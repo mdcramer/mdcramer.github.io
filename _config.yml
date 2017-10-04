@@ -9,11 +9,11 @@ minimal_mistakes_skin    : "dirt" # "air", "contrast", "dark", "dirt", "mint", "
 
 # Site Settings
 locale                   : "en"
-title                    : "Site Title"
+title                    : "Website and Blog for Github"
 title_separator          : "-"
 name                     : "Mark Cramer"
 description              : "Github website and blog"
-url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : https://mdcramer.github.io/ # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
@@ -81,8 +81,8 @@ analytics:
 # Site Author
 author:
   name             : "Mark Cramer"
-  avatar           : /assets/images/_MG_4472_Final_cropped.jpg # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Product Management executive who enjoys hacking around with code in his free time, of which there is always, sadly, too little."
+  avatar           : /assets/images/profilepic.jpg # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  bio              : "Product Management executive who enjoys hacking around with code in his free time, of which there is never, sadly, enough."
   location         : "San Francisco"
   email            :
   uri              :
