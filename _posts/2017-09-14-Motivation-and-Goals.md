@@ -1,3 +1,10 @@
+---
+title: "Motivation and Goals"
+excerpt: "What is the motivation for this project and what are the goals?"
+tags: [RNN]
+last_modified_at: 2017-10-04
+---
+
 # Using Deep Learning to correct spelling mistakes
 ## Motivation
 This project was inspired by [Tal Weiss'](https://medium.com/@majortal) post on [Deep Spelling](https://medium.com/@majortal/deep-spelling-9ffef96a24f6). His [Deep Spell](https://github.com/MajorTal/DeepSpell/blob/master/keras_spell.py) code can be found on Github.
