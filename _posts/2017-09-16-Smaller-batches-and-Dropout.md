@@ -13,6 +13,6 @@ Not only did dropping the batch size down to 128 improve training performance (t
 
 The spelling correction is also not working particularly well. As an example, "he had dated forI much of the past" becomes "Sou had teap for much to heads tap". There's obviously more work to be done.
 <figure>
-	<img src="assets/images/batch256-and-dropout.png " alt="iPod Battery Replacement status"/>
-	<figcaption>iPod battery replacement status screenshot</figcaption>
+	<img src="/assets/images/batch256-and-dropout.png" alt="256 batch size and 30% Dropout"/>
+	<figcaption>Validation loss for various hyperparameter configurtations</figcaption>
 </figure>
