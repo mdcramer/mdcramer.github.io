@@ -81,7 +81,7 @@ analytics:
 # Site Author
 author:
   name             : "Mark Cramer"
-  avatar           : /assets/images/profilepic.jpg # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : /assets/images/profilepic-small.jpg # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Product Management executive who enjoys hacking around with code in his free time, of which there is never, sadly, enough."
   location         : "San Francisco"
   email            :
