@@ -13,5 +13,5 @@ It is not.
 For whatever reason, training with a batch size of 64 progressed significantly slower than all of the training with a batch size of 128. It was so poor that I cut it off before even completing the first epoch. I'll be going back to 128 now because, apparently, that one is "just right."
 <figure>
 	<img src="{{ site.baseurl }}/assets/images/batch_size-64.png" alt="Batch size 64"/>
-	<figcaption>Validation loss for various hyperparameter configurtations</figcaption>
+	<figcaption>Validation loss for various hyperparameter configurations</figcaption>
 </figure>
