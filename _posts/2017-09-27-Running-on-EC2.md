@@ -1,6 +1,6 @@
 ---
 title: "Running on EC2"
-excerpt: "Remove non-English text from the data set."
+excerpt: "Getting up and running in the cloud, with email updates from AWS"
 tags: [ec2, email]
 last_modified_at: 2017-10-16
 ---

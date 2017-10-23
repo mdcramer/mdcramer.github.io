@@ -9,7 +9,7 @@ As mentioned [at the beginning]({{ site.baseurl }}{% post_url 2017-09-14-Motivat
 
 I am thus going to start branching out.
 
-## Removing non-English sentences from the data set
+## Removing non-English sentences from the dataset
 It is critical to know the data set. It is also critical to clean the dataset, which is what data scientists [spend most of their time doing](https://whatsthebigdata.com/2016/05/01/data-scientists-spend-most-of-their-time-cleaning-data/).
 
 Since the inception of this project I've been peaking into the and have noticed, despite the ".en" in the source filename, a considerable number of non-English sentences, like `Toujours aussi inconstant, le Brésil, tombé au 19e rang du classement FIFA, a certes réagi après l'ouverture du score de la tête de Gonzalez (7).` While I would imagine that a neural network could be trained to simultaneously correct spelling for multiple different languages, this will only increase the complexity of the problem. Additionally, only a smattering of different languages is going to be nothing more than noise. Thus, I've decided to scrub the data set of anything non-English.

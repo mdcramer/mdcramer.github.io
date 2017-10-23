@@ -1,5 +1,5 @@
 ---
-title: "Motivation and Goals"
+title: "Motivation and goals"
 excerpt: "What is the motivation for this project and what are the goals?"
 tags: [RNN, motivation, goals]
 last_modified_at: 2017-10-04

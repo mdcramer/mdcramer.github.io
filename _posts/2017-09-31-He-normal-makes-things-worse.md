@@ -1,6 +1,6 @@
 ---
 title: "He normal makes things worse"
-excerpt: "I was disappointed when a fancy, modern initialization technique not only didn't help, but made things worse."
+excerpt: "Disappointing that a fancy, modern initialization technique not only didn't help, but made things worse"
 tags: [he normal, initializer]
 last_modified_at: 2017-10-07
 ---
