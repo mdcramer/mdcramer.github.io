@@ -14,7 +14,7 @@ In January 2017 I began the [Udacity Deep Learning Foundation Nanodegree Program
 Unless you're Google, the typical technique for correcting spelling mistakes is the [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance), or its close cousin, the [Damerau–Levenshtein distance](https://en.wikipedia.org/wiki/Damerau%E2%80%93Levenshtein_distance). Mr. Weiss does a good job of explaining why these do not work particularly well.
 
 ### Goals
-* Re-implement Mr. Weiss' Recurrent Neural Network (RNN) using Tensorflow and achieve the same level of accuracy.
+* Re-implement Mr. Weiss' Recurrent Neural Network (RNN) using Tensorflow and achieve the same level of accuracy. (He claims 90% after 12 hours of training and 95.5% after 3.5 days of training.)
 * Attempt to implement some of the areas for exploration he suggests, as well as others, to see if further improvements can be obtained.
 
 ### The beginning of the code

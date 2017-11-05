@@ -51,6 +51,8 @@ After getting everything set up on EC2, I trained for 3 epochs on my local GPU (
 
 The result below, however, is a bit odd. The discontinuity between the 3rd and 4th epochs is certainly due to the fact the source and validation files were regenerated before training continued. Which leads me to wonder the extent to which the training can be affected by the random sort when generating the source and validation files. It also makes me wonder if any efficiencies can be obtained by generating those files after every epoch, which is not something I have been doing. Those are ideas I will try to explore later.
 
+The final accuracy was 75.1% after over 24 hours of total training. This is quite a bit lower than the goal of 90% after 12 hours, so there is more work to be done.
+
 <figure>
     <img src="{{ site.baseurl }}/assets/images/ec2.png" alt="Training on EC2"/>
     <figcaption>Validation loss for various hyperparameter configurations</figcaption>

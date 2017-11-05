@@ -1,8 +1,8 @@
 ---
-title: "Reducing the Size of the Problem Makes Things Worse"
+title: "Eliminating Uncommon Words Makes Things Worse"
 excerpt: "Eliminating sentences with uncommon words (i.e. those that only appear once) from the dataset does not improve the accuracy of the training, for reasons unknown."
 tags: [datasets, common words, uncommon words]
-last_modified_at: 2017-11-03
+last_modified_at: 2017-11-05
 ---
 
 This is frustrating.
@@ -17,8 +17,6 @@ Therefore, after stripping out all digits and punctuation, I created a frequency
 While previously my dataset has 4,161,772 lines, the new one has only 3,463,951 lines, for a reduction of 20%, which seems pretty sizable. As such, I was giddily anticipating a considerable improvement in accuracy. Naturally, as has been my experience so far, the outcome (below) was exactly the opposite.
 
 How is this possible? How can removing the obviously difficult 'words' to spell from the dataset result in a significantly worse outcome when training. For the moment, I don't even have a theory as to what might have happened here.
-
-This is depressing.
 
 <figure>
     <img src="{{ site.baseurl }}/assets/images/popular-words-only.png" alt="Validation loss for experiment with dataset that contains only popular words"/><figcaption>Removing sentences with uncommon words from the dataset significantly reduces training performance.</figcaption>
