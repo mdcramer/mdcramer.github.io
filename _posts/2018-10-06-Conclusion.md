@@ -2,7 +2,7 @@
 title: "Conclusion"
 excerpt: "This was an amazing experience, but today I pulled the plug."
 tags: [goals, conclusion]
-last_modified_at: 2017-11-05
+last_modified_at: 2018-10-06
 ---
 
 For a while there, thanks to taking the [Udacity Deep Learning Nanodegree](https://www.udacity.com/course/deep-learning-nanodegree--nd101), which is what [got me hooked on deep learning]({{ site.baseurl }}{% post_url 2017-09-14-Motivation-and-goals %}) in the first place, I had a bunch of free usage on AWS. A couple of months ago, however, my pool of free usage ran dry and, even though my instance has been dormant for a long time, I started getting charged ~$4 a month. Certainly not a lot of money, but I haven't worked on this project is almost a year, so I felt it was time to pull the plug.
