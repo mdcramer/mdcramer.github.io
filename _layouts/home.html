@@ -1,11 +1,19 @@
 ---
-layout: archive
+layout: default
 ---
-
-<h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
-
-{% for post in paginator.posts %}
-  {% include archive-single.html %}
-{% endfor %}
-
-{% include paginator.html %}
+{% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
+  {% include page__hero.html %}
+{% elsif page.header.video.id and page.header.video.provider %}
+  {% include page__hero_video.html %}
+{% endif %}
+<div id="main" role="main">
+  {% include sidebar.html %}
+  <div class = 'archive'>
+    {%- for blog in site.data.blogs -%}
+    <a class = 'blog_card' href = '/{{ blog.name | downcase | slugify }}/'>
+      <h2 class = 'blog_header'>{{ blog.name }}</h2>
+      <p class = 'blog_excerpt'>{{ blog.description }}</p>
+    </a>
+    {%- endfor -%}
+  </div>
+</div>
