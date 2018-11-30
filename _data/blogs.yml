@@ -1,0 +1,4 @@
+# [name] values should be written in lower case
+- name: deep speeding blog
+  description: A blog for Mark Cramer's Deep Speeling Github repository. Recurrent neural network (RNN) using Tensorflow designed to correct spelling mistakes.
+  # background: darkgoldenrod
