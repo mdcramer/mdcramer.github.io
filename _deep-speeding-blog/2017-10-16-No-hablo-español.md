@@ -3,9 +3,10 @@ title: "No hablo español"
 excerpt: "Remove non-English text from the data set."
 tags: [english, non-english, langdetect, language detection]
 last_modified_at: 2017-10-16
+permalink: /deep-speeding-blog/no-hablo-espanol/
 ---
 
-As mentioned [at the beginning]({{ site.baseurl }}{% post_url 2017-09-14-Motivation-and-Goals %}), the first goal is to reproduce the results produced by Mr. Weiss. After implementing virtually everything in his post, including the [He normal initialization]({{ site.baseurl }}{% post_url 2017-09-31-He-normal-makes-things-worse %}), and building a highly similar model, the target of 90% accuracy (let alone 95.5%) is proving elusive.
+As mentioned [at the beginning](/deep-speeding-blog/2017-09-14-Motivation-and-Goals/), the first goal is to reproduce the results produced by Mr. Weiss. After implementing virtually everything in his post, including the [He normal initialization](/deep-speeding-blog/2017-09-31-He-normal-makes-things-worse/), and building a highly similar model, the target of 90% accuracy (let alone 95.5%) is proving elusive.
 
 I am thus going to start branching out.
 
@@ -27,7 +28,7 @@ In any event, the end result is that 848,326 lines, including 345 "errors," were
 ## That's the theory, anyway
 The actual result, after two days of training, is disappointing. In my first run (orange-brown dots) I inadvertently also changed the minimum input size from 5 to 10, which had a pretty negative impact on training so I cut it short. It's often helpful to not change multiple things at the same time.
 
-The second run (dark blue dots) actually did well, although not better than the run a couple weeks ago when I changed the number of allowable characters from 100 to 75 and before I implemented [He normal initialization]({{ site.baseurl }}{% post_url 2017-09-31-He-normal-makes-things-worse %}). The final validation accuracy was 70.0%. This is another disappointing result and I continued to be perplexed as to how Mr. Weiss got to 95.5% accuracy.
+The second run (dark blue dots) actually did well, although not better than the run a couple weeks ago when I changed the number of allowable characters from 100 to 75 and before I implemented [He normal initialization](/deep-speeding-blog/2017-09-31-He-normal-makes-things-worse/). The final validation accuracy was 70.0%. This is another disappointing result and I continued to be perplexed as to how Mr. Weiss got to 95.5% accuracy.
 
 I have not yet, however, run out of ideas.
 

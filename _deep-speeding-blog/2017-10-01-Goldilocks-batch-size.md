@@ -6,7 +6,7 @@ last_modified_at: 2017-10-04
 ---
 
 ## Batch size of 64 is too small
-As we learned in a previous post, a [batch size of 256]({{ site.baseurl }}{% post_url 2017-09-16-Smaller-batches-and-Dropout %}) is too large. Since then I've been running with a batch size of 128 when I got to thinking, if 128 is better than 256 then perhaps 64 is even better than that.
+As we learned in a previous post, a [batch size of 256](/deep-speeding-blog/2017-09-16-Smaller-batches-and-Dropout/) is too large. Since then I've been running with a batch size of 128 when I got to thinking, if 128 is better than 256 then perhaps 64 is even better than that.
 
 It is not.
 

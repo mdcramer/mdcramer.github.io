@@ -5,7 +5,7 @@ tags: [ec2, aws, email]
 last_modified_at: 2017-10-16
 ---
 
-Even with a [local GPU]({{ site.baseurl }}{% post_url 2017-09-15-My-rig %}) there is a certain convenience to training in the cloud. For starters, you can turn off your machine, which is especially handy if your training takes multiple days (or weeks). If training causes your laptop's fan to whir, there's also the benefit to some quiet.
+Even with a [local GPU](/deep-speeding-blog/2017-09-15-My-rig/) there is a certain convenience to training in the cloud. For starters, you can turn off your machine, which is especially handy if your training takes multiple days (or weeks). If training causes your laptop's fan to whir, there's also the benefit to some quiet.
 
 ## Getting off the ground
 The first step is to create an account at AWS. Since I took the [Udacity Deep Learning Nanodegree](https://www.udacity.com/course/deep-learning-nanodegree-foundation--nd101) I already had one.
