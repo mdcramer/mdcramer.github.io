@@ -9,10 +9,10 @@ minimal_mistakes_skin: "dirt" # "air", "contrast", "dark", "dirt", "mint", "sunr
 
 # Site Settings
 locale: "en"
-title: "Mark's Blogs"
+title: "Hackin' and Tinkerin'"
 title_separator: "-"
 name: "Mark Cramer"
-description: "A collection of Mark Cramer's blogs"
+description: "A collection of blogs related to some of my projects on GitHub"
 url: https://mdcramer.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl: "" # the subpath of your site, e.g. "/blog"
 repository: mdcramer/Deep-Speeling-Blog # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -161,9 +161,9 @@ plugins:
   - jekyll-include-cache
 
 collections:
-  deep-speeding-blog:
+  deep-speeling-blog:
     output: true
-    permalink: /deep-speeding-blog/:path/
+    permalink: /deep-speeling-blog/:path/
 
 pagination:
   enabled: true
@@ -238,13 +238,13 @@ compress_html:
 
 # Defaults
 defaults:
-  # _deep-speeding-blog
+  # _deep-speeling-blog
   - scope:
-      path: "_deep-speeding-blog"
-      type: deep-speeding-blog
+      path: "_deep-speeling-blog"
+      type: deep-speeling-blog
     values:
       layout: single
-      permalink: /deep-speeding-blog/:title/
+      permalink: /deep-speeling-blog/:title/
       author_profile: true
       read_time: false
       comments: true # true

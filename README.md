@@ -7,11 +7,11 @@ Since we would like permalinks to be generated automatically, special characters
 
 For this reason it's best to explicitly specify the permalink if the page title/filename contains these special characters.
 
-For example, in **_deep-speeding-blog/2017-10-16-No-hablo-español.md**, I have explicitly specified the permalink like so:
+For example, in **_deep-speeling-blog/2017-10-16-No-hablo-español.md**, I have explicitly specified the permalink like so:
 
 ```yaml
 ...
-permalink: /deep-speeding-blog/no-hablo-espanol/
+permalink: /deep-speeling-blog/no-hablo-espanol/
 ```
 
 ### Set up the site on your github pages
@@ -49,9 +49,9 @@ Current *_config.yml*
 ```yaml
 ...
 collections:
-  deep-speeding-blog:
+  deep-speeling-blog:
     output: true
-    permalink: /deep-speeding-blog/:path/
+    permalink: /deep-speeling-blog/:path/
 ...
 ```
 
@@ -59,9 +59,9 @@ New *_config.yml*
 ```yaml
 ...
 collections:
-  deep-speeding-blog:
+  deep-speeling-blog:
     output: true
-    permalink: /deep-speeding-blog/:path/
+    permalink: /deep-speeling-blog/:path/
   neural-engines:
     output: true
     permalink: /neural-engines/:path/
@@ -73,14 +73,14 @@ This description will be used to list the blog in the home page:
 Current *_data/blogs.yml*
 ```yaml
 # [name] values should be written in lower case
-- name: deep speeding blog
+- name: deep speeling blog
   description: A blog for Mark Cramer's Deep Speeling Github repository. Recurrent neural network (RNN) using Tensorflow designed to correct spelling mistakes.
   # background: darkgoldenrod
 ```
 New *_data/blogs.yml*
 ```yaml
 # [name] values should be written in lower case
-- name: deep speeding blog
+- name: deep speeling blog
   description: A blog for Mark Cramer's Deep Speeling Github repository. Recurrent neural network (RNN) using Tensorflow designed to correct spelling mistakes.
 - name: neural engines
   description: Something interesting about neural engines ...
