@@ -12,7 +12,7 @@ sections:
   create: all
 - type: directory
   path: _deep-speeling-blog
-  label: Deep speeling blog
+  label: Deep Speeling
   create: all
   match: "**/*"
 upload_dir: uploads
