@@ -11,8 +11,8 @@ sections:
   label: Posts
   create: all
 - type: directory
-  path: _deep-speeding-blog
-  label: Deep speeding blog
+  path: _deep-speeling-blog
+  label: Deep speeling blog
   create: all
   match: "**/*"
 upload_dir: uploads
