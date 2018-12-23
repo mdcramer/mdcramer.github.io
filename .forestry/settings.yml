@@ -11,7 +11,7 @@ sections:
   label: Posts
   create: all
 - type: directory
-  path: _deep-speeding-blog
+  path: _deep-speeling-blog
   label: Deep Speeling
   create: all
   match: "**/*"
