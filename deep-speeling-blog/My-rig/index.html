@@ -19,12 +19,12 @@
 
 
 
-<title>Dropout Experiment with Only Popular Words - Mark’s Blogs</title>
+<title>My rig - Hackin’ and Tinkerin’</title>
 
 
 
 
-<meta name="description" content="Continuing from the previous experiment eliminating uncommon words, adjusting the Dropout produces an effect, but the improvement is not significant enough.">
+<meta name="description" content="Having a powerful local machine with a GPU doesn’t hurt.">
 
 
 
@@ -32,23 +32,23 @@
 <meta name="author" content="Mark Cramer">
 
 <meta property="og:locale" content="en">
-<meta property="og:site_name" content="Mark's Blogs">
-<meta property="og:title" content="Dropout Experiment with Only Popular Words">
+<meta property="og:site_name" content="Hackin' and Tinkerin'">
+<meta property="og:title" content="My rig">
 
 
-  <link rel="canonical" href="https://mdcramer.github.io/deep-speeding-blog/Dropout-Experiment-With-Only-Popular-Words/">
-  <meta property="og:url" content="https://mdcramer.github.io/deep-speeding-blog/Dropout-Experiment-With-Only-Popular-Words/">
+  <link rel="canonical" href="https://mdcramer.github.io/deep-speeling-blog/My-rig/">
+  <meta property="og:url" content="https://mdcramer.github.io/deep-speeling-blog/My-rig/">
 
 
 
-  <meta property="og:description" content="Continuing from the previous experiment eliminating uncommon words, adjusting the Dropout produces an effect, but the improvement is not significant enough.">
+  <meta property="og:description" content="Having a powerful local machine with a GPU doesn’t hurt.">
 
 
 
   <meta name="twitter:site" content="@markdcramer">
-  <meta name="twitter:title" content="Dropout Experiment with Only Popular Words">
-  <meta name="twitter:description" content="Continuing from the previous experiment eliminating uncommon words, adjusting the Dropout produces an effect, but the improvement is not significant enough.">
-  <meta name="twitter:url" content="https://mdcramer.github.io/deep-speeding-blog/Dropout-Experiment-With-Only-Popular-Words/">
+  <meta name="twitter:title" content="My rig">
+  <meta name="twitter:description" content="Having a powerful local machine with a GPU doesn’t hurt.">
+  <meta name="twitter:url" content="https://mdcramer.github.io/deep-speeling-blog/My-rig/">
 
   
     <meta name="twitter:card" content="summary">
@@ -70,7 +70,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2017-11-05T00:00:00-07:00">
+  <meta property="article:published_time" content="2017-09-15T00:00:00-07:00">
 
 
 
@@ -98,7 +98,7 @@
 <!-- end SEO -->
 
 
-<link href="https://mdcramer.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Mark's Blogs Feed">
+<link href="https://mdcramer.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Hackin' and Tinkerin' Feed">
 
 <!-- http://t.co/dKP3o1e -->
 <meta name="HandheldFriendly" content="True">
@@ -144,7 +144,7 @@
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
-        <a class="site-title" href="https://mdcramer.github.io/">Mark's Blogs</a>
+        <a class="site-title" href="https://mdcramer.github.io/">Hackin' and Tinkerin'</a>
         <ul class="visible-links">
           
             
@@ -288,34 +288,28 @@
 
 
   <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Dropout Experiment with Only Popular Words">
-    <meta itemprop="description" content="Continuing from the previous experiment eliminating uncommon words, adjusting the Dropout produces an effect, but the improvement is not significant enough.">
-    <meta itemprop="datePublished" content="November 05, 2017">
-    <meta itemprop="dateModified" content="November 05, 2017">
+    <meta itemprop="headline" content="My rig">
+    <meta itemprop="description" content="Having a powerful local machine with a GPU doesn’t hurt.">
+    <meta itemprop="datePublished" content="September 15, 2017">
+    <meta itemprop="dateModified" content="October 04, 2017">
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 class="page__title" itemprop="headline">Dropout Experiment with Only Popular Words
+          <h1 class="page__title" itemprop="headline">My rig
 </h1>
           
         </header>
       
 
       <section class="page__content" itemprop="text">
-        <p><a href="/deep-speeding-blog/2017-10-16-No-hablo-español/">As mentioned earlier</a>, I am becoming increasingly skeptical of the possibility of reaching 90% accuracy after 12 hours of training using <a href="https://github.com/MajorTal/DeepSpell/blob/master/keras_spell.py">Mr. Weiss’ methodology</a> and the publicly available <a href="http://research.google.com/pubs/pub41880.html">billion word dataset</a> released by Google. However, I am a stubborn individual and so I thought I would experiment with adjusting the Regularization to see if that helps.</p>
+        <p>With inexpensive GPUs in the cloud, there isn’t much of a need to spend thousands of dollars on a fully-loaded machine with a local GPU. That being said, having such a machine handy does not hurt.</p>
 
-<p>The fact that the previous experiment, where I removed all of the <a href="/deep-speeding-blog/2017-11-03-Eliminating-Uncommon-Words-Makes-Things-Worse/">sentences with uncommon words</a>, produced an inferior result makes no sense whatsoever; the problem was significantly simplified and yet the validation results during training were considerably worse. Upon reflection, if the ‘size’ of the problem is reduced and yet the network performs worse, perhaps it is over-fitting.</p>
+<p>I’m fortunate enough to be able to develop on a <a href="https://www.dell.com/en-us/work/shop/dell-laptops-and-notebooks/precision-7520/spd/precision-15-7520-laptop">Dell Precision 7520</a> with an i7 CPU @ 2.9GHz, 32GB of RAM and a SSD. Most importantly, it has a <a href="https://www.techpowerup.com/gpudb/2922/quadro-m2200-mobile">Nvidia M2200 GPU</a>. It’s not a <a href="https://www.nvidia.com/en-us/geforce/products/10series/titan-xp/">Titan Xp</a>, but after loading up CUDA, cuDNN and Tensorflow 1.3, I’m finding it performs about 11% faster than a <a href="https://aws.amazon.com/blogs/aws/build-3d-streaming-applications-with-ec2s-new-g2-instance-type/">EC2 g2.2xlarge</a>. The g2 GPUs all have 1536 CUDA cores and 4 GB RAM, compared to my laptop which has 1024 CUDA cores and 4 GB RAM, which explains why my laptop performed on par with the single GPU g2.2xlarge. I’m not sure why, however, it would perform slightly faster. PassMark Software has a really good <a href="https://www.videocardbenchmark.net/directCompute.html">GPU Compute Benchmark Chart</a> which I found handy.</p>
 
-<p>As such, I decided to adjust the Dropout from the 30% I’ve been using to a more aggressive 50%. (Mr. Weiss’ <a href="https://machinelearnings.co/deep-spelling-9ffef96a24f6">blog</a> says that he used 30% although his code has 20%, so perhaps it’s worth fudging.) If you’ve been following along you can probably guess that, naturally, the result was yet even worse (below).</p>
+<p>Under no circumstances am I suggesting anyone drop $3k on a rig, but if it’s there then running small tests locally is pretty convenient.</p>
 
-<p>Continuing, if increasing the Dropout has a significant negative impact on training, then perhaps reducing it would help. Logically this makes little sense to me, as the scope of the problem was just reduced, but I decided to try nonetheless. I launched the training before heading out for a day at an <a href="http://aifrontiers.com/">AI Conference</a>, and things were initially looking <em>great</em> during the first hour before I left the house, but by the time I got home the training went sideways. I decided to run a full 5 epochs just to see how it would finish and at the end I achieve 70.2% accuracy. It should be noted that this is much lower than the <a href="/deep-speeding-blog/2017-09-27-Running-on-EC2/">75.1% accuracy</a> achieved prior to implementing He normal initialization, extracting non-English sentences from the dataset and removing sentences with uncommon words and numbers.</p>
-
-<p>Every time I’ve tried to implement an improvement it has degraded the network’s ability to learn. I’m again not quite sure where to go from here. Perhaps I’ll dig deeper into the dataset or perhaps I should build the RNN using Keras, just in case something is implemented differently there.</p>
-
-<figure>
-    <img src="/assets/images/dropout-experiment-with-popular.png" alt="Validation loss for experiment varying amount of Dropout" /><figcaption>Continuing with the dataset that contains only popular words, adjusting the Dropout produces an effect, but does not improve the results significantly enough.</figcaption>
-</figure>
+<p><strong>Update: 6 October 2018</strong> - I’m not suggesting that anyone do this, but the AI Engineer and Entrepreneur <a href="http://thisisjeffchen.com/">Jeff Chen</a> wrote a popular blog post describing how <a href="https://medium.com/the-mission/why-building-your-own-deep-learning-computer-is-10x-cheaper-than-aws-b1c91b55ce8c">building your own deep learning computer is 10x cheaper than AWS</a>. An expandable computer with one top-end GPU (a 1080 Ti GPU) can be had for $3k, which depreciated over 3 years makes it substantially less expensive than AWS or Google Cloud. According to Jeff, “Nvidia contractually prohibits the use of GeForce and Titan cards in datacenters. So Amazon and other providers have to use the $8,500 datacenter version of the GPUs, and they have to charge a lot for renting it. This is customer segmentation at its finest folks!”</p>
 
         
       </section>
@@ -336,15 +330,19 @@
     
       
       
-      <a href="/tags/common-words" class="page__taxonomy-item" rel="tag">common words</a><span class="sep">, </span>
+      <a href="/tags/aws" class="page__taxonomy-item" rel="tag">aws</a><span class="sep">, </span>
     
       
       
-      <a href="/tags/dropout" class="page__taxonomy-item" rel="tag">dropout</a><span class="sep">, </span>
+      <a href="/tags/computer" class="page__taxonomy-item" rel="tag">computer</a><span class="sep">, </span>
     
       
       
-      <a href="/tags/uncommon-words" class="page__taxonomy-item" rel="tag">uncommon words</a>
+      <a href="/tags/gpu" class="page__taxonomy-item" rel="tag">GPU</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/local-machine" class="page__taxonomy-item" rel="tag">local machine</a>
     
     </span>
   </p>
@@ -353,29 +351,29 @@
 
 
         
-          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2017-11-05">November 05, 2017</time></p>
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2017-10-04">October 04, 2017</time></p>
         
       </footer><section class="page__share">
   
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?via=markdcramer&text=Dropout+Experiment+with+Only+Popular+Words%20https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeding-blog%2FDropout-Experiment-With-Only-Popular-Words%2F" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?via=markdcramer&text=My+rig%20https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeling-blog%2FMy-rig%2F" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeding-blog%2FDropout-Experiment-With-Only-Popular-Words%2F" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeling-blog%2FMy-rig%2F" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://plus.google.com/share?url=https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeding-blog%2FDropout-Experiment-With-Only-Popular-Words%2F" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+  <a href="https://plus.google.com/share?url=https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeling-blog%2FMy-rig%2F" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeding-blog%2FDropout-Experiment-With-Only-Popular-Words%2F" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeling-blog%2FMy-rig%2F" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
   <nav class="pagination">
     
-      <a href="https://mdcramer.github.io/deep-speeding-blog/Eliminating-Uncommon-Words-Makes-Things-Worse/" class="pagination--pager" title="Eliminating Uncommon Words Makes Things Worse
+      <a href="https://mdcramer.github.io/deep-speeling-blog/Motivation-and-Goals/" class="pagination--pager" title="Motivation and goals
 ">Previous</a>
     
     
-      <a href="https://mdcramer.github.io/deep-speeding-blog/Conclusion/" class="pagination--pager" title="Conclusion
+      <a href="https://mdcramer.github.io/deep-speeling-blog/Smaller-batches-and-Dropout/" class="pagination--pager" title="Smaller batches and Dropout
 ">Next</a>
     
   </nav>
@@ -427,8 +425,8 @@
       
   <script>
     var disqus_config = function () {
-      this.page.url = "https://mdcramer.github.io/deep-speeding-blog/Dropout-Experiment-With-Only-Popular-Words/";  // Replace PAGE_URL with your page's canonical URL variable
-      this.page.identifier = "/deep-speeding-blog/Dropout-Experiment-With-Only-Popular-Words"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      this.page.url = "https://mdcramer.github.io/deep-speeling-blog/My-rig/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/deep-speeling-blog/My-rig"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
     (function() { // DON'T EDIT BELOW THIS LINE
       var d = document, s = d.createElement('script');

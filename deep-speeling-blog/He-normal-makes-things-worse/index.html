@@ -19,12 +19,12 @@
 
 
 
-<title>My rig - Mark’s Blogs</title>
+<title>He normal makes things worse - Hackin’ and Tinkerin’</title>
 
 
 
 
-<meta name="description" content="Having a powerful local machine with a GPU doesn’t hurt.">
+<meta name="description" content="Disappointing that a fancy, modern initialization technique not only didn’t help, but made things worse">
 
 
 
@@ -32,23 +32,23 @@
 <meta name="author" content="Mark Cramer">
 
 <meta property="og:locale" content="en">
-<meta property="og:site_name" content="Mark's Blogs">
-<meta property="og:title" content="My rig">
+<meta property="og:site_name" content="Hackin' and Tinkerin'">
+<meta property="og:title" content="He normal makes things worse">
 
 
-  <link rel="canonical" href="https://mdcramer.github.io/deep-speeding-blog/My-rig/">
-  <meta property="og:url" content="https://mdcramer.github.io/deep-speeding-blog/My-rig/">
+  <link rel="canonical" href="https://mdcramer.github.io/deep-speeling-blog/He-normal-makes-things-worse/">
+  <meta property="og:url" content="https://mdcramer.github.io/deep-speeling-blog/He-normal-makes-things-worse/">
 
 
 
-  <meta property="og:description" content="Having a powerful local machine with a GPU doesn’t hurt.">
+  <meta property="og:description" content="Disappointing that a fancy, modern initialization technique not only didn’t help, but made things worse">
 
 
 
   <meta name="twitter:site" content="@markdcramer">
-  <meta name="twitter:title" content="My rig">
-  <meta name="twitter:description" content="Having a powerful local machine with a GPU doesn’t hurt.">
-  <meta name="twitter:url" content="https://mdcramer.github.io/deep-speeding-blog/My-rig/">
+  <meta name="twitter:title" content="He normal makes things worse">
+  <meta name="twitter:description" content="Disappointing that a fancy, modern initialization technique not only didn’t help, but made things worse">
+  <meta name="twitter:url" content="https://mdcramer.github.io/deep-speeling-blog/He-normal-makes-things-worse/">
 
   
     <meta name="twitter:card" content="summary">
@@ -70,7 +70,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2017-09-15T00:00:00-07:00">
+  <meta property="article:published_time" content="2017-10-01T00:00:00-07:00">
 
 
 
@@ -98,7 +98,7 @@
 <!-- end SEO -->
 
 
-<link href="https://mdcramer.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Mark's Blogs Feed">
+<link href="https://mdcramer.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Hackin' and Tinkerin' Feed">
 
 <!-- http://t.co/dKP3o1e -->
 <meta name="HandheldFriendly" content="True">
@@ -144,7 +144,7 @@
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
-        <a class="site-title" href="https://mdcramer.github.io/">Mark's Blogs</a>
+        <a class="site-title" href="https://mdcramer.github.io/">Hackin' and Tinkerin'</a>
         <ul class="visible-links">
           
             
@@ -288,28 +288,32 @@
 
 
   <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
-    <meta itemprop="headline" content="My rig">
-    <meta itemprop="description" content="Having a powerful local machine with a GPU doesn’t hurt.">
-    <meta itemprop="datePublished" content="September 15, 2017">
-    <meta itemprop="dateModified" content="October 04, 2017">
+    <meta itemprop="headline" content="He normal makes things worse">
+    <meta itemprop="description" content="Disappointing that a fancy, modern initialization technique not only didn’t help, but made things worse">
+    <meta itemprop="datePublished" content="October 01, 2017">
+    <meta itemprop="dateModified" content="October 07, 2017">
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 class="page__title" itemprop="headline">My rig
+          <h1 class="page__title" itemprop="headline">He normal makes things worse
 </h1>
           
         </header>
       
 
       <section class="page__content" itemprop="text">
-        <p>With inexpensive GPUs in the cloud, there isn’t much of a need to spend thousands of dollars on a fully-loaded machine with a local GPU. That being said, having such a machine handy does not hurt.</p>
+        <h2 id="initializing-weights-is-important">Initializing weights is important</h2>
+<p>Initializing the weights properly can make the difference between a model that trains nicely and converges to a generalized solution, and one that either explodes, never quite gets there or <a href="https://plus.google.com/+SoumithChintala/posts/RZfdrRQWL6u">trains more slowly</a>. The Udacity <a href="https://github.com/mdcramer/deep-learning/tree/master/seq2seq">sequence-to-sequency RNN example</a> used a random uniform initialization (<code class="highlighter-rouge">tf.random_uniform_initializer(-0.1, 0.1, seed=2)</code>) for the encoder and decoder and then a truncated normal initialization (<code class="highlighter-rouge">tf.truncated_normal_initializer(mean=0.0, stddev=0.1)</code>) for the decoder dense layer, while <a href="https://medium.com/@majortal/deep-spelling-9ffef96a24f6">Weiss</a> used a Gaussian initialization scaled by fan-in, also known as <a href="https://arxiv.org/abs/1502.01852">He normal initialization</a>.</p>
 
-<p>I’m fortunate enough to be able to develop on a <a href="https://www.dell.com/en-us/work/shop/dell-laptops-and-notebooks/precision-7520/spd/precision-15-7520-laptop">Dell Precision 7520</a> with an i7 CPU @ 2.9GHz, 32GB of RAM and a SSD. Most importantly, it has a <a href="https://www.techpowerup.com/gpudb/2922/quadro-m2200-mobile">Nvidia M2200 GPU</a>. It’s not a <a href="https://www.nvidia.com/en-us/geforce/products/10series/titan-xp/">Titan Xp</a>, but after loading up CUDA, cuDNN and Tensorflow 1.3, I’m finding it performs about 11% faster than a <a href="https://aws.amazon.com/blogs/aws/build-3d-streaming-applications-with-ec2s-new-g2-instance-type/">EC2 g2.2xlarge</a>. The g2 GPUs all have 1536 CUDA cores and 4 GB RAM, compared to my laptop which has 1024 CUDA cores and 4 GB RAM, which explains why my laptop performed on par with the single GPU g2.2xlarge. I’m not sure why, however, it would perform slightly faster. PassMark Software has a really good <a href="https://www.videocardbenchmark.net/directCompute.html">GPU Compute Benchmark Chart</a> which I found handy.</p>
+<p>Again, the training results were disappointing. Not only did the He normal initialization (achieved via <code class="highlighter-rouge">tf.contrib.layers.variance_scaling_initializer()</code> - the default is He normal) not surpass the very basic random uniform initialization, but it performed worse. This is both disappointing and surprising, given that normal initializers typically surpass uniform ones.</p>
 
-<p>Under no circumstances am I suggesting anyone drop $3k on a rig, but if it’s there then running small tests locally is pretty convenient.</p>
-
-<p><strong>Update: 6 October 2018</strong> - I’m not suggesting that anyone do this, but the AI Engineer and Entrepreneur <a href="http://thisisjeffchen.com/">Jeff Chen</a> wrote a popular blog post describing how <a href="https://medium.com/the-mission/why-building-your-own-deep-learning-computer-is-10x-cheaper-than-aws-b1c91b55ce8c">building your own deep learning computer is 10x cheaper than AWS</a>. An expandable computer with one top-end GPU (a 1080 Ti GPU) can be had for $3k, which depreciated over 3 years makes it substantially less expensive than AWS or Google Cloud. According to Jeff, “Nvidia contractually prohibits the use of GeForce and Titan cards in datacenters. So Amazon and other providers have to use the $8,500 datacenter version of the GPUs, and they have to charge a lot for renting it. This is customer segmentation at its finest folks!”</p>
+<h2 id="this-is-odd">This is odd</h2>
+<p>Also interesting is how, unlike the previous configurations, with the He normal initialization there are a number of validation losses that are significantly outside of the trend. You can see the couple dozen blue dots in the white space above the He normal validation loss curve. I have no explanation or theory for that.</p>
+<figure>
+	<img src="/assets/images/he-normal.png" alt="He normal initialization" />
+	<figcaption>Validation loss for various hyperparameter configurations</figcaption>
+</figure>
 
         
       </section>
@@ -330,19 +334,11 @@
     
       
       
-      <a href="/tags/aws" class="page__taxonomy-item" rel="tag">aws</a><span class="sep">, </span>
+      <a href="/tags/he-normal" class="page__taxonomy-item" rel="tag">he normal</a><span class="sep">, </span>
     
       
       
-      <a href="/tags/computer" class="page__taxonomy-item" rel="tag">computer</a><span class="sep">, </span>
-    
-      
-      
-      <a href="/tags/gpu" class="page__taxonomy-item" rel="tag">GPU</a><span class="sep">, </span>
-    
-      
-      
-      <a href="/tags/local-machine" class="page__taxonomy-item" rel="tag">local machine</a>
+      <a href="/tags/initializer" class="page__taxonomy-item" rel="tag">initializer</a>
     
     </span>
   </p>
@@ -351,29 +347,29 @@
 
 
         
-          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2017-10-04">October 04, 2017</time></p>
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2017-10-07">October 07, 2017</time></p>
         
       </footer><section class="page__share">
   
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?via=markdcramer&text=My+rig%20https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeding-blog%2FMy-rig%2F" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?via=markdcramer&text=He+normal+makes+things+worse%20https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeling-blog%2FHe-normal-makes-things-worse%2F" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeding-blog%2FMy-rig%2F" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeling-blog%2FHe-normal-makes-things-worse%2F" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://plus.google.com/share?url=https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeding-blog%2FMy-rig%2F" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+  <a href="https://plus.google.com/share?url=https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeling-blog%2FHe-normal-makes-things-worse%2F" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeding-blog%2FMy-rig%2F" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeling-blog%2FHe-normal-makes-things-worse%2F" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
   <nav class="pagination">
     
-      <a href="https://mdcramer.github.io/deep-speeding-blog/Motivation-and-Goals/" class="pagination--pager" title="Motivation and goals
+      <a href="https://mdcramer.github.io/deep-speeling-blog/Running-on-EC2/" class="pagination--pager" title="Running on EC2
 ">Previous</a>
     
     
-      <a href="https://mdcramer.github.io/deep-speeding-blog/Smaller-batches-and-Dropout/" class="pagination--pager" title="Smaller batches and Dropout
+      <a href="https://mdcramer.github.io/deep-speeling-blog/Goldilocks-batch-size/" class="pagination--pager" title="Goldilocks batch size
 ">Next</a>
     
   </nav>
@@ -425,8 +421,8 @@
       
   <script>
     var disqus_config = function () {
-      this.page.url = "https://mdcramer.github.io/deep-speeding-blog/My-rig/";  // Replace PAGE_URL with your page's canonical URL variable
-      this.page.identifier = "/deep-speeding-blog/My-rig"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      this.page.url = "https://mdcramer.github.io/deep-speeling-blog/He-normal-makes-things-worse/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/deep-speeling-blog/He-normal-makes-things-worse"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
     (function() { // DON'T EDIT BELOW THIS LINE
       var d = document, s = d.createElement('script');

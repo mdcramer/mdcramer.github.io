@@ -19,12 +19,12 @@
 
 
 
-<title>Goldilocks batch size - Mark’s Blogs</title>
+<title>Posts in collection deep-speeling-blog - Hackin’ and Tinkerin’ - Page 2</title>
 
 
 
 
-<meta name="description" content="Some batch sizes are too big and some are too small. It’s important to find the one that is just right.">
+<meta name="description" content="A collection of blogs related to some of my projects on GitHub">
 
 
 
@@ -32,23 +32,21 @@
 <meta name="author" content="Mark Cramer">
 
 <meta property="og:locale" content="en">
-<meta property="og:site_name" content="Mark's Blogs">
-<meta property="og:title" content="Goldilocks batch size">
+<meta property="og:site_name" content="Hackin' and Tinkerin'">
+<meta property="og:title" content="Posts in collection deep-speeling-blog">
 
 
-  <link rel="canonical" href="https://mdcramer.github.io/deep-speeding-blog/Goldilocks-batch-size/">
-  <meta property="og:url" content="https://mdcramer.github.io/deep-speeding-blog/Goldilocks-batch-size/">
+  <link rel="canonical" href="https://mdcramer.github.io/deep-speeling-blog/page/2/">
+  <meta property="og:url" content="https://mdcramer.github.io/deep-speeling-blog/page/2/">
 
 
-
-  <meta property="og:description" content="Some batch sizes are too big and some are too small. It’s important to find the one that is just right.">
 
 
 
   <meta name="twitter:site" content="@markdcramer">
-  <meta name="twitter:title" content="Goldilocks batch size">
-  <meta name="twitter:description" content="Some batch sizes are too big and some are too small. It’s important to find the one that is just right.">
-  <meta name="twitter:url" content="https://mdcramer.github.io/deep-speeding-blog/Goldilocks-batch-size/">
+  <meta name="twitter:title" content="Posts in collection deep-speeling-blog">
+  <meta name="twitter:description" content="A collection of blogs related to some of my projects on GitHub">
+  <meta name="twitter:url" content="https://mdcramer.github.io/deep-speeling-blog/page/2/">
 
   
     <meta name="twitter:card" content="summary">
@@ -69,10 +67,9 @@
 
 
 
-  <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2017-10-01T00:00:00-07:00">
 
 
+  <link rel="prev" href="https://mdcramer.github.io/deep-speeling-blog/">
 
 
 
@@ -98,7 +95,7 @@
 <!-- end SEO -->
 
 
-<link href="https://mdcramer.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Mark's Blogs Feed">
+<link href="https://mdcramer.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Hackin' and Tinkerin' Feed">
 
 <!-- http://t.co/dKP3o1e -->
 <meta name="HandheldFriendly" content="True">
@@ -135,7 +132,7 @@
 <!-- end custom head snippets -->
   </head>
 
-  <body class="layout--single">
+  <body class="layout--autopage_collection">
 
     <!--[if lt IE 9]>
 <div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
@@ -144,7 +141,7 @@
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
-        <a class="site-title" href="https://mdcramer.github.io/">Mark's Blogs</a>
+        <a class="site-title" href="https://mdcramer.github.io/">Hackin' and Tinkerin'</a>
         <ul class="visible-links">
           
             
@@ -162,6 +159,39 @@
 </div>
 
     
+  
+
+
+
+
+
+
+
+
+
+
+
+<div class="page__hero--overlay"
+  style="background-color:  #24292e; "
+>
+  
+    <div class="wrapper">
+      <h1 class="page__title" itemprop="headline">
+        
+          
+        
+      </h1>
+      
+        <p class="page__lead"></p>
+      
+      
+      
+    </div>
+  
+  
+</div>
+
+
 
 
 
@@ -287,96 +317,135 @@
   </div>
 
 
-  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Goldilocks batch size">
-    <meta itemprop="description" content="Some batch sizes are too big and some are too small. It’s important to find the one that is just right.">
-    <meta itemprop="datePublished" content="October 01, 2017">
-    <meta itemprop="dateModified" content="October 04, 2017">
+  <div class="archive">
+    
+    <h3 class="archive__subtitle">Recent Posts</h3>
 
-    <div class="page__inner-wrap">
-      
-        <header>
-          <h1 class="page__title" itemprop="headline">Goldilocks batch size
-</h1>
-          
-        </header>
-      
-
-      <section class="page__content" itemprop="text">
-        <h2 id="batch-size-of-64-is-too-small">Batch size of 64 is too small</h2>
-<p>As we learned in a previous post, a <a href="/deep-speeding-blog/2017-09-16-Smaller-batches-and-Dropout/">batch size of 256</a> is too large. Since then I’ve been running with a batch size of 128 when I got to thinking, if 128 is better than 256 then perhaps 64 is even better than that.</p>
-
-<p>It is not.</p>
-
-<p>For whatever reason, training with a batch size of 64 progressed significantly slower than all of the training with a batch size of 128. It was so poor that I cut it off before even completing the first epoch. I’ll be going back to 128 now because, apparently, that one is “just right.”</p>
-<figure>
-	<img src="/assets/images/batch_size-64.png" alt="Batch size 64" />
-	<figcaption>Validation loss for various hyperparameter configurations</figcaption>
-</figure>
-
-        
-      </section>
-
-      <footer class="page__meta">
-        
-        
-  
-
-
-  
-  
-  
-
-  <p class="page__taxonomy">
-    <strong><i class="fa fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
-    <span itemprop="keywords">
     
       
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
       
-      <a href="/tags/batch-size" class="page__taxonomy-item" rel="tag">batch_size</a>
-    
-    </span>
-  </p>
-
-
-
-
-        
-          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2017-10-04">October 04, 2017</time></p>
-        
-      </footer><section class="page__share">
-  
-    <h4 class="page__share-title">Share on</h4>
-  
-
-  <a href="https://twitter.com/intent/tweet?via=markdcramer&text=Goldilocks+batch+size%20https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeding-blog%2FGoldilocks-batch-size%2F" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
-
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeding-blog%2FGoldilocks-batch-size%2F" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
-
-  <a href="https://plus.google.com/share?url=https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeding-blog%2FGoldilocks-batch-size%2F" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
-
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeding-blog%2FGoldilocks-batch-size%2F" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
-</section>
-
-  <nav class="pagination">
-    
-      <a href="https://mdcramer.github.io/deep-speeding-blog/He-normal-makes-things-worse/" class="pagination--pager" title="He normal makes things worse
-">Previous</a>
-    
-    
-      <a href="https://mdcramer.github.io/deep-speeding-blog/no-hablo-espanol/" class="pagination--pager" title="No hablo español
-">Next</a>
-    
-  </nav>
-</div><div class="page__comments">
-  
-    
-        <h4 class="page__comments-title">Leave a Comment</h4>
-        <section id="disqus_thread"></section>
+        <a href="https://mdcramer.github.io/deep-speeling-blog/Running-on-EC2/" rel="permalink">Running on EC2
+</a>
       
-</div></article>
+    </h2>
+	<span>27 Sep 2017</span>
+    
+    <p class="archive__item-excerpt" itemprop="description">Getting up and running in the cloud, with email updates from AWS
+</p>
+  </article>
 </div>
+    
+      
 
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://mdcramer.github.io/deep-speeling-blog/Saving-for-future-training/" rel="permalink">Saving for future training
+</a>
+      
+    </h2>
+	<span>24 Sep 2017</span>
+    
+    <p class="archive__item-excerpt" itemprop="description">When training can last for days, and days, it’s nice to be able to save the graph where it is an then pick it up again later.
+</p>
+  </article>
+</div>
+    
+      
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://mdcramer.github.io/deep-speeling-blog/Smaller-batches-and-Dropout/" rel="permalink">Smaller batches and Dropout
+</a>
+      
+    </h2>
+	<span>16 Sep 2017</span>
+    
+    <p class="archive__item-excerpt" itemprop="description">Decreasing the batch size improved performance and adding Dropout helped even more.
+</p>
+  </article>
+</div>
+    
+      
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://mdcramer.github.io/deep-speeling-blog/My-rig/" rel="permalink">My rig
+</a>
+      
+    </h2>
+	<span>15 Sep 2017</span>
+    
+    <p class="archive__item-excerpt" itemprop="description">Having a powerful local machine with a GPU doesn’t hurt.
+</p>
+  </article>
+</div>
+    
+      
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://mdcramer.github.io/deep-speeling-blog/Motivation-and-Goals/" rel="permalink">Motivation and goals
+</a>
+      
+    </h2>
+	<span>14 Sep 2017</span>
+    
+    <p class="archive__item-excerpt" itemprop="description">What is the motivation for this project and what are the goals?
+</p>
+  </article>
+</div>
+    
+    
+    
+<nav class="pagination">
+  
+  <ul>
+    <li>
+      <a href="/deep-speeling-blog/">Previous</a>
+    </li>
+
+    
+      <li><a href="/deep-speeling-blog/" >1</a></li>
+    
+      <li><a href="/deep-speeling-blog/page/2/"  class = "disabled current" >2</a></li>
+    
+
+    <li>
+      <a href = "#" class="disabled" aria-hidden="true">Next</a>
+    </li>
+  </ul>
+</nav>
+
+
+  </div>
+</div>
 
     <div class="page__footer">
       <footer>
@@ -411,25 +480,6 @@
 
 
 
-
-  
-      
-  <script>
-    var disqus_config = function () {
-      this.page.url = "https://mdcramer.github.io/deep-speeding-blog/Goldilocks-batch-size/";  // Replace PAGE_URL with your page's canonical URL variable
-      this.page.identifier = "/deep-speeding-blog/Goldilocks-batch-size"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    (function() { // DON'T EDIT BELOW THIS LINE
-      var d = document, s = d.createElement('script');
-      s.src = 'https://githubmdcramer.disqus.com/embed.js';
-      s.setAttribute('data-timestamp', +new Date());
-      (d.head || d.body).appendChild(s);
-    })();
-  </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-
-    
 
 
 

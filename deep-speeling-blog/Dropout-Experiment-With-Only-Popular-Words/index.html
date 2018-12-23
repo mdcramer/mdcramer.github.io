@@ -19,12 +19,12 @@
 
 
 
-<title>Eliminating Uncommon Words Makes Things Worse - Mark’s Blogs</title>
+<title>Dropout Experiment with Only Popular Words - Hackin’ and Tinkerin’</title>
 
 
 
 
-<meta name="description" content="Eliminating sentences with uncommon words (i.e. those that only appear once) from the dataset does not improve the accuracy of the training, for reasons unknown.">
+<meta name="description" content="Continuing from the previous experiment eliminating uncommon words, adjusting the Dropout produces an effect, but the improvement is not significant enough.">
 
 
 
@@ -32,23 +32,23 @@
 <meta name="author" content="Mark Cramer">
 
 <meta property="og:locale" content="en">
-<meta property="og:site_name" content="Mark's Blogs">
-<meta property="og:title" content="Eliminating Uncommon Words Makes Things Worse">
+<meta property="og:site_name" content="Hackin' and Tinkerin'">
+<meta property="og:title" content="Dropout Experiment with Only Popular Words">
 
 
-  <link rel="canonical" href="https://mdcramer.github.io/deep-speeding-blog/Eliminating-Uncommon-Words-Makes-Things-Worse/">
-  <meta property="og:url" content="https://mdcramer.github.io/deep-speeding-blog/Eliminating-Uncommon-Words-Makes-Things-Worse/">
+  <link rel="canonical" href="https://mdcramer.github.io/deep-speeling-blog/Dropout-Experiment-With-Only-Popular-Words/">
+  <meta property="og:url" content="https://mdcramer.github.io/deep-speeling-blog/Dropout-Experiment-With-Only-Popular-Words/">
 
 
 
-  <meta property="og:description" content="Eliminating sentences with uncommon words (i.e. those that only appear once) from the dataset does not improve the accuracy of the training, for reasons unknown.">
+  <meta property="og:description" content="Continuing from the previous experiment eliminating uncommon words, adjusting the Dropout produces an effect, but the improvement is not significant enough.">
 
 
 
   <meta name="twitter:site" content="@markdcramer">
-  <meta name="twitter:title" content="Eliminating Uncommon Words Makes Things Worse">
-  <meta name="twitter:description" content="Eliminating sentences with uncommon words (i.e. those that only appear once) from the dataset does not improve the accuracy of the training, for reasons unknown.">
-  <meta name="twitter:url" content="https://mdcramer.github.io/deep-speeding-blog/Eliminating-Uncommon-Words-Makes-Things-Worse/">
+  <meta name="twitter:title" content="Dropout Experiment with Only Popular Words">
+  <meta name="twitter:description" content="Continuing from the previous experiment eliminating uncommon words, adjusting the Dropout produces an effect, but the improvement is not significant enough.">
+  <meta name="twitter:url" content="https://mdcramer.github.io/deep-speeling-blog/Dropout-Experiment-With-Only-Popular-Words/">
 
   
     <meta name="twitter:card" content="summary">
@@ -70,7 +70,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2017-11-03T00:00:00-07:00">
+  <meta property="article:published_time" content="2017-11-05T00:00:00-07:00">
 
 
 
@@ -98,7 +98,7 @@
 <!-- end SEO -->
 
 
-<link href="https://mdcramer.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Mark's Blogs Feed">
+<link href="https://mdcramer.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Hackin' and Tinkerin' Feed">
 
 <!-- http://t.co/dKP3o1e -->
 <meta name="HandheldFriendly" content="True">
@@ -144,7 +144,7 @@
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
-        <a class="site-title" href="https://mdcramer.github.io/">Mark's Blogs</a>
+        <a class="site-title" href="https://mdcramer.github.io/">Hackin' and Tinkerin'</a>
         <ul class="visible-links">
           
             
@@ -288,38 +288,33 @@
 
 
   <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Eliminating Uncommon Words Makes Things Worse">
-    <meta itemprop="description" content="Eliminating sentences with uncommon words (i.e. those that only appear once) from the dataset does not improve the accuracy of the training, for reasons unknown.">
-    <meta itemprop="datePublished" content="November 03, 2017">
+    <meta itemprop="headline" content="Dropout Experiment with Only Popular Words">
+    <meta itemprop="description" content="Continuing from the previous experiment eliminating uncommon words, adjusting the Dropout produces an effect, but the improvement is not significant enough.">
+    <meta itemprop="datePublished" content="November 05, 2017">
     <meta itemprop="dateModified" content="November 05, 2017">
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 class="page__title" itemprop="headline">Eliminating Uncommon Words Makes Things Worse
+          <h1 class="page__title" itemprop="headline">Dropout Experiment with Only Popular Words
 </h1>
           
         </header>
       
 
       <section class="page__content" itemprop="text">
-        <p>This is frustrating.</p>
+        <p><a href="/deep-speeding-blog/2017-10-16-No-hablo-español/">As mentioned earlier</a>, I am becoming increasingly skeptical of the possibility of reaching 90% accuracy after 12 hours of training using <a href="https://github.com/MajorTal/DeepSpell/blob/master/keras_spell.py">Mr. Weiss’ methodology</a> and the publicly available <a href="http://research.google.com/pubs/pub41880.html">billion word dataset</a> released by Google. However, I am a stubborn individual and so I thought I would experiment with adjusting the Regularization to see if that helps.</p>
 
-<p>In the <a href="/deep-speeding-blog/2017-09-14-Motivation-and-Goals/">quest for 90% accuracy</a> I decided to take another look at <a href="https://github.com/MajorTal/DeepSpell/blob/master/keras_spell.py">Mr. Weiss’ code</a> and noticed that in <code class="highlighter-rouge">preprocesses_split_lines4()</code> he is “… selecting only sentences with most-common words.” The call to the function is commented out, and more than half of the function is commented out as well (it appears to be using <a href="https://www.tensorflow.org/tutorials/word2vec">word2vec</a>, but I’m not seeing how), but it got me to thinking:</p>
+<p>The fact that the previous experiment, where I removed all of the <a href="/deep-speeding-blog/2017-11-03-Eliminating-Uncommon-Words-Makes-Things-Worse/">sentences with uncommon words</a>, produced an inferior result makes no sense whatsoever; the problem was significantly simplified and yet the validation results during training were considerably worse. Upon reflection, if the ‘size’ of the problem is reduced and yet the network performs worse, perhaps it is over-fitting.</p>
 
-<ul>
-  <li>Perhaps this ‘problem’ can be simplified by removing sentences with very uncommon words, such as those that only ever appear once. It’s unreasonable to think that a neural network could ‘know’ how to spell a word without ever seeing it previously. Those very uncommon words probably contain many proper names and misspellings (which I should check at some point).</li>
-  <li>Additionally, while I’m at it, the problem could potentially be simplified even further by removing sentences with numbers. How would a human being, let alone a neural network, know that “I have 41 apples” was, in fact, a transposition of “I have 14 apples.”</li>
-</ul>
+<p>As such, I decided to adjust the Dropout from the 30% I’ve been using to a more aggressive 50%. (Mr. Weiss’ <a href="https://machinelearnings.co/deep-spelling-9ffef96a24f6">blog</a> says that he used 30% although his code has 20%, so perhaps it’s worth fudging.) If you’ve been following along you can probably guess that, naturally, the result was yet even worse (below).</p>
 
-<p>Therefore, after stripping out all digits and punctuation, I created a frequency dictionary of every ‘word’ in the dataset (“don’t” gets represented as “dont”, which is fine, and “egg-beater” becomes “eggbeater”, which is arguably better) and then removed all sentences containing a ‘word’ that only appears once (i.e. a unique word). Additionally, I removed any sentence containing digits. (This process, by the way, took 30 hours to run.)</p>
+<p>Continuing, if increasing the Dropout has a significant negative impact on training, then perhaps reducing it would help. Logically this makes little sense to me, as the scope of the problem was just reduced, but I decided to try nonetheless. I launched the training before heading out for a day at an <a href="http://aifrontiers.com/">AI Conference</a>, and things were initially looking <em>great</em> during the first hour before I left the house, but by the time I got home the training went sideways. I decided to run a full 5 epochs just to see how it would finish and at the end I achieve 70.2% accuracy. It should be noted that this is much lower than the <a href="/deep-speeding-blog/2017-09-27-Running-on-EC2/">75.1% accuracy</a> achieved prior to implementing He normal initialization, extracting non-English sentences from the dataset and removing sentences with uncommon words and numbers.</p>
 
-<p>While previously my dataset has 4,161,772 lines, the new one has only 3,463,951 lines, for a reduction of 20%, which seems pretty sizable. As such, I was giddily anticipating a considerable improvement in accuracy. Naturally, as has been my experience so far, the outcome (below) was exactly the opposite.</p>
-
-<p>How is this possible? How can removing the obviously difficult ‘words’ to spell from the dataset result in a significantly worse outcome when training. For the moment, I don’t even have a theory as to what might have happened here.</p>
+<p>Every time I’ve tried to implement an improvement it has degraded the network’s ability to learn. I’m again not quite sure where to go from here. Perhaps I’ll dig deeper into the dataset or perhaps I should build the RNN using Keras, just in case something is implemented differently there.</p>
 
 <figure>
-    <img src="/assets/images/popular-words-only.png" alt="Validation loss for experiment with dataset that contains only popular words" /><figcaption>Removing sentences with uncommon words from the dataset significantly reduces training performance.</figcaption>
+    <img src="/assets/images/dropout-experiment-with-popular.png" alt="Validation loss for experiment varying amount of Dropout" /><figcaption>Continuing with the dataset that contains only popular words, adjusting the Dropout produces an effect, but does not improve the results significantly enough.</figcaption>
 </figure>
 
         
@@ -345,7 +340,7 @@
     
       
       
-      <a href="/tags/datasets" class="page__taxonomy-item" rel="tag">datasets</a><span class="sep">, </span>
+      <a href="/tags/dropout" class="page__taxonomy-item" rel="tag">dropout</a><span class="sep">, </span>
     
       
       
@@ -365,22 +360,22 @@
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?via=markdcramer&text=Eliminating+Uncommon+Words+Makes+Things+Worse%20https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeding-blog%2FEliminating-Uncommon-Words-Makes-Things-Worse%2F" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?via=markdcramer&text=Dropout+Experiment+with+Only+Popular+Words%20https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeling-blog%2FDropout-Experiment-With-Only-Popular-Words%2F" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeding-blog%2FEliminating-Uncommon-Words-Makes-Things-Worse%2F" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeling-blog%2FDropout-Experiment-With-Only-Popular-Words%2F" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://plus.google.com/share?url=https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeding-blog%2FEliminating-Uncommon-Words-Makes-Things-Worse%2F" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+  <a href="https://plus.google.com/share?url=https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeling-blog%2FDropout-Experiment-With-Only-Popular-Words%2F" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeding-blog%2FEliminating-Uncommon-Words-Makes-Things-Worse%2F" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeling-blog%2FDropout-Experiment-With-Only-Popular-Words%2F" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
   <nav class="pagination">
     
-      <a href="https://mdcramer.github.io/deep-speeding-blog/Reducing-the-Validation-and-Test-datasets/" class="pagination--pager" title="Reducing the Validation and Test datasets
+      <a href="https://mdcramer.github.io/deep-speeling-blog/Eliminating-Uncommon-Words-Makes-Things-Worse/" class="pagination--pager" title="Eliminating Uncommon Words Makes Things Worse
 ">Previous</a>
     
     
-      <a href="https://mdcramer.github.io/deep-speeding-blog/Dropout-Experiment-With-Only-Popular-Words/" class="pagination--pager" title="Dropout Experiment with Only Popular Words
+      <a href="https://mdcramer.github.io/deep-speeling-blog/Conclusion/" class="pagination--pager" title="Conclusion
 ">Next</a>
     
   </nav>
@@ -432,8 +427,8 @@
       
   <script>
     var disqus_config = function () {
-      this.page.url = "https://mdcramer.github.io/deep-speeding-blog/Eliminating-Uncommon-Words-Makes-Things-Worse/";  // Replace PAGE_URL with your page's canonical URL variable
-      this.page.identifier = "/deep-speeding-blog/Eliminating-Uncommon-Words-Makes-Things-Worse"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      this.page.url = "https://mdcramer.github.io/deep-speeling-blog/Dropout-Experiment-With-Only-Popular-Words/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/deep-speeling-blog/Dropout-Experiment-With-Only-Popular-Words"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
     (function() { // DON'T EDIT BELOW THIS LINE
       var d = document, s = d.createElement('script');

@@ -19,12 +19,12 @@
 
 
 
-<title>Motivation and goals - Mark’s Blogs</title>
+<title>Goldilocks batch size - Hackin’ and Tinkerin’</title>
 
 
 
 
-<meta name="description" content="What is the motivation for this project and what are the goals?">
+<meta name="description" content="Some batch sizes are too big and some are too small. It’s important to find the one that is just right.">
 
 
 
@@ -32,23 +32,23 @@
 <meta name="author" content="Mark Cramer">
 
 <meta property="og:locale" content="en">
-<meta property="og:site_name" content="Mark's Blogs">
-<meta property="og:title" content="Motivation and goals">
+<meta property="og:site_name" content="Hackin' and Tinkerin'">
+<meta property="og:title" content="Goldilocks batch size">
 
 
-  <link rel="canonical" href="https://mdcramer.github.io/deep-speeding-blog/Motivation-and-Goals/">
-  <meta property="og:url" content="https://mdcramer.github.io/deep-speeding-blog/Motivation-and-Goals/">
+  <link rel="canonical" href="https://mdcramer.github.io/deep-speeling-blog/Goldilocks-batch-size/">
+  <meta property="og:url" content="https://mdcramer.github.io/deep-speeling-blog/Goldilocks-batch-size/">
 
 
 
-  <meta property="og:description" content="What is the motivation for this project and what are the goals?">
+  <meta property="og:description" content="Some batch sizes are too big and some are too small. It’s important to find the one that is just right.">
 
 
 
   <meta name="twitter:site" content="@markdcramer">
-  <meta name="twitter:title" content="Motivation and goals">
-  <meta name="twitter:description" content="What is the motivation for this project and what are the goals?">
-  <meta name="twitter:url" content="https://mdcramer.github.io/deep-speeding-blog/Motivation-and-Goals/">
+  <meta name="twitter:title" content="Goldilocks batch size">
+  <meta name="twitter:description" content="Some batch sizes are too big and some are too small. It’s important to find the one that is just right.">
+  <meta name="twitter:url" content="https://mdcramer.github.io/deep-speeling-blog/Goldilocks-batch-size/">
 
   
     <meta name="twitter:card" content="summary">
@@ -70,7 +70,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2017-09-14T00:00:00-07:00">
+  <meta property="article:published_time" content="2017-10-01T00:00:00-07:00">
 
 
 
@@ -98,7 +98,7 @@
 <!-- end SEO -->
 
 
-<link href="https://mdcramer.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Mark's Blogs Feed">
+<link href="https://mdcramer.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Hackin' and Tinkerin' Feed">
 
 <!-- http://t.co/dKP3o1e -->
 <meta name="HandheldFriendly" content="True">
@@ -144,7 +144,7 @@
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
-        <a class="site-title" href="https://mdcramer.github.io/">Mark's Blogs</a>
+        <a class="site-title" href="https://mdcramer.github.io/">Hackin' and Tinkerin'</a>
         <ul class="visible-links">
           
             
@@ -288,37 +288,31 @@
 
 
   <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Motivation and goals">
-    <meta itemprop="description" content="What is the motivation for this project and what are the goals?">
-    <meta itemprop="datePublished" content="September 14, 2017">
+    <meta itemprop="headline" content="Goldilocks batch size">
+    <meta itemprop="description" content="Some batch sizes are too big and some are too small. It’s important to find the one that is just right.">
+    <meta itemprop="datePublished" content="October 01, 2017">
     <meta itemprop="dateModified" content="October 04, 2017">
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 class="page__title" itemprop="headline">Motivation and goals
+          <h1 class="page__title" itemprop="headline">Goldilocks batch size
 </h1>
           
         </header>
       
 
       <section class="page__content" itemprop="text">
-        <h2 id="using-deep-learning-to-correct-spelling-mistakes">Using Deep Learning to correct spelling mistakes</h2>
-<h3 id="motivation">Motivation</h3>
-<p>This project was inspired by <a href="https://medium.com/@majortal">Tal Weiss’</a> post on <a href="https://medium.com/@majortal/deep-spelling-9ffef96a24f6">Deep Spelling</a>. His <a href="https://github.com/MajorTal/DeepSpell/blob/master/keras_spell.py">Deep Spell</a> code can be found on Github.</p>
+        <h2 id="batch-size-of-64-is-too-small">Batch size of 64 is too small</h2>
+<p>As we learned in a previous post, a <a href="/deep-speeding-blog/2017-09-16-Smaller-batches-and-Dropout/">batch size of 256</a> is too large. Since then I’ve been running with a batch size of 128 when I got to thinking, if 128 is better than 256 then perhaps 64 is even better than that.</p>
 
-<p>In January 2017 I began the <a href="https://www.udacity.com/course/deep-learning-nanodegree-foundation--nd101">Udacity Deep Learning Foundation Nanodegree Program</a> and was hooked from the first lecture. I’d heard the term ‘neural network’ plenty of times previously, and had a general idea of what they could accomplish, but I never had a detailed understanding of how they ‘work.’ Since completing the course I haven’t had much opportunity to tinker with the technology, but I’ve continued to contemplate its uses, particularly in the domain of information retrieval, which is where I’ve spent the last decade focusing.</p>
+<p>It is not.</p>
 
-<p>Unless you’re Google, the typical technique for correcting spelling mistakes is the <a href="https://en.wikipedia.org/wiki/Levenshtein_distance">Levenshtein distance</a>, or its close cousin, the <a href="https://en.wikipedia.org/wiki/Damerau%E2%80%93Levenshtein_distance">Damerau–Levenshtein distance</a>. Mr. Weiss does a good job of explaining why these do not work particularly well.</p>
-
-<h3 id="goals">Goals</h3>
-<ul>
-  <li>Re-implement Mr. Weiss’ Recurrent Neural Network (RNN) using Tensorflow and achieve the same level of accuracy. (He claims 90% after 12 hours of training and 95.5% after 3.5 days of training.)</li>
-  <li>Attempt to implement some of the areas for exploration he suggests, as well as others, to see if further improvements can be obtained.</li>
-</ul>
-
-<h3 id="the-beginning-of-the-code">The beginning of the code</h3>
-<p>The first part of the code, which involves downloading the <a href="http://research.google.com/pubs/pub41880.html">billion word dataset</a> that Google released and then setting it up for training, is predominantly lifted from Mr. Weiss. The second part of the code, which involves building the graph and training the neural network, is borrowed from the Udacity <a href="https://github.com/mdcramer/deep-learning/tree/master/seq2seq">sequence-to-sequence RNN example</a>. This Udacity example works on a small dataset of 10,000 ‘sentences’ (1- to 8-character words) and trains the network to sort the characters alphabetically. The current project contains code to handle both this large dataset as well as the small dataset, which is useful for debugging.</p>
+<p>For whatever reason, training with a batch size of 64 progressed significantly slower than all of the training with a batch size of 128. It was so poor that I cut it off before even completing the first epoch. I’ll be going back to 128 now because, apparently, that one is “just right.”</p>
+<figure>
+	<img src="/assets/images/batch_size-64.png" alt="Batch size 64" />
+	<figcaption>Validation loss for various hyperparameter configurations</figcaption>
+</figure>
 
         
       </section>
@@ -339,15 +333,7 @@
     
       
       
-      <a href="/tags/goals" class="page__taxonomy-item" rel="tag">goals</a><span class="sep">, </span>
-    
-      
-      
-      <a href="/tags/motivation" class="page__taxonomy-item" rel="tag">motivation</a><span class="sep">, </span>
-    
-      
-      
-      <a href="/tags/rnn" class="page__taxonomy-item" rel="tag">RNN</a>
+      <a href="/tags/batch-size" class="page__taxonomy-item" rel="tag">batch_size</a>
     
     </span>
   </p>
@@ -363,21 +349,22 @@
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?via=markdcramer&text=Motivation+and+goals%20https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeding-blog%2FMotivation-and-Goals%2F" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?via=markdcramer&text=Goldilocks+batch+size%20https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeling-blog%2FGoldilocks-batch-size%2F" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeding-blog%2FMotivation-and-Goals%2F" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeling-blog%2FGoldilocks-batch-size%2F" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://plus.google.com/share?url=https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeding-blog%2FMotivation-and-Goals%2F" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+  <a href="https://plus.google.com/share?url=https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeling-blog%2FGoldilocks-batch-size%2F" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeding-blog%2FMotivation-and-Goals%2F" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeling-blog%2FGoldilocks-batch-size%2F" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
   <nav class="pagination">
     
-      <a href="#" class="pagination--pager disabled">Previous</a>
+      <a href="https://mdcramer.github.io/deep-speeling-blog/He-normal-makes-things-worse/" class="pagination--pager" title="He normal makes things worse
+">Previous</a>
     
     
-      <a href="https://mdcramer.github.io/deep-speeding-blog/My-rig/" class="pagination--pager" title="My rig
+      <a href="https://mdcramer.github.io/deep-speeding-blog/no-hablo-espanol/" class="pagination--pager" title="No hablo español
 ">Next</a>
     
   </nav>
@@ -429,8 +416,8 @@
       
   <script>
     var disqus_config = function () {
-      this.page.url = "https://mdcramer.github.io/deep-speeding-blog/Motivation-and-Goals/";  // Replace PAGE_URL with your page's canonical URL variable
-      this.page.identifier = "/deep-speeding-blog/Motivation-and-Goals"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      this.page.url = "https://mdcramer.github.io/deep-speeling-blog/Goldilocks-batch-size/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/deep-speeling-blog/Goldilocks-batch-size"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
     (function() { // DON'T EDIT BELOW THIS LINE
       var d = document, s = d.createElement('script');

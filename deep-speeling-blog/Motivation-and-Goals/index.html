@@ -19,12 +19,12 @@
 
 
 
-<title>Saving for future training - Mark’s Blogs</title>
+<title>Motivation and goals - Hackin’ and Tinkerin’</title>
 
 
 
 
-<meta name="description" content="When training can last for days, and days, it’s nice to be able to save the graph where it is an then pick it up again later.">
+<meta name="description" content="What is the motivation for this project and what are the goals?">
 
 
 
@@ -32,23 +32,23 @@
 <meta name="author" content="Mark Cramer">
 
 <meta property="og:locale" content="en">
-<meta property="og:site_name" content="Mark's Blogs">
-<meta property="og:title" content="Saving for future training">
+<meta property="og:site_name" content="Hackin' and Tinkerin'">
+<meta property="og:title" content="Motivation and goals">
 
 
-  <link rel="canonical" href="https://mdcramer.github.io/deep-speeding-blog/Saving-for-future-training/">
-  <meta property="og:url" content="https://mdcramer.github.io/deep-speeding-blog/Saving-for-future-training/">
+  <link rel="canonical" href="https://mdcramer.github.io/deep-speeling-blog/Motivation-and-Goals/">
+  <meta property="og:url" content="https://mdcramer.github.io/deep-speeling-blog/Motivation-and-Goals/">
 
 
 
-  <meta property="og:description" content="When training can last for days, and days, it’s nice to be able to save the graph where it is an then pick it up again later.">
+  <meta property="og:description" content="What is the motivation for this project and what are the goals?">
 
 
 
   <meta name="twitter:site" content="@markdcramer">
-  <meta name="twitter:title" content="Saving for future training">
-  <meta name="twitter:description" content="When training can last for days, and days, it’s nice to be able to save the graph where it is an then pick it up again later.">
-  <meta name="twitter:url" content="https://mdcramer.github.io/deep-speeding-blog/Saving-for-future-training/">
+  <meta name="twitter:title" content="Motivation and goals">
+  <meta name="twitter:description" content="What is the motivation for this project and what are the goals?">
+  <meta name="twitter:url" content="https://mdcramer.github.io/deep-speeling-blog/Motivation-and-Goals/">
 
   
     <meta name="twitter:card" content="summary">
@@ -70,7 +70,7 @@
 
 
   <meta property="og:type" content="article">
-  <meta property="article:published_time" content="2017-09-24T00:00:00-07:00">
+  <meta property="article:published_time" content="2017-09-14T00:00:00-07:00">
 
 
 
@@ -98,7 +98,7 @@
 <!-- end SEO -->
 
 
-<link href="https://mdcramer.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Mark's Blogs Feed">
+<link href="https://mdcramer.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Hackin' and Tinkerin' Feed">
 
 <!-- http://t.co/dKP3o1e -->
 <meta name="HandheldFriendly" content="True">
@@ -144,7 +144,7 @@
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
-        <a class="site-title" href="https://mdcramer.github.io/">Mark's Blogs</a>
+        <a class="site-title" href="https://mdcramer.github.io/">Hackin' and Tinkerin'</a>
         <ul class="visible-links">
           
             
@@ -288,32 +288,37 @@
 
 
   <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Saving for future training">
-    <meta itemprop="description" content="When training can last for days, and days, it’s nice to be able to save the graph where it is an then pick it up again later.">
-    <meta itemprop="datePublished" content="September 24, 2017">
-    <meta itemprop="dateModified" content="October 07, 2017">
+    <meta itemprop="headline" content="Motivation and goals">
+    <meta itemprop="description" content="What is the motivation for this project and what are the goals?">
+    <meta itemprop="datePublished" content="September 14, 2017">
+    <meta itemprop="dateModified" content="October 04, 2017">
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 class="page__title" itemprop="headline">Saving for future training
+          <h1 class="page__title" itemprop="headline">Motivation and goals
 </h1>
           
         </header>
       
 
       <section class="page__content" itemprop="text">
-        <p>The Udacity <a href="https://github.com/mdcramer/deep-learning/tree/master/seq2seq">sequence to sequence project</a> that I used as a starting point for the code actually had code to save and then reload the graph. I’m not sure why they decided to do that, but the graph is saved at the end of training and then reloaded right before it is used to make a prediction. So simply going back to continue training after the graph is saved should be easy, right?</p>
+        <h2 id="using-deep-learning-to-correct-spelling-mistakes">Using Deep Learning to correct spelling mistakes</h2>
+<h3 id="motivation">Motivation</h3>
+<p>This project was inspired by <a href="https://medium.com/@majortal">Tal Weiss’</a> post on <a href="https://medium.com/@majortal/deep-spelling-9ffef96a24f6">Deep Spelling</a>. His <a href="https://github.com/MajorTal/DeepSpell/blob/master/keras_spell.py">Deep Spell</a> code can be found on Github.</p>
 
-<p>Nothing is ever easy.</p>
+<p>In January 2017 I began the <a href="https://www.udacity.com/course/deep-learning-nanodegree-foundation--nd101">Udacity Deep Learning Foundation Nanodegree Program</a> and was hooked from the first lecture. I’d heard the term ‘neural network’ plenty of times previously, and had a general idea of what they could accomplish, but I never had a detailed understanding of how they ‘work.’ Since completing the course I haven’t had much opportunity to tinker with the technology, but I’ve continued to contemplate its uses, particularly in the domain of information retrieval, which is where I’ve spent the last decade focusing.</p>
 
-<h2 id="getting-help-from-stack-overflow">Getting help from Stack Overflow</h2>
-<p>The problem was that while the Udacity project saved the graph, it only ‘named’ those variables necessary for the predictions. It did not ‘name’ those variables that are also necessary for continued training. This problem vexed me for days, so I finally went to <a href="https://stackoverflow.com/questions/46374113/indexerror-when-loading-saved-tensorflow-graph-to-continue-training">Stack Overflow</a> for assistance. While there were a number of generous individuals who tried to give me a hand, in the end I had to figure it out myself. For the benefit of others who might stumble across the same problem, I went ahead and answered my own question.</p>
+<p>Unless you’re Google, the typical technique for correcting spelling mistakes is the <a href="https://en.wikipedia.org/wiki/Levenshtein_distance">Levenshtein distance</a>, or its close cousin, the <a href="https://en.wikipedia.org/wiki/Damerau%E2%80%93Levenshtein_distance">Damerau–Levenshtein distance</a>. Mr. Weiss does a good job of explaining why these do not work particularly well.</p>
 
-<h2 id="setting-up-the-script-to-run-automatically">Setting up the script to run automatically.</h2>
-<p>While I was fiddling with the script I figured I would also get the thing to run ‘automatically’ from top to bottom. Part of the problem with Jupyter (or perhaps one of the benefits of Jupyter), is that you can manually execute the cells one at a time. When doing so it’s easy to jump over any cells that shouldn’t be run, for whatever reason.</p>
+<h3 id="goals">Goals</h3>
+<ul>
+  <li>Re-implement Mr. Weiss’ Recurrent Neural Network (RNN) using Tensorflow and achieve the same level of accuracy. (He claims 90% after 12 hours of training and 95.5% after 3.5 days of training.)</li>
+  <li>Attempt to implement some of the areas for exploration he suggests, as well as others, to see if further improvements can be obtained.</li>
+</ul>
 
-<p>Therefore, I arranged the code so that not only could it run from top to bottom automatically, but I could export the script to a .py file and run it from the command line. This will be handy for running in the background on EC2. Additionally, I added the ability to insert the command line switch “small” to indicate that the script should run on the small data. This turns out to be very handy for testing and debugging.</p>
+<h3 id="the-beginning-of-the-code">The beginning of the code</h3>
+<p>The first part of the code, which involves downloading the <a href="http://research.google.com/pubs/pub41880.html">billion word dataset</a> that Google released and then setting it up for training, is predominantly lifted from Mr. Weiss. The second part of the code, which involves building the graph and training the neural network, is borrowed from the Udacity <a href="https://github.com/mdcramer/deep-learning/tree/master/seq2seq">sequence-to-sequence RNN example</a>. This Udacity example works on a small dataset of 10,000 ‘sentences’ (1- to 8-character words) and trains the network to sort the characters alphabetically. The current project contains code to handle both this large dataset as well as the small dataset, which is useful for debugging.</p>
 
         
       </section>
@@ -334,15 +339,15 @@
     
       
       
-      <a href="/tags/saving" class="page__taxonomy-item" rel="tag">saving</a><span class="sep">, </span>
+      <a href="/tags/goals" class="page__taxonomy-item" rel="tag">goals</a><span class="sep">, </span>
     
       
       
-      <a href="/tags/stack-overflow" class="page__taxonomy-item" rel="tag">stack overflow</a><span class="sep">, </span>
+      <a href="/tags/motivation" class="page__taxonomy-item" rel="tag">motivation</a><span class="sep">, </span>
     
       
       
-      <a href="/tags/training" class="page__taxonomy-item" rel="tag">training</a>
+      <a href="/tags/rnn" class="page__taxonomy-item" rel="tag">RNN</a>
     
     </span>
   </p>
@@ -351,29 +356,28 @@
 
 
         
-          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2017-10-07">October 07, 2017</time></p>
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2017-10-04">October 04, 2017</time></p>
         
       </footer><section class="page__share">
   
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?via=markdcramer&text=Saving+for+future+training%20https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeding-blog%2FSaving-for-future-training%2F" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?via=markdcramer&text=Motivation+and+goals%20https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeling-blog%2FMotivation-and-Goals%2F" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeding-blog%2FSaving-for-future-training%2F" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeling-blog%2FMotivation-and-Goals%2F" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://plus.google.com/share?url=https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeding-blog%2FSaving-for-future-training%2F" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+  <a href="https://plus.google.com/share?url=https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeling-blog%2FMotivation-and-Goals%2F" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeding-blog%2FSaving-for-future-training%2F" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeling-blog%2FMotivation-and-Goals%2F" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
   <nav class="pagination">
     
-      <a href="https://mdcramer.github.io/deep-speeding-blog/Smaller-batches-and-Dropout/" class="pagination--pager" title="Smaller batches and Dropout
-">Previous</a>
+      <a href="#" class="pagination--pager disabled">Previous</a>
     
     
-      <a href="https://mdcramer.github.io/deep-speeding-blog/Running-on-EC2/" class="pagination--pager" title="Running on EC2
+      <a href="https://mdcramer.github.io/deep-speeling-blog/My-rig/" class="pagination--pager" title="My rig
 ">Next</a>
     
   </nav>
@@ -425,8 +429,8 @@
       
   <script>
     var disqus_config = function () {
-      this.page.url = "https://mdcramer.github.io/deep-speeding-blog/Saving-for-future-training/";  // Replace PAGE_URL with your page's canonical URL variable
-      this.page.identifier = "/deep-speeding-blog/Saving-for-future-training"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      this.page.url = "https://mdcramer.github.io/deep-speeling-blog/Motivation-and-Goals/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/deep-speeling-blog/Motivation-and-Goals"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
     (function() { // DON'T EDIT BELOW THIS LINE
       var d = document, s = d.createElement('script');
