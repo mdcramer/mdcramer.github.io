@@ -4,5 +4,5 @@
   description: A recurrent neural network (RNN) using Tensorflow designed to correct spelling mistakes.
   # background: darkgoldenrod
   - name: perceptron magic
-  description: An instructional blog to understand neural networks that uses a Perceptron class, built from scratch, as opposed to matrix math.
+  description: An instructional blog aimed at understanding neural networks through the use of a Perceptron class, built from scratch, as opposed to matrix math.
   # background: darkgoldenrod
