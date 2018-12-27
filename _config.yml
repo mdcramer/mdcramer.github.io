@@ -164,6 +164,9 @@ collections:
   deep-speeling-blog:
     output: true
     permalink: /deep-speeling-blog/:path/
+  perceptron-magic-blog:
+    output: true
+    permalink: /perceptron-magic-blog/:path/
 
 pagination:
   enabled: true
