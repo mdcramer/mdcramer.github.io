@@ -23,9 +23,6 @@ comments:
   provider: disqus # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
   disqus:
     shortname: githubmdcramer # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
-  discourse:
-    server: 
-    # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
   facebook:
     # https://developers.facebook.com/docs/plugins/comments
     appid:
@@ -108,9 +105,6 @@ exclude:
   - config
   - Gemfile
   - LICENSE
-  - log
-  - node_modules
-  - package.json
   - Rakefile
   - README
   - tmp
@@ -140,11 +134,10 @@ kramdown:
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
 
-
 # Sass/SCSS
 sass:
   sass_dir: _sass
-  style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+  style: compressed 
 
 # Outputting
 permalink: /:categories/:title/
@@ -159,14 +152,6 @@ plugins:
   - jekyll-feed
   - jemoji
   - jekyll-include-cache
-
-collections:
-  deep-speeling-blog:
-    output: true
-    permalink: /deep-speeling-blog/:path/
-  perceptron-magic-blog:
-    output: true
-    permalink: /perceptron-magic-blog/:path/
 
 pagination:
   enabled: true
@@ -204,33 +189,12 @@ whitelist:
   - jekyll-feed
   - jemoji
 
-# Archives
-#  Type
-#  - GitHub Pages compatible archive pages built with Liquid ~> type: liquid (default)
-#  - Jekyll Archives plugin archive pages ~> type: jekyll-archives
-#  Path (examples)
-#  - Archive page should exist at path when using Liquid method or you can
-#    expect broken links (especially with breadcrumbs enabled)
-#  - <base_path>/tags/my-awesome-tag/index.html ~> path: /tags/
-#  - <base_path/categories/my-awesome-category/index.html ~> path: /categories/
-#  - <base_path/my-awesome-category/index.html ~> path: /
 category_archive:
   type: liquid
   path: /categories/
 tag_archive:
   type: liquid
   path: /tags/
-# https://github.com/jekyll/jekyll-archives
-# jekyll-archives:
-#   enabled:
-#     - categories
-#     - tags
-#   layouts:
-#     category: archive-taxonomy
-#     tag: archive-taxonomy
-#   permalinks:
-#     category: /categories/:name/
-#     tag: /tags/:name/
 
 # HTML Compression
 # - http://jch.penibelst.de/
@@ -238,6 +202,14 @@ compress_html:
   clippings: all
   ignore:
     envs: development
+
+collections:
+  deep-speeling-blog:
+    output: true
+    permalink: /deep-speeling-blog/:path/
+  perceptron-magic-blog:
+    output: true
+    permalink: /perceptron-magic-blog/:path/
 
 # Defaults
 defaults:
