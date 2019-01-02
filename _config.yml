@@ -241,6 +241,16 @@ compress_html:
 
 # Defaults
 defaults:
+  # All pages with layout of type [single]
+  - scope:
+      layout: single
+    values:
+      author_profile: true
+      read_time: false
+      comments: true # true
+      share: true
+      related: true
+
   # _deep-speeling-blog
   - scope:
       path: "_deep-speeling-blog"
@@ -248,8 +258,11 @@ defaults:
     values:
       layout: single
       permalink: /deep-speeling-blog/:title/
-      author_profile: true
-      read_time: false
-      comments: true # true
-      share: true
-      related: true
+
+  # _perceptron-magic-blog
+  - scope:
+      path: "_perceptron-magic-blog"
+      type: perceptron-magic-blog
+    values:
+      layout: single
+      permalink: /perceptron-magic-blog/:title/
