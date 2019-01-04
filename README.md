@@ -90,3 +90,22 @@ New *_data/blogs.yml*
 > The **name** entry in this data file must always be in lower case
 
 > To change the color of a blog header, uncomment and alter the value of the **background** entry
+
+## Working locally
+
+If you're working locally, make sure you're on the right branch. From your terminal
+1. cd to your project directory
+2. Checkout to your working git branch, like so:
+
+```
+git checkout -b blog
+```
+
+3. Once you're done working, push your changes to the right branch like so:
+
+```
+git push --set-upstream origin blog
+```
+
+> Note that the above git commands assume that your working git branch is **blog**
+
