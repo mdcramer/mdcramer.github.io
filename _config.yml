@@ -103,6 +103,9 @@ exclude:
   - Capfile
   - CHANGELOG
   - config
+  - log
+  - node_modules
+  - package.json
   - Gemfile
   - LICENSE
   - Rakefile
