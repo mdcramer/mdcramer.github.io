@@ -291,7 +291,7 @@
     <meta itemprop="headline" content="Motivation">
     <meta itemprop="description" content="What is the motivation for this project?">
     <meta itemprop="datePublished" content="December 26, 2018">
-    <meta itemprop="dateModified" content="December 26, 2018">
+    <meta itemprop="dateModified" content="December 25, 2018">
 
     <div class="page__inner-wrap">
       
@@ -304,21 +304,41 @@
 
       <section class="page__content" itemprop="text">
         <h2 id="using-deep-learning-to-correct-spelling-mistakes">Using Deep Learning to correct spelling mistakes</h2>
+
 <h3 id="motivation">Motivation</h3>
+
 <p>This project was inspired by <a href="https://medium.com/@majortal">Tal Weiss’</a> post on <a href="https://medium.com/@majortal/deep-spelling-9ffef96a24f6">Deep Spelling</a>. His <a href="https://github.com/MajorTal/DeepSpell/blob/master/keras_spell.py">Deep Spell</a> code can be found on Github.</p>
 
-<p>In January 2017 I began the <a href="https://www.udacity.com/course/deep-learning-nanodegree-foundation--nd101">Udacity Deep Learning Foundation Nanodegree Program</a> and was hooked from the first lecture. I’d heard the term ‘neural network’ plenty of times previously, and had a general idea of what they could accomplish, but I never had a detailed understanding of how they ‘work.’ Since completing the course I haven’t had much opportunity to tinker with the technology, but I’ve continued to contemplate its uses, particularly in the domain of information retrieval, which is where I’ve spent the last decade focusing.</p>
+<p>Here is the beginning of a code block:</p>
 
-<p>Unless you’re Google, the typical technique for correcting spelling mistakes is the <a href="https://en.wikipedia.org/wiki/Levenshtein_distance">Levenshtein distance</a>, or its close cousin, the <a href="https://en.wikipedia.org/wiki/Damerau%E2%80%93Levenshtein_distance">Damerau–Levenshtein distance</a>. Mr. Weiss does a good job of explaining why these do not work particularly well.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Check for command line argument to use small data
+print ("Command line args are: {}".format(str(sys.argv)))
+small = 'small' in str(sys.argv)
+# small = True # Use this to force small data. Comment out when running script.
 
-<h3 id="goals">Goals</h3>
-<ul>
-  <li>Re-implement Mr. Weiss’ Recurrent Neural Network (RNN) using Tensorflow and achieve the same level of accuracy. (He claims 90% after 12 hours of training and 95.5% after 3.5 days of training.)</li>
-  <li>Attempt to implement some of the areas for exploration he suggests, as well as others, to see if further improvements can be obtained.</li>
-</ul>
+if (small):
+    print("Using the small data.")
+    directory = "small_graph"
+    # This is where the small graph is going to be saved and reloaded
+    GRAPH_PARAMETERS = "small_graph/graph_params" # Filename for storing parameters associated with the graph    
+    SOURCE_INT_TO_LETTER = "small_graph/sourceinttoletter.json" # Filename for INT to letter List for source sentences
+    TARGET_INT_TO_LETTER = "small_graph/targetinttoletter.json" # Filename for INT to letter List for target sentences
+    SOURCE_LETTER_TO_INT = "small_graph/sourcelettertoint.json" # Filename for letter to INT List for source sentences
+    TARGET_LETTER_TO_INT = "small_graph/targetlettertoint.json" # Filename for letter to INT List for source sentences
+    checkpoint = "./small_graph/best_model.ckpt"
+else:
+    print("Using the large data.")
+    # This is where the large graph is going to be saved and reloaded
+    directory = "large_graph"
+    GRAPH_PARAMETERS = "large_graph/graph_params" # Filename for storing parameters associated with the graph    
+    SOURCE_INT_TO_LETTER = "large_graph/sourceinttoletter.json" # Filename for INT to letter List for source sentences
+    TARGET_INT_TO_LETTER = "large_graph/targetinttoletter.json" # Filename for INT to letter List for target sentences
+    SOURCE_LETTER_TO_INT = "large_graph/sourcelettertoint.json" # Filename for letter to INT List for source sentences
+    TARGET_LETTER_TO_INT = "large_graph/targetlettertoint.json" # Filename for letter to INT List for source sentences
+    checkpoint = "./large_graph/best_model.ckpt"
+</code></pre></div></div>
 
-<h3 id="the-beginning-of-the-code">The beginning of the code</h3>
-<p>The first part of the code, which involves downloading the <a href="http://research.google.com/pubs/pub41880.html">billion word dataset</a> that Google released and then setting it up for training, is predominantly lifted from Mr. Weiss. The second part of the code, which involves building the graph and training the neural network, is borrowed from the Udacity <a href="https://github.com/mdcramer/deep-learning/tree/master/seq2seq">sequence-to-sequence RNN example</a>. This Udacity example works on a small dataset of 10,000 ‘sentences’ (1- to 8-character words) and trains the network to sort the characters alphabetically. The current project contains code to handle both this large dataset as well as the small dataset, which is useful for debugging.</p>
+<p>End of code.</p>
 
         
       </section>
@@ -352,7 +372,7 @@
 
 
         
-          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2018-12-26">December 26, 2018</time></p>
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2018-12-25">December 25, 2018</time></p>
         
       </footer><section class="page__share">
   
