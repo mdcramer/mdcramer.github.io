@@ -1,21 +1,44 @@
 ---
-title: "Motivation"
-excerpt: "What is the motivation for this project?"
-tags: [Perceptron, motivation]
-last_modified_at: 2018-12-26
----
+title: Motivation
+excerpt: What is the motivation for this project?
+tags:
+- Perceptron
+- motivation
+last_modified_at: 2018-12-26 00:00:00 +0000
 
+---
 ## Using Deep Learning to correct spelling mistakes
+
 ### Motivation
+
 This project was inspired by [Tal Weiss'](https://medium.com/@majortal) post on [Deep Spelling](https://medium.com/@majortal/deep-spelling-9ffef96a24f6). His [Deep Spell](https://github.com/MajorTal/DeepSpell/blob/master/keras_spell.py) code can be found on Github.
 
-In January 2017 I began the [Udacity Deep Learning Foundation Nanodegree Program](https://www.udacity.com/course/deep-learning-nanodegree-foundation--nd101) and was hooked from the first lecture. I'd heard the term 'neural network' plenty of times previously, and had a general idea of what they could accomplish, but I never had a detailed understanding of how they 'work.' Since completing the course I haven't had much opportunity to tinker with the technology, but I've continued to contemplate its uses, particularly in the domain of information retrieval, which is where I've spent the last decade focusing.
+Here is the beginning of a code block:
 
-Unless you're Google, the typical technique for correcting spelling mistakes is the [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance), or its close cousin, the [Damerau–Levenshtein distance](https://en.wikipedia.org/wiki/Damerau%E2%80%93Levenshtein_distance). Mr. Weiss does a good job of explaining why these do not work particularly well.
+    # Check for command line argument to use small data
+    print ("Command line args are: {}".format(str(sys.argv)))
+    small = 'small' in str(sys.argv)
+    # small = True # Use this to force small data. Comment out when running script.
+    
+    if (small):
+        print("Using the small data.")
+        directory = "small_graph"
+        # This is where the small graph is going to be saved and reloaded
+        GRAPH_PARAMETERS = "small_graph/graph_params" # Filename for storing parameters associated with the graph    
+        SOURCE_INT_TO_LETTER = "small_graph/sourceinttoletter.json" # Filename for INT to letter List for source sentences
+        TARGET_INT_TO_LETTER = "small_graph/targetinttoletter.json" # Filename for INT to letter List for target sentences
+        SOURCE_LETTER_TO_INT = "small_graph/sourcelettertoint.json" # Filename for letter to INT List for source sentences
+        TARGET_LETTER_TO_INT = "small_graph/targetlettertoint.json" # Filename for letter to INT List for source sentences
+        checkpoint = "./small_graph/best_model.ckpt"
+    else:
+        print("Using the large data.")
+        # This is where the large graph is going to be saved and reloaded
+        directory = "large_graph"
+        GRAPH_PARAMETERS = "large_graph/graph_params" # Filename for storing parameters associated with the graph    
+        SOURCE_INT_TO_LETTER = "large_graph/sourceinttoletter.json" # Filename for INT to letter List for source sentences
+        TARGET_INT_TO_LETTER = "large_graph/targetinttoletter.json" # Filename for INT to letter List for target sentences
+        SOURCE_LETTER_TO_INT = "large_graph/sourcelettertoint.json" # Filename for letter to INT List for source sentences
+        TARGET_LETTER_TO_INT = "large_graph/targetlettertoint.json" # Filename for letter to INT List for source sentences
+        checkpoint = "./large_graph/best_model.ckpt"
 
-### Goals
-* Re-implement Mr. Weiss' Recurrent Neural Network (RNN) using Tensorflow and achieve the same level of accuracy. (He claims 90% after 12 hours of training and 95.5% after 3.5 days of training.)
-* Attempt to implement some of the areas for exploration he suggests, as well as others, to see if further improvements can be obtained.
-
-### The beginning of the code
-The first part of the code, which involves downloading the [billion word dataset](http://research.google.com/pubs/pub41880.html) that Google released and then setting it up for training, is predominantly lifted from Mr. Weiss. The second part of the code, which involves building the graph and training the neural network, is borrowed from the Udacity [sequence-to-sequence RNN example](https://github.com/mdcramer/deep-learning/tree/master/seq2seq). This Udacity example works on a small dataset of 10,000 'sentences' (1- to 8-character words) and trains the network to sort the characters alphabetically. The current project contains code to handle both this large dataset as well as the small dataset, which is useful for debugging.
+End of code.
