@@ -1,6 +1,6 @@
 ---
 title: Motivation
-excerpt: What is the motivation for this project?
+excerpt: Why build neural networks using a Perceptron class?
 tags:
 - Perceptron
 - motivation
