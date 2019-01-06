@@ -1,9 +1,8 @@
 ---
 title: The Perceptron Class
-excerpt: Why build neural networks using a Perceptron class?
+excerpt: What is a Perceptron and how can we build a simple one?
 tags:
 - Perceptron
-- motivation
 last_modified_at: 2019-01-05 20:50:00 -0800
 published: false
 
