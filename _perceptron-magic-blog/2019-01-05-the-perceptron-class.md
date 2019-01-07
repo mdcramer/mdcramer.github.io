@@ -5,6 +5,7 @@ excerpt: Provide description of a Perceptron and build the initial, basic Percep
 tags:
 - Perceptron
 last_modified_at: 2019-01-05 20:50:00 -0800
+published: false
 
 ---
 ## What is a Perceptron?
@@ -34,7 +35,7 @@ class Perceptron: # This begins the class definition
     def __init__(self, num_inputs):
         # Create an empty array for the weights
         self.weights = []
-        for i in range(0, num_inputs):
+        for _ in range(0, num_inputs):
             # Set each weight to a random number from -1 to +1
             # random.random() produces a floating point number in the range [0.0, 1.0)
             self.weights.append(random.random() * 2 - 1)
