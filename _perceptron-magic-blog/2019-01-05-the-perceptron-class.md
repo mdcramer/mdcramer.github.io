@@ -5,7 +5,6 @@ excerpt: Provide description of a Perceptron and build the initial, basic Percep
 tags:
 - Perceptron
 last_modified_at: 2019-01-05 20:50:00 -0800
-published: false
 
 ---
 ## What is a Perceptron?
@@ -22,13 +21,23 @@ So what's the point of this? We'll dig into that, but at a high level what we've
 
 We're going to use [Python](https://www.python.org/) because it easy to learn, easy to use and has become, more or less, for reasons associated with data science-related libraries, the language of choice for people building neural networks. That being said, you could follow these exercises using most any [object-oriented](https://en.wikipedia.org/wiki/Object-oriented_programming) programing language.
 
-    import random # we'll need this for random numbers
+As mentioned in the [Motivation](https://mdcramer.github.io/perceptron-magic-blog/Motivation/), this is the thing that, for performance reasons, nobody ever does. To reiterate, we're doing it to try to get insights into functioning of Perceptrons and neural networks.
+
+Below is the first chuck of code we'll need. We define the Perceptron call and set up the initialization function to accept the number of inputs. For the moment, there's nothing else to define. Using the number of inputs we then create an equal number of weights to which we'll assign random floating point numbers between -1 and +1.
+
+    import random # We'll need this to generate random numbers
     
-    class Perceptron:
-    
+    class Perceptron: # This begins the class definition
+        
+        # This runs whenever we instantiate
         def __init__(self, num_inputs):
+            # Create an empty array for the weights
             self.weights = []
-            self.num_inputs = num_inputs
-            for _ in range(0, num_inputs):
-            self.weights.append(random.random() * 2 - 1)
+            for i in range(0, num_inputs):
+                # Set each weight to a random number from -1 to +1
+                # random.random() produces a floating point number in the range [0.0, 1.0)
+                self.weights.append(random.random() * 2 - 1)
+            # Print the weights to see what happened
             print(self.weights)
+
+Now if you run `a = Perceptron(5)`, which creates a new Perceptron with 5 inputs, called `a`, you should get an output like `[0.12754034043801643, -0.20861593234059006, -0.37130273318835005, -0.10781144821380861, -0.5746109925723668]`, which is simply an array of 5 random numbers between -1 and +1. So the first step works.
