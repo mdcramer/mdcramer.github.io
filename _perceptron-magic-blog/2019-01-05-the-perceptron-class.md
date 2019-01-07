@@ -25,19 +25,21 @@ As mentioned in the [Motivation](https://mdcramer.github.io/perceptron-magic-blo
 
 Below is the first chuck of code we'll need. We define the Perceptron call and set up the initialization function to accept the number of inputs. For the moment, there's nothing else to define. Using the number of inputs we then create an equal number of weights to which we'll assign random floating point numbers between -1 and +1.
 
-    import random # We'll need this to generate random numbers
+```python
+import random # We'll need this to generate random numbers
     
-    class Perceptron: # This begins the class definition
+class Perceptron: # This begins the class definition
         
-        # This runs whenever we instantiate
-        def __init__(self, num_inputs):
-            # Create an empty array for the weights
-            self.weights = []
-            for i in range(0, num_inputs):
-                # Set each weight to a random number from -1 to +1
-                # random.random() produces a floating point number in the range [0.0, 1.0)
-                self.weights.append(random.random() * 2 - 1)
-            # Print the weights to see what happened
-            print(self.weights)
+    # This runs whenever we instantiate
+    def __init__(self, num_inputs):
+        # Create an empty array for the weights
+        self.weights = []
+        for i in range(0, num_inputs):
+            # Set each weight to a random number from -1 to +1
+            # random.random() produces a floating point number in the range [0.0, 1.0)
+            self.weights.append(random.random() * 2 - 1)
+        # Print the weights to see what happened
+        print(self.weights)
+```
 
 Now if you run `a = Perceptron(5)`, which creates a new Perceptron with 5 inputs, called `a`, you should get an output like `[0.12754034043801643, -0.20861593234059006, -0.37130273318835005, -0.10781144821380861, -0.5746109925723668]`, which is simply an array of 5 random numbers between -1 and +1. So the first step works.
