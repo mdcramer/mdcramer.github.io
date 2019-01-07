@@ -321,20 +321,20 @@
 
 <p>Below is the first chuck of code we’ll need. We define the Perceptron call and set up the initialization function to accept the number of inputs. For the moment, there’s nothing else to define. Using the number of inputs we then create an equal number of weights to which we’ll assign random floating point numbers between -1 and +1.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import random # We'll need this to generate random numbers
-
-class Perceptron: # This begins the class definition
-    
-    # This runs whenever we instantiate
-    def __init__(self, num_inputs):
-        # Create an empty array for the weights
-        self.weights = []
-        for i in range(0, num_inputs):
-            # Set each weight to a random number from -1 to +1
-            # random.random() produces a floating point number in the range [0.0, 1.0)
-            self.weights.append(random.random() * 2 - 1)
-        # Print the weights to see what happened
-        print(self.weights)
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">random</span> <span class="c1"># We'll need this to generate random numbers
+</span>    
+<span class="k">class</span> <span class="nc">Perceptron</span><span class="p">:</span> <span class="c1"># This begins the class definition
+</span>        
+    <span class="c1"># This runs whenever we instantiate
+</span>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num_inputs</span><span class="p">):</span>
+        <span class="c1"># Create an empty array for the weights
+</span>        <span class="bp">self</span><span class="o">.</span><span class="n">weights</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">num_inputs</span><span class="p">):</span>
+            <span class="c1"># Set each weight to a random number from -1 to +1
+</span>            <span class="c1"># random.random() produces a floating point number in the range [0.0, 1.0)
+</span>            <span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="c1"># Print the weights to see what happened
+</span>        <span class="k">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Now if you run <code class="highlighter-rouge">a = Perceptron(5)</code>, which creates a new Perceptron with 5 inputs, called <code class="highlighter-rouge">a</code>, you should get an output like <code class="highlighter-rouge">[0.12754034043801643, -0.20861593234059006, -0.37130273318835005, -0.10781144821380861, -0.5746109925723668]</code>, which is simply an array of 5 random numbers between -1 and +1. So the first step works.</p>
