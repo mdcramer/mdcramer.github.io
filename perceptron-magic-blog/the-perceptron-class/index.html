@@ -307,9 +307,11 @@
 
 <p>The node is the ‘atomic’ unit of a neural network and the <a href="https://en.wikipedia.org/wiki/Perceptron" title="Wikipedia definition">Perceptron</a> is the most basic form of node. Wikipedia describes it as an ‘algorithm,’ but you can also think of it as an ‘object’ that accepts some inputs and produces an output. Neural networks may then be constructed by stringing Perceptrons together and potentially stacking layers of them on top of each other.</p>
 
-<p>Walking through the diagram below, a Perceptron will accept any number (<code class="highlighter-rouge">n</code>, for example) of inputs, X<sub>0</sub> to Xn, and product a single output, <code class="highlighter-rouge">y</code>. These inputs are, of course, numbers, although they may be arbitrarily large or small and include fractions. Each input is then multiplied by a weight, <code class="highlighter-rouge">W0 to Wn</code>. The summation of all the inputs multiplied by their weights is called the hypothesis:
-<script type="math/tex">h(x) = X_{0} * W_{0} + X_{1} * W_{1} + ... + X_{n} * W_{n}</script>
-The hypothesis is thus a single number which is then sent through an activation function. There are many types of activation functions (we’ll review some later), but the simplest is the “step”: if the hypothesis is positive or zero our output is <code class="highlighter-rouge">1</code>, otherwise it is <code class="highlighter-rouge">0</code>.</p>
+<p>Walking through the diagram below, a Perceptron will accept any number (n, for example) of inputs, X<sub>0</sub> to X<sub>n</sub>, and product a single output, y. These inputs are, of course, numbers, although they may be arbitrarily large or small and include fractions. Each input is then multiplied by a weight, W<sub>0</sub> to W<sub>n</sub>. The summation of all the inputs multiplied by their weights is called the hypothesis:</p>
+
+<script type="math/tex; mode=display">h(x) = X_{0} * W_{0} + X_{1} * W_{1} + ... + X_{n} * W_{n}</script>
+
+<p>The hypothesis is thus a single number which is then sent through an activation function. There are many types of activation functions (we’ll review some later), but the simplest is the “step”: if the hypothesis is positive or zero our output is <code class="highlighter-rouge">1</code>, otherwise it is <code class="highlighter-rouge">0</code>.</p>
 
 <p><img src="/assets/images/perceptron-architecture.png" alt="" title="Perceptron Architecture" /></p>
 
