@@ -13,9 +13,9 @@ The node is the 'atomic' unit of a neural network and the [Perceptron](https://e
 
 Walking through the diagram below, a Perceptron will accept any number (n, for example) of inputs, X<sub>0</sub> to X<sub>n</sub>, and product a single output, y. These inputs are, of course, numbers, although they may be arbitrarily large or small and include fractions. Each input is then multiplied by a weight, W<sub>0</sub> to W<sub>n</sub>. The summation of all the inputs multiplied by their weights is called the hypothesis:
 
-$$ h(x) = X_{0} * W_{0} + X_{1} * W_{1} + ... + X_{n} * W_{n} $$
+$$ 5 + 5 $$
 
-The hypothesis is thus a single number which is then sent through an activation function. There are many types of activation functions (we'll review some later), but the simplest is the "step": if the hypothesis is positive or zero our output is `1`, otherwise it is `0`.
+The hypothesis is thus a single number which is then sent through an activation function. There are many types of activation functions (we'll review some later), but the simplest is the "step": if the hypothesis is positive or zero our output is 1, otherwise it is 0.
 
 ![](/assets/images/perceptron-architecture.png "Perceptron Architecture")
 
