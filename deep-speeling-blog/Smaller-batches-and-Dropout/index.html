@@ -291,7 +291,7 @@
     <meta itemprop="headline" content="Smaller batches and Dropout">
     <meta itemprop="description" content="Decreasing the batch size improved performance and adding Dropout helped even more.">
     <meta itemprop="datePublished" content="September 16, 2017">
-    <meta itemprop="dateModified" content="October 07, 2017">
+    <meta itemprop="dateModified" content="October 06, 2017">
 
     <div class="page__inner-wrap">
       
@@ -304,15 +304,17 @@
 
       <section class="page__content" itemprop="text">
         <h2 id="batch-size-of-256-is-too-large">Batch size of 256 is too large</h2>
-<p>I used a batch size of 256 during my first crack at training the RNN and, as can be seen below, it crashed before completing the first epoch. I’m not sure how long it took to get to that point, but it was probably only a couple hours in.</p>
+
+<p>I used a batch size of 256 during my first crack at training the RNN and, as can be seen below, it crashed before completing the first epoch. I’m not sure how long it took to get to that point, but it was probably only a couple hours out.</p>
 
 <h2 id="adding-dropout">Adding Dropout</h2>
+
 <p>Not only did dropping the batch size down to 128 improve training performance (the validation loss came down more quickly), but the RNN was able to successfully train for 6 hours on my local machine. That being said, it’s generally a good idea to use some form of <a href="https://en.wikipedia.org/wiki/Regularization_(mathematics)">Regularization</a> to prevent over-fitting. The Udacity project didn’t have any Regularization, so I added 30% <a href="https://en.wikipedia.org/wiki/Dropout_(neural_networks)">Dropout</a>. This had the happy effect of initially increasing the rate at which the validation loss dropped, but at the end of the epoch it was still about the same without dropout.</p>
 
 <p>The spelling correction is also not working particularly well. As an example, “he had dated forI much of the past” becomes “Sou had teap for much to heads tap”. There’s obviously more work to be done.</p>
 <figure>
-	<img src="/assets/images/batch256-and-dropout.png" alt="256 batch size and 30% Dropout" />
-	<figcaption>Validation loss for various hyperparameter configurations</figcaption>
+<img src="/assets/images/batch256-and-dropout.png" alt="256 batch size and 30% Dropout" />
+<figcaption>Validation loss for various hyperparameter configurations</figcaption>
 </figure>
 
         
@@ -347,7 +349,7 @@
 
 
         
-          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2017-10-07">October 07, 2017</time></p>
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2017-10-06">October 06, 2017</time></p>
         
       </footer><section class="page__share">
   
