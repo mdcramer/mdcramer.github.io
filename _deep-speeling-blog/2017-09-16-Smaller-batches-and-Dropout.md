@@ -10,7 +10,7 @@ last_modified_at: 2017-10-07 00:00:00 +0000
 ---
 ## Batch size of 256 is too large
 
-I used a batch size of 256 during my first crack at training the RNN and, as can be seen below, it crashed before completing the first epoch. I'm not sure how long it took to get to that point, but it was probably only a couple hours out.
+I used a batch size of 256 during my first crack at training the RNN and, as can be seen below, it crashed before completing the first epoch. I'm not sure how long it took to get to that point, but it was probably only a couple hours in.
 
 ## Adding Dropout
 
