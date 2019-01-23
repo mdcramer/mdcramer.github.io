@@ -1,8 +1,14 @@
 # [name] values should be written in lower case
 # colors: https://github.com/Tapanila/Portable-Jekyll-Azure/blob/master/devkit/mingw/i686-w64-mingw32/include/gdiplus/gdipluscolor.h
-- name: deep speeling blog
-  description: A recurrent neural network (RNN) using Tensorflow designed to correct spelling mistakes.
-  # background: darkgoldenrod
-- name: perceptron magic blog
-  description: An instructional blog aimed at understanding neural networks through the use of a Perceptron class, built from scratch, as opposed to matrix math.
-  background: darkgoldenrod
+internal_blogs:
+  - name: deep speeling blog
+    description: A recurrent neural network (RNN) using Tensorflow designed to correct spelling mistakes.
+    # background: darkgoldenrod
+  - name: perceptron magic blog
+    description: An instructional blog aimed at understanding neural networks through the use of a Perceptron class, built from scratch, as opposed to matrix math.
+    background: darkgoldenrod
+
+external_blogs:
+  - name: Mortal Wayfare
+    description: An old-school retro 2D turn-based RPG built for Android.
+    url: http://www.mortalwayfare.com/
