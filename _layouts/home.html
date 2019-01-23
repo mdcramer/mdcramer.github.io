@@ -9,8 +9,14 @@ layout: default
 <div id="main" role="main">
   {% include sidebar.html %}
   <div class = 'archive'>
-    {%- for blog in site.data.blogs -%}
+    {%- for blog in site.data.blogs.internal_blogs -%}
     <a class = 'blog_card' href = '/{{ blog.name | downcase | slugify }}/'>
+      <h2 class = 'blog_header'>{{ blog.name }}</h2>
+      <p class = 'blog_excerpt'>{{ blog.description }}</p>
+    </a>
+    {%- endfor -%}
+    {%- for blog in site.data.blogs.external_blogs -%}
+    <a class = 'blog_card' href = '{{ blog.url }}' target = '_blank' rel = 'noopener'>
       <h2 class = 'blog_header'>{{ blog.name }}</h2>
       <p class = 'blog_excerpt'>{{ blog.description }}</p>
     </a>
