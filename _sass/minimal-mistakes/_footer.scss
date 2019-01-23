@@ -1,7 +1,4 @@
-/* ==========================================================================
-   FOOTER
-   ========================================================================== */
-
+//
 .page__footer {
   @include clearfix;
   float: left;
@@ -9,11 +6,11 @@
   margin-right: 0;
   width: 100%;
   clear: both;
-  /* sticky footer fix start */
+  // sticky footer fix start */
   position: absolute;
   bottom: 0;
   height: auto;
-  /* sticky footer fix end */
+  // sticky footer fix end */
   margin-top: 3em;
   color: $muted-text-color;
   -webkit-animation: $intro-transition;
@@ -63,19 +60,13 @@
   }
 
   li {
-    display: inline-block;
+    display: inline-flex;
     padding-top: 5px;
     padding-bottom: 5px;
     font-family: $sans-serif-narrow;
     font-size: $type-size-6;
     text-transform: uppercase;
   }
-
-  li + li:before {
-    content: "";
-    padding-right: 5px;
-  }
-
   a {
     padding-right: 10px;
     font-weight: bold;
