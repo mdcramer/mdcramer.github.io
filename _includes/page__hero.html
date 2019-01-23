@@ -31,7 +31,7 @@
 {% assign image_description = image_description | markdownify | strip_html | strip_newlines | escape_once %}
 {% if page.signature == 'collection' %}
   {% assign signature = page.permalink | remove: '/' | remove: 'index.html' | replace: '-', ' ' %}
-  {% assign signature_owner = site.data.blogs | where_exp: "item", "item.name == signature" %}
+  {% assign signature_owner = site.data.blogs.internal_blogs | where_exp: "item", "item.name == signature" %}
 {% endif %}
 <div class="page__hero{% if page.header.overlay_color or page.header.overlay_image %}--overlay{% endif %}"
   style="{% if page.header.overlay_color %}background-color: {% if signature_owner[0].background %} {{ signature_owner[0].background}} {% else %} {{ page.header.overlay_color | default: 'transparent' }};{% endif %} {% if overlay_img_path %}background-image: {% if overlay_filter %}linear-gradient({{ overlay_filter }}, {{ overlay_filter }}), {% endif %}url('{{ overlay_img_path }}');{% endif %}{% endif %}"

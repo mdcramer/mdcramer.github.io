@@ -2,16 +2,32 @@
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
-        <a class="site-title" href="{{ '/' | absolute_url }}">{{ site.title }}</a>
+        {%- if page.signature == 'collection' -%}
+          {%- assign signature = page.permalink | remove: '/' | remove: 'index.html' | replace: '-', ' ' -%}
+        {%- endif -%}
+
+        {%- if signature or page.collection -%}
+          {%- if page.collection -%}
+            {%- assign site_title = page.collection -%}
+          {%- else -%}
+            {%- assign site_title = signature -%}
+          {%- endif -%}
+        {%- else -%}
+          {%- assign site_title = site.title -%}
+        {%- endif -%}
+
+        {%- if site_title == site.title -%}
+          {%- assign site_url = '/' -%}
+        {%- else -%}
+          {%- assign site_url = site_title | slugify | prepend: '/' | append : '/' -%}
+        {%- endif -%}
+
+        <a class="site-title" href="{{ site_url }}">{{ site_title }}</a>
         <ul class="visible-links">
           {% for link in site.data.navigation.main %}
-            {% if link.url contains 'http' %}
-              {% assign domain = '' %}
-            {% else %}
-              {% assign domain = site.url | append: site.baseurl %}
-            {% endif %}
-            <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}">{{ link.title }}</a></li>
-          {% endfor %}
+            <li class="masthead__menu-item"><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {% endfor %}
+            {% include repo.html %}
         </ul>
         <button type="button">
           <span class="visually-hidden">{{ site.data.ui-text[site.locale].menu_label | default: "Toggle Menu" }}</span>

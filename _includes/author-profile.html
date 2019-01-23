@@ -1,9 +1,4 @@
-{% if page.author and site.data.author %}
-  {% assign author = site.data.author %}
-{% else %}
-  {% assign author = site.author %}
-{% endif %}
-
+{%- assign author = site.data.author -%}
 <div itemscope itemtype="http://schema.org/Person">
 
   {% if author.avatar %}
