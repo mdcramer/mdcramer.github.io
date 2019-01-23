@@ -12,7 +12,10 @@ title_separator: "-"
 name: "Mark Cramer"
 description: "A collection of blogs related to some of my projects on GitHub"
 url: https://mdcramer.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-repository: mdcramer/Deep-Speeling-Blog # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+repo:
+  root: https://github.com/mdcramer/mdcramer.github.io
+  source_branch: blog
+  production_branch: master
 teaser: # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 # breadcrumbs: false # true, false (default)
 words_per_minute: 200
