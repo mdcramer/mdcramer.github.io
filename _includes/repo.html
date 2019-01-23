@@ -1,0 +1,15 @@
+{% if page.signature == 'collection' %}
+  {% assign signature = page.permalink | remove: '/' | remove: 'index.html' | replace: '-', ' ' %}
+{% endif %}
+
+{%- assign repo = site.repo -%}
+{%- assign repo_slug = repo.source_branch | prepend: '/tree/' | append: '/' -%}
+
+{%- if signature -%}
+  {%- assign repo_suffix = signature | slugify | prepend: '_' -%}
+{%- else -%}
+  {% assign repo_suffix = page.collection | slugify | prepend: '_' -%}
+{%- endif -%}
+<li>
+  <a href="{{ repo.root }}{{ repo_slug }}{{ repo_suffix }}"><i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub</a>
+</li>
