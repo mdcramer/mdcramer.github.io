@@ -15,7 +15,7 @@ Walking through the diagram below, a Perceptron will accept any number (\\(n\\),
 
 $$  
 \\begin{align*}  
-    h(X) = x_0w_0 + x_1w_1 + \\cdots +x_nw_n  
+    h(X) = x_0w_0 + x_1w_1 + \\dots +x_nw_n  
 \\end{align*}  
 $$
 
