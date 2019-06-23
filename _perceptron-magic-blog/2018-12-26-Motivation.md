@@ -4,16 +4,16 @@ excerpt: Why build neural networks using a Perceptron class?
 tags:
 - Perceptron
 - motivation
-last_modified_at: 2019-01-05 20:50:00 -0800
+last_modified_at: 2019-01-06T04:50:00.000+00:00
 
 ---
 ## Why build neural networks using a Perceptron class?
 
-The obvious reason as to why neural networks are build using matrix math, as opposed to a Perceptron class using an object oriented language, is simple: performance. Even if you're not using a GPU capable of massive parallel computations, the performance advantages of using matrices, to compute things like forward and backward propagation, are enormous. Having to go one neuron at a time while training, which is notoriously computationally intensive, could render the thing useless.
+The obvious reason as to why neural networks are built using matrix math, as opposed to a Perceptron class using an object oriented language, is simple: performance. Even if you're not using a GPU capable of massive parallel computations, the performance advantages of using matrices, to compute things like forward and backward propagation, are enormous. Having to go one neuron at a time while training, which is notoriously computationally intensive, could render the thing useless.
 
 So why do it?
 
-I've always felt that to fundamentally understanding something it helps to break it down into it's smallest components and then look at how each one operates. In the case of a neural network, that's the node, and the most fundamental form of a node is the Perceptron.
+I've always felt that to fundamentally understanding something it helps to break it down into it's smallest components and then look at how each one operates. In the case of a neural network, that's the node, and the most fundamental form of a node is the [Perceptron](https://en.wikipedia.org/wiki/Perceptron "Perceptron - Wikipedia").
 
 Naturally, this would eliminate the possibility of using a library, such as TensorFlow, but so much the better since the learning process is enhanced even further when building something from scratch. Finding examples of networks built using a Perceptron class was not easy, which is not surprising given the argument above, but I eventually stumbled across [An Introduction to Python Machine Learning with Perceptrons](https://www.codementor.io/mcorr/an-introduction-to-python-machine-learning-with-perceptrons-k7pn85vfi) which offered some helpful guidance to get off the ground.
 
