@@ -4,33 +4,19 @@ excerpt: Provide description of a Perceptron and build the initial, basic Percep
   class.
 tags:
 - Perceptron
-last_modified_at: 2019-01-09 08:04:00 -0800
+last_modified_at: 2019-01-09T16:04:00.000+00:00
+published: false
 
 ---
 ## What is a Perceptron?
 
-The node is the 'atomic' unit of a neural network and the [Perceptron](https://en.wikipedia.org/wiki/Perceptron "Wikipedia definition") is the most basic form of node. Wikipedia describes it as an 'algorithm,' but you can also think of it as an 'object' that accepts some inputs and produces an output. Neural networks may then be constructed by stringing Perceptrons together and potentially stacking layers of them on top of each other.
+The node is the 'atomic' unit of a neural network and the [Perceptron](https://en.wikipedia.org/wiki/Perceptron "Perceptron - Wikipedia") is the most basic form of node. Wikipedia describes it as an 'algorithm,' but you can also think of it as an 'object' that accepts some inputs and produces an output. Neural networks may then be constructed by stringing Perceptrons together and potentially stacking layers of them on top of each other. With enough of them, what they can end up doing is, often, nothing short of magic.
 
-Walking through the diagram below, a Perceptron will accept any number (n, for example) of inputs, X<sub>0</sub> to X<sub>n</sub>, and product a single output, y. These inputs are, of course, numbers, although they may be arbitrarily large or small and include fractions. Each input is then multiplied by a weight, W<sub>0</sub> to W<sub>n</sub>. The summation of all the inputs multiplied by their weights is called the hypothesis:
+Walking through the diagram below, a Perceptron will accept any number ($n$, for example) of inputs, $X_0$ X<sub>0</sub> to X<sub>n</sub>, and product a single output, $y$. These inputs are, of course, numbers, although they may be arbitrarily large or small and include fractions. Each input is then multiplied by a weight, W<sub>0</sub> to W<sub>n</sub>. The summation of all the inputs multiplied by their weights is called the hypothesis:
 
 $$
-\begin{align*}
-  & \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right)
-  = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j) = \\
-  & (x_1, \ldots, x_n) \left( \begin{array}{ccc}
-      \phi(e_1, e_1) & \cdots & \phi(e_1, e_n) \\
-      \vdots & \ddots & \vdots \\
-      \phi(e_n, e_1) & \cdots & \phi(e_n, e_n)
-    \end{array} \right)
-  \left( \begin{array}{c}
-      y_1 \\
-      \vdots \\
-      y_n
-    \end{array} \right)
-\end{align*}
-$$
 
-The hypothesis is thus a single number which is then sent through an activation function. There are many types of activation functions (we'll review some later), but the simplest is the "step": if the hypothesis is positive or zero our output is 1, otherwise it is 0.
+The _hypothesis_ is thus a single number which is then sent through an activation function. There are many types of activation functions (we'll review some later), but the simplest is the "step": if the hypothesis is positive or zero our output is 1, otherwise it is 0.
 
 ![](/assets/images/perceptron-architecture.png "Perceptron Architecture")
 
