@@ -11,7 +11,7 @@ last_modified_at: 2019-01-09T16:04:00.000+00:00
 
 The node is the 'atomic' unit of a neural network and the [Perceptron](https://en.wikipedia.org/wiki/Perceptron "Perceptron - Wikipedia") is the most basic form of node. Wikipedia describes it as an 'algorithm,' but you can also think of it as an 'object' that accepts some inputs and produces an output. Neural networks may then be constructed by stringing Perceptrons together and potentially stacking layers of them on top of each other. With enough of them, what they can end up doing is, often, nothing short of magic.
 
-Walking through the diagram below, a Perceptron will accept any number ($n$, for example) of inputs, $X_0$ X<sub>0</sub> to X<sub>n</sub>, and product a single output, $y$. These inputs are, of course, numbers, although they may be arbitrarily large or small and include fractions. Each input is then multiplied by a weight, W<sub>0</sub> to W<sub>n</sub>. The summation of all the inputs multiplied by their weights is called the hypothesis:
+Walking through the diagram below, a Perceptron will accept any number (\\(n\\), for example) of inputs, \\(X_0\\) X<sub>0</sub> to X<sub>n</sub>, and product a single output, \\(y\\). These inputs are, of course, numbers, although they may be arbitrarily large or small and include fractions. Each input is then multiplied by a weight, W<sub>0</sub> to W<sub>n</sub>. The summation of all the inputs multiplied by their weights is called the hypothesis:
 
 $$
 
@@ -27,7 +27,7 @@ So what's the point of this? We'll dig into that, but at a high level what we've
 
 ## The Perceptron Class
 
-We're going to use [Python](https://www.python.org/) because it easy to learn, easy to use and has become, more or less, for reasons associated with data science-related libraries, the language of choice for people building neural networks. That being said, you could follow these exercises using most any [object-oriented](https://en.wikipedia.org/wiki/Object-oriented_programming) programing language.
+We're going to use [Python](https://www.python.org/) because it easy to learn, easy to use and has become, more or less, for reasons associated with data science-related libraries, the language of choice for people building neural networks. That being said, you could follow these exercises using most any [object-oriented](https://en.wikipedia.org/wiki/Object-oriented_programming) programming language.
 
 As mentioned in the [Motivation](https://mdcramer.github.io/perceptron-magic-blog/Motivation/), this is the thing that, for performance reasons, nobody ever does. To reiterate, we're doing it to try to get insights into functioning of Perceptrons and neural networks.
 
