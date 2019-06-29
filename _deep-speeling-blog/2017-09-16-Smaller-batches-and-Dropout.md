@@ -1,7 +1,6 @@
 ---
-title: Smaller batches and Dropout
-excerpt: Decreasing the batch size improved performance and adding Dropout helped
-  even more.
+title: "Smaller batches and Dropout"
+excerpt: "Decreasing the batch size improved performance and adding Dropout helped even more."
 tags:
 - batch_size
 - dropout

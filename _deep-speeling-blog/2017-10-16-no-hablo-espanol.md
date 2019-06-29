@@ -3,7 +3,6 @@ title: "No hablo español"
 excerpt: "Remove non-English text from the data set."
 tags: [english, non-english, langdetect, language detection]
 last_modified_at: 2017-10-16
-permalink: /deep-speeding-blog/no-hablo-espanol/
 ---
 
 As mentioned [at the beginning](/deep-speeding-blog/2017-09-14-Motivation-and-Goals/), the first goal is to reproduce the results produced by Mr. Weiss. After implementing virtually everything in his post, including the [He normal initialization](/deep-speeding-blog/2017-09-31-He-normal-makes-things-worse/), and building a highly similar model, the target of 90% accuracy (let alone 95.5%) is proving elusive.
