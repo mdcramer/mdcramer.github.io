@@ -120,7 +120,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
-  
+
 pagination:
   enabled: true
   debug: false
@@ -164,10 +164,10 @@ compress_html:
 collections:
   deep-speeling-blog:
     output: true
-    permalink: /deep-speeling-blog/:path/
+    # permalink: /deep-speeling-blog/:path/
   perceptron-magic-blog:
     output: true
-    permalink: /perceptron-magic-blog/:path/
+    # permalink: /perceptron-magic-blog/:path/
 
 defaults:
   # All pages with layout of type [single]
