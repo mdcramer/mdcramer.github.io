@@ -1,11 +1,10 @@
 ---
-title: The Perceptron Class
-excerpt: Provide description of a Perceptron and build the initial, basic Perceptron
-  class.
+title: "The Perceptron Class"
+excerpt: "Provide description of a Perceptron and build the initial, basic Perceptron class."
 tags:
-- Perceptron
+  - Perceptron
+date: 2019-01-05
 last_modified_at: 2019-01-09T16:04:00.000+00:00
-
 ---
 ## What is a Perceptron?
 

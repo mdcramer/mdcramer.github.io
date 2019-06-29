@@ -2,6 +2,7 @@
 title: "Dropout Experiment with Only Popular Words"
 excerpt: "Continuing from the previous experiment eliminating uncommon words, adjusting the Dropout produces an effect, but the improvement is not significant enough."
 tags: [dropout, common words, uncommon words]
+date: 2017-11-05
 last_modified_at: 2017-11-05
 ---
 

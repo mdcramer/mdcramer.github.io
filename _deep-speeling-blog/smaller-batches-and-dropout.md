@@ -4,6 +4,7 @@ excerpt: "Decreasing the batch size improved performance and adding Dropout help
 tags:
 - batch_size
 - dropout
+date: 2017-09-16
 last_modified_at: 2017-10-07 00:00:00 +0000
 
 ---

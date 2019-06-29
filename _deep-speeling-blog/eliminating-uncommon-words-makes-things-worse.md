@@ -2,6 +2,7 @@
 title: "Eliminating Uncommon Words Makes Things Worse"
 excerpt: "Eliminating sentences with uncommon words (i.e. those that only appear once) from the dataset does not improve the accuracy of the training, for reasons unknown."
 tags: [datasets, common words, uncommon words]
+date: 2017-11-03
 last_modified_at: 2017-11-05
 ---
 

@@ -2,6 +2,7 @@
 title: "Goldilocks batch size"
 excerpt: "Some batch sizes are too big and some are too small. It's important to find the one that is just right."
 tags: [batch_size]
+date: 2017-10-01
 last_modified_at: 2017-10-04
 ---
 

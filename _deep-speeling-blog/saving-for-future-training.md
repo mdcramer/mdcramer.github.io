@@ -2,6 +2,7 @@
 title: "Saving for future training"
 excerpt: "When training can last for days, and days, it's nice to be able to save the graph where it is an then pick it up again later."
 tags: [training, saving, stack overflow]
+date: 2017-09-24
 last_modified_at: 2017-10-07
 ---
 

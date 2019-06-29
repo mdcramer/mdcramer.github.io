@@ -2,6 +2,7 @@
 title: "No hablo español"
 excerpt: "Remove non-English text from the data set."
 tags: [english, non-english, langdetect, language detection]
+date: 2017-10-16
 last_modified_at: 2017-10-16
 ---
 

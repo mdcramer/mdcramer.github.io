@@ -2,6 +2,7 @@
 title: "Running on EC2"
 excerpt: "Getting up and running in the cloud with email updates from AWS"
 tags: [ec2, aws, email]
+date: 2017-09-27
 last_modified_at: 2017-10-16
 ---
 

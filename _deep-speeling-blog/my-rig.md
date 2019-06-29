@@ -2,6 +2,7 @@
 title: "My rig"
 excerpt: "Having a powerful local machine with a GPU doesn't hurt."
 tags: [GPU, local machine, computer, aws]
+date: 2017-09-15
 last_modified_at: 2017-10-04
 ---
 With inexpensive GPUs in the cloud, there isn't much of a need to spend thousands of dollars on a fully-loaded machine with a local GPU. That being said, having such a machine handy does not hurt.

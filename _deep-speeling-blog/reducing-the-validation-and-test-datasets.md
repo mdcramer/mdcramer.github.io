@@ -2,6 +2,7 @@
 title: "Reducing the Validation and Test datasets"
 excerpt: "Depending on the situation, using smaller Validation and Test datasets can leave more data for training, and reduce time spent computing accuracy, without any impact on determining accuracy."
 tags: [validation, test, datasets]
+date: 2017-10-20
 last_modified_at: 2017-10-23
 ---
 

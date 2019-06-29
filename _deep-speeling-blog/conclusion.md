@@ -2,6 +2,7 @@
 title: "Conclusion"
 excerpt: "This was an amazing experience, but today I pulled the plug."
 tags: [goals, conclusion]
+date: 2018-10-06
 last_modified_at: 2018-10-06
 ---
 
