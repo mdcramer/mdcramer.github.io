@@ -22,7 +22,7 @@
           {%- assign site_url = site_title | slugify | prepend: '/' | append : '/' -%}
         {%- endif -%}
 
-        <a class="site-title" href="{{ site_url }}">{{ site_title }}</a>
+        <a class="site-title" href="{{ site_url }}">{{ site_title | replace: '-', ' ' }}</a>
         <ul class="visible-links">
           {% for link in site.data.navigation.main %}
             <li class="masthead__menu-item"><a href="{{ link.url }}">{{ link.title }}</a></li>
