@@ -120,8 +120,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
-  - jekyll-include-cache
-
+  
 pagination:
   enabled: true
   debug: false

@@ -10,7 +10,6 @@ gem 'wdm', '>= 0.1.0'
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.6"
   gem 'jekyll-gist'
-  gem 'jekyll-include-cache'
   gem 'jekyll-sitemap'
   gem 'jekyll-paginate-v2', '2.0.0'
 end
