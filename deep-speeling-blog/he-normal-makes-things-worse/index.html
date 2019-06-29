@@ -19,12 +19,12 @@
 
 
 
-<title>Goldilocks batch size - Hackin’ and Tinkerin’</title>
+<title>He normal makes things worse - Hackin’ and Tinkerin’</title>
 
 
 
 
-<meta name="description" content="Some batch sizes are too big and some are too small. It’s important to find the one that is just right.">
+<meta name="description" content="Disappointing that a fancy, modern initialization technique not only didn’t help, but made things worse">
 
 
 
@@ -33,22 +33,22 @@
 
 <meta property="og:locale" content="en">
 <meta property="og:site_name" content="Hackin' and Tinkerin'">
-<meta property="og:title" content="Goldilocks batch size">
+<meta property="og:title" content="He normal makes things worse">
 
 
-  <link rel="canonical" href="https://mdcramer.github.io/deep-speeling-blog/Goldilocks-batch-size/">
-  <meta property="og:url" content="https://mdcramer.github.io/deep-speeling-blog/Goldilocks-batch-size/">
+  <link rel="canonical" href="https://mdcramer.github.io/deep-speeling-blog/he-normal-makes-things-worse/">
+  <meta property="og:url" content="https://mdcramer.github.io/deep-speeling-blog/he-normal-makes-things-worse/">
 
 
 
-  <meta property="og:description" content="Some batch sizes are too big and some are too small. It’s important to find the one that is just right.">
+  <meta property="og:description" content="Disappointing that a fancy, modern initialization technique not only didn’t help, but made things worse">
 
 
 
   <meta name="twitter:site" content="@markdcramer">
-  <meta name="twitter:title" content="Goldilocks batch size">
-  <meta name="twitter:description" content="Some batch sizes are too big and some are too small. It’s important to find the one that is just right.">
-  <meta name="twitter:url" content="https://mdcramer.github.io/deep-speeling-blog/Goldilocks-batch-size/">
+  <meta name="twitter:title" content="He normal makes things worse">
+  <meta name="twitter:description" content="Disappointing that a fancy, modern initialization technique not only didn’t help, but made things worse">
+  <meta name="twitter:url" content="https://mdcramer.github.io/deep-speeling-blog/he-normal-makes-things-worse/">
 
   
     <meta name="twitter:card" content="summary">
@@ -237,29 +237,30 @@
 
 
   <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Goldilocks batch size">
-    <meta itemprop="description" content="Some batch sizes are too big and some are too small. It’s important to find the one that is just right.">
+    <meta itemprop="headline" content="He normal makes things worse">
+    <meta itemprop="description" content="Disappointing that a fancy, modern initialization technique not only didn’t help, but made things worse">
     <meta itemprop="datePublished" content="October 01, 2017">
-    <meta itemprop="dateModified" content="October 04, 2017">
+    <meta itemprop="dateModified" content="October 07, 2017">
 
     <div class="page__inner-wrap">
       
         <header>
-          <h1 class="page__title" itemprop="headline">Goldilocks batch size
+          <h1 class="page__title" itemprop="headline">He normal makes things worse
 </h1>
           
         </header>
       
 
       <section class="page__content" itemprop="text">
-        <h2 id="batch-size-of-64-is-too-small">Batch size of 64 is too small</h2>
-<p>As we learned in a previous post, a <a href="/deep-speeding-blog/2017-09-16-Smaller-batches-and-Dropout/">batch size of 256</a> is too large. Since then I’ve been running with a batch size of 128 when I got to thinking, if 128 is better than 256 then perhaps 64 is even better than that.</p>
+        <h2 id="initializing-weights-is-important">Initializing weights is important</h2>
+<p>Initializing the weights properly can make the difference between a model that trains nicely and converges to a generalized solution, and one that either explodes, never quite gets there or <a href="https://plus.google.com/+SoumithChintala/posts/RZfdrRQWL6u">trains more slowly</a>. The Udacity <a href="https://github.com/mdcramer/deep-learning/tree/master/seq2seq">sequence-to-sequency RNN example</a> used a random uniform initialization (<code class="highlighter-rouge">tf.random_uniform_initializer(-0.1, 0.1, seed=2)</code>) for the encoder and decoder and then a truncated normal initialization (<code class="highlighter-rouge">tf.truncated_normal_initializer(mean=0.0, stddev=0.1)</code>) for the decoder dense layer, while <a href="https://medium.com/@majortal/deep-spelling-9ffef96a24f6">Weiss</a> used a Gaussian initialization scaled by fan-in, also known as <a href="https://arxiv.org/abs/1502.01852">He normal initialization</a>.</p>
 
-<p>It is not.</p>
+<p>Again, the training results were disappointing. Not only did the He normal initialization (achieved via <code class="highlighter-rouge">tf.contrib.layers.variance_scaling_initializer()</code> - the default is He normal) not surpass the very basic random uniform initialization, but it performed worse. This is both disappointing and surprising, given that normal initializers typically surpass uniform ones.</p>
 
-<p>For whatever reason, training with a batch size of 64 progressed significantly slower than all of the training with a batch size of 128. It was so poor that I cut it off before even completing the first epoch. I’ll be going back to 128 now because, apparently, that one is “just right.”</p>
+<h2 id="this-is-odd">This is odd</h2>
+<p>Also interesting is how, unlike the previous configurations, with the He normal initialization there are a number of validation losses that are significantly outside of the trend. You can see the couple dozen blue dots in the white space above the He normal validation loss curve. I have no explanation or theory for that.</p>
 <figure>
-	<img src="/assets/images/batch_size-64.png" alt="Batch size 64" />
+	<img src="/assets/images/he-normal.png" alt="He normal initialization" />
 	<figcaption>Validation loss for various hyperparameter configurations</figcaption>
 </figure>
 
@@ -282,7 +283,11 @@
     
       
       
-      <a href="/tags/batch-size" class="page__taxonomy-item" rel="tag">batch_size</a>
+      <a href="/tags/he-normal" class="page__taxonomy-item" rel="tag">he normal</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/initializer" class="page__taxonomy-item" rel="tag">initializer</a>
     
     </span>
   </p>
@@ -291,29 +296,29 @@
 
 
         
-          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2017-10-04">October 04, 2017</time></p>
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2017-10-07">October 07, 2017</time></p>
         
       </footer><section class="page__share">
   
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?via=markdcramer&text=Goldilocks+batch+size%20https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeling-blog%2FGoldilocks-batch-size%2F" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?via=markdcramer&text=He+normal+makes+things+worse%20https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeling-blog%2Fhe-normal-makes-things-worse%2F" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeling-blog%2FGoldilocks-batch-size%2F" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeling-blog%2Fhe-normal-makes-things-worse%2F" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://plus.google.com/share?url=https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeling-blog%2FGoldilocks-batch-size%2F" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+  <a href="https://plus.google.com/share?url=https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeling-blog%2Fhe-normal-makes-things-worse%2F" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeling-blog%2FGoldilocks-batch-size%2F" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeling-blog%2Fhe-normal-makes-things-worse%2F" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
   <nav class="pagination">
     
-      <a href="https://mdcramer.github.io/deep-speeling-blog/He-normal-makes-things-worse/" class="pagination--pager" title="He normal makes things worse
+      <a href="https://mdcramer.github.io/deep-speeling-blog/running-on-ec2/" class="pagination--pager" title="Running on EC2
 ">Previous</a>
     
     
-      <a href="https://mdcramer.github.io/deep-speeling-blog/no-hablo-espanol/" class="pagination--pager" title="No hablo español
+      <a href="https://mdcramer.github.io/deep-speeling-blog/goldilocks-batch-size/" class="pagination--pager" title="Goldilocks batch size
 ">Next</a>
     
   </nav>
@@ -357,8 +362,8 @@
       
   <script>
     var disqus_config = function () {
-      this.page.url = "https://mdcramer.github.io/deep-speeling-blog/Goldilocks-batch-size/";  // Replace PAGE_URL with your page's canonical URL variable
-      this.page.identifier = "/deep-speeling-blog/Goldilocks-batch-size"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      this.page.url = "https://mdcramer.github.io/deep-speeling-blog/he-normal-makes-things-worse/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/deep-speeling-blog/he-normal-makes-things-worse"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
     (function() { // DON'T EDIT BELOW THIS LINE
       var d = document, s = d.createElement('script');
