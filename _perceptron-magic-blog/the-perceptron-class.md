@@ -1,10 +1,13 @@
 ---
-title: "The Perceptron Class"
-excerpt: "Provide description of a Perceptron and build the initial, basic Perceptron class."
+title: The Perceptron Class
+excerpt: Provide description of a Perceptron and build the initial, basic Perceptron
+  class.
 tags:
-  - Perceptron
+- Perceptron
 date: 2019-01-05
 last_modified_at: 2019-01-09T16:04:00.000+00:00
+published: false
+
 ---
 ## What is a Perceptron?
 
@@ -12,7 +15,7 @@ The node is the 'atomic' unit of a neural network and the [Perceptron](https://e
 
 Walking through the diagram below, a Perceptron will accept any number (\\(n\\), for example) of inputs, \\(x_0\\) to \\(x_n\\), and product a single output, \\(y\\). These inputs are, of course, numbers, although they may be arbitrarily large or small and include fractions. Each input is then multiplied by a weight, \\(w_0\\) to \\(w_n\\). The summation of all the inputs multiplied by their weights is called the hypothesis:
 
-$$h(X) = x_0 w_0 + x_1w_1 + \cdots +x_nw_n$$
+$$h(X) = x_0 w_0 + x_1w_1 + \\cdots +x_nw_n$$
 
 The _hypothesis_ is thus a single number which is then sent through an activation function. There are many types of activation functions (we'll review some later), but the simplest is the "step": if the hypothesis is positive or zero our output is 1, otherwise it is 0.
 
@@ -46,3 +49,5 @@ class Perceptron: # This begins the class definition
 ```
 
 Now if you run `a = Perceptron(5)`, which creates a new Perceptron with 5 inputs, called `a`, you should get an output like `[0.12754034043801643, -0.20861593234059006, -0.37130273318835005, -0.10781144821380861, -0.5746109925723668]`, which is simply an array of 5 random numbers between -1 and +1. So the first step works.
+
+Here is the next text.
