@@ -168,6 +168,9 @@ collections:
   perceptron-magic-blog:
     output: true
     # permalink: /perceptron-magic-blog/:path/
+  rank-dynamics:
+    output: true
+    # permalink: /rank-dynamics/:path/
 
 defaults:
   # All pages with layout of type [single]
@@ -195,3 +198,11 @@ defaults:
     values:
       layout: single
       permalink: /perceptron-magic-blog/:title/
+
+  # _perceptron-magic-blog
+  - scope:
+      path: "_rank-dynamics"
+      type: rank-dynamics
+    values:
+      layout: single
+      permalink: /rank-dynamics/:title/
