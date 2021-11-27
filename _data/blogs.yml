@@ -8,6 +8,10 @@ internal_blogs:
     description: An instructional blog aimed at understanding neural networks through the use of a Perceptron class, built from scratch, as opposed to matrix math.
     background: darkgoldenrod
 
+  - name: Rank Dynamics
+    description: An instructional blog aimed at understanding neural networks through the use of a Perceptron class, built from scratch, as opposed to matrix math.
+    background: darkgoldenrod
+
 external_blogs:
   - name: Mortal Wayfare
     description: An old-school retro 2D turn-based RPG built for Android.
