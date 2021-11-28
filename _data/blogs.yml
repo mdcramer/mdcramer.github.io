@@ -9,8 +9,8 @@ internal_blogs:
     background: darkgoldenrod
 
   - name: Rank Dynamics
-    description: An instructional blog aimed at understanding neural networks through the use of a Perceptron class, built from scratch, as opposed to matrix math.
-    background: darkgoldenrod
+    description: A backup of the blog from the company I founded. We improved search by transforming the traditional static list of links into a fluid experience where relevance was improved by dynamically re-ranking results in response to implicit user feedback.
+    background: OrangeRed
 
 external_blogs:
   - name: Mortal Wayfare
