@@ -1,7 +1,7 @@
 ---
 title: "v2.0.2 - Real-time Personalization Enhanced With Real-Time Results"
 date: "2009-03-10"
-categories: 
+tags: 
   - "announcements"
   - "collaboration"
 ---

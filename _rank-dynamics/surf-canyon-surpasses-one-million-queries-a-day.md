@@ -1,7 +1,7 @@
 ---
 title: "Surf Canyon Surpasses One Million Queries A Day"
 date: "2009-11-11"
-categories: 
+tags: 
   - "top-posts"
   - "announcements"
   - "press-releases"

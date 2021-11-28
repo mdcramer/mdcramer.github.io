@@ -1,7 +1,7 @@
 ---
 title: "More Mozilla Testimonials"
 date: "2009-06-11"
-categories: 
+tags: 
   - "testimonials"
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "v3.0.6 - Real-time Featured Results and Private Browsing Support"
 date: "2010-07-08"
-categories: 
+tags: 
   - "announcements"
 ---
 

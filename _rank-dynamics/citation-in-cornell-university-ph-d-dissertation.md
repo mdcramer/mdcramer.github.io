@@ -1,7 +1,7 @@
 ---
 title: "Citation in Cornell University Ph.D. Dissertation"
 date: "2010-10-30"
-categories: 
+tags: 
   - "top-posts"
   - "research"
   - "testimonials"

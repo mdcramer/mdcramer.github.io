@@ -1,7 +1,7 @@
 ---
 title: "More Pudding"
 date: "2015-10-30"
-categories: 
+tags: 
   - "top-posts"
   - "demonstration"
   - "research"

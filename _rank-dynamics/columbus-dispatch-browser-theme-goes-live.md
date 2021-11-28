@@ -1,7 +1,7 @@
 ---
 title: "Columbus Dispatch Browser Theme Goes Live"
 date: "2009-08-19"
-categories: 
+tags: 
   - "announcements"
   - "collaboration"
   - "media"

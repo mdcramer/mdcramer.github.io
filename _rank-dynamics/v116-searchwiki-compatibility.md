@@ -1,7 +1,7 @@
 ---
 title: "v1.1.6 - SearchWiki Compatibility"
 date: "2008-11-22"
-categories: 
+tags: 
   - "announcements"
   - "testimonials"
 ---

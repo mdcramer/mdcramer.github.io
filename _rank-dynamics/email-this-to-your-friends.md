@@ -1,7 +1,7 @@
 ---
 title: "\"Email This\" to Your Friends"
 date: "2008-06-20"
-categories: 
+tags: 
   - "announcements"
   - "tutorials"
 ---

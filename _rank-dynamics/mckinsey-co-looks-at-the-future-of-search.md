@@ -1,7 +1,7 @@
 ---
 title: "McKinsey & Co. Looks at the Future of Search"
 date: "2011-08-22"
-categories: 
+tags: 
   - "media"
 ---
 

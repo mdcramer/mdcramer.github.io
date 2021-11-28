@@ -1,7 +1,7 @@
 ---
 title: "Panel Participatation at Add-on-Con"
 date: "2008-12-07"
-categories: 
+tags: 
   - "announcements"
   - "presentations"
 ---

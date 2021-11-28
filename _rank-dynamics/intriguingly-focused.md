@@ -1,7 +1,7 @@
 ---
 title: "\"Intriguingly Focused\""
 date: "2008-10-30"
-categories: 
+tags: 
   - "media"
   - "testimonials"
 ---

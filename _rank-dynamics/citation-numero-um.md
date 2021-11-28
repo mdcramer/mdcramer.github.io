@@ -1,7 +1,7 @@
 ---
 title: "Citation Número Um"
 date: "2010-06-18"
-categories: 
+tags: 
   - "research"
   - "testimonials"
 ---

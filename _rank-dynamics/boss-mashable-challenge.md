@@ -1,7 +1,7 @@
 ---
 title: "BOSS Mashable Challenge"
 date: "2008-10-03"
-categories: 
+tags: 
   - "announcements"
 ---
 

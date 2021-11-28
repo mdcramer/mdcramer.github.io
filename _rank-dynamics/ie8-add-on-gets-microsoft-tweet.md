@@ -1,7 +1,7 @@
 ---
 title: "IE8 Add-on Gets Microsoft Tweet"
 date: "2009-09-24"
-categories: 
+tags: 
   - "announcements"
   - "testimonials"
 ---

@@ -1,7 +1,7 @@
 ---
 title: "The Geeks Have Spoken"
 date: "2008-03-18"
-categories: 
+tags: 
   - "media"
   - "testimonials"
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Invited to Return to Piper Jaffray Conference"
 date: "2009-11-04"
-categories: 
+tags: 
   - "announcements"
   - "media"
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Panel Participation at Add-on-Con"
 date: "2010-01-25"
-categories: 
+tags: 
   - "code"
   - "media"
   - "presentations"

@@ -1,7 +1,7 @@
 ---
 title: "Improving Your Search According to the Universe"
 date: "2010-08-24"
-categories: 
+tags: 
   - "media"
   - "testimonials"
 ---

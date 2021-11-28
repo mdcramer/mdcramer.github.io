@@ -1,7 +1,7 @@
 ---
 title: "Alternative Search Engines Day"
 date: "2008-04-24"
-categories: 
+tags: 
   - "media"
   - "presentations"
 ---

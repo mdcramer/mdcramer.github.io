@@ -1,7 +1,7 @@
 ---
 title: "v1.1.2 - The \"Google Preview\" Edition"
 date: "2008-07-22"
-categories: 
+tags: 
   - "announcements"
   - "collaboration"
   - "media"

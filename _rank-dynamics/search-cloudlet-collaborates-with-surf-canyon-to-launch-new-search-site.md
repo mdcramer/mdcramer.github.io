@@ -1,7 +1,7 @@
 ---
 title: "Search Cloudlet Collaborates with Surf Canyon to Launch New Search Site"
 date: "2009-06-10"
-categories: 
+tags: 
   - "announcements"
   - "collaboration"
   - "media"

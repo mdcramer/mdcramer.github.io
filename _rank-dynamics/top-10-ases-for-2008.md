@@ -1,7 +1,7 @@
 ---
 title: "Top 10 Alternative Search Engines for 2008!"
 date: "2008-12-19"
-categories: 
+tags: 
   - "announcements"
   - "media"
   - "testimonials"

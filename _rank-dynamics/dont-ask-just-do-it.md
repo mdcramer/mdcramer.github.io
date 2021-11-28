@@ -1,7 +1,7 @@
 ---
 title: "Don't ask... just do it!"
 date: "2008-02-06"
-categories: 
+tags: 
   - "discovery"
   - "personalization"
 ---

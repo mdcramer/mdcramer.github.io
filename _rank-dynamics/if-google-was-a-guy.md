@@ -1,7 +1,7 @@
 ---
 title: "If Google was a Guy"
 date: "2014-01-17"
-categories: 
+tags: 
   - "fun"
   - "reformulation"
 ---

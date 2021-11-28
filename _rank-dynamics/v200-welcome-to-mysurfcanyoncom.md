@@ -1,7 +1,7 @@
 ---
 title: "v2.0.0 - Welcome to my.SurfCanyon.com"
 date: "2008-12-09"
-categories: 
+tags: 
   - "announcements"
   - "media"
   - "personalization"

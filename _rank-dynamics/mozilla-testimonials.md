@@ -1,7 +1,7 @@
 ---
 title: "Mozilla Testimonials"
 date: "2008-11-10"
-categories: 
+tags: 
   - "testimonials"
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Presentation at Bay Area Search Meetup"
 date: "2013-01-21"
-categories: 
+tags: 
   - "announcements"
   - "demonstration"
   - "personalization"

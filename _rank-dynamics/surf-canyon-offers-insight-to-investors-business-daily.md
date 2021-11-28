@@ -1,7 +1,7 @@
 ---
 title: "Offering Insight to Investor's Business Daily"
 date: "2008-08-06"
-categories: 
+tags: 
   - "media"
 ---
 

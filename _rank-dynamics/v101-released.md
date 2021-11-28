@@ -1,7 +1,7 @@
 ---
 title: "v1.0.1 Released"
 date: "2008-04-03"
-categories: 
+tags: 
   - "announcements"
   - "media"
 ---

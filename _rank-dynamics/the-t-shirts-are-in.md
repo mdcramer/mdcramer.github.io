@@ -1,7 +1,7 @@
 ---
 title: "The T-shirts are in!"
 date: "2013-05-23"
-categories: 
+tags: 
   - "announcements"
   - "fun"
 ---

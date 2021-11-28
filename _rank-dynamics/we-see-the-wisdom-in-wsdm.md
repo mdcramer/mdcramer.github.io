@@ -1,7 +1,7 @@
 ---
 title: "We See the Wisdom in WSDM"
 date: "2011-08-10"
-categories: 
+tags: 
   - "announcements"
 ---
 

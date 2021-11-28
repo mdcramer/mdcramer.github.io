@@ -1,7 +1,7 @@
 ---
 title: "Back in Action on AMO!"
 date: "2015-02-20"
-categories: 
+tags: 
   - "announcements"
   - "code"
 ---

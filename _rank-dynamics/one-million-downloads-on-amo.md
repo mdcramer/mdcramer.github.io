@@ -1,7 +1,7 @@
 ---
 title: "One Million Downloads on AMO"
 date: "2009-08-25"
-categories: 
+tags: 
   - "top-posts"
   - "announcements"
   - "testimonials"

@@ -1,7 +1,7 @@
 ---
 title: "Joint paper with Bing and Microsoft Research Accepted for Publication by CIKM 2013"
 date: "2013-08-12"
-categories: 
+tags: 
   - "top-posts"
   - "announcements"
   - "collaboration"

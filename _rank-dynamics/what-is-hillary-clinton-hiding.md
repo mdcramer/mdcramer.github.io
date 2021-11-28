@@ -1,7 +1,7 @@
 ---
 title: "What is Hillary Clinton Hiding?"
 date: "2008-05-29"
-categories: 
+tags: 
   - "tutorials"
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Firefox Add-on of the Week"
 date: "2009-09-22"
-categories: 
+tags: 
   - "media"
   - "testimonials"
 ---

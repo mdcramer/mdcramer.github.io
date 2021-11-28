@@ -1,7 +1,7 @@
 ---
 title: "Enter Your Friends to Win!"
 date: "2008-07-16"
-categories: 
+tags: 
   - "announcements"
 ---
 

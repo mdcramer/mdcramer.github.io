@@ -1,7 +1,7 @@
 ---
 title: "\"Research Potential is Incredible\""
 date: "2008-08-21"
-categories: 
+tags: 
   - "media"
   - "testimonials"
 ---

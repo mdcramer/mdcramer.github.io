@@ -1,7 +1,7 @@
 ---
 title: "The Academic Treatment"
 date: "2008-11-03"
-categories: 
+tags: 
   - "testimonials"
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "v3.0.2 - All About Sharing"
 date: "2009-11-13"
-categories: 
+tags: 
   - "announcements"
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Seed Funding Secured"
 date: "2008-05-28"
-categories: 
+tags: 
   - "announcements"
   - "media"
   - "press-releases"

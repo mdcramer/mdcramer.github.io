@@ -1,7 +1,7 @@
 ---
 title: "v2.0.0 Press Release"
 date: "2008-12-09"
-categories: 
+tags: 
   - "announcements"
   - "press-releases"
 ---

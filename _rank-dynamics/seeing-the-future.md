@@ -1,7 +1,7 @@
 ---
 title: "Seeing the Future"
 date: "2011-03-25"
-categories: 
+tags: 
   - "media"
 ---
 

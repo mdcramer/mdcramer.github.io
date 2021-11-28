@@ -1,7 +1,7 @@
 ---
 title: "“Fully Dynamic” Search on TechCrunch"
 date: "2010-10-12"
-categories: 
+tags: 
   - "top-posts"
   - "announcements"
   - "media"

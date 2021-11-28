@@ -1,7 +1,7 @@
 ---
 title: "Vator.tv Interview"
 date: "2008-06-15"
-categories: 
+tags: 
   - "media"
 ---
 

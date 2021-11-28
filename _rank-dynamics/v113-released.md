@@ -1,7 +1,7 @@
 ---
 title: "v1.1.3 Released"
 date: "2008-08-22"
-categories: 
+tags: 
   - "announcements"
 ---
 

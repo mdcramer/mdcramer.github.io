@@ -1,7 +1,7 @@
 ---
 title: "Improving Search for Etsy"
 date: "2014-02-14"
-categories: 
+tags: 
   - "demonstration"
   - "personalization"
   - "recommendations"

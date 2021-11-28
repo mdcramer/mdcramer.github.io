@@ -1,7 +1,7 @@
 ---
 title: "SES NYC Panelist Selection"
 date: "2008-03-10"
-categories: 
+tags: 
   - "media"
   - "presentations"
 ---

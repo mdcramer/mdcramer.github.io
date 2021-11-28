@@ -1,7 +1,7 @@
 ---
 title: "v1.1.1 - Toss Your Cookies"
 date: "2008-07-03"
-categories: 
+tags: 
   - "announcements"
 ---
 

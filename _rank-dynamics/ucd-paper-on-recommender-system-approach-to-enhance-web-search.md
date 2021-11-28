@@ -1,7 +1,7 @@
 ---
 title: "UCD Paper on Recommender System Approach to Enhance Web Search"
 date: "2010-10-18"
-categories: 
+tags: 
   - "recommendations"
   - "research"
   - "testimonials"

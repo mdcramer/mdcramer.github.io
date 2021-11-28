@@ -1,7 +1,7 @@
 ---
 title: "The Four Quadrants of Personalization"
 date: "2009-01-14"
-categories: 
+tags: 
   - "discovery"
   - "personalization"
   - "research"

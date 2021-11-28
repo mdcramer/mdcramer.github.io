@@ -1,7 +1,7 @@
 ---
 title: "USPTO Awards Third Patent to Surf Canyon"
 date: "2013-04-30"
-categories: 
+tags: 
   - "top-posts"
   - "announcements"
   - "research"

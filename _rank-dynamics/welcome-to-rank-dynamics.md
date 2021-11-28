@@ -1,7 +1,7 @@
 ---
 title: "Welcome to Rank Dynamics"
 date: "2015-07-02"
-categories: 
+tags: 
   - "top-posts"
   - "announcements"
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Mention in University of Cambridge / Microsoft Paper on Personalization"
 date: "2013-02-02"
-categories: 
+tags: 
   - "personalization"
   - "research"
 ---

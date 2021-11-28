@@ -1,7 +1,7 @@
 ---
 title: "Kudos from Network World"
 date: "2008-10-08"
-categories: 
+tags: 
   - "media"
   - "testimonials"
 ---

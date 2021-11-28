@@ -1,7 +1,7 @@
 ---
 title: "John McCain has an SEO Problem"
 date: "2008-06-27"
-categories: 
+tags: 
   - "tutorials"
 ---
 

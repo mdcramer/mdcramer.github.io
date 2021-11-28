@@ -1,7 +1,7 @@
 ---
 title: "Givin' 'em What They Want"
 date: "2008-07-01"
-categories: 
+tags: 
   - "media"
   - "testimonials"
 ---

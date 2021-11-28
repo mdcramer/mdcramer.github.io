@@ -1,7 +1,7 @@
 ---
 title: "Maybe if I Just Add Some Quotes…"
 date: "2008-01-16"
-categories: 
+tags: 
   - "personalization"
   - "reformulation"
   - "research"

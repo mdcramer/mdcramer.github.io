@@ -1,7 +1,7 @@
 ---
 title: "I Miss You When You're Gone"
 date: "2008-09-23"
-categories: 
+tags: 
   - "media"
   - "testimonials"
 ---

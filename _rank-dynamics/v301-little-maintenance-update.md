@@ -1,7 +1,7 @@
 ---
 title: "v3.0.1 - Little Maintenance Update"
 date: "2009-08-28"
-categories: 
+tags: 
   - "announcements"
 ---
 

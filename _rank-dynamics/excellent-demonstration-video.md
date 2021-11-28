@@ -1,7 +1,7 @@
 ---
 title: "Excellent Demonstration Video"
 date: "2010-03-17"
-categories: 
+tags: 
   - "presentations"
   - "testimonials"
   - "tutorials"

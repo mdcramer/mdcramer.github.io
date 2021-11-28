@@ -1,7 +1,7 @@
 ---
 title: "Yeah, We're Cool"
 date: "2008-07-28"
-categories: 
+tags: 
   - "media"
 ---
 

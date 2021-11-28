@@ -1,7 +1,7 @@
 ---
 title: "Evaluating Dynamic Ranking Technology (Part 1)"
 date: "2008-10-14"
-categories: 
+tags: 
   - "discovery"
   - "personalization"
   - "research"

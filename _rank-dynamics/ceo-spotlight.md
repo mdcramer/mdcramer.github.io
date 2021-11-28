@@ -1,7 +1,7 @@
 ---
 title: "CEO Spotlight"
 date: "2008-03-21"
-categories: 
+tags: 
   - "media"
 ---
 

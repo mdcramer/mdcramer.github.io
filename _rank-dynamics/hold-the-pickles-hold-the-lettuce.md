@@ -1,7 +1,7 @@
 ---
 title: "Hold the Pickles, Hold the Lettuce"
 date: "2007-09-19"
-categories: 
+tags: 
   - "discovery"
   - "personalization"
   - "research"

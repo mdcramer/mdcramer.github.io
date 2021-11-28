@@ -1,7 +1,7 @@
 ---
 title: "The Onion Throws Wrench into Real-Time Contextualization"
 date: "2015-02-13"
-categories: 
+tags: 
   - "contextualization"
   - "discovery"
   - "fun"

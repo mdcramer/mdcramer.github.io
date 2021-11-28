@@ -1,7 +1,7 @@
 ---
 title: "v2.0.1 - The Lexis Web Edition"
 date: "2009-02-19"
-categories: 
+tags: 
   - "announcements"
   - "collaboration"
 ---

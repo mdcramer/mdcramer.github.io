@@ -1,7 +1,7 @@
 ---
 title: "Page 13? Not a problem."
 date: "2008-05-08"
-categories: 
+tags: 
   - "media"
   - "testimonials"
 ---

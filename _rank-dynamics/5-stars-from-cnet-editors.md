@@ -1,7 +1,7 @@
 ---
 title: "5 Stars from CNET Editors"
 date: "2009-03-16"
-categories:
+tags:
   - "media"
   - "testimonials"
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Surf Canyon Releases Major Update with v3"
 date: "2009-08-05"
-categories: 
+tags: 
   - "announcements"
   - "press-releases"
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Significant Milestones Reached"
 date: "2008-10-21"
-categories: 
+tags: 
   - "announcements"
   - "press-releases"
   - "testimonials"

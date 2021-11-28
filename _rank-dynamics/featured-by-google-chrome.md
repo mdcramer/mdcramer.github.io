@@ -1,7 +1,7 @@
 ---
 title: "\"Featured\" by Google Chrome"
 date: "2010-03-18"
-categories: 
+tags: 
   - "announcements"
   - "testimonials"
 ---

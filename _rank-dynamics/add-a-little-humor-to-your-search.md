@@ -1,7 +1,7 @@
 ---
 title: "Add a Little Humor to Your Search"
 date: "2009-04-13"
-categories: 
+tags: 
   - "announcements"
 ---
 

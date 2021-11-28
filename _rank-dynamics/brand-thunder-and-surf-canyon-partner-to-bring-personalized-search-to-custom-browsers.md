@@ -1,7 +1,7 @@
 ---
 title: "Brand Thunder and Surf Canyon Partner to Bring Personalized Search to Custom Browsers"
 date: "2009-05-19"
-categories: 
+tags: 
   - "announcements"
   - "collaboration"
   - "press-releases"

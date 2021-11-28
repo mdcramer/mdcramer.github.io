@@ -1,7 +1,7 @@
 ---
 title: "\"Search User Interfaces\" Mention"
 date: "2009-07-13"
-categories: 
+tags: 
   - "announcements"
   - "media"
   - "personalization"

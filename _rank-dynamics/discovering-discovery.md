@@ -1,7 +1,7 @@
 ---
 title: "Discovering Discovery"
 date: "2007-10-11"
-categories: 
+tags: 
   - "discovery"
   - "recommendations"
   - "tutorials"

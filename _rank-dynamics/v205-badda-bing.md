@@ -1,7 +1,7 @@
 ---
 title: "v2.0.5 - Badda Bing!"
 date: "2009-06-04"
-categories: 
+tags: 
   - "announcements"
   - "personalization"
 ---

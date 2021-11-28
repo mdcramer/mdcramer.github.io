@@ -1,7 +1,7 @@
 ---
 title: "On Top in the Low Countries"
 date: "2009-01-19"
-categories: 
+tags: 
   - "media"
   - "testimonials"
 ---

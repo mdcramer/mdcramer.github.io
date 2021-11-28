@@ -1,7 +1,7 @@
 ---
 title: "The Covers Come Off"
 date: "2007-10-03"
-categories: 
+tags: 
   - "media"
 ---
 

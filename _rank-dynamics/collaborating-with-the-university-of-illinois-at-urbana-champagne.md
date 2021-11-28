@@ -1,7 +1,7 @@
 ---
 title: "Collaborating with the University of Illinois at Urbana-Champaign"
 date: "2009-02-27"
-categories: 
+tags: 
   - "announcements"
   - "collaboration"
   - "media"

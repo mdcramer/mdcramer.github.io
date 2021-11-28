@@ -1,7 +1,7 @@
 ---
 title: "The Barnacle Approach"
 date: "2009-04-03"
-categories: 
+tags: 
   - "media"
   - "testimonials"
 ---

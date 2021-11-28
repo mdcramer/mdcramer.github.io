@@ -1,7 +1,7 @@
 ---
 title: "The Future of Search: The Emerging Power of Real-time Personalized Search - July 13th Webinar with comScore"
 date: "2010-06-30"
-categories: 
+tags: 
   - "announcements"
   - "personalization"
   - "presentations"

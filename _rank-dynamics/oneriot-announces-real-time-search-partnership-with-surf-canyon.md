@@ -1,7 +1,7 @@
 ---
 title: "OneRiot Announces Real-Time Search Partnership with Surf Canyon"
 date: "2009-05-22"
-categories: 
+tags: 
   - "announcements"
   - "collaboration"
   - "press-releases"

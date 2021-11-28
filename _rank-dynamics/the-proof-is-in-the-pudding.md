@@ -1,7 +1,7 @@
 ---
 title: "The Proof is in the Pudding"
 date: "2015-10-27"
-categories: 
+tags: 
   - "demonstration"
   - "research"
 ---

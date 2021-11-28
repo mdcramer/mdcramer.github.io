@@ -1,7 +1,7 @@
 ---
 title: "Popgadget and Search Engine Journal Weigh In"
 date: "2008-04-14"
-categories: 
+tags: 
   - "media"
   - "testimonials"
 ---

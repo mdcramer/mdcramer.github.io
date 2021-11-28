@@ -1,7 +1,7 @@
 ---
 title: "Top 3 Firefox Extensions for Bloggers"
 date: "2009-05-13"
-categories: 
+tags: 
   - "media"
   - "testimonials"
 ---

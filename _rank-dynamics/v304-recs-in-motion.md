@@ -1,7 +1,7 @@
 ---
 title: "v3.0.4 - Recs in Motion"
 date: "2010-02-16"
-categories: 
+tags: 
   - "announcements"
 ---
 

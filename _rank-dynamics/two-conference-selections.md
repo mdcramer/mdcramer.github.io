@@ -1,7 +1,7 @@
 ---
 title: "Two Conference Selections"
 date: "2008-10-06"
-categories: 
+tags: 
   - "announcements"
   - "media"
   - "testimonials"

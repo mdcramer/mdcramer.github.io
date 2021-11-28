@@ -1,7 +1,7 @@
 ---
 title: "Video of Dynamic Ranked Retrieval Presentation at WSDM 2011 in Hong Kong"
 date: "2013-08-29"
-categories: 
+tags: 
   - "top-posts"
   - "presentations"
   - "research"

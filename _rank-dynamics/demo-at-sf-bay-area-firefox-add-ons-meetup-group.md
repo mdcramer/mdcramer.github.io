@@ -1,7 +1,7 @@
 ---
 title: "Demo at SF Bay Area Firefox Add-ons Meetup Group"
 date: "2012-02-24"
-categories: 
+tags: 
   - "demonstration"
   - "media"
   - "presentations"

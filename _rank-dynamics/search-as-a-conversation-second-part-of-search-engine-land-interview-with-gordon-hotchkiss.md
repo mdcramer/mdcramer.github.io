@@ -1,7 +1,7 @@
 ---
 title: "Search as a Conversation - Second Part of Search Engine Land Interview with Gordon Hotchkiss"
 date: "2010-10-01"
-categories: 
+tags: 
   - "media"
 ---
 

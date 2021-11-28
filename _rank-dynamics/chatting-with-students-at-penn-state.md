@@ -1,7 +1,7 @@
 ---
 title: "Chatting with Students at Penn State"
 date: "2010-02-03"
-categories: 
+tags: 
   - "collaboration"
 ---
 

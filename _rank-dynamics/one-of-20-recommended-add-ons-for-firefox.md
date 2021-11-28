@@ -1,7 +1,7 @@
 ---
 title: "One of 20 Recommended Add-ons for Firefox"
 date: "2009-03-28"
-categories: 
+tags: 
   - "media"
   - "testimonials"
 ---

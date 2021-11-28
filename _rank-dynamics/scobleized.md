@@ -1,7 +1,7 @@
 ---
 title: "Scobleized!"
 date: "2014-06-24"
-categories: 
+tags: 
   - "demonstration"
   - "media"
   - "presentations"

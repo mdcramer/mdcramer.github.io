@@ -1,7 +1,7 @@
 ---
 title: "v1.1.4 - Categorically Speaking"
 date: "2008-10-16"
-categories: 
+tags: 
   - "announcements"
   - "testimonials"
 ---

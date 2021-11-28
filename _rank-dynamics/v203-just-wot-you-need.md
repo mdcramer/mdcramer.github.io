@@ -1,7 +1,7 @@
 ---
 title: "v2.0.3 - Just WOT you need!"
 date: "2009-03-27"
-categories: 
+tags: 
   - "announcements"
   - "collaboration"
 ---

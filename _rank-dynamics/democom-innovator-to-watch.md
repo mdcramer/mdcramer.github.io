@@ -1,7 +1,7 @@
 ---
 title: "DEMO.com - Innovator to Watch"
 date: "2008-01-29"
-categories: 
+tags: 
   - "media"
   - "testimonials"
 ---

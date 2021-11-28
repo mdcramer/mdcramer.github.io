@@ -1,7 +1,7 @@
 ---
 title: "Co-sponsoring TechCrunch50 Cocktail Reception with Microsoft Bing"
 date: "2009-09-14"
-categories: 
+tags: 
   - "announcements"
 ---
 

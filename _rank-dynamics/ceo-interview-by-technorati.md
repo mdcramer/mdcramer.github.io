@@ -1,7 +1,7 @@
 ---
 title: "CEO Interview by Technorati"
 date: "2010-03-09"
-categories: 
+tags: 
   - "media"
 ---
 

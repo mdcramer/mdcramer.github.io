@@ -1,7 +1,7 @@
 ---
 title: "Presenting at Search Insider Summit"
 date: "2011-04-18"
-categories: 
+tags: 
   - "announcements"
   - "media"
   - "presentations"

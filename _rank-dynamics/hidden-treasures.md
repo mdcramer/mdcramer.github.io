@@ -1,7 +1,7 @@
 ---
 title: "Hidden Treasures"
 date: "2008-02-18"
-categories: 
+tags: 
   - "discovery"
   - "personalization"
   - "research"

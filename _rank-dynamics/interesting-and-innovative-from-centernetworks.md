@@ -1,7 +1,7 @@
 ---
 title: "\"Interesting and Innovative\" from CenterNetworks"
 date: "2008-09-21"
-categories: 
+tags: 
   - "media"
   - "testimonials"
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Mozilla \"Recommends\" Surf Canyon"
 date: "2008-06-04"
-categories: 
+tags: 
   - "announcements"
   - "testimonials"
 ---

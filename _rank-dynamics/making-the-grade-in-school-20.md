@@ -1,7 +1,7 @@
 ---
 title: "Making the grade in School 2.0"
 date: "2008-08-14"
-categories: 
+tags: 
   - "media"
   - "testimonials"
 ---

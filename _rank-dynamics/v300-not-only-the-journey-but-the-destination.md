@@ -1,7 +1,7 @@
 ---
 title: "v3.0.0 - Not only the Journey, but the Destination"
 date: "2009-07-30"
-categories: 
+tags: 
   - "announcements"
   - "media"
   - "testimonials"

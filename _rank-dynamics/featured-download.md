@@ -1,7 +1,7 @@
 ---
 title: "Featured Download"
 date: "2008-05-12"
-categories: 
+tags: 
   - "media"
   - "testimonials"
 ---

@@ -1,7 +1,7 @@
 ---
 title: "v2.0.4 - Further Refinements"
 date: "2009-04-30"
-categories: 
+tags: 
   - "announcements"
   - "media"
   - "personalization"

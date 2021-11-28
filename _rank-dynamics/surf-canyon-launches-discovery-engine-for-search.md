@@ -1,7 +1,7 @@
 ---
 title: "Surf Canyon Launches Discovery Engine for Search"
 date: "2008-02-19"
-categories: 
+tags: 
   - "announcements"
   - "discovery"
   - "media"

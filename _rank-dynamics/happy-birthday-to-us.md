@@ -1,7 +1,7 @@
 ---
 title: "Happy Birthday to Us!"
 date: "2009-02-19"
-categories: 
+tags: 
   - "top-posts"
   - "announcements"
   - "collaboration"

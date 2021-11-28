@@ -1,7 +1,7 @@
 ---
 title: "Google’s SearchWiki & Surf Canyon Share The Mossberg Solution Column"
 date: "2009-01-14"
-categories: 
+tags: 
   - "top-posts"
   - "discovery"
   - "media"

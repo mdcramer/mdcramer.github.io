@@ -1,7 +1,7 @@
 ---
 title: "Cornell University Produces More Research on Dynamic Ranked Retrieval"
 date: "2012-01-18"
-categories: 
+tags: 
   - "top-posts"
   - "research"
   - "testimonials"

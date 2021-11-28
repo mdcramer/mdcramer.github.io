@@ -1,7 +1,7 @@
 ---
 title: "Reaching the World with AMO Localizations"
 date: "2010-07-30"
-categories: 
+tags: 
   - "collaboration"
   - "tutorials"
 ---

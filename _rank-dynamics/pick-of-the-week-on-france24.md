@@ -1,7 +1,7 @@
 ---
 title: "Pick of the Week on France24"
 date: "2010-10-07"
-categories: 
+tags: 
   - "media"
   - "testimonials"
 ---

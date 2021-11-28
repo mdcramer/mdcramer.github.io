@@ -1,7 +1,7 @@
 ---
 title: "All Corners of the Globe"
 date: "2009-07-08"
-categories: 
+tags: 
   - "media"
   - "testimonials"
 ---

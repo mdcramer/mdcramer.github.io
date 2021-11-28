@@ -1,7 +1,7 @@
 ---
 title: "The Problem: Too Many Results"
 date: "2008-07-30"
-categories: 
+tags: 
   - "discovery"
   - "personalization"
   - "reformulation"

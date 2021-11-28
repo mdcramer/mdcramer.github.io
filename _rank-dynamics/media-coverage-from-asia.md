@@ -1,7 +1,7 @@
 ---
 title: "Media Coverage from Asia"
 date: "2008-10-23"
-categories: 
+tags: 
   - "media"
   - "testimonials"
 ---

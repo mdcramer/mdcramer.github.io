@@ -1,7 +1,7 @@
 ---
 title: "Surf Canyon Selected “Best Search Engine” in About.com Reader’s Choice Awards"
 date: "2010-03-09"
-categories: 
+tags: 
   - "announcements"
   - "press-releases"
   - "testimonials"

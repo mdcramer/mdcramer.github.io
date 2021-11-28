@@ -1,7 +1,7 @@
 ---
 title: "MIT's Technology Review Offers Insights"
 date: "2009-01-29"
-categories: 
+tags: 
   - "media"
   - "personalization"
   - "testimonials"

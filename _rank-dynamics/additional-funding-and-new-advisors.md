@@ -1,7 +1,7 @@
 ---
 title: "Additional Funding and New Advisors"
 date: "2009-10-08"
-categories: 
+tags: 
   - "top-posts"
   - "announcements"
   - "media"

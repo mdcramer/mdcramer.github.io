@@ -1,7 +1,7 @@
 ---
 title: "Know Thy Add-on User"
 date: "2009-01-20"
-categories: 
+tags: 
   - "tutorials"
 ---
 

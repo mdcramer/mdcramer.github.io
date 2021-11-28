@@ -1,7 +1,7 @@
 ---
 title: "Great Debate"
 date: "2008-05-21"
-categories: 
+tags: 
   - "media"
   - "personalization"
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Some Java to Search Etsy for Matching Products"
 date: "2014-01-16"
-categories: 
+tags: 
   - "code"
 ---
 

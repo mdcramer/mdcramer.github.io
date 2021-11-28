@@ -1,7 +1,7 @@
 ---
 title: "Search Reformulation Alternative"
 date: "2008-03-25"
-categories: 
+tags: 
   - "media"
   - "reformulation"
   - "testimonials"

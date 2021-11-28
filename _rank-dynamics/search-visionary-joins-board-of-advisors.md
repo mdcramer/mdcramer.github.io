@@ -1,7 +1,7 @@
 ---
 title: "Search Visionary Joins Board of Advisors"
 date: "2012-01-24"
-categories: 
+tags: 
   - "top-posts"
   - "announcements"
   - "research"

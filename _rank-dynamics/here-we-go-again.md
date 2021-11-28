@@ -1,7 +1,7 @@
 ---
 title: "Here we go again!"
 date: "2011-02-11"
-categories: 
+tags: 
   - "announcements"
   - "media"
   - "testimonials"

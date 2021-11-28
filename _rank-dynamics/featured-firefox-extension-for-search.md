@@ -1,7 +1,7 @@
 ---
 title: "Featured Firefox Extension for Search"
 date: "2009-06-24"
-categories: 
+tags: 
   - "media"
   - "testimonials"
 ---

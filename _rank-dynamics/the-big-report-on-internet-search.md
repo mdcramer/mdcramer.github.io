@@ -1,7 +1,7 @@
 ---
 title: "The Big Report on Internet Search"
 date: "2008-09-30"
-categories: 
+tags: 
   - "media"
   - "testimonials"
 ---

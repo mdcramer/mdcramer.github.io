@@ -1,7 +1,7 @@
 ---
 title: "Extension Approved by Mozilla!"
 date: "2008-05-04"
-categories: 
+tags: 
   - "announcements"
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Real-time Contextualized Search - It is What We Do"
 date: "2014-03-07"
-categories: 
+tags: 
   - "top-posts"
   - "contextualization"
   - "discovery"

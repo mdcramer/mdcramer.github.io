@@ -1,7 +1,7 @@
 ---
 title: "v1.1.0 - The Craigslist Edition"
 date: "2008-06-12"
-categories: 
+tags: 
   - "announcements"
   - "media"
   - "testimonials"

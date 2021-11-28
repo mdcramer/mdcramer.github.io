@@ -1,7 +1,7 @@
 ---
 title: "The French Connection"
 date: "2007-11-21"
-categories: 
+tags: 
   - "media"
   - "testimonials"
 ---

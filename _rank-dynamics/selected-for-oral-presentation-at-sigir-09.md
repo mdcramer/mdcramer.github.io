@@ -1,7 +1,7 @@
 ---
 title: "Selected for Oral Presentation at SIGIR ’09"
 date: "2009-07-15"
-categories: 
+tags: 
   - "top-posts"
   - "announcements"
   - "presentations"

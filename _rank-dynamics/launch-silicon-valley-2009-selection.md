@@ -1,7 +1,7 @@
 ---
 title: "Launch: Silicon Valley 2009 Selection"
 date: "2009-05-26"
-categories: 
+tags: 
   - "announcements"
   - "press-releases"
 ---

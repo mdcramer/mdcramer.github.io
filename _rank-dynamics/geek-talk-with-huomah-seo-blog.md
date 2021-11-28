@@ -1,7 +1,7 @@
 ---
 title: "Geek Talk with HuoMah SEO Blog"
 date: "2010-02-22"
-categories: 
+tags: 
   - "media"
   - "personalization"
   - "testimonials"

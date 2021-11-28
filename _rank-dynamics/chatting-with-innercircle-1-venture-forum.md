@@ -1,7 +1,7 @@
 ---
 title: "Chatting with InnerCircle 1 Venture Forum"
 date: "2009-01-27"
-categories: 
+tags: 
   - "media"
 ---
 

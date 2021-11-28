@@ -1,7 +1,7 @@
 ---
 title: "Fast & Easy Wordnet Java"
 date: "2008-07-21"
-categories: 
+tags: 
   - "code"
 ---
 

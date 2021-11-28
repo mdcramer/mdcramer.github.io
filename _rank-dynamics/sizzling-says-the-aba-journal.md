@@ -1,7 +1,7 @@
 ---
 title: "\"Sizzling\" says the ABA Journal"
 date: "2009-11-04"
-categories: 
+tags: 
   - "media"
   - "testimonials"
 ---

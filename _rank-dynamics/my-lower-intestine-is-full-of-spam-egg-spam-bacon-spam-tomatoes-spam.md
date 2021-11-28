@@ -1,7 +1,7 @@
 ---
 title: "My lower intestine is full of Spam, Egg, Spam, Bacon, Spam, Tomatoes, Spam"
 date: "2011-02-07"
-categories: 
+tags: 
   - "announcements"
   - "testimonials"
 ---

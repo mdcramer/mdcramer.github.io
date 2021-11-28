@@ -1,7 +1,7 @@
 ---
 title: "Best Search Engine: Winner!"
 date: "2010-03-04"
-categories: 
+tags: 
   - "top-posts"
   - "announcements"
   - "media"

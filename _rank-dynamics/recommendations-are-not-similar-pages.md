@@ -1,7 +1,7 @@
 ---
 title: "Recommendations are not \"Similar Pages\""
 date: "2007-09-29"
-categories: 
+tags: 
   - "recommendations"
 ---
 

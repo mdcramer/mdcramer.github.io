@@ -1,7 +1,7 @@
 ---
 title: "Mention in Paper from Endicott College and University of Massachusetts, Amherst"
 date: "2013-09-03"
-categories: 
+tags: 
   - "research"
 ---
 

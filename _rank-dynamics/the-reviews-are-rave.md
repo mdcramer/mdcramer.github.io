@@ -1,7 +1,7 @@
 ---
 title: "The Reviews Are Rave"
 date: "2008-02-19"
-categories: 
+tags: 
   - "top-posts"
   - "media"
   - "testimonials"
