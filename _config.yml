@@ -10,7 +10,7 @@ locale: "en"
 title: "Hackin' and Tinkerin'"
 title_separator: "-"
 name: "Mark Cramer"
-description: "A collection of blogs related to some of my projects on GitHub"
+description: "A collection of blogs related to some of my work on GitHub and elsewhere"
 url: https://mdcramer.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 repo:
   root: https://github.com/mdcramer/mdcramer.github.io
