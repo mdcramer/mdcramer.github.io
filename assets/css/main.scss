@@ -6,3 +6,14 @@
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+.sidebar {
+  .profile {
+    &_icon {
+      --length: 25px;
+      display: inline-block;
+      height: var(--length);
+      width: var(--length);
+    }
+  }
+}

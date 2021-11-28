@@ -133,6 +133,14 @@
           </a>
         </li>
       {% endif %}
+
+      {% if author.googlescholar %}
+        <li>
+          <a href="{{ author.googlescholar }}" itemprop="sameAs">
+            <img src="/assets/images/googlescholar.svg" alt="googlescholar" class="profile_icon"> Google Scholar
+          </a>
+        </li>
+      {% endif %}
     </ul>
   </div>
 </div>
