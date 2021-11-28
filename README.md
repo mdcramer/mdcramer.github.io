@@ -1,6 +1,6 @@
 # [Deep Speeling Blog](https://mdcramer.github.io/Deep-Speeling-Blog/)
 
-This repo is the [blog](https://mdcramer.github.io/Deep-Speeling-Blog/) for the [Deep Speeling](https://github.com/mdcramer/Deep-Speeling) project. Deep Speeling is a Recurrent Neural Network (RNN), implemented in Tensorflow, designed to correct spelling mistakes using Deep Learning.
+This repo is the [blog](https://mdcramer.github.io/) for the [Deep Speeling](https://github.com/mdcramer/Deep-Speeling) project. Deep Speeling is a Recurrent Neural Network (RNN), implemented in Tensorflow, designed to correct spelling mistakes using Deep Learning.
 
 ### Special Characters
 Since we would like permalinks to be generated automatically, special characters (non-english) e.g **ñ** are going to be problematic.
