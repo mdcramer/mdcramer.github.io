@@ -1,13 +1,38 @@
+{%- assign author = site.data.author -%}
 <div class="page__footer-follow">
   <ul class="social-icons">
-    {% if site.data.ui-text[site.locale].follow_label %}
+    <!-- {% if site.data.ui-text[site.locale].follow_label %}
       <li><strong>{{ site.data.ui-text[site.locale].follow_label }}</strong></li>
-    {% endif %}
+    {% endif %} -->
     {% if site.twitter.username %}
       <li><a href="https://twitter.com/{{ site.twitter.username }}"><i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
     {% endif %}
 
+    {% if author.linkedin %}
+    <li>
+      <a href="https://www.linkedin.com/in/{{ author.linkedin }}" itemprop="sameAs">
+        <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+      </a>
+    </li>
+    {% endif %}
+
     {%- include repo.html -%}
+
+    {% if author.stackoverflow %}
+    <li>
+      <a href="https://www.stackoverflow.com/users/{{ author.stackoverflow }}" itemprop="sameAs">
+        <i class="fa fa-fw fa-stack-overflow" aria-hidden="true"></i> Stackoverflow
+      </a>
+    </li>
+    {% endif %}
+
+    {% if author.googlescholar %}
+    <li>
+      <a href="{{ author.googlescholar }}" itemprop="sameAs">
+        <img src="/assets/images/googlescholar.svg" alt="googlescholar" class="profile_icon"> Google Scholar
+      </a>
+    </li>
+  {% endif %}
 
     <li><a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | absolute_url }}{% endif %}"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].feed_label | default: "Feed" }}</a></li>
   </ul>
