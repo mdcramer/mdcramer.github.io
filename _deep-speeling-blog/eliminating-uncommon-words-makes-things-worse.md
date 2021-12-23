@@ -8,7 +8,7 @@ last_modified_at: 2017-11-05
 
 This is frustrating.
 
-In the [quest for 90% accuracy](/deep-speeding-blog/2017-09-14-Motivation-and-Goals/) I decided to take another look at [Mr. Weiss' code](https://github.com/MajorTal/DeepSpell/blob/master/keras_spell.py) and noticed that in `preprocesses_split_lines4()` he is "... selecting only sentences with most-common words." The call to the function is commented out, and more than half of the function is commented out as well (it appears to be using [word2vec](https://www.tensorflow.org/tutorials/word2vec), but I'm not seeing how), but it got me to thinking:
+In the [quest for 90% accuracy](/deep-speeling-blog/motivation-and-goals/) I decided to take another look at [Mr. Weiss' code](https://github.com/MajorTal/DeepSpell/blob/master/keras_spell.py) and noticed that in `preprocesses_split_lines4()` he is "... selecting only sentences with most-common words." The call to the function is commented out, and more than half of the function is commented out as well (it appears to be using [word2vec](https://www.tensorflow.org/tutorials/word2vec), but I'm not seeing how), but it got me to thinking:
 
 * Perhaps this 'problem' can be simplified by removing sentences with very uncommon words, such as those that only ever appear once. It's unreasonable to think that a neural network could 'know' how to spell a word without ever seeing it previously. Those very uncommon words probably contain many proper names and misspellings (which I should check at some point).
 * Additionally, while I'm at it, the problem could potentially be simplified even further by removing sentences with numbers. How would a human being, let alone a neural network, know that "I have 41 apples" was, in fact, a transposition of "I have 14 apples."
