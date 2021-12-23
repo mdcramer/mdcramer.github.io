@@ -1,7 +1,8 @@
 ---
 title: "Welcome"
+excerpt: "This is a copy of the original Rank Dynamics WordPress blog for safe keeping. Open this post to find our mission, links to top posts and published research."
 date: 2020-12-23
-last_modified_at: 2017-11-05
+last_modified_at: 2020-12-23
 tags: [top-posts, announcements]
 ---
 This is a copy of the original [Rank Dynamics WordPress blog](https://blog.rankdynamics.com/), for safe keeping.
