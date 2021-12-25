@@ -1,8 +1,8 @@
 ---
 title: "Welcome"
 excerpt: "This is a copy of the original Rank Dynamics WordPress blog for safe keeping. Open this post to find our mission, links to top posts and published research."
-date: 2020-12-23
-last_modified_at: 2020-12-23
+date: 2021-12-23
+last_modified_at: 2021-12-24
 tags: [top-posts, announcements]
 ---
 This is a copy of the original [Rank Dynamics WordPress blog](https://blog.rankdynamics.com/), for safe keeping.
@@ -20,8 +20,8 @@ The mission of Rank Dynamics is to transform search into a dynamic experience wh
 -   [USPTO Awards Third Patent](http://blog.rankdynamics.com/2013/04/30/uspto-awards-third-patent-to-surf-canyon/ "USPTO Awards Third Patent")
 
 # Published Research
-"[Demonstration of Improved Search Result Relevancy Using Real-Time Implicit Relevance Feedback](/assets/papers/SurfCanyonDemonstrationResearchPaper.pdf "Demonstration of Improved Search Result Relevancy Using Real-Time Implicit Relevance Feedback")," SIGIR ’09, July 19-23, 2009, Boston, USA.
+[Demonstration of Improved Search Result Relevancy Using Real-Time Implicit Relevance Feedback](/assets/papers/SurfCanyonDemonstrationResearchPaper.pdf), SIGIR ’09, July 19-23, 2009, Boston, USA.
 
-"[Dynamic Ranked Retrieval](/assets/papers/wsdm11Brandt_etal_11a.pdf "Dynamic Ranked Retrieval")," WSDM ’11, February 9-12, 2011, Hong Kong, China.
+[Dynamic Ranked Retrieval](/assets/papers/wsdm11Brandt_etal_11a.pdf), WSDM ’11, February 9-12, 2011, Hong Kong, China.
 
-"[Understanding How People Interact with Web Search Results that Change in Real-Time Using Implicit Feedback](/assets/papers/cikm13HowPeopleInteractWithSearch.pdf "Understanding How People Interact with Web Search Results that Change in Real-Time Using Implicit Feedback")," CIKM ’13, October 27-November 1, 2013, San Francisco, USA.
+[Understanding How People Interact with Web Search Results that Change in Real-Time Using Implicit Feedback](/assets/papers/cikm13HowPeopleInteractWithSearch.pdf), CIKM ’13, October 27-November 1, 2013, San Francisco, USA.

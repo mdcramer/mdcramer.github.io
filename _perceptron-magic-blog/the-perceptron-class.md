@@ -4,7 +4,7 @@ excerpt: Provide description of a Perceptron and build the initial, basic Percep
   class.
 tags: [Perceptron]
 date: 2019-01-05
-last_modified_at: 2019-01-09
+last_modified_at: 2021-12-24
 ---
 ## What is a Perceptron?
 
@@ -12,7 +12,7 @@ The node is the 'atomic' unit of a neural network and the [Perceptron](https://e
 
 Walking through the diagram below, a Perceptron will accept any number (\\(n\\), for example) of inputs, \\(x_0\\) to \\(x_n\\), and product a single output, \\(y\\). These inputs are, of course, numbers, although they may be arbitrarily large or small and include fractions. Each input is then multiplied by a weight, \\(w_0\\) to \\(w_n\\). The summation of all the inputs multiplied by their weights is called the hypothesis:
 
-$$h(X) = x_0 w_0 + x_1w_1 + \\cdots +x_nw_n$$
+$$h(X) = x_0 w_0 + x_1w_1 + \cdots +x_nw_n$$
 
 The _hypothesis_ is thus a single number which is then sent through an activation function. There are many types of activation functions (we'll review some later), but the simplest is the "step": if the hypothesis is positive or zero our output is 1, otherwise it is 0.
 
@@ -24,7 +24,7 @@ So what's the point of this? We'll dig into that, but at a high level what we've
 
 We're going to use [Python](https://www.python.org/) because it easy to learn, easy to use and has become, more or less, for reasons associated with data science-related libraries, the language of choice for people building neural networks. That being said, you could follow these exercises using most any [object-oriented](https://en.wikipedia.org/wiki/Object-oriented_programming) programming language.
 
-As mentioned in the [Motivation](https://mdcramer.github.io/perceptron-magic-blog/Motivation/), this is the thing that, for performance reasons, nobody ever does. To reiterate, we're doing it to try to get insights into functioning of Perceptrons and neural networks.
+As mentioned in the [Motivation](/perceptron-magic-blog/motivation/), this is the thing that, for performance reasons, nobody ever does. To reiterate, we're doing it to try to get insights into functioning of Perceptrons and neural networks.
 
 Below is the first chuck of code we'll need. We define the Perceptron call and set up the initialization function to accept the number of inputs. For the moment, there's nothing else to define. Using the number of inputs we then create an equal number of weights to which we'll assign random floating point numbers between -1 and +1.
 

@@ -11,7 +11,7 @@ internal_blogs:
 
   - name: rank dynamics
     description: A backup of the blog from the company I founded. We improved search by transforming the traditional static list of links into a fluid experience where relevance was improved by dynamically re-ranking results in response to implicit user feedback.
-    background: darkgoldenrod
+    background: orangered # darkgoldenrod works
 
 external_blogs:
   - name: Mortal Wayfare
