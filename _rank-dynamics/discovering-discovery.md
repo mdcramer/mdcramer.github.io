@@ -9,7 +9,7 @@ tags:
 
 Here's a quick 1, 2, 3 to help you get the most out of our Discovery Engine for Search™.
 
-**Step 1:** Enter you query on our website or, if you like, [download our add-on](http://www.surfcanyon.com/extension.jsp) and then go to your favorite search engine (Google, Yahoo! or Bing), just like you always do, and enter your keywords.
+**Step 1:** Enter you query on our website or, if you like, download our add-on (Note: no longer available) and then go to your favorite search engine (Google, Yahoo! or Bing), just like you always do, and enter your keywords.
 
 Our example will use a search for the term “dolphins” since it is often used to illustrate one of the classic problems with information retrieval. No matter how much information is gathered about the subject, the individual, or all the individuals who have ever searched for “dolphins”, it is impossible to know _a priori_ whether or not the searcher’s intent is related to the animal or to the football team. While search engines may suggest alternate queries or reformulations through the use of keyword suggestions or clusters, the search results produced will always be a mix of the animal and the football team.
 
