@@ -10,6 +10,7 @@ tags:
 ---
 
 ![SIGIR ‘09](/assets/images/rank-dynamics/sigir09.jpg "SIGIR ‘09")
+
 On the heals of being mentioned in Professor Marti Hearst's [new book](/rank-dynamics/search-user-interfaces-mention/), we're thrilled to announce that the Association for Computing Machinery's Special Interest Group on Information Retrieval has selected Surf Canyon to present at [SIGIR 2009](http://sigir.org/sigir2009/). Considered one of the [most important conferences](http://en.wikipedia.org/wiki/Special_Interest_Group_on_Information_Retrieval) in the field of information retrieval, the event will be in Boston from July 19th-23rd. Mark Cramer, CEO, will be presenting the **[research paper](/assets/papers/SurfCanyonDemonstrationResearchPaper.pdf)** "Demonstration of Improved Search Result Relevancy Using Real-Time Implicit Relevance Feedback" at the [workshop](http://sigir.org/sigir2009/Program/workshops.html) "[Understanding the user](https://web.archive.org/web/20090331021056/http://uiir-2009.dfki.de/) - Logging and interpreting user interactions in information search and retrieval."
 
 During the submission process, one reviewer, an Associate Professor of Computer Science, had this to say:

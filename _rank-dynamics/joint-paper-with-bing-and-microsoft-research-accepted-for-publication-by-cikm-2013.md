@@ -9,6 +9,7 @@ tags:
 ---
 
 ![CIKM 2013](/assets/images/rank-dynamics/cikm-2013-logo.jpg)
+
 The 2013 ACM International Conference on Information and Knowledge Management ([CIKM](http://cikm2013.org/ "ACM International Conference on Information and Knowledge Management")) is [one of the major forums](http://en.wikipedia.org/wiki/CIKM "Wikipedia - Conference on Information and Knowledge Management") for research on database management, information retrieval, and knowledge management. As such, we are proud to announce that our latest research paper, entitled "**[Understanding How People Interact with Web Search Results that Change in Real-Time Using Implicit Feedback](/assets/papers/cikm13HowPeopleInteractWithSearch.pdf)**," co-authored with [Jin Young Kim](https://scholar.google.com/citations?user=SOJ0fy8AAAAJ&hl=en "Jin Young Kim") from Bing, [Jaime Teevan](http://research.microsoft.com/~teevan "Jaime Teevan") from Microsoft Research and [Dmitry Lagun](http://www.mathcs.emory.edu/~dlagun/ "Dmitry Lagun") from Emory University, has been accepted by the conference. Only 106 papers out of 848 submissions were selected, so the conference was very competitive.
 
 The data [once again](/rank-dynamics/evaluating-surf-canyons-technology-part-2/ "Evaluating Surf Canyon’s Technology") demonstrates the extent to which dynamically ranking search results in response to real-time user feedback dramatically improves relevance:

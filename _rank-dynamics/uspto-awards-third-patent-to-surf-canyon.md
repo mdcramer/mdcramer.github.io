@@ -8,6 +8,7 @@ tags:
 ---
 
 ![USPTO Logo](/assets/images/rank-dynamics/USPTO-Logo.jpg)
+
 We are delighted to announce that on Friday the USPTO awarded Surf Canyon its third patent, U.S. Patent No. 8,442,973, to be issued on May 14th, for "**[Real Time Implicit User Modeling for Personalized Search](https://patents.google.com/patent/US8442973)**." This is an important piece of intellectual property, as evidenced by the fact it has been referenced over 25 times by other patents issued to companies such as Google, Microsoft, Yahoo!, IBM and Samsung. The Abstract of the invention is as follows:
 
 > A method and apparatus for utilizing user behavior to immediately modify sets of search results so that the most relevant documents are moved to the top. In one embodiment of the invention, behavior data, which can come from virtually any activity, is used to infer the user's intent. The updated inferred implicit user model is then exploited immediately by re-ranking the set of matched documents to best reflect the information need of the user. The system updates the user model and immediately re-ranks documents at every opportunity in order to constantly provide the most optimal results. In another embodiment, the system determines, based on the similarity of results sets, if the current query belongs in the same information session as one or more previous queries. If so, the current query is expanded with additional keywords in order to improve the targeting of the results.
