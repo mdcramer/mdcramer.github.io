@@ -17,7 +17,7 @@ Nevertheless, the result interleaving in the 2nd experiment has the virtue of no
 
 As before, the data were impressive.
 
-[![eBay Interleaving Clicks](/assets/images/rank-dynamics/eBay-test-2-interleaving-clicks-2.png)](/rank-dynamics/eBay-test-2-interleaving-clicks-2.png)
+[![eBay Interleaving Clicks](/assets/images/rank-dynamics/eBay-test-2-interleaving-clicks-2.png)](/assets/images/rank-dynamics/eBay-test-2-interleaving-clicks-2.png)
 
 The x-axis is no longer users, but simply the cumulative number of results clicked beyond the top 10 in both the control (i.e. static) and treatment (i.e. dynamic) groups. The y-axis represents the cumulative number of results clicked in each of the respective groups, control and treatment. If our null hypothesis (that there is no difference in user preference between static or dynamic results) is true, then we would expect each group to receive half of the clicks and the two lines would be on top of each other. One can plainly see that this is not the case, but is the difference statistically significant?
 
