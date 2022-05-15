@@ -14,7 +14,7 @@ The mission of Rank Dynamics is to transform search into a dynamic experience wh
  - [Discoverying Discovery](/rank-dynamics/discovering-discovery/): an introduction to the product and how it works
  - [The Mossberg Column](/rank-dynamics/googles-searchwiki-surf-canyon-share-the-mossberg-solutions-column): Web Searches That Really Bear Fruit
  - [Where is Search Going?](/rank-dynamics/where-is-search-going-search-engine-land-interview-with-gordon-hotchkiss/): an interview with Gordon Hotchkiss
- - [Best Search Engine](/rank-dynamics/best-search-engine-winner/): About&#46;com Reader's Choice Award
+ - [Best Search Engine](/rank-dynamics/best-search-engine-winner/): Abo<span>ut.co</span>m Reader's Choice Award
  - [Selected for Oral Presentation at SIGIR '09](/rank-dynamics/selected-for-oral-presentation-at-sigir-09/)
  - [Joint paper with Bing and Microsoft Research Accepted for Publication by CIKM 2013](/rank-dynamics/joint-paper-with-bing-and-microsoft-research-accepted-for-publication-by-cikm-2013/)
  - [Evaluating Dynamic Ranking Technology](/rank-dynamics/evaluating-surf-canyons-technology-part-2/): up to 40% Improvement in Relevance
