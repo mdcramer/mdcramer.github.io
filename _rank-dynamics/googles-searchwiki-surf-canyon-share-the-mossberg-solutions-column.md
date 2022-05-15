@@ -23,7 +23,7 @@ The real-time _implicit_ personalization offered by Surf Canyon and the real-tim
 
 ![Wall Street Journal Screen Shot with Shadow](/assets/images/rank-dynamics/wsj-screen-shot-with-shadow.jpg)
 
-Update (1/14/09) - Katherine Boehret added a video. Here is what she had to say at the 3m20s mark:
+Update (1/14/09) - Katherine Boehret added a [video](https://www.wsj.com/articles/SB123189045689079109). Here is what she had to say at the 3m20s mark:
 
 > "At the end of the day, Google SearchWiki makes you do a lot of work. It might be beneficial for some people who want to save their searches, but Surf Canyon works with you as you go, on the fly. It works automatically and doesn’t make you do anything extra other than what you’re already doing."
 

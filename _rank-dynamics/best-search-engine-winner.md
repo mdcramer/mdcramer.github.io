@@ -10,7 +10,7 @@ tags:
 
 ![About.com Best Search Engine Logo](/assets/images/rank-dynamics/aboutcom-best-search-engine-logo.jpg "About.com Best Search Engine Logo")
 
-About.com has posted the winners of their 2010 Reader's Choice Awards and we're thrilled to announce that Surf Canyon won in the category of [Best Search Engine](https://web.archive.org/web/20100306020705/http://websearch.about.com/od/2010readerschoiceawards/ss/2010-readers-choice-awards-winners_10.htm). In their own words,
+About&#46;com has posted the winners of their 2010 Reader's Choice Awards and we're thrilled to announce that Surf Canyon won in the category of [Best Search Engine](https://web.archive.org/web/20100306020705/http://websearch.about.com/od/2010readerschoiceawards/ss/2010-readers-choice-awards-winners_10.htm). In their own words,
 
 > "The race for the Best Search Engine was intriguing, with a relatively unknown newcomer, [Surf Canyon](http://www.surfcanyon.com/), picking up 48% of the votes and beating out search engine powerhouses Google, Yahoo! and Bing."
 

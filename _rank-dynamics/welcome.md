@@ -14,13 +14,14 @@ The mission of Rank Dynamics is to transform search into a dynamic experience wh
  - [Discoverying Discovery](/rank-dynamics/discovering-discovery/): an introduction to the product and how it works
  - [The Mossberg Column](/rank-dynamics/googles-searchwiki-surf-canyon-share-the-mossberg-solutions-column): Web Searches That Really Bear Fruit
  - [Where is Search Going?](/rank-dynamics/where-is-search-going-search-engine-land-interview-with-gordon-hotchkiss/): an interview with Gordon Hotchkiss
- - [Best Search Engine](/rank-dynamics/best-search-engine-winner/): [About.com]() Reader's Choice Award
+ - [Best Search Engine](/rank-dynamics/best-search-engine-winner/): About&#46;com Reader's Choice Award
  - [Selected for Oral Presentation at SIGIR '09](/rank-dynamics/selected-for-oral-presentation-at-sigir-09/)
  - [Joint paper with Bing and Microsoft Research Accepted for Publication by CIKM 2013](/rank-dynamics/joint-paper-with-bing-and-microsoft-research-accepted-for-publication-by-cikm-2013/)
  - [Evaluating Dynamic Ranking Technology](/rank-dynamics/evaluating-surf-canyons-technology-part-2/): up to 40% Improvement in Relevance
  - [USPTO Awards Third Patent](/rank-dynamics/uspto-awards-third-patent-to-surf-canyon/)
- [//]: <> (https://stackoverflow.com/a/20885980/852795 for commenting in markdown)
- [//]: <> (https://github.com/TryGhost/Ghost/issues/9566 to remove auto hyperlinks)
+
+[comment]: <> (https://stackoverflow.com/a/20885980/852795 for adding comments to markdown)
+[comment]: <> (https://github.com/TryGhost/Ghost/issues/9566#issuecomment-723738249 for not auto-hyperlinking URLs)
 
 # Published Research
 [Demonstration of Improved Search Result Relevancy Using Real-Time Implicit Relevance Feedback](/assets/papers/SurfCanyonDemonstrationResearchPaper.pdf), SIGIR ’09, July 19-23, 2009, Boston, USA.
