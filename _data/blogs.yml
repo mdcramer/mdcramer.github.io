@@ -1,6 +1,10 @@
 # [name] values should be written in lower case
 # colors: https://github.com/Tapanila/Portable-Jekyll-Azure/blob/master/devkit/mingw/i686-w64-mingw32/include/gdiplus/gdipluscolor.h
 internal_blogs:
+  - name: apple 2 blog
+    description: Machine learning on an Apple ][+.
+    background: darkred
+    
   - name: deep speeling blog
     description: A recurrent neural network (RNN) using Tensorflow designed to correct spelling mistakes.
     # background: darkgoldenrod

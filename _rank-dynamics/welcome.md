@@ -21,7 +21,8 @@ The mission of Rank Dynamics is to transform search into a dynamic experience wh
  - [USPTO Awards Third Patent](/rank-dynamics/uspto-awards-third-patent-to-surf-canyon/)
 
 [comment]: <> (https://stackoverflow.com/a/20885980/852795 for adding comments to markdown)
-[comment]: <> (https://github.com/TryGhost/Ghost/issues/9566#issuecomment-723738249 for not auto-hyperlinking URLs)
+[comment]: <> (https://github.com/TryGhost/Ghost/issues/9566#issuecomment-723738249 for discussion on auto-hyperlinking URLs)
+[comment]: <> (https://stackoverflow.com/a/25707855/852795 for solution to auto-hyperlinking URLs)
 
 # Published Research
 [Demonstration of Improved Search Result Relevancy Using Real-Time Implicit Relevance Feedback](/assets/papers/SurfCanyonDemonstrationResearchPaper.pdf), SIGIR ’09, July 19-23, 2009, Boston, USA.

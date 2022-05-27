@@ -162,6 +162,9 @@ compress_html:
     envs: development
 
 collections:
+  apple-2-blog:
+    output: true
+    # permalink: /apple-2-blog/:path/
   deep-speeling-blog:
     output: true
     # permalink: /deep-speeling-blog/:path/
@@ -183,6 +186,14 @@ defaults:
       share: true
       related: true
 
+  # _apple-2-blog
+  - scope:
+      path: "_apple-2-blog"
+      type: apple-2-blog
+    values:
+      layout: single
+      permalink: /apple-2-blog/:title/
+      
   # _deep-speeling-blog
   - scope:
       path: "_deep-speeling-blog"
