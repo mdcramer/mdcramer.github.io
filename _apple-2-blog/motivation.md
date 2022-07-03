@@ -19,7 +19,7 @@ Everyone is aware of the impressive achievements of modern artificial intelligen
 
 As such, I am going to see what sort of machine learning I can do on my Apple ][+ computer from high school.
 
-[![](/assets/images/apple2/apple2-in-suitcase.jpg)](/assets/images/apple2/apple2-in-suitcase.jpg)
+![Apple \]\[+ computer in the suitcase](/assets/images/apple2/apple2-in-suitcase.jpg)
 
 The [specifications of the Apple \]\[+](https://en.wikipedia.org/wiki/Apple_II_series#Apple_II_Plus) are somewhat daunting:
 * Processor: 6502 microprocessor running at 1.023 MHz
