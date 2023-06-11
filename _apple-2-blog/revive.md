@@ -2,7 +2,6 @@
 title: "Bringing the clunker back to life"
 excerpt: "The old Apple ][+ had not been turned on in decades. It needed a lot of help to work again."
 tags:
-  - machine learning
   - restoration
 date: 2022-06-06
 last_modified_at: 2022-07-03
@@ -56,5 +55,7 @@ This exercise clearly indicated that the problem was somewhere with the RAM. Tak
 I tried to repair the broken pins with a soldering iron, but the work was too difficult. Eventually I decided that the hassle here was too great. Following [more advice](https://www.applefritter.com/content/replacement-ram-chips-tms4116-20nl) from the forum, I went online and purchased a full set of 24 replacement [TMS4116-20NL](https://www.questcomp.com/part/4/tms4116-20nl/408290989) RAM chips for $100, including shipping. They arrived in no time, with shiny pins, and worked like a charm. The machine booted immediately with no problems and I was able to run software off the new floppies I had purchased.
 
 ![Booting with new RAM](/assets/images/apple2/boot-with-new-ram.jpg)
+
+We have liftoff!
 
 In the meantime, with the help of my [new Twitter friend]((https://twitter.com/bzotto)), I tried to recover the old game from high school. That did not go as well.
