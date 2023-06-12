@@ -6,9 +6,11 @@ tags:
 date: 2023-06-11
 ---
 
-As mentioned in [Bringing the clunker back to life](/apple-2-blog/revive/), the original motivation was to resurrect a [game](https://mortalwayfare.com/in-the-beginning-there-was-basic/) that I wrote in high school. I was obsessed with the game [Ultima](https://en.wikipedia.org/wiki/Ultima_(series)), beginning with [The First Age of Darkness](https://en.wikipedia.org/wiki/Ultima_I:_The_First_Age_of_Darkness), and so spent countless hours developing my own version.
+As mentioned in [Bringing the clunker back to life](/apple-2-blog/revive/), the original motivation was to resurrect a [game](https://mortalwayfare.com/in-the-beginning-there-was-basic/) that I wrote in high school. I was obsessed with [Ultima](https://en.wikipedia.org/wiki/Ultima_(series)), beginning with [The First Age of Darkness](https://en.wikipedia.org/wiki/Ultima_I:_The_First_Age_of_Darkness), and so spent countless hours developing my own version.
 
 The game logic was written in BASIC but this was much too slow for the graphics. Therefore, I convinced my parents to drive me to a remote bookstore to pick up a book on Apple ][ assembly (there were not a lot of resources in those early days) and then taught myself how to develop assembly subroutines that could be called from BASIC. I had a 2D array which I used as a map and then moved [hand-crafted images](https://mortalwayfare.com/remnant-from-the-past/) directly to the graphics memory as the character moved around. This already difficult process was more complicated by the fact the computer's graphics memory was interleaved and the Apple CPU didn't have a multiply command. Fortunately, the book offered a routine that would accomplish this with bit shifting and addition.
+
+>Side note: After all these years, only today did I [learn](https://en.wikipedia.org/wiki/Ultima_I:_The_First_Age_of_Darkness#Development_and_release) that [Richard Garriott](https://en.wikipedia.org/wiki/Richard_Garriott) (aka Lord British) coded Ultima in BASIC while his friend Ken Arnold "wrote code in [assembly language](https://en.wikipedia.org/wiki/Assembly_language "Assembly language") for the tile-based graphics system, the first game in the genre to do so."
 
 To this day I'm pretty proud of this little piece of computer wizardry and would love to see it again.
 
@@ -24,7 +26,7 @@ For some unknown reason, my high school brain decided to just number the floppie
 
 ## A glimmer of hope on Twitter
 
-I don't recall how I came across [@bzotto](https://twitter.com/bzotto) Twitter thread about how he [resurrected his high school game](https://twitter.com/bzotto/status/1353797383201558531) by reconstructing the data from an old 5.25" floppy, but it renewed my hope. He purchased some [specialized hardware](https://twitter.com/bzotto/status/1353800316693606402) that move repeatedly moved the drive head back and forth by fractions of a track to try to pull off enough magnetic signal to reconstruct the data.
+I don't recall how I came across [@bzotto](https://twitter.com/bzotto)'s Twitter thread about how he [resurrected his high school game](https://twitter.com/bzotto/status/1353797383201558531) by reconstructing the data from an old 5.25" floppy, but it renewed my hope. He purchased some [specialized hardware](https://twitter.com/bzotto/status/1353800316693606402) that move repeatedly moved the drive head back and forth by fractions of a track to try to pull off enough magnetic signal to reconstruct the data.
 
 Turns out [@bzotto](https://twitter.com/bzotto) is a great guy and extremely generous with his time, so when I reached out with my story he offered to help.
 
@@ -42,8 +44,10 @@ As we patiently allowed the hardware and software to do its magic, something inc
 
 ## Disappointment
 
-Unfortunately, the old game floppy was not to be found. We were able to identify the contents of every floppy we tried, but it wasn't there. As they closed up the coffee shop there was still a handful of floppies remaining. [@bzotto](https://twitter.com/bzotto) graciously offered to check them out at home, but no luck. I had printouts of my code, but we never saved them. It's also disappointing that I never made a copy, but this is not how young people think. I'll have to be satisfied with just the memory of what I put together.
+Unfortunately, the old game floppy was not to be found. We were able to identify the contents of every floppy we tried, but it wasn't there. As they closed up the coffee shop there was still a handful of floppies remaining. [@bzotto](https://twitter.com/bzotto) graciously offered to check them out at home, but no luck. In high school I had many printouts of my code, but we never saved them. It's also disappointing that I never made a copy, but this is not how young people think. I'll have to be satisfied with just the memory of what I put together.
+
+What was the name of this game? In case anyone's curious, I never got that far. If I remember correctly, the name of the main file was just "game".
 
 ## What next?
 
-Nevertheless, I now have a [functional Apple ][+](/apple-2-blog/revive/) computer sitting on my desk. I don't have much time to devote to tinkering with an ancient piece of hardware, but it would be cool to see if I could run some modern machine learning algorithms on it. I'll be giving that some thought and will see what I can do...
+Nevertheless, I now have a [functional](/apple-2-blog/revive/) Apple ][+ computer sitting on my desk. I don't have much time to devote to tinkering with an ancient piece of hardware, but it would be cool to see if I could run some modern machine learning algorithms on it. I'll be giving that some thought and will see what I can do...
