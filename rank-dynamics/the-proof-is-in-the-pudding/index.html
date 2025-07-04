@@ -1,0 +1,457 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.6.0 by Michael Rose
+  Copyright 2017 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<title>The Proof is in the Pudding - Hackin’ and Tinkerin’</title>
+
+
+
+
+<meta name="description" content="Over the years at Rank Dynamics we have made considerable effort to “road test” our technology with real users whenever possible. The first opportunity came in 2008 when we studied how users with our browser extension selected results on Google. By using a result interleaving technique designed by Professor Thorsten Joachims to determine user preference between two competing ranking functions (i.e. our dynamically ranked results and Google’s native static results), we were able to demonstrate improvements in relevance of 30-40%. We packaged these results in a research paper which was eventually published by SIGIR.">
+
+
+
+
+<meta name="author" content="">
+
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="Hackin' and Tinkerin'">
+<meta property="og:title" content="The Proof is in the Pudding - Hackin’ and Tinkerin’">
+
+
+  <link rel="canonical" href="https://mdcramer.github.io/rank-dynamics/the-proof-is-in-the-pudding/">
+  <meta property="og:url" content="https://mdcramer.github.io/rank-dynamics/the-proof-is-in-the-pudding/">
+
+
+
+  <meta property="og:description" content="Over the years at Rank Dynamics we have made considerable effort to “road test” our technology with real users whenever possible. The first opportunity came in 2008 when we studied how users with our browser extension selected results on Google. By using a result interleaving technique designed by Professor Thorsten Joachims to determine user preference between two competing ranking functions (i.e. our dynamically ranked results and Google’s native static results), we were able to demonstrate improvements in relevance of 30-40%. We packaged these results in a research paper which was eventually published by SIGIR.">
+
+
+
+  <meta name="twitter:site" content="@markdcramer">
+  <meta name="twitter:title" content="The Proof is in the Pudding - Hackin’ and Tinkerin’">
+  <meta name="twitter:description" content="Over the years at Rank Dynamics we have made considerable effort to “road test” our technology with real users whenever possible. The first opportunity came in 2008 when we studied how users with our browser extension selected results on Google. By using a result interleaving technique designed by Professor Thorsten Joachims to determine user preference between two competing ranking functions (i.e. our dynamically ranked results and Google’s native static results), we were able to demonstrate improvements in relevance of 30-40%. We packaged these results in a research paper which was eventually published by SIGIR.">
+  <meta name="twitter:url" content="https://mdcramer.github.io/rank-dynamics/the-proof-is-in-the-pudding/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+  
+
+  
+
+
+
+  
+
+  
+
+
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2015-10-27T00:00:00-07:00">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end SEO -->
+
+
+<link href="https://mdcramer.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Hackin' and Tinkerin' Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://mdcramer.github.io/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav"><a class="site-title" href="/rank-dynamics/">rank dynamics</a>
+        <ul class="visible-links">
+          
+            <li class="masthead__menu-item"><a href="/">Home</a></li>
+            
+            
+<li>
+  <a href="https://github.com/mdcramer/mdcramer.github.io/tree/blog/_rank-dynamics"><i class="fa fa-fw fa-github" aria-hidden="true"></i>GitHub</a>
+</li>
+        </ul>
+        <button type="button">
+          <span class="visually-hidden">Toggle Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+    <div itemscope itemtype="http://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="https://mdcramer.github.io/assets/images/profilepic-small.jpg" class="author__avatar" alt="Mark Cramer" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name" itemprop="name">Mark Cramer</h3>
+    
+      <p class="author__bio" itemprop="description">
+        Product Management executive who enjoys hacking around with code in his free time, of which there is never, sadly, enough.
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Profile</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> <span itemprop="name">San Francisco</span>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/markdcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="https://www.facebook.com/markdcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/mcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/mdcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.stackoverflow.com/users/852795/mark-cramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-stack-overflow" aria-hidden="true"></i> Stackoverflow
+          </a>
+        </li>
+      
+
+      
+        
+          <li>
+            <a href="https://youtube.com/c/MarkCramerD" itemprop="sameAs">
+              <i class="fa fa-fw fa-youtube-square" aria-hidden="true"></i> YouTube
+            </a>
+          </li>
+        
+      
+
+      
+
+      
+        <li>
+          <a href="https://scholar.google.com/citations?user=vlo46P8AAAAJ" itemprop="sameAs">
+            <img src="/assets/images/googlescholar.svg" alt="googlescholar" class="profile_icon"> Google Scholar
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+  
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="The Proof is in the Pudding">
+    <meta itemprop="description" content="Over the years at Rank Dynamics we have made considerable effort to “road test” our technology with real users whenever possible. The first opportunity came in 2008 when we studied how users with our browser extension selected results on Google. By using a result interleaving technique designed by Professor Thorsten Joachims to determine user preference between two competing ranking functions (i.e. our dynamically ranked results and Google’s native static results), we were able to demonstrate improvements in relevance of 30-40%. We packaged these results in a research paper which was eventually published by SIGIR.">
+    <meta itemprop="datePublished" content="October 27, 2015">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">The Proof is in the Pudding
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <p>Over the years at <a href="http://www.RankDynamics.com">Rank Dynamics</a> we have made considerable effort to “road test” our technology with real users whenever possible. The first opportunity came in 2008 when we studied how users with our browser extension selected results on Google. By using a result interleaving technique designed by Professor Thorsten Joachims to determine user preference between two competing ranking functions (i.e. our dynamically ranked results and Google’s native static results), we were able to demonstrate <a href="/rank-dynamics/evaluating-surf-canyons-technology-part-2/">improvements in relevance of 30-40%</a>. We packaged these results in a <a href="/assets/papers/SurfCanyonDemonstrationResearchPaper.pdf">research paper</a> which was eventually published by SIGIR.</p>
+
+<p>Early this year, we had an opportunity to run a blind A/B test using eBay’s API. We drove people to an <a href="http://ebay.rankdynamics.com">eBay search engine</a> we created and populated with eBay’s products. Users were randomly and evenly split between control (with traditional static ranking as provided by the API) and treatment (with dynamic ranking as provided by our technology) groups. We did not dynamically generate <a href="/rank-dynamics/discovering-discovery/">indented recommendations</a>, but we implemented infinite scroll and dynamically ranked all of the results after the first 10. While we believe dynamic ranking will work with smaller result sets, for the purpose of this test we restricted our data set to queries that returned at least 200 results, which represented about half of the total queries.</p>
+
+<p>The data were impressive.</p>
+
+<p><a href="/assets/images/rank-dynamics/eBay-test-1-search-to-action-conversion-by-user-2.png"><img src="/assets/images/rank-dynamics/eBay-test-1-search-to-action-conversion-by-user-2.png" alt="" /></a></p>
+
+<p>Each user on the x-axis above was a trial and the y-axis represents cumulative bids on auctions (a strong indication of intent to buy, even if the auction isn’t won) or purchases of products, collectively referring to as “actions.” The red and blue lines are, respectively, the dynamic and static groups while the purple line is simply the difference between the two.</p>
+
+<p>Determining statistical significance with two binomial streams of data (each trial was considered a ‘success’ if the user completed one or more actions) was tricky. We employed Meeker’s <a href="http://www.jstor.org/stable/2346379?seq=1#page_scan_tab_contents">Conditional Sequential Test for the Equality of Two Binomial Proportions</a>. The null hypothesis was that there was no difference between the two proportions, or more simply that users in the dynamic and static groups would bid on auctions and purchase items at the same rate. After each trial (i.e. user) the test offers three possibilities:</p>
+
+<ol>
+  <li>If the log probability ratio reaches the upper critical limit (i.e. “significant difference”) then reject the null hypothesis (i.e. conclude that the two groups are not equal) and terminate the test.</li>
+  <li>If the log probability ratio reaches the lower critical limit (i.e. “no difference”) then accept the null hypothesis (i.e. conclude that there is no difference between the two groups) and terminate the test.</li>
+  <li>If neither critical limit is reached, conduct another trial and continue the test.</li>
+</ol>
+
+<p><a href="/assets/images/rank-dynamics/SBRT.png"><img src="/assets/images/rank-dynamics/SBRT.png" alt="" /></a></p>
+
+<p>After 3 months and over 40,000 users (20,000 in each group), the SBPT (Sequential Binomial Proportion Test) produced a statistically significant result and we were able to reject the null hypothesis. In other words, using eBay’s product search, dynamically ranking results produced a statistically significant increase in the rate at which users bid on auctions or purchase items. Specifically, on a per user basis, we measured the following:</p>
+
+<ul>
+  <li>+32% increase in sales</li>
+  <li>+30% increase in bids plus sales</li>
+  <li>+3.4% increase in clicks</li>
+  <li>+8.2% increase in clicks after the top 10 results</li>
+</ul>
+
+<p>Our work with Google’s results through our browser extension indicated that shopping was one category of search particularly amendable to dynamic ranking, which is confirmed by this eBay test. We will continue to put our technology through the ringer, but if queries on your shopping search produce hundreds of results, there is every reason to believe that dynamic ranking will work for you, too.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/demonstration" class="page__taxonomy-item" rel="tag">demonstration</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/research" class="page__taxonomy-item" rel="tag">research</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2015-10-27T00:00:00-07:00">October 27, 2015</time></p>
+        
+      </footer><section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?via=markdcramer&text=The+Proof+is+in+the+Pudding%20https%3A%2F%2Fmdcramer.github.io%2Frank-dynamics%2Fthe-proof-is-in-the-pudding%2F" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmdcramer.github.io%2Frank-dynamics%2Fthe-proof-is-in-the-pudding%2F" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+<!-- 
+  <a href="https://plus.google.com/share?url=https%3A%2F%2Fmdcramer.github.io%2Frank-dynamics%2Fthe-proof-is-in-the-pudding%2F" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a> -->
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmdcramer.github.io%2Frank-dynamics%2Fthe-proof-is-in-the-pudding%2F" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+  <nav class="pagination">
+    
+      <a href="https://mdcramer.github.io/rank-dynamics/welcome-to-rank-dynamics/" class="pagination--pager" title="Welcome to Rank Dynamics
+">Previous</a>
+    
+    
+      <a href="https://mdcramer.github.io/rank-dynamics/more-pudding/" class="pagination--pager" title="More Pudding
+">Next</a>
+    
+  </nav>
+</div><div class="page__comments">
+  
+    
+        <h4 class="page__comments-title">Leave a Comment</h4>
+        <section id="disqus_thread"></section>
+      
+</div></article>
+</div>
+
+
+    <div class="page__footer">
+      <footer>
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    <!-- 
+      <li><strong>Follow:</strong></li>
+     -->
+    
+      <li><a href="https://twitter.com/markdcramer"><i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+    
+
+    
+    <li>
+      <a href="https://www.linkedin.com/in/mcramer" itemprop="sameAs">
+        <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+      </a>
+    </li>
+    
+<li>
+  <a href="https://github.com/mdcramer/mdcramer.github.io/tree/blog/_rank-dynamics"><i class="fa fa-fw fa-github" aria-hidden="true"></i>GitHub</a>
+</li>
+    <li>
+      <a href="https://www.stackoverflow.com/users/852795/mark-cramer" itemprop="sameAs">
+        <i class="fa fa-fw fa-stack-overflow" aria-hidden="true"></i> Stackoverflow
+      </a>
+    </li>
+    
+
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=vlo46P8AAAAJ" itemprop="sameAs">
+        <img src="/assets/images/googlescholar.svg" alt="googlescholar" class="profile_icon"> Google Scholar
+      </a>
+    </li>
+  
+
+    <li><a href="https://mdcramer.github.io/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 Mark Cramer. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="https://mdcramer.github.io/assets/js/main.min.js"></script>
+
+
+
+
+  
+      
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://mdcramer.github.io/rank-dynamics/the-proof-is-in-the-pudding/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/rank-dynamics/the-proof-is-in-the-pudding"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://githubmdcramer.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+    
+
+
+    <script type="text/javascript" async 
+src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?
+config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+</html>
