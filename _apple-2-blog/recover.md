@@ -3,6 +3,7 @@ title: "Recovering the old game"
 excerpt: "The quest to recover my game from high school ended in vain, but the process was delightful."
 tags:
   - restoration
+  - Applesauce
 date: 2023-06-11
 ---
 
@@ -26,7 +27,7 @@ For some unknown reason, my high school brain decided to just number the floppie
 
 ## A glimmer of hope on Twitter
 
-I don't recall how I came across [@bzotto](https://twitter.com/bzotto)'s Twitter thread about how he [resurrected his high school game](https://twitter.com/bzotto/status/1353797383201558531) by reconstructing the data from an old 5.25" floppy, but it renewed my hope. He purchased some [specialized hardware](https://twitter.com/bzotto/status/1353800316693606402) that move repeatedly moved the drive head back and forth by fractions of a track to try to pull off enough magnetic signal to reconstruct the data.
+I don't recall how I came across [@bzotto](https://twitter.com/bzotto)'s Twitter thread about how he [resurrected his high school game](https://twitter.com/bzotto/status/1353797383201558531) by reconstructing the data from an old 5.25" floppy, but it renewed my hope. He purchased some [specialized hardware](https://twitter.com/bzotto/status/1353800316693606402) that repeatedly moved the drive head back and forth by fractions of a track to try to pull off enough magnetic signal to reconstruct the data.
 
 Turns out [@bzotto](https://twitter.com/bzotto) is a great guy and extremely generous with his time, so when I reached out with my story he offered to help.
 
@@ -44,7 +45,7 @@ As we patiently allowed the hardware and software to do its magic, something inc
 
 ## Disappointment
 
-Unfortunately, the old game floppy was not to be found. We were able to identify the contents of every floppy we tried, but it wasn't there. As they closed up the coffee shop there was still a handful of floppies remaining. [@bzotto](https://twitter.com/bzotto) graciously offered to check them out at home, but no luck. In high school I had many printouts of my code, but we never saved them. It's also disappointing that I never made a copy, but this is not how young people think. I'll have to be satisfied with just the memory of what I put together.
+Unfortunately, the old game floppy was not to be found. We were able to identify the contents of every floppy we tried, but the game wasn't there. As they closed up the coffee shop there were still a handful of floppies remaining. [@bzotto](https://twitter.com/bzotto) graciously offered to check them out at home, but no luck. In high school I had many printouts of my code, but we never saved them. It's also disappointing that I never made a copy, but this is not how young people think. I'll have to be satisfied with just the memory of what I put together.
 
 What was the name of this game? In case anyone's curious, I never got that far. If I remember correctly, the name of the main file was just "game".
 

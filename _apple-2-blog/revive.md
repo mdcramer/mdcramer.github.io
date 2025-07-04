@@ -3,6 +3,8 @@ title: "Bringing the clunker back to life"
 excerpt: "The old Apple ][+ had not been turned on in decades. It needed a lot of help to work again."
 tags:
   - restoration
+  - RAM
+  - memory
 date: 2022-06-06
 last_modified_at: 2022-07-03
 ---
@@ -18,7 +20,7 @@ After recovering the machine from my parent's house, where it spent decades in t
 
 After playing around with it a bit (swapping the floppy drives), I was able to get the BASIC prompt. I entered and ran a 1-line "HELLO WORLD", which worked. Then I smelled something awful and saw smoke coming out of the PSU. 
 
-![PSC fries and gives off smoke](/assets/images/apple2/psu-goes-up-in-smoke.jpg)
+![PSU fries and gives off smoke](/assets/images/apple2/psu-goes-up-in-smoke.jpg)
 
 Not having been powered on for decades, turns out a capacitor in the PSU dried out and fried.
 
