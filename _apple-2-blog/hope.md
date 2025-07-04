@@ -38,13 +38,13 @@ The new drive would also require some new cables to hook it up. They were inexpe
 
 The opportunity to give it a go arrived when we were invited to a dinner party at the Surdulescu’s. We plugged everything into Răzvan’s beefy homemade Windows desktop, grabbed a couple flutes of Champagne and got to work.
 
-![The full rig with Greaseweazle](/assets/images/apple2/rig-with-greaseweazle.jpeg)
+![The full rig with Greaseweazle](/assets/images/apple2/rig-with-greaseweazle.jpg)
 
 ## Problems with the backside
 
 The first thing I noticed was how quickly Greaseweazle was able to read data off the floppies. Unlike the [Applesauce](https://applesaucefdc.com/) USB disk controller that needed to grind back and forth to find the data using an original Apple ][+ floppy drive, Greaseweazle was able to find the floppy catalog in a second. (We used [FluxEngine](https://cowlark.com/fluxengine/index.html), seen below, which is different from the command line utility that comes with the GreaseWeazle, to test the directory of files on the disk. If that didn’t work, it had an option to read the flux off the disk which involved grinding back and forth to try to locate data. We had to do that quite a few times.)
 
-![FlexEngine on the monitor](/assets/images/apple2/greaseweazle-monitor.jpeg)
+![FlexEngine on the monitor](/assets/images/apple2/greaseweazle-monitor.jpg)
 
 While we were able to find quite a bit of data, including a few titles from [Beagle Bros](https://en.wikipedia.org/wiki/Beagle_Bros), it seems the Apple ][+ may have used different kinds of data encodings to lay the sectors on the disk. Even if Greaseweazle can read the magnetic flux, the actual semantics of the flux (what sector goes where and in what order) can be opaque and the FluxEngine software might not interpret them in the right way. This might require more investigation.
 
@@ -52,12 +52,12 @@ After checking a few disks to verify that we were getting the same results as th
 
 One solution was to cut another hole in the floppy case. Given the proximity to the center of the floppy, however, this risked damaging the media. We explored some software solutions but then eventually decided it would be easiest to rip open the floppy and then manually flip the media. I had never opened a floppy before, but it was a relatively easy process. The old plastic was brittle and frequently crumbled in my fingers, but we were able to make it work.
 
-![Opening a floppy disk](/assets/images/apple2/open-floppy-disk.jpeg)
+![Opening a floppy disk](/assets/images/apple2/open-floppy-disk.jpg)
 
-![Looking at the floppy media](/assets/images/apple2/floppy-media.jpeg)
+![Looking at the floppy media](/assets/images/apple2/floppy-media.jpg)
 
 ## Disappointment redux
 
 Unfortunately, the result was no different from my previous attempt: there was no game to be found. The process wasn’t relatively quick. We were able to rip open and flip the media on about half of the floppies. There are ~25 to go so perhaps we’ll get to those one day. And then I’ll just discard everything. In the meantime, hopefully I’ll have some time to get back to deep learning…
 
-![Deep learning on the Apple 2+](/assets/images/apple2/deep-learning.jpeg)
+![Deep learning on the Apple 2+](/assets/images/apple2/deep-learning.jpg)
