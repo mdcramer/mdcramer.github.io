@@ -28,23 +28,23 @@ While Răzvan had the latest v4.1 Greaseweazle [hardware](https://github.com/kei
 
 No problem. A few eBay searches later, I purchased this Toshiba 5¼" 1.2Mb Internal Floppy Disk Drive ND-08DE for $76. There were different DOS formats for the Apple ][+, but this capacity is significantly greater than the whopping 140Kb with Apple DOS 3.3.
 
-![The Toshiba 5.25" floppy drive](/assets/images/apple2/toshiba-floppy-drive.jpg)
+![The Toshiba 5.25" floppy drive](/assets/images/apple2/toshiba-floppy-drive.jpg "Toshiba 5.25" floppy drive")
 
 The new drive would also require some new cables to hook it up. They were inexpensive. Răzvan already had a few of the necessary cables and very helpfully made sure that I bought all the right stuff.
 
-![Molex 4 pin female to female connector](/assets/images/apple2/molex-4pin-ftof.jpeg)
+![Molex 4 pin female to female connector](/assets/images/apple2/molex-4pin-ftof.jpeg "Molex 4 pin female to female connector")
 
-![36" Universal 34-Pin Floppy Drive Ribbon Cable for 3.5" and/or 5.25" Drives](/assets/images/apple2/floppy-ribbon.jpeg)
+![36" Universal 34-Pin Floppy Drive Ribbon Cable for 3.5" and/or 5.25" Drives](/assets/images/apple2/floppy-ribbon.jpeg "36" Universal 34-Pin Floppy Drive Ribbon Cable")
 
 The opportunity to give it a go arrived when we were invited to a dinner party at the Surdulescu’s. We plugged everything into Răzvan’s beefy homemade Windows desktop, grabbed a couple flutes of Champagne and got to work.
 
-![The full rig with Greaseweazle](/assets/images/apple2/rig-with-greaseweazle.jpg)
+![The full rig with Greaseweazle](/assets/images/apple2/rig-with-greaseweazle.jpg "Full rig with Greaseweazle")
 
 ## Problems with the backside
 
 The first thing I noticed was how quickly Greaseweazle was able to read data off the floppies. Unlike the [Applesauce](https://applesaucefdc.com/) USB disk controller that needed to grind back and forth to find the data using an original Apple ][+ floppy drive, Greaseweazle was able to find the floppy catalog in a second. (We used [FluxEngine](https://cowlark.com/fluxengine/index.html), seen below, which is different from the command line utility that comes with the GreaseWeazle, to test the directory of files on the disk. If that didn’t work, it had an option to read the flux off the disk which involved grinding back and forth to try to locate data. We had to do that quite a few times.)
 
-![FlexEngine on the monitor](/assets/images/apple2/greaseweazle-monitor.jpg)
+![FlexEngine on the monitor](/assets/images/apple2/greaseweazle-monitor.jpg "FlexEngine")
 
 While we were able to find quite a bit of data, including a few titles from [Beagle Bros](https://en.wikipedia.org/wiki/Beagle_Bros), it seems the Apple ][+ may have used different kinds of data encodings to lay the sectors on the disk. Even if Greaseweazle can read the magnetic flux, the actual semantics of the flux (what sector goes where and in what order) can be opaque and the FluxEngine software might not interpret them in the right way. This might require more investigation.
 
