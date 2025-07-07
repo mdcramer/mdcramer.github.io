@@ -7,12 +7,11 @@ tags:
 date: 2025-07-06
 ---
 
-# In the beginning, there was data
-Crestfallen by the seeming impossibility of [recovering](/apple-2-blog/recover/) by beloved [game](https://mortalwayfare.com/remnant-from-the-past/) from high school, I turned my attention to the original [motivation](apple-2-blog/motivation/): developing machine learning on the Apple ][+. Grabbing my manuals, I got to work.
+Crestfallen by the seeming impossibility of [recovering](/apple-2-blog/recover/) by beloved [game](https://mortalwayfare.com/remnant-from-the-past/){:target="_blank"} from high school, I turned my attention to the original [motivation](apple-2-blog/motivation/): developing machine learning on the Apple ][+. Grabbing my manuals, I got to work.
 
 ![Apple 2+ manuals](/assets/images/apple2/manuals.jpg "Apple 2+ manuals")
 
-Every solid machine learning project begins with data. My old clunker, however, is cut off from the world. I never had a modem but I recall one of my best friends using the modem on his Apple ][ to hack long distance access codes. (He since went on to pursue a successful career in telecommunications... naturally.) Even if I had a modem, what would I connect it to? Do those services still even exists? (I'm sure they do but I'm not going to figure that out today.) In the meantime, the plan is to create synthetic data locally.
+Every solid machine learning project begins with data. My old clunker, however, is cut off from the world. I never had a modem but I recall one of my best friends using the modem on his Apple&nbsp][ to hack long distance access codes. (He since went on to pursue a successful career in telecommunications... naturally.) Even if I had a modem, what would I connect it to? Do those services still even exists? (I'm sure they do but I'm not going to figure that out today.) In the meantime, the plan is to create synthetic data locally.
 
 I'm sure everyone is familiar with the [chart](https://scikit-learn.org/stable/auto_examples/classification/plot_classifier_comparison.html) comparing different classification algorithms. Since two-dimensional binary classification seems like a great place to start, I'll need a simple way to graph the data.
 
@@ -152,8 +151,6 @@ Putting it all together, it takes the Apple ][+ about a minute to generate and p
 Watch this video if you'd like to see it run, in all it's glory.
 
 [![Video of Apple2+ synthesizing data](https://img.youtube.com/vi/xi876Gqt4jk/0.jpg)](https://youtube.com/shorts/xi876Gqt4jk "Video of Apple][+ synthesizing data")
-
-https://youtube.com/shorts/xi876Gqt4jk?feature=share
 
 Now that this is out of the way, we'll start by implementing one of the simplest and easiest to understand machine learning algorithms.
 
