@@ -16,7 +16,7 @@ Every solid machine learning project begins with data. My old clunker, however, 
 
 I'm sure everyone is familiar with the [chart](https://scikit-learn.org/stable/auto_examples/classification/plot_classifier_comparison.html) comparing different classification algorithms. Since two-dimensional binary classification seems like a great place to start, I'll need a simple way to graph the data.
 
-![Classifier comparison](/assets/images/apple2/sphx_glr_plot_classifier_comparison_001.png "Classifier comparison)
+![Classifier comparison](/assets/images/apple2/sphx_glr_plot_classifier_comparison_001.png "Classifier comparison")
 
 Fortunately, the Apple ][+ comes with a high-resolution graphics screen (`HGR`) that is 280 pixels across by 160 pixels high. (There is another mode with 192 vertical pixels but I wanted leave the bottom 4 lines of the text window visible for running output.) There are [8 color options](https://en.wikipedia.org/wiki/Apple_II_graphics#High-Resolution_%28Hi-Res%29_graphics) for each pixel, but I have a green screen monitor, so I set everything to `HCOLOR=7` (white2).
 
@@ -47,7 +47,7 @@ Deciding to stick to the positive quadrant, I wrote a subroutine (Apple BASIC do
 ```
 The first `FOR I` loop adds tick marks along the y-axis. I decided to get fancy and add elongated tick marks at every 5th unit and even longer ticks marks at every 10 unit. I use `J` to count the ticks. The second `FOR I` loop does the same for the x-axis. The final result looks like this:
 
-[insert image of axes]
+![x- and y-axis of graph](/assets/images/apple2/axis.jpg)
 
 ## Synthesizing the data
 
@@ -79,7 +79,8 @@ With a particular fondness for all thing [Gaussian](https://en.wikipedia.org/wik
 ### Box-Muller to the rescue
 The Apple ][+ can generate uniform random variables from 0 to 0.999999999 using `RND()`, however, to get standard normal random variables we'll have to use the [Box-Muller](https://en.wikipedia.org/wiki/Box%E2%80%93Muller_transform) transform.
 
-Given two independent samples, $u_1$ and $u_2$, chosen from a uniform distribution on the unit interval (0, 1), we can get two independent random variables, $z_0$ and $z_1$, with a standard normal distribution with the following:
+Given two independent samples, \\u_1\\ and \\u_2\\, chosen from a uniform distribution on the unit interval (0, 1), we can get two independent random variables, \\z_0\\ and \\z_1\\, with a standard normal distribution with the following:
+
 $$z_0 = R \cos(\theta) = \sqrt(-2 \ln(u_1)) \cos(2 \pi u_2) \\
 z_1 = R \sin(\theta) = \sqrt(-2 \ln(u_1)) \sin(2 \pi u_2) $$
 
@@ -90,11 +91,12 @@ Here is the code to do that.
 920 U2 = RND(1)
 930 R = SQR(-2 * LOG(U1))
 940 TH = 2 * PI * U2
-950 Z1 = R * COS(TH)
-960 Z2 = R * SIN(TH)
+950 Z0 = R * COS(TH)
+960 Z1 = R * SIN(TH)
 970 RETURN
 ```
-From there, to obtain a 2D Gaussian with mean $\mu_x, \mu_y$ and covariance matrix $\Sigma$, we'll need to apply the following, where $\sigma_x$ and $\sigma_y$ are the standard deviations in the $x$ and $y$ directions, and $\rho$ is the correlation coefficient:
+From there, to obtain a 2D Gaussian with mean \\ \mu_x, \mu_y \\ and covariance matrix \\ \Sigma \\, we'll need to apply the following, where \\ \sigma_x\\ and \\ \sigma_y\\ are the standard deviations in the \\x\\ and \\y\\ directions, and \\ \rho\\ is the correlation coefficient:
+
 $$x = \mu_x + \sigma_x z_1 \\
 y = \mu_y + \rho \sigma_y z_1 + \sqrt(1 - \rho^2) \sigma_y z_2$$
 
@@ -122,7 +124,7 @@ Here is the code that generates all the samples using these transformations.
 390 NEXT I
 400 END
 ```
-I decided to store the data samples in `AX%` and `BX%` as integers to save on memory. Since they are all randomly generated, the extra precision won't make much of a difference anyway. I'm using 2D arrays where the first axis is the number of samples (e.g., `AN`) and the second axis is the feature dimension (e.g., 2 for $x$ and $y$).
+I decided to store the data samples in `AX%` and `BX%` as integers to save on memory. Since they are all randomly generated, the extra precision won't make much of a difference anyway. I'm using 2D arrays where the first axis is the number of samples (e.g., `AN`) and the second axis is the feature dimension (e.g., 2 for \\x\\ and \\y\\).
 
 You can see calling `GOSUB 700` and `GOSUB 800` to plot the points. Here is the final code for that.
 ```basic
@@ -143,13 +145,15 @@ You can see calling `GOSUB 700` and `GOSUB 800` to plot the points. Here is the 
 I first verify that the data point is on the visible region of the graph (plotting off the screen will throw an error) and then draw either a "+" or a "□".
 
 ## Running the code
-Putting it all together, it takes the Apple ][+ about ... seconds to generate and plot 150 data points. The end result looks like this.
+Putting it all together, it takes the Apple ][+ about a minute to generate and plot 150 data points. The end result looks like this.
 
-[image of final screen]
+![Final plot of synthesized data](/assets/images/apple2/final-plot.jpg "Final plot of synthesized data")
 
 Watch this video if you'd like to see it run, in all it's glory.
 
-[youtube video]
+[![Video of Apple2+ synthesizing data](https://img.youtube.com/vi/xi876Gqt4jk/0.jpg)](https://youtube.com/shorts/xi876Gqt4jk "Video of Apple][+ synthesizing data")
+
+https://youtube.com/shorts/xi876Gqt4jk?feature=share
 
 Now that this is out of the way, we'll start by implementing one of the simplest and easiest to understand machine learning algorithms.
 
