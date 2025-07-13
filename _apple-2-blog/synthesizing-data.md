@@ -23,7 +23,7 @@ Fortunately, the Apple ][+ comes with a high-resolution graphics screen (`HGR`) 
 
 Deciding to stick to the positive quadrant, I wrote a subroutine (Applesoft BASIC does not have methods) to simply display the axes. Interestingly, coordinate (0,0) is the upper left corner of the screen while (279,159) is the lower right, so `HPLOT 0,159 TO 279,159` draws the x-axis.
 
-```vb
+```bbcbasic
     500 REM  == SET GRAPHICS AND DRAW Y AXIS WITH TICK MARKS ==
     510 HGR : HCOLOR=7
     520 HPLOT 0,159 TO 279,159
@@ -52,7 +52,7 @@ The first `FOR I` loop adds tick marks along the y-axis. I decided to get fancy 
 
 With a particular fondness for all thing [Gaussian](https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss){:target="_blank"}, I decided to create two sets of data points with [Gaussian distributions](https://en.wikipedia.org/wiki/Normal_distribution){:target="_blank"}. They look pretty and they're fun.
 
-```vb
+```bbcbasic
     10  HOME : VTAB 21
     20  PI = 3.14159265
     30  GOSUB 500 : REM  DRAW AXIS
@@ -85,7 +85,7 @@ z_1 = R \sin(\theta) = \sqrt{-2 \ln(u_1)} \sin(2 \pi u_2) $$
 
 Here is the code to do that.
 
-```vb
+```bbcbasic
 900 REM  == BOX-MULLER TRANSFORM ==
 910 U1 = RND(1)
 920 U2 = RND(1)
