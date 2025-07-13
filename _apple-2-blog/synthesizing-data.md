@@ -23,7 +23,7 @@ Fortunately, the Apple ][+ comes with a high-resolution graphics screen (`HGR`) 
 
 Deciding to stick to the positive quadrant, I wrote a subroutine (Applesoft BASIC does not have methods) to simply display the axes. Interestingly, coordinate (0,0) is the upper left corner of the screen while (279,159) is the lower right, so `HPLOT 0,159 TO 279,159` draws the x-axis.
 
-```vbnet
+```vb
     500 REM  == SET GRAPHICS AND DRAW Y AXIS WITH TICK MARKS ==
     510 HGR : HCOLOR=7
     520 HPLOT 0,159 TO 279,159
@@ -52,7 +52,7 @@ The first `FOR I` loop adds tick marks along the y-axis. I decided to get fancy 
 
 With a particular fondness for all thing [Gaussian](https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss){:target="_blank"}, I decided to create two sets of data points with [Gaussian distributions](https://en.wikipedia.org/wiki/Normal_distribution){:target="_blank"}. They look pretty and they're fun.
 
-```vbnet
+```vb
     10  HOME : VTAB 21
     20  PI = 3.14159265
     30  GOSUB 500 : REM  DRAW AXIS
@@ -73,7 +73,7 @@ With a particular fondness for all thing [Gaussian](https://en.wikipedia.org/wik
 ```
 `HOME` clears the screen and `VTAB 21` moves the cursor to the 21st text line on the screen, which will be the first line under the graphics after `HGR`. The Apple ][+ doesn't come with a constant for π so I set that up using all the precision available.
 
-`AM%` is a two element array of integers to store, respectively, the x-mean and y-mean values for the A data set. (The % sign makes the variable an integer which save space but actually reduced performance because mathematical operations on the Apple ][+ convert integers to real numbers and then back again.) `AS%` does the same for the x- and y-standard deviations. `AC` is a real number correlation coefficient ∈ [-1, 1]. Finally, `AN` is the number of elements in the A dataset. The corresponding B data set hyperparameters are similar. (In Applesoft BASIC only the first two characters of a variable name are 'considered' so you have to be careful of collisions.)
+`AM%` is a two element array of integers to store, respectively, the x-mean and y-mean values for the A data set. (The % sign makes the variable an integer which save space but actually reduced performance because mathematical operations on the Apple ][+ convert integers to real numbers and then back again.) `AS%` does the same for the x- and y-standard deviations. `AC` is a real number correlation coefficient ∈ [-1, 1]. Finally, `AN` is the number of elements in the A dataset. The corresponding B data set hyperparameters are similar. (In Applesoft BASIC only the [first two characters](https://youtu.be/PHfKCxjsmos?si=lVgpeslJ8ZBiRaAl&t=39) of a variable name are 'considered' so you have to be careful of collisions.)
 
 ### Box-Muller to the rescue
 The Apple ][+ can generate uniform random variables from 0 to 0.999999999 using `RND()`, however, to get standard normal random variables we'll have to use the [Box-Muller](https://en.wikipedia.org/wiki/Box%E2%80%93Muller_transform){:target="_blank"} transform.
@@ -84,7 +84,8 @@ $$z_0 = R \cos(\theta) = \sqrt{-2 \ln(u_1)} \cos(2 \pi u_2) \\
 z_1 = R \sin(\theta) = \sqrt{-2 \ln(u_1)} \sin(2 \pi u_2) $$
 
 Here is the code to do that.
-```vbnet
+
+```vb
 900 REM  == BOX-MULLER TRANSFORM ==
 910 U1 = RND(1)
 920 U2 = RND(1)
@@ -96,11 +97,12 @@ Here is the code to do that.
 ```
 From there, to obtain a 2D Gaussian with mean \\(\mu_x, \mu_y\\) and covariance matrix \\(\Sigma\\), we'll need to apply the following, where \\(\sigma_x\\) and \\(\sigma_y\\) are the standard deviations in the \\(x\\) and \\(y\\) directions, and \\(\rho\\) is the correlation coefficient:
 
-$$x = \mu_x + \sigma_x z_1 \\
-y = \mu_y + \rho \sigma_y z_1 + \sqrt{1 - \rho^2} \sigma_y z_2$$
+$$x = \mu_x + \sigma_x z_0 \\
+y = \mu_y + \rho \sigma_y z_0 + \sqrt{1 - \rho^2} \sigma_y z_1$$
 
 Here is the code that generates all the samples using these transformations.
-```vbnet
+
+```bbcbasic
 200 DIM AX%(AN,2)
 210 DIM BX%(BN,2)
 220 FOR I = 1 TO AN
@@ -126,7 +128,8 @@ Here is the code that generates all the samples using these transformations.
 I decided to store the data samples in `AX%` and `BX%` as integers to save on memory. Since they are all randomly generated, the extra precision won't make much of a difference anyway. I'm using 2D arrays where the first axis is the number of samples (e.g., `AN`) and the second axis is the feature dimension (e.g., 2 for \\(x\\) and \\(y\\)).
 
 You can see calling `GOSUB 700` and `GOSUB 800` to plot the points. Here is the final code for that.
-```vbnet
+
+```bbcbasic
 700 REM == DRAW + AT X,Y ==
 710 IF X% < 1 OR X% > 270 THEN RETURN
 720 IF Y% < 1 OR Y% > 150 THEN RETURN
