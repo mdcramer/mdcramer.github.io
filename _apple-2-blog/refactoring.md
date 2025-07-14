@@ -8,11 +8,15 @@ tags:
 date: 2025-07-13
 ---
 
-Well, that didn't take too long. When I think about when I was developing [Mortal Wayfare](https://mortalwayfare.com/){:target="_blank"}, I frequently recall the amount of time I spent refactoring. I passed hours just looking at the code, trying to figure out how to better represent what I was trying to accomplish which improving the organization. Some days I would do nothing but this. Having never been a professional software developer, I'm not sure to what extent this is normal, but I found the process to be very helpful.
+Well, that didn't take too long. When I was developing [Mortal Wayfare](https://mortalwayfare.com/){:target="_blank"}, I recall frequently passing hours just looking at the code, trying to figure out how to better represent what I was trying to accomplish while improving the organization. (Should this method go in a different class? Is there a better name for this variable? Should I break this code out into a function?...) Some days I would do nothing but this. Having never been a professional software developer, I'm not sure to what extent this is normal, but I found the process to be very helpful.
 
 I suppose there's a balance between planning out what you're going to do and just getting started. For my this project, I leaned toward the latter. As such, after the first pass I already decided to change it up. More specifically, the first thing I decided to do was, rather than have a different array for each class of data, move everything into a single array. The reason is that, during training, this will facilitate looping over all the data.
 
 Quick note on line numbers: refactoring BASIC almost _always_ consists of changing line numbers. As such, this code is not going to match up with previous posts. Hopefully that won't be too confusing.
+
+## Refactoring the hyperparameters
+
+To make that happen, I start by moving all of my generator hyperparameters into a single array, `GE(..,..)`, where the first axis is the class. The second axis contains, respectively, \\(u_{x_0}, u_{x_1}, \sigma_{x_0}, \sigma_{x_1}, \rho\\) and \\(\sqrt{1 - \rho^2}\\). (See [Synthesizing data](/apple-2-blog/synthesizing-data/) for details.) The last element is purely for performance since this quantity will need to be frequently calculated. (Upon further refection, I could have used \\(\sqrt{1 - \rho^2} \sigma_{x_1}\\) but this is a small optimization for later.)
 
 ```bbcbasic
 100 REM == HYPERPARAMETERS ==
@@ -42,7 +46,13 @@ Quick note on line numbers: refactoring BASIC almost _always_ consists of changi
 310 GE(1,5) = SQR(1 - GE(1,4) ^ 2)
 320 REM == END HYPERPARAMETERS ==
 ```
-To make that happen, I start by moving all of my generator hyperparameters into a single array, `GE(..,..)`, where the first axis is the class. The second axis contains, respectively, \\(u_{x_0}, u_{x_1}, \sigma_{x_0}, \sigma_{x_1}, \rho\\) and \\(\sqrt{1 - \rho^2}\\). (See [Synthesizing data](/apple-2-blog/synthesizing-data/) for details.) The last element is purely for performance since this quantity will need to be frequently calculated. Upon further refection, I could have used \\(\sqrt{1 - \rho^2} \sigma_{x_1}\\) but this is a small optimization for later.
+Note: here is a funny thing with Applesoft BASIC arrays. I couldn't remember if there was 0- or 1-indexed. Turns out, they are both! `DIM A(3)` will create an array of length 4 which goes from index 0 to 3. I can't recall seeing anything like that anywhere else. So, I use `DIM GE(KN-1,4)` because I want the first axis to have `KN` elements and the second axis to have 5. Funny.
+
+Another note: Applesoft BASIC only uses the first two characters of a variable names, however, `KN` and `KN%(..)` are considered different.
+
+## Generating the samples
+
+After counting up the total number of samples, I then create `DS%(..,..)` which replaces `AX%(..)` and `BX%(..)`. The first axis contains the samples, of which there are `NS` in total. The second axis is, respectively, \\(x_0, x_1, \hat{y}\\) and \\(y\\). \\(\hat{y}\\) is the label (i.e., the class) and \\(y\\) is the prediction, which we'll get to later. Having all the data in a single array will facilitate generating and training.
 
 ```bbcbasic
 330 NS = 0: REM TOTAL # SAMPLES
@@ -54,7 +64,7 @@ To make that happen, I start by moving all of my generator hyperparameters into 
 380 REM -- # - X0, X1, Y-HAT, Y --
 390 DIM DS%(NS - 1,3)
 ```
-After counting up the total number of samples, I then create `DS%(..,..)` which replaces `AX%(..)` and `BX%(..)`. The first axis contains the samples, of which there are `NS` in total. The second axis is, respectively, \\(x_0, x_1, \hat{y}\\) and \\(y\\). \\(\hat{y}\\) is the label (i.e., the class) and \\(y\\) is the prediction, which we'll get to later. Having all the data in a single array will facilitate generating and training.
+Since I'd like for my data to be randomly sampled, rather than scrambled after the fact, I decided to use 'adaptive quota sampling' to generate them randomly while ending up with the appropriate quantities. I could have simply taken the end proportion of each class and use that to create probabilities during generation but then there would be no guarantee then the final number of samples for each class would be correct.
 
 ```bbcbasic
 400 REM -- REMAINING SAMPLES COUNT
@@ -91,13 +101,15 @@ After counting up the total number of samples, I then create `DS%(..,..)` which 
 700   ON K + 1 GOSUB 1200,1300: REM PLOT SAMPLE
 710 NEXT
 ```
-Since I'd like for my data to be randomly sampled, rather than scrambled after the fact, I decided to use 'adaptive quota sampling' to generate them randomly while ending up with the appropriate quantities. I could have simply taken the end proportion of each class and use that to create probabilities during generation but then there would be no guarantee then the final number of samples for each class would be correct.
-
 `RK%(..)` holds the remaining number of samples to be generated for each class. Lines 490 to 550 then produce a random number `P%` which is from 0 to the number of remaining samples to generate and then figures out which class this should be based on the remaining number of samples to be generated for each. The beauty of this is that the probably of generating a sample in each class will be a function of how many remaining samples need to be generated. It took a while to debug, but in the end this produces exactly the number of samples in each class as specified in the hyperparameters.
 
 The code from lines 580 to 690 is the same as previously, however, the class-specific variables have been replaced by `GE(..,..)`, as mentioned above. Also, I changed `X%` and `Y%` to `XO%` and `X1%` to avoid confusion and be more consistent with the \\(Y = \theta^T X\\) literature.
 
-Line 700 is nifty. I don't recall using `ON...GOSUB` in high school but it enables branching based on the argument. I use `K+1` since the first class is \\(0\\) and a zero argument doesn't branch. For the moment, this only supports two classes.
+Line 700 is nifty. I don't recall using `ON..GOSUB` in high school but it enables branching based on the argument. I use `K+1` since the first class is \\(0\\) and a zero argument doesn't branch. For the moment, this only supports two classes.
+
+### Counting the samples
+
+For debugging purposes, I added some code to count the number of samples in each class to make sure it matched the hyperparameters. In the end, I decided to leave it. The loop is actually a bit slow but it's only run once.
 
 ```bbcbasic
 720 REM == COUNT SAMPLES OF EACH CLASS TO VERIFY RESULT ==
@@ -112,9 +124,10 @@ Line 700 is nifty. I don't recall using `ON...GOSUB` in high school but it enabl
 810 NEXT
 820 END
 ```
-For debugging purposes, I added some code to count the number of samples in each class to make sure it matched the hyperparameters. In the end, I decided to leave it. The loop is actually a bit slow but it's only run once.
 
-The only remaining tweaks were for the plotting routines. The two routines below, which are called from the `ON...GOSUB` in line 700, are updated to use `XO%` and `X1%`. The rest is the same.
+## Fixing the plotting routines
+
+The only remaining tweaks were for the plotting routines. The two routines below, which are called from the `ON..GOSUB` in line 700, are updated to use `XO%` and `X1%`. The rest is the same.
 
 ```bbcbasic
 1200 REM == DRAW + AT X0, X1 ==
@@ -134,6 +147,9 @@ The only remaining tweaks were for the plotting routines. The two routines below
 1360 HPLOT X0% - 1,X1% + 1 TO X0% + 1,X1% + 1
 1370 RETURN
 ```
+
+## Testing Irwin-Hall as an alternative to Box-Muller
+
 The final chunk of code is interesting. After sharing my [Box-Muller](/apple-2-blog/synthesizing-data#Box-Muller-to-the-rescue/) routine with my friend, [Răzvan Surdulescu](https://www.linkedin.com/in/surdules/), he suggested using the [Irwin-Hall Distribution](https://en.wikipedia.org/wiki/Irwin%E2%80%93Hall_distribution). `SQR` and `COS` are expensive operations in BASIC and Irwin-Hall [approximates a normal distribution](https://en.wikipedia.org/wiki/Irwin%E2%80%93Hall_distribution#Approximating_a_Normal_distribution) by sampling 12 uniform random numbers.
 
 ```bbcbasic
@@ -150,3 +166,11 @@ The final chunk of code is interesting. After sharing my [Box-Muller](/apple-2-b
 1580 NEXT
 ```
 I gave it a go and ran a comparison by generating 500 pairs of random numbers with each. This took 63s with Box-Muller and 90s with Irwin-Hall, so I will stick with the former. That being said, this was a nifty idea.
+
+## An updated final plot
+
+The final result looks pretty much the same as before but it's flipped horizontally. The new data structure, however, will make implementing ML much easier.
+
+![Updated plot of synthesized data](/assets/images/apple2/updated-final-plot.jpg "Updated final plot of synthesized data")
+
+Now onto implementing the simplest and easiest to understand machine learning algorithm...

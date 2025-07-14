@@ -15,7 +15,7 @@ Every solid machine learning project begins with data. My old clunker, however, 
 
 I'm sure everyone is familiar with the [chart](https://scikit-learn.org/stable/auto_examples/classification/plot_classifier_comparison.html){:target="_blank"} comparing different classification algorithms. Since two-dimensional binary classification seems like a great place to start, I'll need a simple way to graph the data.
 
-![Classifier comparison](/assets/images/apple2/sphx_glr_plot_classifier_comparison_001.png "Classifier comparison")
+[![Classifier comparison](/assets/images/apple2/sphx_glr_plot_classifier_comparison_001.png "Classifier comparison")](/assets/images/apple2/sphx_glr_plot_classifier_comparison_001.png)
 
 Fortunately, the Apple ][+ comes with a high-resolution graphics screen (`HGR`) that is 280 pixels across by 160 pixels high. (There is another mode with 192 vertical pixels but I wanted leave the bottom 4 lines of the text window visible for running output.) There are [8 color options](https://en.wikipedia.org/wiki/Apple_II_graphics#High-Resolution_%28Hi-Res%29_graphics){:target="_blank"} for each pixel, but I have a green screen monitor, so I set everything to `HCOLOR=7` (white2).
 
@@ -24,25 +24,25 @@ Fortunately, the Apple ][+ comes with a high-resolution graphics screen (`HGR`) 
 Deciding to stick to the positive quadrant, I wrote a subroutine (Applesoft BASIC does not have methods) to simply display the axes. Interestingly, coordinate (0,0) is the upper left corner of the screen while (279,159) is the lower right, so `HPLOT 0,159 TO 279,159` draws the x-axis.
 
 ```bbcbasic
-    500 REM  == SET GRAPHICS AND DRAW Y AXIS WITH TICK MARKS ==
-    510 HGR : HCOLOR=7
-    520 HPLOT 0,159 TO 279,159
-    530 HPLOT 0,159 TO 0,0
-    540 J = 0
-    550 FOR I = 159 TO 0 STEP -10
-    560   HPLOT 0,I TO 1,I
-    570   IF J / 5 = INT(J / 5) THEN HPLOT 0,I TO 2,I
-    580   IF J / 10 = INT(J / 10) THEN HPLOT 0,I TO 3,I
-    590   J = J + 1
-    600 NEXT I
-    610 J = 0
-    620 FOR I = 0 TO 279 STEP 10
-    630   HPLOT I,159 TO I,158
-    640   IF J / 5 = INT(J / 5) THEN HPLOT I,159 TO I,157
-    650   IF J / 10 = INT(J / 10) THEN HPLOT I,159 TO I,156
-    660   J = J + 1
-    670 NEXT I
-    680 RETURN
+500 REM  == SET GRAPHICS AND DRAW Y AXIS WITH TICK MARKS ==
+510 HGR : HCOLOR=7
+520 HPLOT 0,159 TO 279,159
+530 HPLOT 0,159 TO 0,0
+540 J = 0
+550 FOR I = 159 TO 0 STEP -10
+560   HPLOT 0,I TO 1,I
+570   IF J / 5 = INT(J / 5) THEN HPLOT 0,I TO 2,I
+580   IF J / 10 = INT(J / 10) THEN HPLOT 0,I TO 3,I
+590   J = J + 1
+600 NEXT I
+610 J = 0
+620 FOR I = 0 TO 279 STEP 10
+630   HPLOT I,159 TO I,158
+640   IF J / 5 = INT(J / 5) THEN HPLOT I,159 TO I,157
+650   IF J / 10 = INT(J / 10) THEN HPLOT I,159 TO I,156
+660   J = J + 1
+670 NEXT I
+680 RETURN
 ```
 The first `FOR I` loop adds tick marks along the y-axis. I decided to get fancy and add elongated tick marks at every 5th unit and even longer ticks marks at every 10 unit. I use `J` to count the ticks. The second `FOR I` loop does the same for the x-axis. The final result looks like this:
 
@@ -53,23 +53,23 @@ The first `FOR I` loop adds tick marks along the y-axis. I decided to get fancy 
 With a particular fondness for all thing [Gaussian](https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss){:target="_blank"}, I decided to create two sets of data points with [Gaussian distributions](https://en.wikipedia.org/wiki/Normal_distribution){:target="_blank"}. They look pretty and they're fun.
 
 ```bbcbasic
-    10  HOME : VTAB 21
-    20  PI = 3.14159265
-    30  GOSUB 500 : REM  DRAW AXIS
-    40  DIM AM%(2) : REM  -- MEAN
-    50  DIM BM%(2)
-    60  DIM AS%(2) : REM  -- STD
-    70  DIM BS%(2)
-    80  REM  == HYPERPARAMETERS ==
-    90  AN = 100 : REM  # OF POINTS
-    100 BN = 50
-    110 AM%(1) = 100 : AM%(2) = 50
-    120 BM%(1) = 200 : BM%(2) = 100
-    130 AS%(1) = 30 : AS%(2) = 10
-    140 BS%(1) = 50 : BS%(2) = 25
-    150 AC = 0.5
-    160 BC = -0.5
-    170 REM  == END HYPERPARAMETERS ==
+10  HOME : VTAB 21
+20  PI = 3.14159265
+30  GOSUB 500 : REM  DRAW AXIS
+40  DIM AM%(2) : REM  -- MEAN
+50  DIM BM%(2)
+60  DIM AS%(2) : REM  -- STD
+70  DIM BS%(2)
+80  REM  == HYPERPARAMETERS ==
+90  AN = 100 : REM  # OF POINTS
+100 BN = 50
+110 AM%(1) = 100 : AM%(2) = 50
+120 BM%(1) = 200 : BM%(2) = 100
+130 AS%(1) = 30 : AS%(2) = 10
+140 BS%(1) = 50 : BS%(2) = 25
+150 AC = 0.5
+160 BC = -0.5
+170 REM  == END HYPERPARAMETERS ==
 ```
 `HOME` clears the screen and `VTAB 21` moves the cursor to the 21st text line on the screen, which will be the first line under the graphics after `HGR`. The Apple ][+ doesn't come with a constant for π so I set that up using all the precision available.
 
@@ -147,7 +147,7 @@ You can see calling `GOSUB 700` and `GOSUB 800` to plot the points. Here is the 
 I first verify that the data point is on the visible region of the graph (plotting off the screen will throw an error) and then draw either a "+" or a "□".
 
 ## Running the code
-Putting it all together, it takes the Apple ][+ about a minute to generate and plot 150 data points. The end result looks like this.
+Putting it all together, it takes the Apple ][+ about a minute to generate and plot 150 data points. The end result looks like this:
 
 ![Final plot of synthesized data](/assets/images/apple2/final-plot.jpg "Final plot of synthesized data")
 
