@@ -12,11 +12,11 @@ Well, that didn't take too long. When I was developing [Mortal Wayfare](https://
 
 I suppose there's a balance between planning out what you're going to do and just getting started. For my this project, I leaned toward the latter. As such, after the first pass I already decided to change it up. More specifically, the first thing I decided to do was, rather than have a different array for each class of data, move everything into a single array. The reason is that, during training, this will facilitate looping over all the data.
 
-Quick note on line numbers: refactoring BASIC almost _always_ consists of changing line numbers. As such, this code is not going to match up with previous posts. Hopefully that won't be too confusing.
+Quick note on line numbers: refactoring BASIC almost _always_ consists of changing line numbers. As such, this code is not going to match up with previous posts. Hopefully that won't be confusing.
 
 ## Refactoring the hyperparameters
 
-To make that happen, I start by moving all of my generator hyperparameters into a single array, `GE(..,..)`, where the first axis is the class. The second axis contains, respectively, \\(u_{x_0}, u_{x_1}, \sigma_{x_0}, \sigma_{x_1}, \rho\\) and \\(\sqrt{1 - \rho^2}\\). (See [Synthesizing data](/apple-2-blog/synthesizing-data/) for details.) The last element is purely for performance since this quantity will need to be frequently calculated. (Upon further refection, I could have used \\(\sqrt{1 - \rho^2} \sigma_{x_1}\\) but this is a small optimization for later.)
+To make that happen, I start by moving all of my generator hyperparameters into a single array, `GE(..,..)`, where the first axis is the class. The second axis contains, respectively, \\(u_{x_0}, u_{x_1}, \sigma_{x_0}, \sigma_{x_1}, \rho\\) and \\(\sqrt{1 - \rho^2}\\). (See [Synthesizing data - Box-Muller](/apple-2-blog/synthesizing-data#box-muller-to-the-rescue/) for details.) The last element is purely for performance since this quantity will be needed frequently. (Upon further refection, I could have used \\(\sqrt{1 - \rho^2} \sigma_{x_1}\\) but this is a small optimization for later.)
 
 ```bbcbasic
 100 REM == HYPERPARAMETERS ==
@@ -67,7 +67,7 @@ After counting up the total number of samples, I then create `DS%(..,..)` which 
 Since I'd like for my data to be randomly sampled, rather than scrambled after the fact, I decided to use 'adaptive quota sampling' to generate them randomly while ending up with the appropriate quantities. I could have simply taken the end proportion of each class and use that to create probabilities during generation but then there would be no guarantee then the final number of samples for each class would be correct.
 
 ```bbcbasic
-400 REM -- REMAINING SAMPLES COUNT
+400 REM -- REMAINING SAMPLES COUNT --
 410 DIM RK%(KN - 1)
 420 FOR I = 0 TO KN - 1
 430   RK%(I) = KN%(I)
@@ -150,7 +150,7 @@ The only remaining tweaks were for the plotting routines. The two routines below
 
 ## Testing Irwin-Hall as an alternative to Box-Muller
 
-The final chunk of code is interesting. After sharing my [Box-Muller](/apple-2-blog/synthesizing-data#Box-Muller-to-the-rescue/) routine with my friend, [Răzvan Surdulescu](https://www.linkedin.com/in/surdules/), he suggested using the [Irwin-Hall Distribution](https://en.wikipedia.org/wiki/Irwin%E2%80%93Hall_distribution). `SQR` and `COS` are expensive operations in BASIC and Irwin-Hall [approximates a normal distribution](https://en.wikipedia.org/wiki/Irwin%E2%80%93Hall_distribution#Approximating_a_Normal_distribution) by sampling 12 uniform random numbers.
+The final chunk of code is interesting. After sharing my [Box-Muller](/apple-2-blog/synthesizing-data#box-muller-to-the-rescue/) routine with my friend, [Răzvan Surdulescu](https://www.linkedin.com/in/surdules/){:target="_blank"}, he suggested using the [Irwin-Hall Distribution](https://en.wikipedia.org/wiki/Irwin%E2%80%93Hall_distribution){:target="_blank"}. `SQR` and `COS` are expensive operations in BASIC and Irwin-Hall [approximates a normal distribution](https://en.wikipedia.org/wiki/Irwin%E2%80%93Hall_distribution#Approximating_a_Normal_distribution){:target="_blank"} by sampling 12 uniform random numbers.
 
 ```bbcbasic
 1400 REM == IRWIN-HALL DISTRIBUTION ==

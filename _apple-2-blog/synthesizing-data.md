@@ -1,15 +1,15 @@
 ---
 title: "In the beginning, there was data"
-excerpt: "Turning to machine learning, I begin synthesizing some data."
+excerpt: "Turning to machine learning, I begin by synthesizing some data."
 tags:
   - machine learning
   - synthesizing data
 date: 2025-07-06
 ---
 
-Crestfallen by the seeming impossibility of [recovering](/apple-2-blog/recover/) by beloved [game](https://mortalwayfare.com/remnant-from-the-past/){:target="_blank"} from high school, I turned my attention to the original [motivation](apple-2-blog/motivation/): developing machine learning on the Apple ][+. Grabbing my manuals, I got to work.
+Crestfallen by the seeming impossibility of [recovering](/apple-2-blog/recover/) my beloved [game](https://mortalwayfare.com/remnant-from-the-past/){:target="_blank"} from high school, I turned my attention to the original [motivation](apple-2-blog/motivation/): developing machine learning on the Apple ][+. Grabbing my manuals, I got to work.
 
-![Apple 2+ manuals](/assets/images/apple2/manuals.jpg "Apple 2+ manuals")
+![Apple 2+ manuals](/assets/images/apple2/manuals.jpg "Apple ][+ manuals")
 
 Every solid machine learning project begins with data. My old clunker, however, is cut off from the world. I never had a modem but I recall one of my best friends using the modem on his Apple&nbsp;][ to hack long distance access codes. (He since went on to pursue a successful career in telecommunications... naturally.) Even if I had a modem, what would I connect it to? Do those services still even exists? (I'm sure they do but I'm not going to figure that out today.) In the meantime, the plan is to create synthetic data locally.
 
@@ -73,7 +73,7 @@ With a particular fondness for all thing [Gaussian](https://en.wikipedia.org/wik
 ```
 `HOME` clears the screen and `VTAB 21` moves the cursor to the 21st text line on the screen, which will be the first line under the graphics after `HGR`. The Apple ][+ doesn't come with a constant for π so I set that up using all the precision available.
 
-`AM%` is a two element array of integers to store, respectively, the x-mean and y-mean values for the A data set. (The % sign makes the variable an integer which save space but actually reduced performance because mathematical operations on the Apple ][+ convert integers to real numbers and then back again.) `AS%` does the same for the x- and y-standard deviations. `AC` is a real number correlation coefficient ∈ [-1, 1]. Finally, `AN` is the number of elements in the A dataset. The corresponding B data set hyperparameters are similar. (In Applesoft BASIC only the [first two characters](https://youtu.be/PHfKCxjsmos?si=lVgpeslJ8ZBiRaAl&t=39) of a variable name are 'considered' so you have to be careful of collisions.)
+`AM%` is a two element array of integers to store, respectively, the x-mean and y-mean values for the A data set. (The % sign makes the variable an integer which save space but actually reduced performance because mathematical operations on the Apple ][+ convert integers to real numbers and then back again.) `AS%` does the same for the x- and y-standard deviations. `AC` is a real number correlation coefficient ∈ [-1, 1]. Finally, `AN` is the number of elements in the A dataset. The corresponding B data set hyperparameters are similar. (In Applesoft BASIC only the [first two characters](https://youtu.be/PHfKCxjsmos?si=lVgpeslJ8ZBiRaAl&t=39){:target="_blank"} of a variable name are 'considered' so you have to be careful of collisions.)
 
 ### Box-Muller to the rescue
 The Apple ][+ can generate uniform random variables from 0 to 0.999999999 using `RND()`, however, to get standard normal random variables we'll have to use the [Box-Muller](https://en.wikipedia.org/wiki/Box%E2%80%93Muller_transform){:target="_blank"} transform.
