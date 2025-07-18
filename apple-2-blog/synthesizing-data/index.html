@@ -1,0 +1,572 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.6.0 by Michael Rose
+  Copyright 2017 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<title>In the beginning, there was data - Hackin’ and Tinkerin’</title>
+
+
+
+
+<meta name="description" content="Turning to machine learning, I begin by synthesizing some data.">
+
+
+
+
+<meta name="author" content="">
+
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="Hackin' and Tinkerin'">
+<meta property="og:title" content="In the beginning, there was data - Hackin’ and Tinkerin’">
+
+
+  <link rel="canonical" href="https://mdcramer.github.io/apple-2-blog/synthesizing-data/">
+  <meta property="og:url" content="https://mdcramer.github.io/apple-2-blog/synthesizing-data/">
+
+
+
+  <meta property="og:description" content="Turning to machine learning, I begin by synthesizing some data.">
+
+
+
+  <meta name="twitter:site" content="@markdcramer">
+  <meta name="twitter:title" content="In the beginning, there was data - Hackin’ and Tinkerin’">
+  <meta name="twitter:description" content="Turning to machine learning, I begin by synthesizing some data.">
+  <meta name="twitter:url" content="https://mdcramer.github.io/apple-2-blog/synthesizing-data/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+  
+
+  
+
+
+
+  
+
+  
+
+
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2025-07-06T00:00:00-07:00">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end SEO -->
+
+
+<link href="https://mdcramer.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Hackin' and Tinkerin' Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://mdcramer.github.io/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav"><a class="site-title" href="/apple-2-blog/">apple 2 blog</a>
+        <ul class="visible-links">
+          
+            <li class="masthead__menu-item"><a href="/">Home</a></li>
+            
+            
+<li>
+  <a href="https://github.com/mdcramer/mdcramer.github.io/tree/blog/_apple-2-blog"><i class="fa fa-fw fa-github" aria-hidden="true"></i>GitHub</a>
+</li>
+        </ul>
+        <button type="button">
+          <span class="visually-hidden">Toggle Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+    <div itemscope itemtype="http://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="https://mdcramer.github.io/assets/images/profilepic-small.jpg" class="author__avatar" alt="Mark Cramer" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name" itemprop="name">Mark Cramer</h3>
+    
+      <p class="author__bio" itemprop="description">
+        Product Management executive who enjoys hacking around with code in his free time, of which there is never, sadly, enough.
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Profile</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> <span itemprop="name">San Francisco</span>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/markdcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="https://www.facebook.com/markdcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/mcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/mdcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.stackoverflow.com/users/852795/mark-cramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-stack-overflow" aria-hidden="true"></i> Stackoverflow
+          </a>
+        </li>
+      
+
+      
+        
+          <li>
+            <a href="https://youtube.com/c/MarkCramerD" itemprop="sameAs">
+              <i class="fa fa-fw fa-youtube-square" aria-hidden="true"></i> YouTube
+            </a>
+          </li>
+        
+      
+
+      
+
+      
+        <li>
+          <a href="https://scholar.google.com/citations?user=vlo46P8AAAAJ" itemprop="sameAs">
+            <img src="/assets/images/googlescholar.svg" alt="googlescholar" class="profile_icon"> Google Scholar
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+  
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="In the beginning, there was data">
+    <meta itemprop="description" content="Turning to machine learning, I begin by synthesizing some data.">
+    <meta itemprop="datePublished" content="July 06, 2025">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">In the beginning, there was data
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <p>Crestfallen by the seeming impossibility of <a href="/apple-2-blog/recover/">recovering</a> my beloved <a href="https://mortalwayfare.com/remnant-from-the-past/" target="_blank">game</a> from high school, I turned my attention to the original <a href="apple-2-blog/motivation/">motivation</a>: developing machine learning on the Apple ][+. Grabbing my manuals, I got to work.</p>
+
+<p><img src="/assets/images/apple2/manuals.jpg" alt="Apple 2+ manuals" title="Apple ][+ manuals" /></p>
+
+<p>Every solid machine learning project begins with data. My old clunker, however, is cut off from the world. I never had a modem but I recall one of my best friends using the modem on his Apple ][ to hack long distance access codes. (He since went on to pursue a successful career in telecommunications… naturally.) Even if I had a modem, what would I connect it to? Do those services still even exists? (I’m sure they do but I’m not going to figure that out today.) In the meantime, the plan is to create synthetic data locally.</p>
+
+<p>I’m sure everyone is familiar with the <a href="https://scikit-learn.org/stable/auto_examples/classification/plot_classifier_comparison.html" target="_blank">chart</a> comparing different classification algorithms. Since two-dimensional binary classification seems like a great place to start, I’ll need a simple way to graph the data.</p>
+
+<p><a href="/assets/images/apple2/sphx_glr_plot_classifier_comparison_001.png"><img src="/assets/images/apple2/sphx_glr_plot_classifier_comparison_001.png" alt="Classifier comparison" title="Classifier comparison" /></a></p>
+
+<p>Fortunately, the Apple ][+ comes with a high-resolution graphics screen (<code class="language-plaintext highlighter-rouge">HGR</code>) that is 280 pixels across by 160 pixels high. (There is another mode with 192 vertical pixels but I wanted leave the bottom 4 lines of the text window visible for running output.) There are <a href="https://en.wikipedia.org/wiki/Apple_II_graphics#High-Resolution_%28Hi-Res%29_graphics" target="_blank">8 color options</a> for each pixel, but I have a green screen monitor, so I set everything to <code class="language-plaintext highlighter-rouge">HCOLOR=7</code> (white2).</p>
+
+<h2 id="drawing-the-axes">Drawing the axes</h2>
+
+<p>Deciding to stick to the positive quadrant, I wrote a subroutine (Applesoft BASIC does not have methods) to simply display the axes. Interestingly, coordinate (0,0) is the upper left corner of the screen while (279,159) is the lower right, so <code class="language-plaintext highlighter-rouge">HPLOT 0,159 TO 279,159</code> draws the x-axis.</p>
+
+<div class="language-bbcbasic highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="m">500</span> <span class="c">REM  == SET GRAPHICS AND DRAW Y AXIS WITH TICK MARKS ==</span>
+<span class="m">510</span> <span class="nv">HGR</span> <span class="p">:</span> <span class="nv">HCOLOR</span><span class="o">=</span><span class="m">7</span>
+<span class="m">520</span> <span class="nv">HPLOT</span> <span class="m">0</span><span class="p">,</span><span class="m">159</span> <span class="k">TO</span> <span class="m">279</span><span class="p">,</span><span class="m">159</span>
+<span class="m">530</span> <span class="nv">HPLOT</span> <span class="m">0</span><span class="p">,</span><span class="m">159</span> <span class="k">TO</span> <span class="m">0</span><span class="p">,</span><span class="m">0</span>
+<span class="m">540</span> <span class="nv">J</span> <span class="o">=</span> <span class="m">0</span>
+<span class="m">550</span> <span class="k">FOR</span> <span class="nv">I</span> <span class="o">=</span> <span class="m">159</span> <span class="k">TO</span> <span class="m">0</span> <span class="k">STEP</span> <span class="o">-</span><span class="m">10</span>
+<span class="m">560</span>   <span class="nv">HPLOT</span> <span class="m">0</span><span class="p">,</span><span class="nv">I</span> <span class="k">TO</span> <span class="m">1</span><span class="p">,</span><span class="nv">I</span>
+<span class="m">570</span>   <span class="k">IF</span> <span class="nv">J</span> <span class="o">/</span> <span class="m">5</span> <span class="o">=</span> <span class="nb">INT</span><span class="o">(</span><span class="nv">J</span> <span class="o">/</span> <span class="m">5</span><span class="o">)</span> <span class="k">THEN</span> <span class="nv">HPLOT</span> <span class="m">0</span><span class="p">,</span><span class="nv">I</span> <span class="k">TO</span> <span class="m">2</span><span class="p">,</span><span class="nv">I</span>
+<span class="m">580</span>   <span class="k">IF</span> <span class="nv">J</span> <span class="o">/</span> <span class="m">10</span> <span class="o">=</span> <span class="nb">INT</span><span class="o">(</span><span class="nv">J</span> <span class="o">/</span> <span class="m">10</span><span class="o">)</span> <span class="k">THEN</span> <span class="nv">HPLOT</span> <span class="m">0</span><span class="p">,</span><span class="nv">I</span> <span class="k">TO</span> <span class="m">3</span><span class="p">,</span><span class="nv">I</span>
+<span class="m">590</span>   <span class="nv">J</span> <span class="o">=</span> <span class="nv">J</span> <span class="o">+</span> <span class="m">1</span>
+<span class="m">600</span> <span class="k">NEXT</span> <span class="nv">I</span>
+<span class="m">610</span> <span class="nv">J</span> <span class="o">=</span> <span class="m">0</span>
+<span class="m">620</span> <span class="k">FOR</span> <span class="nv">I</span> <span class="o">=</span> <span class="m">0</span> <span class="k">TO</span> <span class="m">279</span> <span class="k">STEP</span> <span class="m">10</span>
+<span class="m">630</span>   <span class="nv">HPLOT</span> <span class="nv">I</span><span class="p">,</span><span class="m">159</span> <span class="k">TO</span> <span class="nv">I</span><span class="p">,</span><span class="m">158</span>
+<span class="m">640</span>   <span class="k">IF</span> <span class="nv">J</span> <span class="o">/</span> <span class="m">5</span> <span class="o">=</span> <span class="nb">INT</span><span class="o">(</span><span class="nv">J</span> <span class="o">/</span> <span class="m">5</span><span class="o">)</span> <span class="k">THEN</span> <span class="nv">HPLOT</span> <span class="nv">I</span><span class="p">,</span><span class="m">159</span> <span class="k">TO</span> <span class="nv">I</span><span class="p">,</span><span class="m">157</span>
+<span class="m">650</span>   <span class="k">IF</span> <span class="nv">J</span> <span class="o">/</span> <span class="m">10</span> <span class="o">=</span> <span class="nb">INT</span><span class="o">(</span><span class="nv">J</span> <span class="o">/</span> <span class="m">10</span><span class="o">)</span> <span class="k">THEN</span> <span class="nv">HPLOT</span> <span class="nv">I</span><span class="p">,</span><span class="m">159</span> <span class="k">TO</span> <span class="nv">I</span><span class="p">,</span><span class="m">156</span>
+<span class="m">660</span>   <span class="nv">J</span> <span class="o">=</span> <span class="nv">J</span> <span class="o">+</span> <span class="m">1</span>
+<span class="m">670</span> <span class="k">NEXT</span> <span class="nv">I</span>
+<span class="m">680</span> <span class="k">RETURN</span>
+</code></pre></div></div>
+<p>The first <code class="language-plaintext highlighter-rouge">FOR I</code> loop adds tick marks along the y-axis. I decided to get fancy and add elongated tick marks at every 5th unit and even longer ticks marks at every 10 unit. I use <code class="language-plaintext highlighter-rouge">J</code> to count the ticks. The second <code class="language-plaintext highlighter-rouge">FOR I</code> loop does the same for the x-axis. The final result looks like this:</p>
+
+<p><img src="/assets/images/apple2/axis.jpg" alt="x- and y-axis of graph" title="The x- and y-axis of the graph" /></p>
+
+<h2 id="synthesizing-the-data">Synthesizing the data</h2>
+
+<p>With a particular fondness for all thing <a href="https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss" target="_blank">Gaussian</a>, I decided to create two sets of data points with <a href="https://en.wikipedia.org/wiki/Normal_distribution" target="_blank">Gaussian distributions</a>. They look pretty and they’re fun.</p>
+
+<div class="language-bbcbasic highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="m">10</span>  <span class="nv">HOME</span> <span class="p">:</span> <span class="nv">VTAB</span> <span class="m">21</span>
+<span class="m">20</span>  <span class="nv">PI</span> <span class="o">=</span> <span class="m">3.14159265</span>
+<span class="m">30</span>  <span class="k">GOSUB</span> <span class="m">500</span> <span class="p">:</span> <span class="c">REM  DRAW AXIS</span>
+<span class="m">40</span>  <span class="k">DIM</span> <span class="nv">AM%</span><span class="o">(</span><span class="m">2</span><span class="o">)</span> <span class="p">:</span> <span class="c">REM  -- MEAN</span>
+<span class="m">50</span>  <span class="k">DIM</span> <span class="nv">BM%</span><span class="o">(</span><span class="m">2</span><span class="o">)</span>
+<span class="m">60</span>  <span class="k">DIM</span> <span class="nv">AS%</span><span class="o">(</span><span class="m">2</span><span class="o">)</span> <span class="p">:</span> <span class="c">REM  -- STD</span>
+<span class="m">70</span>  <span class="k">DIM</span> <span class="nv">BS%</span><span class="o">(</span><span class="m">2</span><span class="o">)</span>
+<span class="m">80</span>  <span class="c">REM  == HYPERPARAMETERS ==</span>
+<span class="m">90</span>  <span class="nv">AN</span> <span class="o">=</span> <span class="m">100</span> <span class="p">:</span> <span class="c">REM  # OF POINTS</span>
+<span class="m">100</span> <span class="nv">BN</span> <span class="o">=</span> <span class="m">50</span>
+<span class="m">110</span> <span class="nv">AM%</span><span class="o">(</span><span class="m">1</span><span class="o">)</span> <span class="o">=</span> <span class="m">100</span> <span class="p">:</span> <span class="nv">AM%</span><span class="o">(</span><span class="m">2</span><span class="o">)</span> <span class="o">=</span> <span class="m">50</span>
+<span class="m">120</span> <span class="nv">BM%</span><span class="o">(</span><span class="m">1</span><span class="o">)</span> <span class="o">=</span> <span class="m">200</span> <span class="p">:</span> <span class="nv">BM%</span><span class="o">(</span><span class="m">2</span><span class="o">)</span> <span class="o">=</span> <span class="m">100</span>
+<span class="m">130</span> <span class="nv">AS%</span><span class="o">(</span><span class="m">1</span><span class="o">)</span> <span class="o">=</span> <span class="m">30</span> <span class="p">:</span> <span class="nv">AS%</span><span class="o">(</span><span class="m">2</span><span class="o">)</span> <span class="o">=</span> <span class="m">10</span>
+<span class="m">140</span> <span class="nv">BS%</span><span class="o">(</span><span class="m">1</span><span class="o">)</span> <span class="o">=</span> <span class="m">50</span> <span class="p">:</span> <span class="nv">BS%</span><span class="o">(</span><span class="m">2</span><span class="o">)</span> <span class="o">=</span> <span class="m">25</span>
+<span class="m">150</span> <span class="nv">AC</span> <span class="o">=</span> <span class="m">0.5</span>
+<span class="m">160</span> <span class="nv">BC</span> <span class="o">=</span> <span class="o">-</span><span class="m">0.5</span>
+<span class="m">170</span> <span class="c">REM  == END HYPERPARAMETERS ==</span>
+</code></pre></div></div>
+<p><code class="language-plaintext highlighter-rouge">HOME</code> clears the screen and <code class="language-plaintext highlighter-rouge">VTAB 21</code> moves the cursor to the 21st text line on the screen, which will be the first line under the graphics after <code class="language-plaintext highlighter-rouge">HGR</code>. The Apple ][+ doesn’t come with a constant for π so I set that up using all the precision available.</p>
+
+<p><code class="language-plaintext highlighter-rouge">AM%</code> is a two element array of integers to store, respectively, the x-mean and y-mean values for the A data set. (The % sign makes the variable an integer which save space but actually reduced performance because mathematical operations on the Apple ][+ convert integers to real numbers and then back again.) <code class="language-plaintext highlighter-rouge">AS%</code> does the same for the x- and y-standard deviations. <code class="language-plaintext highlighter-rouge">AC</code> is a real number correlation coefficient ∈ [-1, 1]. Finally, <code class="language-plaintext highlighter-rouge">AN</code> is the number of elements in the A dataset. The corresponding B data set hyperparameters are similar. (In Applesoft BASIC only the <a href="https://youtu.be/PHfKCxjsmos?si=lVgpeslJ8ZBiRaAl&amp;t=39" target="_blank">first two characters</a> of a variable name are ‘considered’ so you have to be careful of collisions.)</p>
+
+<h3 id="box-muller-to-the-rescue">Box-Muller to the rescue</h3>
+<p>The Apple ][+ can generate uniform random variables from 0 to 0.999999999 using <code class="language-plaintext highlighter-rouge">RND()</code>, however, to get standard normal random variables we’ll have to use the <a href="https://en.wikipedia.org/wiki/Box%E2%80%93Muller_transform" target="_blank">Box-Muller</a> transform.</p>
+
+<p>Given two independent samples, \(u_1\) and \(u_2\), chosen from a uniform distribution on the unit interval (0, 1), we can get two independent random variables, \(z_0\) and \(z_1\), with a standard normal distribution with the following:</p>
+
+\[z_0 = R \cos(\theta) = \sqrt{-2 \ln(u_1)} \cos(2 \pi u_2) \\
+z_1 = R \sin(\theta) = \sqrt{-2 \ln(u_1)} \sin(2 \pi u_2)\]
+
+<p>Here is the code to do that.</p>
+
+<div class="language-bbcbasic highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="m">900</span> <span class="c">REM  == BOX-MULLER TRANSFORM ==</span>
+<span class="m">910</span> <span class="nv">U1</span> <span class="o">=</span> <span class="nb">RND</span><span class="o">(</span><span class="m">1</span><span class="o">)</span>
+<span class="m">920</span> <span class="nv">U2</span> <span class="o">=</span> <span class="nb">RND</span><span class="o">(</span><span class="m">1</span><span class="o">)</span>
+<span class="m">930</span> <span class="nv">R</span> <span class="o">=</span> <span class="nb">SQR</span><span class="o">(-</span><span class="m">2</span> <span class="o">*</span> <span class="nb">LOG</span><span class="o">(</span><span class="nv">U1</span><span class="o">))</span>
+<span class="m">940</span> <span class="nv">TH</span> <span class="o">=</span> <span class="m">2</span> <span class="o">*</span> <span class="nv">PI</span> <span class="o">*</span> <span class="nv">U2</span>
+<span class="m">950</span> <span class="nv">Z0</span> <span class="o">=</span> <span class="nv">R</span> <span class="o">*</span> <span class="nb">COS</span><span class="o">(</span><span class="nv">TH</span><span class="o">)</span>
+<span class="m">960</span> <span class="nv">Z1</span> <span class="o">=</span> <span class="nv">R</span> <span class="o">*</span> <span class="nb">SIN</span><span class="o">(</span><span class="nv">TH</span><span class="o">)</span>
+<span class="m">970</span> <span class="k">RETURN</span>
+</code></pre></div></div>
+<p>From there, to obtain a 2D Gaussian with mean \(\mu_x, \mu_y\) and covariance matrix \(\Sigma\), we’ll need to apply the following, where \(\sigma_x\) and \(\sigma_y\) are the standard deviations in the \(x\) and \(y\) directions, and \(\rho\) is the correlation coefficient:</p>
+
+\[x = \mu_x + \sigma_x z_0 \\
+y = \mu_y + \rho \sigma_y z_0 + \sqrt{1 - \rho^2} \sigma_y z_1\]
+
+<p>Here is the code that generates all the samples using these transformations.</p>
+
+<div class="language-bbcbasic highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="m">200</span> <span class="k">DIM</span> <span class="nv">AX%</span><span class="o">(</span><span class="nv">AN</span><span class="p">,</span><span class="m">2</span><span class="o">)</span>
+<span class="m">210</span> <span class="k">DIM</span> <span class="nv">BX%</span><span class="o">(</span><span class="nv">BN</span><span class="p">,</span><span class="m">2</span><span class="o">)</span>
+<span class="m">220</span> <span class="k">FOR</span> <span class="nv">I</span> <span class="o">=</span> <span class="m">1</span> <span class="k">TO</span> <span class="nv">AN</span>
+<span class="m">230</span>   <span class="k">GOSUB</span> <span class="m">900</span> <span class="p">:</span> <span class="c">REM FETCH STANDARD NORMAL RANDOM VALUES</span>
+<span class="m">240</span>   <span class="nv">X%</span> <span class="o">=</span> <span class="nv">AM%</span><span class="o">(</span><span class="m">1</span><span class="o">)</span> <span class="o">+</span> <span class="nv">AS%</span><span class="o">(</span><span class="m">1</span><span class="o">)</span> <span class="o">*</span> <span class="nv">Z0</span>
+<span class="m">250</span>   <span class="nv">Y%</span> <span class="o">=</span> <span class="nv">AM%</span><span class="o">(</span><span class="m">2</span><span class="o">)</span> <span class="o">+</span> <span class="nv">AC</span> <span class="o">*</span> <span class="nv">AS%</span><span class="o">(</span><span class="m">2</span><span class="o">)</span> <span class="o">*</span> <span class="nv">Z0</span> <span class="o">+</span> <span class="nb">SQR</span><span class="o">(</span><span class="m">1</span> <span class="o">-</span> <span class="nv">AC</span> <span class="o">^</span> <span class="m">2</span><span class="o">)</span> <span class="o">*</span> <span class="nv">AS%</span><span class="o">(</span><span class="m">2</span><span class="o">)</span> <span class="o">*</span> <span class="nv">Z1</span>
+<span class="m">260</span>   <span class="nv">AX%</span><span class="o">(</span><span class="nv">I</span><span class="p">,</span><span class="m">1</span><span class="o">)</span> <span class="o">=</span> <span class="nv">X%</span>
+<span class="m">270</span>   <span class="nv">AX%</span><span class="o">(</span><span class="nv">I</span><span class="p">,</span><span class="m">2</span><span class="o">)</span> <span class="o">=</span> <span class="nv">Y%</span>
+<span class="m">280</span>   <span class="k">PRINT</span> <span class="s">"POINT IN SET A "</span><span class="p">;</span> <span class="nv">I</span><span class="p">;</span> <span class="s">" AT ("</span><span class="p">;</span> <span class="nv">X%</span><span class="p">;</span> <span class="s">","</span><span class="p">;</span> <span class="nv">Y%</span><span class="p">;</span> <span class="s">")"</span>
+<span class="m">290</span>   <span class="k">GOSUB</span> <span class="m">700</span> <span class="p">:</span> <span class="c">REM  DRAW A +</span>
+<span class="m">300</span> <span class="k">NEXT</span> <span class="nv">I</span>
+<span class="m">310</span> <span class="k">FOR</span> <span class="nv">I</span> <span class="o">=</span> <span class="m">1</span> <span class="k">TO</span> <span class="nv">BN</span>
+<span class="m">320</span>   <span class="k">GOSUB</span> <span class="m">900</span> <span class="p">:</span> <span class="c">REM FETCH STANDARD NORMAL RANDOM VALUES</span>
+<span class="m">330</span>   <span class="nv">X%</span> <span class="o">=</span> <span class="nv">BM%</span><span class="o">(</span><span class="m">1</span><span class="o">)</span> <span class="o">+</span> <span class="nv">BS%</span><span class="o">(</span><span class="m">1</span><span class="o">)</span> <span class="o">*</span> <span class="nv">Z0</span>
+<span class="m">340</span>   <span class="nv">Y%</span> <span class="o">=</span> <span class="nv">BM%</span><span class="o">(</span><span class="m">2</span><span class="o">)</span> <span class="o">+</span> <span class="nv">BC</span> <span class="o">*</span> <span class="nv">BS%</span><span class="o">(</span><span class="m">2</span><span class="o">)</span> <span class="o">*</span> <span class="nv">Z0</span> <span class="o">+</span> <span class="nb">SQR</span><span class="o">(</span><span class="m">1</span> <span class="o">-</span> <span class="nv">BC</span> <span class="o">^</span> <span class="m">2</span><span class="o">)</span> <span class="o">*</span> <span class="nv">BS%</span><span class="o">(</span><span class="m">2</span><span class="o">)</span> <span class="o">*</span> <span class="nv">Z1</span>
+<span class="m">350</span>   <span class="nv">BX%</span><span class="o">(</span><span class="nv">I</span><span class="p">,</span><span class="m">1</span><span class="o">)</span> <span class="o">=</span> <span class="nv">X%</span>
+<span class="m">360</span>   <span class="nv">BX%</span><span class="o">(</span><span class="nv">I</span><span class="p">,</span><span class="m">2</span><span class="o">)</span> <span class="o">=</span> <span class="nv">Y%</span>
+<span class="m">370</span>   <span class="k">PRINT</span> <span class="s">"POINT IN SET B "</span><span class="p">;</span> <span class="nv">I</span><span class="p">;</span> <span class="s">" AT ("</span><span class="p">;</span> <span class="nv">X%</span><span class="p">;</span> <span class="s">","</span><span class="p">;</span> <span class="nv">Y%</span><span class="p">;</span> <span class="s">")"</span>
+<span class="m">380</span>   <span class="k">GOSUB</span> <span class="m">800</span> <span class="p">:</span> <span class="c">REM  DRAW A BOX</span>
+<span class="m">390</span> <span class="k">NEXT</span> <span class="nv">I</span>
+<span class="m">400</span> <span class="k">END</span>
+</code></pre></div></div>
+<p>I decided to store the data samples in <code class="language-plaintext highlighter-rouge">AX%</code> and <code class="language-plaintext highlighter-rouge">BX%</code> as integers to save on memory. Since they are all randomly generated, the extra precision won’t make much of a difference anyway. I’m using 2D arrays where the first axis is the number of samples (e.g., <code class="language-plaintext highlighter-rouge">AN</code>) and the second axis is the feature dimension (e.g., 2 for \(x\) and \(y\)).</p>
+
+<p>You can see calling <code class="language-plaintext highlighter-rouge">GOSUB 700</code> and <code class="language-plaintext highlighter-rouge">GOSUB 800</code> to plot the points. Here is the final code for that.</p>
+
+<div class="language-bbcbasic highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="m">700</span> <span class="c">REM == DRAW + AT X,Y ==</span>
+<span class="m">710</span> <span class="k">IF</span> <span class="nv">X%</span> <span class="o">&lt;</span> <span class="m">1</span> <span class="o">OR</span> <span class="nv">X%</span> <span class="o">&gt;</span> <span class="m">270</span> <span class="k">THEN</span> <span class="k">RETURN</span>
+<span class="m">720</span> <span class="k">IF</span> <span class="nv">Y%</span> <span class="o">&lt;</span> <span class="m">1</span> <span class="o">OR</span> <span class="nv">Y%</span> <span class="o">&gt;</span> <span class="m">150</span> <span class="k">THEN</span> <span class="k">RETURN</span>
+<span class="m">730</span> <span class="nv">HPLOT</span> <span class="nv">X%</span> <span class="o">-</span> <span class="m">1</span><span class="p">,</span><span class="nv">Y%</span> <span class="k">TO</span> <span class="nv">X%</span> <span class="o">+</span> <span class="m">1</span><span class="p">,</span><span class="nv">Y%</span>
+<span class="m">740</span> <span class="nv">HPLOT</span> <span class="nv">X%</span><span class="p">,</span><span class="nv">Y%</span> <span class="o">-</span> <span class="m">1</span> <span class="k">TO</span> <span class="nv">X%</span><span class="p">,</span><span class="nv">Y%</span> <span class="o">+</span> <span class="m">1</span>
+<span class="m">750</span> <span class="k">RETURN</span>
+<span class="m">800</span> <span class="c">REM == DRAW BOX AT X,Y ==</span>
+<span class="m">810</span> <span class="k">IF</span> <span class="nv">X%</span> <span class="o">&lt;</span> <span class="m">1</span> <span class="o">OR</span> <span class="nv">X%</span> <span class="o">&gt;</span> <span class="m">270</span> <span class="k">THEN</span> <span class="k">RETURN</span>
+<span class="m">820</span> <span class="k">IF</span> <span class="nv">Y%</span> <span class="o">&lt;</span> <span class="m">1</span> <span class="o">OR</span> <span class="nv">Y%</span> <span class="o">&gt;</span> <span class="m">150</span> <span class="k">THEN</span> <span class="k">RETURN</span>
+<span class="m">830</span> <span class="nv">HPLOT</span> <span class="nv">X%</span> <span class="o">-</span> <span class="m">1</span><span class="p">,</span><span class="nv">Y%</span> <span class="o">-</span> <span class="m">1</span> <span class="k">TO</span> <span class="nv">X%</span> <span class="o">+</span> <span class="m">1</span><span class="p">,</span><span class="nv">Y%</span> <span class="o">-</span> <span class="m">1</span>
+<span class="m">840</span> <span class="nv">HPLOT</span> <span class="nv">X%</span> <span class="o">-</span> <span class="m">1</span><span class="p">,</span><span class="nv">Y%</span><span class="p">:</span> <span class="nv">HPLOT</span> <span class="nv">X%</span> <span class="o">+</span> <span class="m">1</span><span class="p">,</span><span class="nv">Y%</span>
+<span class="m">850</span> <span class="nv">HPLOT</span> <span class="nv">X%</span> <span class="o">-</span> <span class="m">1</span><span class="p">,</span><span class="nv">Y%</span> <span class="o">+</span> <span class="m">1</span> <span class="k">TO</span> <span class="nv">X%</span> <span class="o">+</span> <span class="m">1</span><span class="p">,</span><span class="nv">Y%</span> <span class="o">+</span> <span class="m">1</span>
+<span class="m">860</span> <span class="k">RETURN</span>
+</code></pre></div></div>
+<p>I first verify that the data point is on the visible region of the graph (plotting off the screen will throw an error) and then draw either a “+” or a “□”.</p>
+
+<h2 id="running-the-code">Running the code</h2>
+<p>Putting it all together, it takes the Apple ][+ about a minute to generate and plot 150 data points. The end result looks like this:</p>
+
+<p><img src="/assets/images/apple2/final-plot.jpg" alt="Final plot of synthesized data" title="Final plot of synthesized data" /></p>
+
+<p>Watch this video if you’d like to see it run, in all it’s glory.</p>
+
+<p><a href="https://youtube.com/shorts/xi876Gqt4jk" title="Video of Apple][+ synthesizing data" target="_blank"><img src="https://img.youtube.com/vi/xi876Gqt4jk/0.jpg" alt="Video of Apple2+ synthesizing data" /></a></p>
+
+<p>Now that this is out of the way, we’ll start by implementing one of the simplest and easiest to understand machine learning algorithms.</p>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/machine-learning" class="page__taxonomy-item" rel="tag">machine learning</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/synthesizing-data" class="page__taxonomy-item" rel="tag">synthesizing data</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-07-06T00:00:00-07:00">July 06, 2025</time></p>
+        
+      </footer><section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?via=markdcramer&text=In+the+beginning%2C+there+was+data%20https%3A%2F%2Fmdcramer.github.io%2Fapple-2-blog%2Fsynthesizing-data%2F" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmdcramer.github.io%2Fapple-2-blog%2Fsynthesizing-data%2F" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+<!-- 
+  <a href="https://plus.google.com/share?url=https%3A%2F%2Fmdcramer.github.io%2Fapple-2-blog%2Fsynthesizing-data%2F" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a> -->
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmdcramer.github.io%2Fapple-2-blog%2Fsynthesizing-data%2F" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+  <nav class="pagination">
+    
+      <a href="https://mdcramer.github.io/apple-2-blog/hope/" class="pagination--pager" title="Hope springs eternal
+">Previous</a>
+    
+    
+      <a href="https://mdcramer.github.io/apple-2-blog/refactoring/" class="pagination--pager" title="Refactoring
+">Next</a>
+    
+  </nav>
+</div><div class="page__comments">
+  
+    
+        <h4 class="page__comments-title">Leave a Comment</h4>
+        <section id="disqus_thread"></section>
+      
+</div></article>
+</div>
+
+
+    <div class="page__footer">
+      <footer>
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    <!-- 
+      <li><strong>Follow:</strong></li>
+     -->
+    
+      <li><a href="https://twitter.com/markdcramer"><i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+    
+
+    
+    <li>
+      <a href="https://www.linkedin.com/in/mcramer" itemprop="sameAs">
+        <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+      </a>
+    </li>
+    
+<li>
+  <a href="https://github.com/mdcramer/mdcramer.github.io/tree/blog/_apple-2-blog"><i class="fa fa-fw fa-github" aria-hidden="true"></i>GitHub</a>
+</li>
+    <li>
+      <a href="https://www.stackoverflow.com/users/852795/mark-cramer" itemprop="sameAs">
+        <i class="fa fa-fw fa-stack-overflow" aria-hidden="true"></i> Stackoverflow
+      </a>
+    </li>
+    
+
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=vlo46P8AAAAJ" itemprop="sameAs">
+        <img src="/assets/images/googlescholar.svg" alt="googlescholar" class="profile_icon"> Google Scholar
+      </a>
+    </li>
+  
+
+    <li><a href="https://mdcramer.github.io/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 Mark Cramer. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="https://mdcramer.github.io/assets/js/main.min.js"></script>
+
+
+
+
+  
+      
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://mdcramer.github.io/apple-2-blog/synthesizing-data/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/apple-2-blog/synthesizing-data"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://githubmdcramer.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+    
+
+
+    <script type="text/javascript" async 
+src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?
+config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+</html>

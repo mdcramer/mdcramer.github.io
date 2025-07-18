@@ -1,0 +1,459 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.6.0 by Michael Rose
+  Copyright 2017 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<title>Real-time Contextualized Search - It is What We Do - Hackin’ and Tinkerin’</title>
+
+
+
+
+<meta name="description" content="When doing something that has never been done before (as we do), it can be challenging to describe it using familiar terminology in a way that doesn’t create confusion while still conveying the newness of the idea. Large companies are sometimes capable of creating new terminology that is then adopted by others, but this can be particularly difficult for small entities. As such, for the sake of clarity, we describe how we have referred to our technology over the years and how we have now settled on “real-time contextualized search.”">
+
+
+
+
+<meta name="author" content="">
+
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="Hackin' and Tinkerin'">
+<meta property="og:title" content="Real-time Contextualized Search - It is What We Do - Hackin’ and Tinkerin’">
+
+
+  <link rel="canonical" href="https://mdcramer.github.io/rank-dynamics/real-time-contextualized-search/">
+  <meta property="og:url" content="https://mdcramer.github.io/rank-dynamics/real-time-contextualized-search/">
+
+
+
+  <meta property="og:description" content="When doing something that has never been done before (as we do), it can be challenging to describe it using familiar terminology in a way that doesn’t create confusion while still conveying the newness of the idea. Large companies are sometimes capable of creating new terminology that is then adopted by others, but this can be particularly difficult for small entities. As such, for the sake of clarity, we describe how we have referred to our technology over the years and how we have now settled on “real-time contextualized search.”">
+
+
+
+  <meta name="twitter:site" content="@markdcramer">
+  <meta name="twitter:title" content="Real-time Contextualized Search - It is What We Do - Hackin’ and Tinkerin’">
+  <meta name="twitter:description" content="When doing something that has never been done before (as we do), it can be challenging to describe it using familiar terminology in a way that doesn’t create confusion while still conveying the newness of the idea. Large companies are sometimes capable of creating new terminology that is then adopted by others, but this can be particularly difficult for small entities. As such, for the sake of clarity, we describe how we have referred to our technology over the years and how we have now settled on “real-time contextualized search.”">
+  <meta name="twitter:url" content="https://mdcramer.github.io/rank-dynamics/real-time-contextualized-search/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+  
+
+  
+
+
+
+  
+
+  
+
+
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2014-03-07T00:00:00-08:00">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end SEO -->
+
+
+<link href="https://mdcramer.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Hackin' and Tinkerin' Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://mdcramer.github.io/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav"><a class="site-title" href="/rank-dynamics/">rank dynamics</a>
+        <ul class="visible-links">
+          
+            <li class="masthead__menu-item"><a href="/">Home</a></li>
+            
+            
+<li>
+  <a href="https://github.com/mdcramer/mdcramer.github.io/tree/blog/_rank-dynamics"><i class="fa fa-fw fa-github" aria-hidden="true"></i>GitHub</a>
+</li>
+        </ul>
+        <button type="button">
+          <span class="visually-hidden">Toggle Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+    <div itemscope itemtype="http://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="https://mdcramer.github.io/assets/images/profilepic-small.jpg" class="author__avatar" alt="Mark Cramer" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name" itemprop="name">Mark Cramer</h3>
+    
+      <p class="author__bio" itemprop="description">
+        Product Management executive who enjoys hacking around with code in his free time, of which there is never, sadly, enough.
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Profile</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> <span itemprop="name">San Francisco</span>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/markdcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="https://www.facebook.com/markdcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/mcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/mdcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.stackoverflow.com/users/852795/mark-cramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-stack-overflow" aria-hidden="true"></i> Stackoverflow
+          </a>
+        </li>
+      
+
+      
+        
+          <li>
+            <a href="https://youtube.com/c/MarkCramerD" itemprop="sameAs">
+              <i class="fa fa-fw fa-youtube-square" aria-hidden="true"></i> YouTube
+            </a>
+          </li>
+        
+      
+
+      
+
+      
+        <li>
+          <a href="https://scholar.google.com/citations?user=vlo46P8AAAAJ" itemprop="sameAs">
+            <img src="/assets/images/googlescholar.svg" alt="googlescholar" class="profile_icon"> Google Scholar
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+  
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Real-time Contextualized Search - It is What We Do">
+    <meta itemprop="description" content="When doing something that has never been done before (as we do), it can be challenging to describe it using familiar terminology in a way that doesn’t create confusion while still conveying the newness of the idea. Large companies are sometimes capable of creating new terminology that is then adopted by others, but this can be particularly difficult for small entities. As such, for the sake of clarity, we describe how we have referred to our technology over the years and how we have now settled on “real-time contextualized search.”">
+    <meta itemprop="datePublished" content="March 07, 2014">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">Real-time Contextualized Search - It is What We Do
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <p>When doing something that has never been done before (as we do), it can be challenging to describe it using familiar terminology in a way that doesn’t create confusion while still conveying the newness of the idea. Large companies are sometimes capable of creating new terminology that is then adopted by others, but this can be particularly difficult for small entities. As such, for the sake of clarity, we describe how we have referred to our technology over the years and how we have now settled on “real-time contextualized search.”</p>
+
+<p>When <a href="http://www.surfcanyon.com" title="Surf Canyon">Surf Canyon</a> launched its ground-breaking technology for dynamically re-ordering search results in response real time behavioral signals, we called our product a “<a href="http://blog.surfcanyon.com/2008/02/19/surf-canyon-launches-discovery-engine-for-search/" title="Surf Canyon Launches Discovery Engine for Search">Discovery Engine for Search</a>”. The technology was referred to as “real-time implicit personalization” or simply “real-time personalization.” Unfortunately, this created a bit of confusion with some people in the search community:</p>
+
+<ul>
+  <li>The term “real-time” is an often abused and misunderstood. Technically “<a href="http://en.wikipedia.org/wiki/Real-time_computing" title="Real-time Computing">real-time computing</a>” refers to guaranteeing a response “within strict time constraints.” More generally it is used to refer to a system that responds very quickly. “Quickly,” however, is subject to interpretation which is why we then sometimes referred to our technology as “instant” or “immediate personalization.”</li>
+  <li>Additionally, the term “personalization” may also lead to misunderstanding. In information retrieval “personalization” generally refers to collecting data about an individual over an extended period of time in order to generate models of that particular person’s <em>long-term</em> preferences in order to then use those models to modestly adjust relevance scores for <em>future</em> queries. Despite <a href="http://blog.surfcanyon.com/2009/01/14/the-four-quadrants-of-personalization/" title="The Four Quadrants of Personalization">efforts to clarify the distinction</a> with “real-time personalization” the term “personalization” can lead to premature interpretation.</li>
+</ul>
+
+<p>In 2009 the team at Surf Canyon authored a paper entitled “<a href="http://www.surfcanyon.com/SurfCanyonDemonstrationResearchPaper.pdf" title="Demonstration of Improved Search Result Relevancy Using Real-Time Implicit Relevance Feedback">Demonstration of Improved Search Result Relevancy Using Real-Time Implicit Relevance Feedback</a>.” The paper was subsequently <a href="http://blog.surfcanyon.com/2009/07/15/selected-for-oral-presentation-at-sigir-09/" title="Selected for Oral Presentation at SIGIR '09">published by SIGIR</a> after Professor Thorsten Joachims at Cornell University <a href="http://blog.surfcanyon.com/2009/11/10/surf-canyon-surpasses-one-million-queries-a-day/" title="Surf Canyon Surpasses One Million Queries a Day">offered a glowing review</a>. “Real-time implicit relevance feedback” is a mouthful but seems to alleviate misconceptions caused by the term “personalization.”</p>
+
+<p>The next year, a team of researchers at Cornell, lead by Professor Joachims, published a paper called “<a href="http://blog.surfcanyon.com/2010/10/30/citation-in-cornell-university-ph-d-dissertation/" title="Citation in Cornell University Dissertation">Dynamic Ranked Retrieval</a>” which built upon our SIGIR research by running tests using labeled results to compute relevance metrics. The results were not real-world, but <a href="http://blog.surfcanyon.com/2013/08/29/video-of-dynamic-ranked-retrieval-presentation-at-wsdm-2011-in-hong-kong/" title="Dynamic Ranked Retrieval at WSDM '11">they were very impressive</a> and their paper was selected as one of the six best at WSDM 2011. We found “dynamic ranked retrieval” to be more punchy than “real-time implicit relevance feedback.”</p>
+
+<p>Nevertheless, while “dynamic ranked retrieval” has its appeal, a recent post in <a href="http://searchenginewatch.com/article/2329882/Why-Yahoo-Wants-to-Move-Into-Contextual-Search-and-How-it-Might-Work-For-Them" title="Why Yahoo Wants to Move Into Contextual Search and How it Might Work For Them">Search Engine Watch</a> regarding Yahoo!’s interests in search offered this:</p>
+
+<blockquote>
+  <p>Contextual search works by algorithmically trying to determine what you really mean to search for, such as picking up cues <em>from the immediate preceding searches</em>, and presenting results based on that. [Emphasis added]</p>
+</blockquote>
+
+<p>Algorithmically determining user intent by observing user interactions (“cues”) is what Surf Canyon has been doing <a href="http://blog.surfcanyon.com/2007/09/19/hold-the-pickles-hold-the-lettuce/" title="Hold the Pickles Hold the Lettuce">since the very beginning</a>. Our contextual search, however, is taken one large and very important step further - rather than waiting for subsequent searches in order to exploit user behavior signals, our technology <em>immediately</em> re-orders the result set in response to every user action that imparts additional understanding of the at-the-moment intent. As such, we henceforth declare that we develop Real-time Contextual Search.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/contextualization" class="page__taxonomy-item" rel="tag">contextualization</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/discovery" class="page__taxonomy-item" rel="tag">discovery</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/personalization" class="page__taxonomy-item" rel="tag">personalization</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/recommendations" class="page__taxonomy-item" rel="tag">recommendations</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/top-posts" class="page__taxonomy-item" rel="tag">top-posts</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2014-03-07T00:00:00-08:00">March 07, 2014</time></p>
+        
+      </footer><section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?via=markdcramer&text=Real-time+Contextualized+Search+-+It+is+What+We+Do%20https%3A%2F%2Fmdcramer.github.io%2Frank-dynamics%2Freal-time-contextualized-search%2F" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmdcramer.github.io%2Frank-dynamics%2Freal-time-contextualized-search%2F" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+<!-- 
+  <a href="https://plus.google.com/share?url=https%3A%2F%2Fmdcramer.github.io%2Frank-dynamics%2Freal-time-contextualized-search%2F" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a> -->
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmdcramer.github.io%2Frank-dynamics%2Freal-time-contextualized-search%2F" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+  <nav class="pagination">
+    
+      <a href="https://mdcramer.github.io/rank-dynamics/improving-search-for-etsy/" class="pagination--pager" title="Improving Search for Etsy
+">Previous</a>
+    
+    
+      <a href="https://mdcramer.github.io/rank-dynamics/scobleized/" class="pagination--pager" title="Scobleized!
+">Next</a>
+    
+  </nav>
+</div><div class="page__comments">
+  
+    
+        <h4 class="page__comments-title">Leave a Comment</h4>
+        <section id="disqus_thread"></section>
+      
+</div></article>
+</div>
+
+
+    <div class="page__footer">
+      <footer>
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    <!-- 
+      <li><strong>Follow:</strong></li>
+     -->
+    
+      <li><a href="https://twitter.com/markdcramer"><i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+    
+
+    
+    <li>
+      <a href="https://www.linkedin.com/in/mcramer" itemprop="sameAs">
+        <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+      </a>
+    </li>
+    
+<li>
+  <a href="https://github.com/mdcramer/mdcramer.github.io/tree/blog/_rank-dynamics"><i class="fa fa-fw fa-github" aria-hidden="true"></i>GitHub</a>
+</li>
+    <li>
+      <a href="https://www.stackoverflow.com/users/852795/mark-cramer" itemprop="sameAs">
+        <i class="fa fa-fw fa-stack-overflow" aria-hidden="true"></i> Stackoverflow
+      </a>
+    </li>
+    
+
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=vlo46P8AAAAJ" itemprop="sameAs">
+        <img src="/assets/images/googlescholar.svg" alt="googlescholar" class="profile_icon"> Google Scholar
+      </a>
+    </li>
+  
+
+    <li><a href="https://mdcramer.github.io/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 Mark Cramer. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="https://mdcramer.github.io/assets/js/main.min.js"></script>
+
+
+
+
+  
+      
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://mdcramer.github.io/rank-dynamics/real-time-contextualized-search/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/rank-dynamics/real-time-contextualized-search"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://githubmdcramer.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+    
+
+
+    <script type="text/javascript" async 
+src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?
+config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+</html>

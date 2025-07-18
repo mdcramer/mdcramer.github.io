@@ -1,0 +1,482 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.6.0 by Michael Rose
+  Copyright 2017 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<title>Running on EC2 - Hackin’ and Tinkerin’</title>
+
+
+
+
+<meta name="description" content="Getting up and running in the cloud with email updates from AWS">
+
+
+
+
+<meta name="author" content="">
+
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="Hackin' and Tinkerin'">
+<meta property="og:title" content="Running on EC2 - Hackin’ and Tinkerin’">
+
+
+  <link rel="canonical" href="https://mdcramer.github.io/deep-speeling-blog/running-on-ec2/">
+  <meta property="og:url" content="https://mdcramer.github.io/deep-speeling-blog/running-on-ec2/">
+
+
+
+  <meta property="og:description" content="Getting up and running in the cloud with email updates from AWS">
+
+
+
+  <meta name="twitter:site" content="@markdcramer">
+  <meta name="twitter:title" content="Running on EC2 - Hackin’ and Tinkerin’">
+  <meta name="twitter:description" content="Getting up and running in the cloud with email updates from AWS">
+  <meta name="twitter:url" content="https://mdcramer.github.io/deep-speeling-blog/running-on-ec2/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+  
+
+  
+
+
+
+  
+
+  
+
+
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2017-09-27T00:00:00-07:00">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end SEO -->
+
+
+<link href="https://mdcramer.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Hackin' and Tinkerin' Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://mdcramer.github.io/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav"><a class="site-title" href="/deep-speeling-blog/">deep speeling blog</a>
+        <ul class="visible-links">
+          
+            <li class="masthead__menu-item"><a href="/">Home</a></li>
+            
+            
+<li>
+  <a href="https://github.com/mdcramer/mdcramer.github.io/tree/blog/_deep-speeling-blog"><i class="fa fa-fw fa-github" aria-hidden="true"></i>GitHub</a>
+</li>
+        </ul>
+        <button type="button">
+          <span class="visually-hidden">Toggle Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+    <div itemscope itemtype="http://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="https://mdcramer.github.io/assets/images/profilepic-small.jpg" class="author__avatar" alt="Mark Cramer" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name" itemprop="name">Mark Cramer</h3>
+    
+      <p class="author__bio" itemprop="description">
+        Product Management executive who enjoys hacking around with code in his free time, of which there is never, sadly, enough.
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Profile</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> <span itemprop="name">San Francisco</span>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/markdcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="https://www.facebook.com/markdcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/mcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/mdcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.stackoverflow.com/users/852795/mark-cramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-stack-overflow" aria-hidden="true"></i> Stackoverflow
+          </a>
+        </li>
+      
+
+      
+        
+          <li>
+            <a href="https://youtube.com/c/MarkCramerD" itemprop="sameAs">
+              <i class="fa fa-fw fa-youtube-square" aria-hidden="true"></i> YouTube
+            </a>
+          </li>
+        
+      
+
+      
+
+      
+        <li>
+          <a href="https://scholar.google.com/citations?user=vlo46P8AAAAJ" itemprop="sameAs">
+            <img src="/assets/images/googlescholar.svg" alt="googlescholar" class="profile_icon"> Google Scholar
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+  
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Running on EC2">
+    <meta itemprop="description" content="Getting up and running in the cloud with email updates from AWS">
+    <meta itemprop="datePublished" content="September 27, 2017">
+    <meta itemprop="dateModified" content="October 16, 2017">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">Running on EC2
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <p>Even with a <a href="/deep-speeling-blog/my-rig/">local GPU</a> there is a certain convenience to training in the cloud. For starters, you can turn off your machine, which is especially handy if your training takes multiple days (or weeks). If training causes your laptop’s fan to whir, there’s also the benefit to some quiet.</p>
+
+<h2 id="getting-off-the-ground">Getting off the ground</h2>
+<p>The first step is to create an account at AWS. Since I took the <a href="https://www.udacity.com/course/deep-learning-nanodegree-foundation--nd101">Udacity Deep Learning Nanodegree</a> I already had one.</p>
+
+<p>Next, you’ve got to <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/LaunchingAndUsingInstances.html">launch an instance</a> on EC2. Here things can get complicated. If you just grab a generic <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">accelerated computing instance</a>, like the g2.2xlarge, you’ll then have to set it up. There are a number of instructional websites on <a href="http://ramhiser.com/2016/01/05/installing-tensorflow-on-an-aws-ec2-instance-with-gpu-support/">getting things set up</a>, which generally involve installing CUDA, cuDNN, Tensorflow and then whatever else you need, but you can also grab an <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html">AMI</a> that <a href="https://aws.amazon.com/marketplace/pp/B01EYKBEQ0?qid=1505924878587&amp;sr=0-1&amp;ref_=srh_res_product_title">already has everything</a> you need. I decided to run with the AMI provided by the Udacity course.</p>
+
+<p>Finally, you need to log into your instance, load up your code, typically accomplished by cloning a Github repo, and then run. If you’re going to be training for any length of time, <a href="http://linux.101hacks.com/unix/nohup-command/">nohup</a> is your friend. I put a number of helpful commands at the top of the .ipynb file in the Github repo.</p>
+
+<h2 id="phoning-home">Phoning home</h2>
+<p>One thing which is decidedly inconvenient about running in the cloud is that it’s difficult to know how things are going. You could log into the instance and check an output file, but that can be a hassle. For fun (isn’t all of this fun?) I decided to have my script periodically email me updates. Setting up email on EC2 isn’t too hard, so now at the end of each epoch I get an email like this:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Batch size: 128
+RNN size  : 512
+Num layers: 2
+Enc. size : 512
+Dec. size : 512
+Keep prob.: 0.7
+Learn rate: 0.001
+
+Epoch   3/4 Batch    100/32453 Inputs (000)    8320 - Loss:  0.053 - Validation loss:  0.037
+Epoch   3/4 Batch    200/32453 Inputs (000)    8333 - Loss:  0.078 - Validation loss:  0.056
+Epoch   3/4 Batch    300/32453 Inputs (000)    8346 - Loss:  0.052 - Validation loss:  0.044
+Epoch   3/4 Batch    400/32453 Inputs (000)    8359 - Loss:  0.052 - Validation loss:  0.044
+Epoch   3/4 Batch    500/32453 Inputs (000)    8371 - Loss:  0.065 - Validation loss:  0.042
+...
+...
+...
+Epoch   3/4 Batch  32100/32453 Inputs (000)   12416 - Loss:  0.057 - Validation loss:  0.034
+Epoch   3/4 Batch  32200/32453 Inputs (000)   12429 - Loss:  0.046 - Validation loss:  0.036
+Epoch   3/4 Batch  32300/32453 Inputs (000)   12442 - Loss:  0.036 - Validation loss:  0.035
+Epoch   3/4 Batch  32400/32453 Inputs (000)   12455 - Loss:  0.039 - Validation loss:  0.035
+Epoch   3/4 Batch  32453/32453 Inputs (000)   12461 - Loss:  0.041 - Validation loss:  0.035
+
+Model training for 21h:2m:48s and saved.
+Current accuracy = 70.4%
+</code></pre></div></div>
+
+<p>I don’t know why, but getting email updates from EC2 on the status of my neural network training has been more thrilling and I would ever have anticipated.</p>
+
+<h2 id="making-it-happen">Making it happen</h2>
+<p>After getting everything set up on EC2, I trained for 3 epochs on my local GPU (using a batch size of 128 and 30% dropout) before transferring the whole thing, minus the source and validation files but including the current state of the graph, into the cloud. The fourth and final epoch was then successfully run on EC2. Yay.</p>
+
+<p>The result below, however, is a bit odd. The discontinuity between the 3rd and 4th epochs is certainly due to the fact the source and validation files were regenerated before training continued. Which leads me to wonder the extent to which the training can be affected by the random sort when generating the source and validation files. It also makes me wonder if any efficiencies can be obtained by generating those files after every epoch, which is not something I have been doing. Those are ideas I will try to explore later.</p>
+
+<p>The final accuracy was 75.1% after over 24 hours of total training. This is quite a bit lower than the goal of 90% after 12 hours, so there is more work to be done.</p>
+
+<figure>
+    <img src="/assets/images/ec2.png" alt="Training on EC2" />
+    <figcaption>Validation loss for various hyperparameter configurations</figcaption>
+</figure>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/aws" class="page__taxonomy-item" rel="tag">aws</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/ec2" class="page__taxonomy-item" rel="tag">ec2</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/email" class="page__taxonomy-item" rel="tag">email</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2017-10-16">October 16, 2017</time></p>
+        
+      </footer><section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?via=markdcramer&text=Running+on+EC2%20https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeling-blog%2Frunning-on-ec2%2F" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeling-blog%2Frunning-on-ec2%2F" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+<!-- 
+  <a href="https://plus.google.com/share?url=https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeling-blog%2Frunning-on-ec2%2F" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a> -->
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmdcramer.github.io%2Fdeep-speeling-blog%2Frunning-on-ec2%2F" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+  <nav class="pagination">
+    
+      <a href="https://mdcramer.github.io/deep-speeling-blog/saving-for-future-training/" class="pagination--pager" title="Saving for future training
+">Previous</a>
+    
+    
+      <a href="https://mdcramer.github.io/deep-speeling-blog/goldilocks-batch-size/" class="pagination--pager" title="Goldilocks batch size
+">Next</a>
+    
+  </nav>
+</div><div class="page__comments">
+  
+    
+        <h4 class="page__comments-title">Leave a Comment</h4>
+        <section id="disqus_thread"></section>
+      
+</div></article>
+</div>
+
+
+    <div class="page__footer">
+      <footer>
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    <!-- 
+      <li><strong>Follow:</strong></li>
+     -->
+    
+      <li><a href="https://twitter.com/markdcramer"><i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+    
+
+    
+    <li>
+      <a href="https://www.linkedin.com/in/mcramer" itemprop="sameAs">
+        <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+      </a>
+    </li>
+    
+<li>
+  <a href="https://github.com/mdcramer/mdcramer.github.io/tree/blog/_deep-speeling-blog"><i class="fa fa-fw fa-github" aria-hidden="true"></i>GitHub</a>
+</li>
+    <li>
+      <a href="https://www.stackoverflow.com/users/852795/mark-cramer" itemprop="sameAs">
+        <i class="fa fa-fw fa-stack-overflow" aria-hidden="true"></i> Stackoverflow
+      </a>
+    </li>
+    
+
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=vlo46P8AAAAJ" itemprop="sameAs">
+        <img src="/assets/images/googlescholar.svg" alt="googlescholar" class="profile_icon"> Google Scholar
+      </a>
+    </li>
+  
+
+    <li><a href="https://mdcramer.github.io/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 Mark Cramer. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="https://mdcramer.github.io/assets/js/main.min.js"></script>
+
+
+
+
+  
+      
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://mdcramer.github.io/deep-speeling-blog/running-on-ec2/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/deep-speeling-blog/running-on-ec2"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://githubmdcramer.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+    
+
+
+    <script type="text/javascript" async 
+src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?
+config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+</html>
