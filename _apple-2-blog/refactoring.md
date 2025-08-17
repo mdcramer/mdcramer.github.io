@@ -16,7 +16,7 @@ Quick note on line numbers: refactoring BASIC almost _always_ consists of changi
 
 ## Refactoring the hyperparameters
 
-To make that happen, I start by moving all of my generator hyperparameters into a single array, `GE(..,..)`, where the first axis is the class. The second axis contains, respectively, \\(u_{x_0}, u_{x_1}, \sigma_{x_0}, \sigma_{x_1}, \rho\\) and \\(\sqrt{1 - \rho^2}\\). (See [Synthesizing data - Box-Muller](/apple-2-blog/synthesizing-data#box-muller-to-the-rescue/) for details.) The last element is purely for performance since this quantity will be needed frequently. (Upon further refection, I could have used \\(\sqrt{1 - \rho^2} \sigma_{x_1}\\) but this is a small optimization for later.)
+To make that happen, I start by moving all of my generator hyperparameters into a single array, `GE(..,..)`, where the first axis is the class. The second axis contains, respectively, \\(u_{x_0}, u_{x_1}, \sigma_{x_0}, \sigma_{x_1}, \rho\\) and \\(\sqrt{1 - \rho^2}\\). (See [Synthesizing data - Box-Muller](/apple-2-blog/synthesizing-data#box-muller-to-the-rescue) for details.) The last element is purely for performance since this quantity will be needed frequently. (Upon further refection, I could have used \\(\sqrt{1 - \rho^2} \sigma_{x_1}\\) but this is a small optimization for later.)
 
 ```bbcbasic
 100 REM == HYPERPARAMETERS ==
@@ -101,7 +101,7 @@ Since I'd like for my data to be randomly sampled, rather than scrambled after t
 700   ON K + 1 GOSUB 1200,1300: REM PLOT SAMPLE
 710 NEXT
 ```
-`RK%(..)` holds the remaining number of samples to be generated for each class. Lines 490 to 550 then produce a random number `P%` which is from 0 to the number of remaining samples to generate and then figures out which class this should be based on the remaining number of samples to be generated for each. The beauty of this is that the probably of generating a sample in each class will be a function of how many remaining samples need to be generated. It took a while to debug, but in the end this produces exactly the number of samples in each class as specified in the hyperparameters.
+`RK%(..)` holds the remaining number of samples to be generated for each class. Lines 490 to 550 then produce a random number `P%` which is from 0 to the number of remaining samples to generate and then figures out which class this should be based on the remaining number of samples to be generated for each. The beauty of this is that the probability of generating a sample in each class will be a function of how many remaining samples need to be generated. It took a while to debug, but in the end this produces exactly the number of samples in each class as specified in the hyperparameters.
 
 The code from lines 580 to 690 is the same as previously, however, the class-specific variables have been replaced by `GE(..,..)`, as mentioned above. Also, I changed `X%` and `Y%` to `XO%` and `X1%` to avoid confusion and be more consistent with the \\(Y = \theta^T X\\) literature.
 
@@ -150,7 +150,7 @@ The only remaining tweaks were for the plotting routines. The two routines below
 
 ## Testing Irwin-Hall as an alternative to Box-Muller
 
-The final chunk of code is interesting. After sharing my [Box-Muller](/apple-2-blog/synthesizing-data#box-muller-to-the-rescue/) routine with my friend, [Răzvan Surdulescu](https://www.linkedin.com/in/surdules/){:target="_blank"}, he suggested using the [Irwin-Hall Distribution](https://en.wikipedia.org/wiki/Irwin%E2%80%93Hall_distribution){:target="_blank"}. `SQR` and `COS` are expensive operations in BASIC and Irwin-Hall [approximates a normal distribution](https://en.wikipedia.org/wiki/Irwin%E2%80%93Hall_distribution#Approximating_a_Normal_distribution){:target="_blank"} by sampling 12 uniform random numbers.
+The final chunk of code is interesting. After sharing my [Box-Muller](/apple-2-blog/synthesizing-data#box-muller-to-the-rescue) routine with my friend, [Răzvan Surdulescu](https://www.linkedin.com/in/surdules/){:target="_blank"}, he suggested using the [Irwin-Hall Distribution](https://en.wikipedia.org/wiki/Irwin%E2%80%93Hall_distribution){:target="_blank"}. `SQR` and `COS` are expensive operations in BASIC and Irwin-Hall [approximates a normal distribution](https://en.wikipedia.org/wiki/Irwin%E2%80%93Hall_distribution#Approximating_a_Normal_distribution){:target="_blank"} by sampling 12 uniform random numbers.
 
 ```bbcbasic
 1400 REM == IRWIN-HALL DISTRIBUTION ==
