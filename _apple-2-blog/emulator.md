@@ -40,7 +40,11 @@ While I know that there are [emulators](https://www.applefritter.com/content/app
 
 While there's probably a way to connect the Apple ]\[+ to my Windows machine, I solve this problem by taking a picture of the monitor with my phone and then asking [chatGPT](https://chatgpt.com/share/684f9647-c438-8010-86d6-a3eae68a7b7d){:target="_blank"} to extract the code. The first attempts weren't too bad, but I had to iterate quite a few times to get it to output correctly. For example, if a single line of code wrapped on the screen, chatGPT would add extra line numbers. It also messed up the counting on occasion. It sometimes interpreted the percent sign as a dollar sign. That being said, it saves me a _ton_ of work. Interestingly, I think I 'trained' chatGPT on how to read the Applesoft BASIC code because outputs have become increasingly higher quality.
 
-![First screenshot of code](/assets/images/apple2/code-pic-1.jpg) ![Second screenshot of code](/assets/images/apple2/code-pic-2.jpg) ![Third screenshot of code](/assets/images/apple2/code-pic-3.jpg)
+<p align="middle">
+  <img src="/assets/images/apple2/code-pic-1.jpg" width="32%"/>
+  <img src="/assets/images/apple2/code-pic-2.jpg" width="32%"/> 
+  <img src="/assets/images/apple2/code-pic-3.jpg" width="32%"/>
+</p>
 
 I tried taking a video of the entire program scrolling by but the quality was not good enough for OCR.
 
