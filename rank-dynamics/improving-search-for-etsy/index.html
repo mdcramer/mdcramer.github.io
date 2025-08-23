@@ -1,0 +1,454 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.6.0 by Michael Rose
+  Copyright 2017 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<title>Improving Search for Etsy - Hackin’ and Tinkerin’</title>
+
+
+
+
+<meta name="description" content="Anyone familiar with Etsy knows that it is a fantastic website for finding handmade and vintage items, and a wonderful resource for gift-giving. Now, thanks to their search API and Rank Dynamics’s dynamic ranking technology, there is an improved, more conversational, way to search through the millions of items for sale on Etsy. Click over to the Rank Dynamics - Etsy Demo to try for yourself.">
+
+
+
+
+<meta name="author" content="">
+
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="Hackin' and Tinkerin'">
+<meta property="og:title" content="Improving Search for Etsy - Hackin’ and Tinkerin’">
+
+
+  <link rel="canonical" href="https://mdcramer.github.io/rank-dynamics/improving-search-for-etsy/">
+  <meta property="og:url" content="https://mdcramer.github.io/rank-dynamics/improving-search-for-etsy/">
+
+
+
+  <meta property="og:description" content="Anyone familiar with Etsy knows that it is a fantastic website for finding handmade and vintage items, and a wonderful resource for gift-giving. Now, thanks to their search API and Rank Dynamics’s dynamic ranking technology, there is an improved, more conversational, way to search through the millions of items for sale on Etsy. Click over to the Rank Dynamics - Etsy Demo to try for yourself.">
+
+
+
+  <meta name="twitter:site" content="@markdcramer">
+  <meta name="twitter:title" content="Improving Search for Etsy - Hackin’ and Tinkerin’">
+  <meta name="twitter:description" content="Anyone familiar with Etsy knows that it is a fantastic website for finding handmade and vintage items, and a wonderful resource for gift-giving. Now, thanks to their search API and Rank Dynamics’s dynamic ranking technology, there is an improved, more conversational, way to search through the millions of items for sale on Etsy. Click over to the Rank Dynamics - Etsy Demo to try for yourself.">
+  <meta name="twitter:url" content="https://mdcramer.github.io/rank-dynamics/improving-search-for-etsy/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+  
+
+  
+
+
+
+  
+
+  
+
+
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2014-02-14T00:00:00-08:00">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end SEO -->
+
+
+<link href="https://mdcramer.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Hackin' and Tinkerin' Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://mdcramer.github.io/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav"><a class="site-title" href="/rank-dynamics/">rank dynamics</a>
+        <ul class="visible-links">
+          
+            <li class="masthead__menu-item"><a href="/">Home</a></li>
+            
+            
+<li>
+  <a href="https://github.com/mdcramer/mdcramer.github.io/tree/blog/_rank-dynamics"><i class="fa fa-fw fa-github" aria-hidden="true"></i>GitHub</a>
+</li>
+        </ul>
+        <button type="button">
+          <span class="visually-hidden">Toggle Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+    <div itemscope itemtype="http://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="https://mdcramer.github.io/assets/images/profilepic-small.jpg" class="author__avatar" alt="Mark Cramer" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name" itemprop="name">Mark Cramer</h3>
+    
+      <p class="author__bio" itemprop="description">
+        Product Management executive who enjoys hacking around with code in his free time, of which there is never, sadly, enough.
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Profile</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> <span itemprop="name">San Francisco</span>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/markdcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="https://www.facebook.com/markdcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/mcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/mdcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.stackoverflow.com/users/852795/mark-cramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-stack-overflow" aria-hidden="true"></i> Stackoverflow
+          </a>
+        </li>
+      
+
+      
+        
+          <li>
+            <a href="https://youtube.com/c/MarkCramerD" itemprop="sameAs">
+              <i class="fa fa-fw fa-youtube-square" aria-hidden="true"></i> YouTube
+            </a>
+          </li>
+        
+      
+
+      
+
+      
+        <li>
+          <a href="https://scholar.google.com/citations?user=vlo46P8AAAAJ" itemprop="sameAs">
+            <img src="/assets/images/googlescholar.svg" alt="googlescholar" class="profile_icon"> Google Scholar
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+  
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Improving Search for Etsy">
+    <meta itemprop="description" content="Anyone familiar with Etsy knows that it is a fantastic website for finding handmade and vintage items, and a wonderful resource for gift-giving. Now, thanks to their search API and Rank Dynamics’s dynamic ranking technology, there is an improved, more conversational, way to search through the millions of items for sale on Etsy. Click over to the Rank Dynamics - Etsy Demo to try for yourself.">
+    <meta itemprop="datePublished" content="February 14, 2014">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">Improving Search for Etsy
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <p>Anyone familiar with <a href="http://www.etsy.com" title="Etsy">Etsy</a> knows that it is a fantastic website for finding handmade and vintage items, and a wonderful resource for gift-giving. Now, thanks to their search API and Rank Dynamics’s dynamic ranking technology, there is an improved, <a href="http://blog.rankdynamics.com/2010/10/01/search-as-a-conversation-second-part-of-search-engine-land-interview-with-gordon-hotchkiss/">more conversational</a>, way to search through the millions of items for sale on Etsy. Click over to the <strong><a href="http://etsy.rankdynamics.com" title="Rank Dynamics - Etsy Demo">Rank Dynamics - Etsy Demo</a></strong> to try for yourself.</p>
+
+<p>If you run a search for “<a href="http://www.etsy.com/search?q=gloves" title="Search Etsy for &quot;gloves&quot;">gloves</a>” on Etsy you’ll be presented with almost 70,000 results. There are facets on the left for drilling down, and of course users have the option of reformulating their queries to something more precise, but Rank Dynamics has always been about alleviating the cognitive load by automatically and immediately assisting users with finding what they need.</p>
+
+<p>As such, a query for “gloves” on the <strong><a href="http://etsy.rankdynamics.com/search?q=gloves" title="Search Rank Dynamics - Etsy Demo for &quot;gloves&quot;">Rank Dynamics - Etsy Demo</a></strong> will produce a page that looks like this:</p>
+
+<p><a href="/assets/images/rank-dynamics/Etsy-search.png"><img src="/assets/images/rank-dynamics/Etsy-search.png" alt="Etsy search" /></a></p>
+
+<p>As it so happens, tomorrow is Valentine’s Day, so perhaps the very first result fancies you, and so you select it. If your shopping is done, congratulations. It’s very rare indeed to find something to purchases with only a single click! More likely, however, you’ll return to the search page to check out more, which is when you’ll helpfully be provided with real-time recommendations from Rank Dynamics’s dynamic ranking engine:</p>
+
+<p><a href="/assets/images/rank-dynamics/Etsy-search-with-recommendations.png"><img src="/assets/images/rank-dynamics/Etsy-search-with-recommendations.png" alt="Etsy search with recommendations" /></a></p>
+
+<p>As you can see, these Valentine’s Day glove results are coming from pages 35, 37 and 41. It is hard to believe that anyone would ever dig that deep for a search result, but here they are helpful and automatically brought to page 1.</p>
+
+<p>Every selection you make and every result you skip gives Rank Dynamics’s dynamic search engine more information about your information need, enabling a superior ranking every step of the way. Clicking “More Results” on page 1 will produce more re-ranked results on page 1. Moving over to page 2 will the produce a second page of results tailored in real time to your needs.</p>
+
+<p>In this particular example, you get more of what you want - gloves for Valentine’s Day:</p>
+
+<p><a href="/assets/images/rank-dynamics/Etsy-search-page-2.png"><img src="/assets/images/rank-dynamics/Etsy-search-page-2.png" alt="Etsy search page 2" /></a></p>
+
+<p>The results are coming from pages 29, 23 and, somewhat amazingly, 88. Clicking a result on page 2 produces yet more re-ranked results, presented as “recommendations,” and the process continues.</p>
+
+<p>Rank Dynamics’s technology has been proven to deliver dramatic improvement in relevance, so give it a try!</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/demonstration" class="page__taxonomy-item" rel="tag">demonstration</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/personalization" class="page__taxonomy-item" rel="tag">personalization</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/recommendations" class="page__taxonomy-item" rel="tag">recommendations</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2014-02-14T00:00:00-08:00">February 14, 2014</time></p>
+        
+      </footer><section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?via=markdcramer&text=Improving+Search+for+Etsy%20https%3A%2F%2Fmdcramer.github.io%2Frank-dynamics%2Fimproving-search-for-etsy%2F" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmdcramer.github.io%2Frank-dynamics%2Fimproving-search-for-etsy%2F" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+<!-- 
+  <a href="https://plus.google.com/share?url=https%3A%2F%2Fmdcramer.github.io%2Frank-dynamics%2Fimproving-search-for-etsy%2F" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a> -->
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmdcramer.github.io%2Frank-dynamics%2Fimproving-search-for-etsy%2F" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+  <nav class="pagination">
+    
+      <a href="https://mdcramer.github.io/rank-dynamics/if-google-was-a-guy/" class="pagination--pager" title="If Google was a Guy
+">Previous</a>
+    
+    
+      <a href="https://mdcramer.github.io/rank-dynamics/real-time-contextualized-search/" class="pagination--pager" title="Real-time Contextualized Search - It is What We Do
+">Next</a>
+    
+  </nav>
+</div><div class="page__comments">
+  
+    
+        <h4 class="page__comments-title">Leave a Comment</h4>
+        <section id="disqus_thread"></section>
+      
+</div></article>
+</div>
+
+
+    <div class="page__footer">
+      <footer>
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    <!-- 
+      <li><strong>Follow:</strong></li>
+     -->
+    
+      <li><a href="https://twitter.com/markdcramer"><i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+    
+
+    
+    <li>
+      <a href="https://www.linkedin.com/in/mcramer" itemprop="sameAs">
+        <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+      </a>
+    </li>
+    
+<li>
+  <a href="https://github.com/mdcramer/mdcramer.github.io/tree/blog/_rank-dynamics"><i class="fa fa-fw fa-github" aria-hidden="true"></i>GitHub</a>
+</li>
+    <li>
+      <a href="https://www.stackoverflow.com/users/852795/mark-cramer" itemprop="sameAs">
+        <i class="fa fa-fw fa-stack-overflow" aria-hidden="true"></i> Stackoverflow
+      </a>
+    </li>
+    
+
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=vlo46P8AAAAJ" itemprop="sameAs">
+        <img src="/assets/images/googlescholar.svg" alt="googlescholar" class="profile_icon"> Google Scholar
+      </a>
+    </li>
+  
+
+    <li><a href="https://mdcramer.github.io/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 Mark Cramer. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="https://mdcramer.github.io/assets/js/main.min.js"></script>
+
+
+
+
+  
+      
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://mdcramer.github.io/rank-dynamics/improving-search-for-etsy/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/rank-dynamics/improving-search-for-etsy"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://githubmdcramer.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+    
+
+
+    <script type="text/javascript" async 
+src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?
+config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+</html>

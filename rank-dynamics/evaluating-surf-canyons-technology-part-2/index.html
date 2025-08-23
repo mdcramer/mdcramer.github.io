@@ -1,0 +1,462 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.6.0 by Michael Rose
+  Copyright 2017 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<title>Evaluating Dynamic Ranking Technology (Part 2) - Hackin’ and Tinkerin’</title>
+
+
+
+
+<meta name="description" content="In a Part I, we began discussing some quantitative evaluations of the technology reported in our research paper.  The goal in these studies is to see if search engine users get any value out of real-time implicit personalization and, if so, to find metrics that we can use to quantify this value.">
+
+
+
+
+<meta name="author" content="">
+
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="Hackin' and Tinkerin'">
+<meta property="og:title" content="Evaluating Dynamic Ranking Technology (Part 2) - Hackin’ and Tinkerin’">
+
+
+  <link rel="canonical" href="https://mdcramer.github.io/rank-dynamics/evaluating-surf-canyons-technology-part-2/">
+  <meta property="og:url" content="https://mdcramer.github.io/rank-dynamics/evaluating-surf-canyons-technology-part-2/">
+
+
+
+  <meta property="og:description" content="In a Part I, we began discussing some quantitative evaluations of the technology reported in our research paper.  The goal in these studies is to see if search engine users get any value out of real-time implicit personalization and, if so, to find metrics that we can use to quantify this value.">
+
+
+
+  <meta name="twitter:site" content="@markdcramer">
+  <meta name="twitter:title" content="Evaluating Dynamic Ranking Technology (Part 2) - Hackin’ and Tinkerin’">
+  <meta name="twitter:description" content="In a Part I, we began discussing some quantitative evaluations of the technology reported in our research paper.  The goal in these studies is to see if search engine users get any value out of real-time implicit personalization and, if so, to find metrics that we can use to quantify this value.">
+  <meta name="twitter:url" content="https://mdcramer.github.io/rank-dynamics/evaluating-surf-canyons-technology-part-2/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+  
+
+  
+
+
+
+  
+
+  
+
+
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2008-12-01T00:00:00-08:00">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end SEO -->
+
+
+<link href="https://mdcramer.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Hackin' and Tinkerin' Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://mdcramer.github.io/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav"><a class="site-title" href="/rank-dynamics/">rank dynamics</a>
+        <ul class="visible-links">
+          
+            <li class="masthead__menu-item"><a href="/">Home</a></li>
+            
+            
+<li>
+  <a href="https://github.com/mdcramer/mdcramer.github.io/tree/blog/_rank-dynamics"><i class="fa fa-fw fa-github" aria-hidden="true"></i>GitHub</a>
+</li>
+        </ul>
+        <button type="button">
+          <span class="visually-hidden">Toggle Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+    <div itemscope itemtype="http://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="https://mdcramer.github.io/assets/images/profilepic-small.jpg" class="author__avatar" alt="Mark Cramer" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name" itemprop="name">Mark Cramer</h3>
+    
+      <p class="author__bio" itemprop="description">
+        Product Management executive who enjoys hacking around with code in his free time, of which there is never, sadly, enough.
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Profile</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> <span itemprop="name">San Francisco</span>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/markdcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="https://www.facebook.com/markdcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/mcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/mdcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.stackoverflow.com/users/852795/mark-cramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-stack-overflow" aria-hidden="true"></i> Stackoverflow
+          </a>
+        </li>
+      
+
+      
+        
+          <li>
+            <a href="https://youtube.com/c/MarkCramerD" itemprop="sameAs">
+              <i class="fa fa-fw fa-youtube-square" aria-hidden="true"></i> YouTube
+            </a>
+          </li>
+        
+      
+
+      
+
+      
+        <li>
+          <a href="https://scholar.google.com/citations?user=vlo46P8AAAAJ" itemprop="sameAs">
+            <img src="/assets/images/googlescholar.svg" alt="googlescholar" class="profile_icon"> Google Scholar
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+  
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Evaluating Dynamic Ranking Technology (Part 2)">
+    <meta itemprop="description" content="In a Part I, we began discussing some quantitative evaluations of the technology reported in our research paper.  The goal in these studies is to see if search engine users get any value out of real-time implicit personalization and, if so, to find metrics that we can use to quantify this value.">
+    <meta itemprop="datePublished" content="December 01, 2008">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">Evaluating Dynamic Ranking Technology (Part 2)
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <p>In a <a href="/rank-dynamics/evaluating-surf-canyons-technology-part-1/">Part I</a>, we began discussing some quantitative evaluations of the technology reported in our <strong><a href="/assets/papers/SurfCanyonDemonstrationResearchPaper.pdf">research paper</a></strong>.  The goal in these studies is to see if search engine users get any value out of real-time implicit personalization and, if so, to find metrics that we can use to quantify this value.</p>
+
+<p>One of the most useful techniques for comparing the quality of search engine retrieval functions is the technique of result interleaving, invented by <a href="http://www.cs.cornell.edu/People/tj/">Thorsten Joachims</a> of Cornell University. He first introduced the idea in a <a href="http://www.cs.cornell.edu/People/tj/publications/joachims_02b.pdf">2002 paper</a> and has since recently <a href="http://www.cs.cornell.edu/People/tj/publications/radlinski_etal_08b.pdf">expanded</a> on the idea.</p>
+
+<p>A search engine retrieval function is an algorithm that produces a ranked list of documents given a document collection and a user query. The retrieval function is the secret sauce behind the search engine. It is reported that Google, for instance, considers over 200 different document features when ranking web pages in response to a user query. These features are fed into the retrieval function which tells the web application which links to present and it what order.  In an open collection, such as the World Wide Web, different retrieval functions can produce both different document orderings as well as entirely different sets of documents.</p>
+
+<p>Joachims came up with a very simple test that answers the following question: Given two retrieval functions, which does a search engine user prefer? His idea was that one can interleave the results of the two retrieval functions in an unbiased fashion and then count the user clicks on the links contributed by each retrieval function. The better retrieval function is the one that gets the most clicks.</p>
+
+<p>For instance, assume that we have four documents (A, B, C, and D) that are relevant to a given query. According to the first retrieval function, r1, they should be ordered C-A-D-B. According to the second retrieval function, r2, they should be ordered D-A-C-B. The interleaved order of presentation would be D-C-A-B half the time and C-D-A-B half the time. We need to assure that each retrieval function gets to determine the document in the top spot half the time in order to have an unbiased test.  We would then show these document lists to many users as they conduct searches for this query. If we found that there were more user clicks on document C compared to document D, we can state that users prefer retrieval function r1. We can repeat this test for more documents and more queries, but by simply counting the clicks on documents contributed by each retrieval function we can determine an absolute user preference.</p>
+
+<p>We implemented this test to compare our retrieval function, which employs real-time personalization based on implicit relevance feedback, with Google’s retrieval function. We always show the user the top 10 Google results, even with our application installed, so our interleaving test was only done when users asked for a second page of search results. In those cases, the results presented to the user would be a mixture of results 11 through 15 from Google and the most highly ranked personalized results from our retrieval function.</p>
+
+<p>The figure below shows the ratio of link clicks on dynamically ranked results compared to Google results as a function of the number of search results selected by the searcher before preceding to the second page of results. A ratio less than 1.0 would indicate that they prefer un-personalized Google results, whereas a ratio greater than 1.0 would indicate a preference for our retrieval algorithm. A ratio of 1.0 would indicate no user preference. Note that the users do not know if they are selecting personalized or un-personalized links. The result is a very clear preference for our retrieval algorithm – users are 30-40% more likely to select dynamically ranked links.</p>
+
+<p><img src="/assets/images/rank-dynamics/research-paper-fig-6.jpg" alt="Research Paper Fig 6" /></p>
+
+<p>We looked at this quantity versus the number of search results selected because the user’s interactions with the search page are what we use to personalize the results. The more the user selects, the more confident we are about the user’s true intent. Interestingly, users also prefer dynamically ranked results, by a significant margin, even when they skip the top 10 Google links entirely. When a user skips a link, we generally assume that the document is not what the user wanted. If the user skips all 10 links, we assume that the search engine misinterpreted the user intent and we start looking for different content that is not represented in the top 10 links.</p>
+
+<p>Even though only 10% of searchers ever venture beyond page 1, we consider a 30-40% improvement in page 2 click-through rates to be significant. Quantitatively measuring the value delivered by real-time implicit personalization to page 1 results is, unfortunately, considerably more difficult. Nevertheless, be believe that these page 2 results are indicative of the value that real-time implicit personalization can delivery to page 1 results as well.</p>
+
+<p>Update (7/15/09) - Our <a href="/assets/papers/SurfCanyonDemonstrationResearchPaper.pdf">research paper</a>, “Demonstration of Improved Search Result Relevancy Using Real-Time Implicit Relevance Feedback,” was selected for oral presentation at <a href="/rank-dynamics/selected-for-oral-presentation-at-sigir-09/">SIGIR ‘09</a>.</p>
+
+<p>Update (12/18/09) - Our <a href="/assets/papers/SurfCanyonDemonstrationResearchPaper.pdf">research paper</a> was published by <a href="/rank-dynamics/selected-for-oral-presentation-at-sigir-09/">SIGIR</a>.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/discovery" class="page__taxonomy-item" rel="tag">discovery</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/personalization" class="page__taxonomy-item" rel="tag">personalization</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/research" class="page__taxonomy-item" rel="tag">research</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/top-posts" class="page__taxonomy-item" rel="tag">top-posts</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/tutorials" class="page__taxonomy-item" rel="tag">tutorials</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2008-12-01T00:00:00-08:00">December 01, 2008</time></p>
+        
+      </footer><section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?via=markdcramer&text=Evaluating+Dynamic+Ranking+Technology+%28Part+2%29%20https%3A%2F%2Fmdcramer.github.io%2Frank-dynamics%2Fevaluating-surf-canyons-technology-part-2%2F" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmdcramer.github.io%2Frank-dynamics%2Fevaluating-surf-canyons-technology-part-2%2F" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+<!-- 
+  <a href="https://plus.google.com/share?url=https%3A%2F%2Fmdcramer.github.io%2Frank-dynamics%2Fevaluating-surf-canyons-technology-part-2%2F" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a> -->
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmdcramer.github.io%2Frank-dynamics%2Fevaluating-surf-canyons-technology-part-2%2F" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+  <nav class="pagination">
+    
+      <a href="https://mdcramer.github.io/rank-dynamics/v116-searchwiki-compatibility/" class="pagination--pager" title="v1.1.6 - SearchWiki Compatibility
+">Previous</a>
+    
+    
+      <a href="https://mdcramer.github.io/rank-dynamics/panel-participatation-at-add-on-con/" class="pagination--pager" title="Panel Participatation at Add-on-Con
+">Next</a>
+    
+  </nav>
+</div><div class="page__comments">
+  
+    
+        <h4 class="page__comments-title">Leave a Comment</h4>
+        <section id="disqus_thread"></section>
+      
+</div></article>
+</div>
+
+
+    <div class="page__footer">
+      <footer>
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    <!-- 
+      <li><strong>Follow:</strong></li>
+     -->
+    
+      <li><a href="https://twitter.com/markdcramer"><i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+    
+
+    
+    <li>
+      <a href="https://www.linkedin.com/in/mcramer" itemprop="sameAs">
+        <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+      </a>
+    </li>
+    
+<li>
+  <a href="https://github.com/mdcramer/mdcramer.github.io/tree/blog/_rank-dynamics"><i class="fa fa-fw fa-github" aria-hidden="true"></i>GitHub</a>
+</li>
+    <li>
+      <a href="https://www.stackoverflow.com/users/852795/mark-cramer" itemprop="sameAs">
+        <i class="fa fa-fw fa-stack-overflow" aria-hidden="true"></i> Stackoverflow
+      </a>
+    </li>
+    
+
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=vlo46P8AAAAJ" itemprop="sameAs">
+        <img src="/assets/images/googlescholar.svg" alt="googlescholar" class="profile_icon"> Google Scholar
+      </a>
+    </li>
+  
+
+    <li><a href="https://mdcramer.github.io/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 Mark Cramer. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="https://mdcramer.github.io/assets/js/main.min.js"></script>
+
+
+
+
+  
+      
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://mdcramer.github.io/rank-dynamics/evaluating-surf-canyons-technology-part-2/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/rank-dynamics/evaluating-surf-canyons-technology-part-2"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://githubmdcramer.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+    
+
+
+    <script type="text/javascript" async 
+src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?
+config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+</html>

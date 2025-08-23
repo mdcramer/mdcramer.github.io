@@ -1,0 +1,591 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.6.0 by Michael Rose
+  Copyright 2017 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<title>Refactoring - Hackin’ and Tinkerin’</title>
+
+
+
+
+<meta name="description" content="Changing the BASIC code… after only one week.">
+
+
+
+
+<meta name="author" content="">
+
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="Hackin' and Tinkerin'">
+<meta property="og:title" content="Refactoring - Hackin’ and Tinkerin’">
+
+
+  <link rel="canonical" href="https://mdcramer.github.io/apple-2-blog/refactoring/">
+  <meta property="og:url" content="https://mdcramer.github.io/apple-2-blog/refactoring/">
+
+
+
+  <meta property="og:description" content="Changing the BASIC code… after only one week.">
+
+
+
+  <meta name="twitter:site" content="@markdcramer">
+  <meta name="twitter:title" content="Refactoring - Hackin’ and Tinkerin’">
+  <meta name="twitter:description" content="Changing the BASIC code… after only one week.">
+  <meta name="twitter:url" content="https://mdcramer.github.io/apple-2-blog/refactoring/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+  
+
+  
+
+
+
+  
+
+  
+
+
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2025-07-13T00:00:00-07:00">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end SEO -->
+
+
+<link href="https://mdcramer.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Hackin' and Tinkerin' Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://mdcramer.github.io/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav"><a class="site-title" href="/apple-2-blog/">apple 2 blog</a>
+        <ul class="visible-links">
+          
+            <li class="masthead__menu-item"><a href="/">Home</a></li>
+            
+            
+<li>
+  <a href="https://github.com/mdcramer/mdcramer.github.io/tree/blog/_apple-2-blog"><i class="fa fa-fw fa-github" aria-hidden="true"></i>GitHub</a>
+</li>
+        </ul>
+        <button type="button">
+          <span class="visually-hidden">Toggle Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+    <div itemscope itemtype="http://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="https://mdcramer.github.io/assets/images/profilepic-small.jpg" class="author__avatar" alt="Mark Cramer" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name" itemprop="name">Mark Cramer</h3>
+    
+      <p class="author__bio" itemprop="description">
+        Product Management executive who enjoys hacking around with code in his free time, of which there is never, sadly, enough.
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Profile</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> <span itemprop="name">San Francisco</span>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/markdcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="https://www.facebook.com/markdcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/mcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/mdcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.stackoverflow.com/users/852795/mark-cramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-stack-overflow" aria-hidden="true"></i> Stackoverflow
+          </a>
+        </li>
+      
+
+      
+        
+          <li>
+            <a href="https://youtube.com/c/MarkCramerD" itemprop="sameAs">
+              <i class="fa fa-fw fa-youtube-square" aria-hidden="true"></i> YouTube
+            </a>
+          </li>
+        
+      
+
+      
+
+      
+        <li>
+          <a href="https://scholar.google.com/citations?user=vlo46P8AAAAJ" itemprop="sameAs">
+            <img src="/assets/images/googlescholar.svg" alt="googlescholar" class="profile_icon"> Google Scholar
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+  
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Refactoring">
+    <meta itemprop="description" content="Changing the BASIC code… after only one week.">
+    <meta itemprop="datePublished" content="July 13, 2025">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">Refactoring
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <p>Well, that didn’t take too long. When I was developing <a href="https://mortalwayfare.com/" target="_blank">Mortal Wayfare</a>, I recall frequently passing hours just looking at the code, trying to figure out how to better represent what I was trying to accomplish while improving the organization. (Should this method go in a different class? Is there a better name for this variable? Should I break this code out into a function?…) Some days I would do nothing but this. Having never been a professional software developer, I’m not sure to what extent this is normal, but I found the process to be very helpful.</p>
+
+<p>I suppose there’s a balance between planning out what you’re going to do and just getting started. For my this project, I leaned toward the latter. As such, after the first pass I already decided to change it up. More specifically, the first thing I decided to do was, rather than have a different array for each class of data, move everything into a single array. The reason is that, during training, this will facilitate looping over all the data.</p>
+
+<p>Quick note on line numbers: refactoring BASIC almost <em>always</em> consists of changing line numbers. As such, this code is not going to match up with previous posts. Hopefully that won’t be confusing.</p>
+
+<h2 id="refactoring-the-hyperparameters">Refactoring the hyperparameters</h2>
+
+<p>To make that happen, I start by moving all of my generator hyperparameters into a single array, <code class="language-plaintext highlighter-rouge">GE(..,..)</code>, where the first axis is the class. The second axis contains, respectively, \(u_{x_0}, u_{x_1}, \sigma_{x_0}, \sigma_{x_1}, \rho\) and \(\sqrt{1 - \rho^2}\). (See <a href="/apple-2-blog/synthesizing-data#box-muller-to-the-rescue">Synthesizing data - Box-Muller</a> for details.) The last element is purely for performance since this quantity will be needed frequently. (Upon further refection, I could have used \(\sqrt{1 - \rho^2} \sigma_{x_1}\) but this is a small optimization for later.)</p>
+
+<div class="language-bbcbasic highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="m">100</span> <span class="c">REM == HYPERPARAMETERS ==</span>
+<span class="m">110</span> <span class="nv">KN</span> <span class="o">=</span> <span class="m">2</span><span class="p">:</span> <span class="c">REM # OF CLASSES</span>
+<span class="m">120</span> <span class="k">DIM</span> <span class="nv">KN%</span><span class="o">(</span><span class="nv">KN</span> <span class="o">-</span> <span class="m">1</span><span class="o">)</span><span class="p">:</span> <span class="c">REM # OF SAMPLES FROM EACH CLASS</span>
+<span class="m">130</span> <span class="nv">KN%</span><span class="o">(</span><span class="m">0</span><span class="o">)</span> <span class="o">=</span> <span class="m">100</span>
+<span class="m">140</span> <span class="nv">KN%</span><span class="o">(</span><span class="m">1</span><span class="o">)</span> <span class="o">=</span> <span class="m">50</span>
+
+<span class="m">150</span> <span class="c">REM -- GENERATORS --</span>
+<span class="m">160</span> <span class="c">REM -- CLASS - MU-X0, MU-X1, SIG-X0, SIG-X1, RHO --</span>
+<span class="m">170</span> <span class="k">DIM</span> <span class="nv">GE</span><span class="o">(</span><span class="nv">KN</span> <span class="o">-</span> <span class="m">1</span><span class="p">,</span><span class="m">4</span><span class="o">)</span>
+
+<span class="m">180</span> <span class="c">REM -- CLASS 0 --</span>
+<span class="m">190</span> <span class="nv">GE</span><span class="o">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="o">)</span> <span class="o">=</span> <span class="m">100</span><span class="p">:</span> <span class="c">REM MU-X0</span>
+<span class="m">200</span> <span class="nv">GE</span><span class="o">(</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="o">)</span> <span class="o">=</span> <span class="m">50</span><span class="p">:</span> <span class="c">REM MU-X1</span>
+<span class="m">210</span> <span class="nv">GE</span><span class="o">(</span><span class="m">0</span><span class="p">,</span><span class="m">2</span><span class="o">)</span> <span class="o">=</span> <span class="m">30</span><span class="p">:</span> <span class="c">REM SIG-X0</span>
+<span class="m">220</span> <span class="nv">GE</span><span class="o">(</span><span class="m">0</span><span class="p">,</span><span class="m">3</span><span class="o">)</span> <span class="o">=</span> <span class="m">10</span><span class="p">:</span> <span class="c">REM SIG-X1</span>
+<span class="m">230</span> <span class="nv">GE</span><span class="o">(</span><span class="m">0</span><span class="p">,</span><span class="m">4</span><span class="o">)</span> <span class="o">=</span> <span class="m">0.5</span><span class="p">:</span> <span class="c">REM RHO</span>
+<span class="m">240</span> <span class="nv">GE</span><span class="o">(</span><span class="m">0</span><span class="p">,</span><span class="m">5</span><span class="o">)</span> <span class="o">=</span> <span class="nb">SQR</span><span class="o">(</span><span class="m">1</span> <span class="o">-</span> <span class="nv">GE</span><span class="o">(</span><span class="m">0</span><span class="p">,</span><span class="m">4</span><span class="o">)</span> <span class="o">^</span> <span class="m">2</span><span class="o">)</span>
+
+<span class="m">250</span> <span class="c">REM -- CLASS 1 --</span>
+<span class="m">260</span> <span class="nv">GE</span><span class="o">(</span><span class="m">1</span><span class="p">,</span><span class="m">0</span><span class="o">)</span> <span class="o">=</span> <span class="m">200</span><span class="p">:</span> <span class="c">REM MU-X0</span>
+<span class="m">270</span> <span class="nv">GE</span><span class="o">(</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="o">)</span> <span class="o">=</span> <span class="m">100</span><span class="p">:</span> <span class="c">REM MU-X1</span>
+<span class="m">280</span> <span class="nv">GE</span><span class="o">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="o">)</span> <span class="o">=</span> <span class="m">50</span><span class="p">:</span> <span class="c">REM SIG-X0</span>
+<span class="m">290</span> <span class="nv">GE</span><span class="o">(</span><span class="m">1</span><span class="p">,</span><span class="m">3</span><span class="o">)</span> <span class="o">=</span> <span class="m">25</span><span class="p">:</span> <span class="c">REM SIG-X1</span>
+<span class="m">300</span> <span class="nv">GE</span><span class="o">(</span><span class="m">1</span><span class="p">,</span><span class="m">4</span><span class="o">)</span> <span class="o">=</span> <span class="o">-</span><span class="m">0.5</span><span class="p">:</span> <span class="c">REM RHO</span>
+<span class="m">310</span> <span class="nv">GE</span><span class="o">(</span><span class="m">1</span><span class="p">,</span><span class="m">5</span><span class="o">)</span> <span class="o">=</span> <span class="nb">SQR</span><span class="o">(</span><span class="m">1</span> <span class="o">-</span> <span class="nv">GE</span><span class="o">(</span><span class="m">1</span><span class="p">,</span><span class="m">4</span><span class="o">)</span> <span class="o">^</span> <span class="m">2</span><span class="o">)</span>
+<span class="m">320</span> <span class="c">REM == END HYPERPARAMETERS ==</span>
+</code></pre></div></div>
+<p>Note: here is a funny thing with Applesoft BASIC arrays. I couldn’t remember if there was 0- or 1-indexed. Turns out, they are both! <code class="language-plaintext highlighter-rouge">DIM A(3)</code> will create an array of length 4 which goes from index 0 to 3. I can’t recall seeing anything like that anywhere else. So, I use <code class="language-plaintext highlighter-rouge">DIM GE(KN-1,4)</code> because I want the first axis to have <code class="language-plaintext highlighter-rouge">KN</code> elements and the second axis to have 5. Funny.</p>
+
+<p>Another note: Applesoft BASIC only uses the first two characters of a variable names, however, <code class="language-plaintext highlighter-rouge">KN</code> and <code class="language-plaintext highlighter-rouge">KN%(..)</code> are considered different.</p>
+
+<h2 id="generating-the-samples">Generating the samples</h2>
+
+<p>After counting up the total number of samples, I then create <code class="language-plaintext highlighter-rouge">DS%(..,..)</code> which replaces <code class="language-plaintext highlighter-rouge">AX%(..)</code> and <code class="language-plaintext highlighter-rouge">BX%(..)</code>. The first axis contains the samples, of which there are <code class="language-plaintext highlighter-rouge">NS</code> in total. The second axis is, respectively, \(x_0, x_1, \hat{y}\) and \(y\). \(\hat{y}\) is the label (i.e., the class) and \(y\) is the prediction, which we’ll get to later. Having all the data in a single array will facilitate generating and training.</p>
+
+<div class="language-bbcbasic highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="m">330</span> <span class="nv">NS</span> <span class="o">=</span> <span class="m">0</span><span class="p">:</span> <span class="c">REM TOTAL # SAMPLES</span>
+<span class="m">340</span> <span class="k">FOR</span> <span class="nv">I</span> <span class="o">=</span> <span class="m">0</span> <span class="k">TO</span> <span class="nv">KN</span> <span class="o">-</span> <span class="m">1</span>
+<span class="m">350</span>   <span class="nv">NS</span> <span class="o">=</span> <span class="nv">NS</span> <span class="o">+</span> <span class="nv">KN%</span><span class="o">(</span><span class="nv">I</span><span class="o">)</span>
+<span class="m">360</span> <span class="k">NEXT</span>
+
+<span class="m">370</span> <span class="c">REM -- DATA TABLE --</span>
+<span class="m">380</span> <span class="c">REM -- # - X0, X1, Y-HAT, Y --</span>
+<span class="m">390</span> <span class="k">DIM</span> <span class="nv">DS%</span><span class="o">(</span><span class="nv">NS</span> <span class="o">-</span> <span class="m">1</span><span class="p">,</span><span class="m">3</span><span class="o">)</span>
+</code></pre></div></div>
+<p>Since I’d like for my data to be randomly sampled, rather than scrambled after the fact, I decided to use ‘adaptive quota sampling’ to generate them randomly while ending up with the appropriate quantities. I could have simply taken the end proportion of each class and use that to create probabilities during generation but then there would be no guarantee then the final number of samples for each class would be correct.</p>
+
+<div class="language-bbcbasic highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="m">400</span> <span class="c">REM -- REMAINING SAMPLES COUNT --</span>
+<span class="m">410</span> <span class="k">DIM</span> <span class="nv">RK%</span><span class="o">(</span><span class="nv">KN</span> <span class="o">-</span> <span class="m">1</span><span class="o">)</span>
+<span class="m">420</span> <span class="k">FOR</span> <span class="nv">I</span> <span class="o">=</span> <span class="m">0</span> <span class="k">TO</span> <span class="nv">KN</span> <span class="o">-</span> <span class="m">1</span>
+<span class="m">430</span>   <span class="nv">RK%</span><span class="o">(</span><span class="nv">I</span><span class="o">)</span> <span class="o">=</span> <span class="nv">KN%</span><span class="o">(</span><span class="nv">I</span><span class="o">)</span>
+<span class="m">440</span> <span class="k">NEXT</span>
+
+<span class="m">450</span> <span class="c">REM == GENERATE SAMPLES ==</span>
+<span class="m">460</span> <span class="k">FOR</span> <span class="nv">I</span> <span class="o">=</span> <span class="m">0</span> <span class="k">TO</span> <span class="nv">NS</span> <span class="o">-</span> <span class="m">1</span>
+<span class="m">470</span>   <span class="c">REM -- ADAPTIVE QUOTA SAMPLING --</span>
+<span class="m">480</span>   <span class="c">REM -- PICK CLASS BASED ON REMAINING SAMPLES TO GENERATE --</span>
+<span class="m">490</span>   <span class="nv">P%</span> <span class="o">=</span> <span class="nb">RND</span><span class="o">(</span><span class="m">1</span><span class="o">)</span> <span class="o">*</span> <span class="o">(</span><span class="nv">NS</span> <span class="o">-</span> <span class="nv">I</span><span class="o">)</span>
+<span class="m">500</span>   <span class="nv">CS</span> <span class="o">=</span> <span class="m">0</span>
+<span class="m">510</span>   <span class="nv">J</span> <span class="o">=</span> <span class="m">0</span>
+<span class="m">520</span>   <span class="nv">CS</span> <span class="o">=</span> <span class="nv">CS</span> <span class="o">+</span> <span class="nv">RK%</span><span class="o">(</span><span class="nv">J</span><span class="o">)</span>
+<span class="m">530</span>   <span class="nv">K</span> <span class="o">=</span> <span class="nv">J</span>
+<span class="m">540</span>   <span class="nv">J</span> <span class="o">=</span> <span class="nv">J</span> <span class="o">+</span> <span class="m">1</span>
+<span class="m">550</span>   <span class="k">IF</span> <span class="nv">P%</span> <span class="o">&gt;=</span> <span class="nv">CS</span> <span class="k">GOTO</span> <span class="m">520</span>
+<span class="m">560</span>   <span class="nv">RK%</span><span class="o">(</span><span class="nv">K</span><span class="o">)</span> <span class="o">=</span> <span class="nv">RK%</span><span class="o">(</span><span class="nv">K</span><span class="o">)</span> <span class="o">-</span> <span class="m">1</span>
+<span class="m">570</span>   <span class="c">REM -- GENERATE RANDOM NORMAL VARIABLES Z0, Z1 --</span>
+<span class="m">580</span>   <span class="k">GOSUB</span> <span class="m">1400</span>
+<span class="m">590</span>   <span class="c">REM -- GENERATE SAMPLE FROM Z0, Z1 --</span>
+<span class="m">600</span>   <span class="c">REM X0 = MU-X0 + SIG-X0 * Z0</span>
+<span class="m">610</span>   <span class="nv">X0%</span> <span class="o">=</span> <span class="nv">GE</span><span class="o">(</span><span class="nv">K</span><span class="p">,</span><span class="m">0</span><span class="o">)</span> <span class="o">+</span> <span class="nv">GE</span><span class="o">(</span><span class="nv">K</span><span class="p">,</span><span class="m">2</span><span class="o">)</span> <span class="o">*</span> <span class="nv">Z0</span>
+<span class="m">620</span>   <span class="c">REM X1 = MU-X1 + RHO * SIG-X1 * Z0 + SQR(1 - RHO^2) * SIG-X1 * Z1</span>
+<span class="m">630</span>   <span class="nv">X1%</span> <span class="o">=</span> <span class="nv">GE</span><span class="o">(</span><span class="nv">K</span><span class="p">,</span><span class="m">1</span><span class="o">)</span> <span class="o">+</span> <span class="nv">GE</span><span class="o">(</span><span class="nv">K</span><span class="p">,</span><span class="m">4</span><span class="o">)</span> <span class="o">*</span> <span class="nv">GE</span><span class="o">(</span><span class="nv">K</span><span class="p">,</span><span class="m">3</span><span class="o">)</span> <span class="o">*</span> <span class="nv">Z0</span> <span class="o">+</span> <span class="nv">GE</span><span class="o">(</span><span class="nv">K</span><span class="p">,</span><span class="m">5</span><span class="o">)</span> <span class="o">*</span> <span class="nv">GE</span><span class="o">(</span><span class="nv">K</span><span class="p">,</span><span class="m">3</span><span class="o">)</span> <span class="o">*</span> <span class="nv">Z1</span>
+<span class="m">640</span>   <span class="nv">DS%</span><span class="o">(</span><span class="nv">I</span><span class="p">,</span><span class="m">0</span><span class="o">)</span> <span class="o">=</span> <span class="nv">X0%</span>
+<span class="m">650</span>   <span class="nv">DS%</span><span class="o">(</span><span class="nv">I</span><span class="p">,</span><span class="m">1</span><span class="o">)</span> <span class="o">=</span> <span class="nv">X1%</span>
+<span class="m">660</span>   <span class="nv">DS%</span><span class="o">(</span><span class="nv">I</span><span class="p">,</span><span class="m">2</span><span class="o">)</span> <span class="o">=</span> <span class="nv">K</span>
+<span class="m">670</span>   <span class="k">PRINT</span> <span class="nv">I</span> <span class="o">+</span> <span class="m">1</span><span class="p">;</span> <span class="nv">TAB</span><span class="o">(</span><span class="m">5</span><span class="o">)</span><span class="p">;</span> <span class="s">"SAMPLE "</span><span class="p">;</span> <span class="nv">KN%</span><span class="o">(</span><span class="nv">K</span><span class="o">)</span> <span class="o">-</span> <span class="nv">RK%</span><span class="o">(</span><span class="nv">K</span><span class="o">)</span><span class="p">;</span>
+<span class="m">680</span>   <span class="k">PRINT</span> <span class="nv">TAB</span><span class="o">(</span><span class="m">16</span><span class="o">)</span><span class="p">;</span> <span class="s">"IN CLASS "</span><span class="p">;</span> <span class="nv">K</span><span class="p">;</span>
+<span class="m">690</span>   <span class="k">PRINT</span> <span class="s">" AT ("</span><span class="p">;</span> <span class="nv">X0%</span><span class="p">;</span> <span class="s">","</span><span class="p">;</span> <span class="nv">X1%</span><span class="p">;</span> <span class="s">")"</span>
+<span class="m">700</span>   <span class="k">ON</span> <span class="nv">K</span> <span class="o">+</span> <span class="m">1</span> <span class="k">GOSUB</span> <span class="m">1200</span><span class="p">,</span><span class="m">1300</span><span class="p">:</span> <span class="c">REM PLOT SAMPLE</span>
+<span class="m">710</span> <span class="k">NEXT</span>
+</code></pre></div></div>
+<p><code class="language-plaintext highlighter-rouge">RK%(..)</code> holds the remaining number of samples to be generated for each class. Lines 490 to 550 then produce a random number <code class="language-plaintext highlighter-rouge">P%</code> which is from 0 to the number of remaining samples to generate and then figures out which class this should be based on the remaining number of samples to be generated for each. The beauty of this is that the probability of generating a sample in each class will be a function of how many remaining samples need to be generated. It took a while to debug, but in the end this produces exactly the number of samples in each class as specified in the hyperparameters.</p>
+
+<p>The code from lines 580 to 690 is the same as previously, however, the class-specific variables have been replaced by <code class="language-plaintext highlighter-rouge">GE(..,..)</code>, as mentioned above. Also, I changed <code class="language-plaintext highlighter-rouge">X%</code> and <code class="language-plaintext highlighter-rouge">Y%</code> to <code class="language-plaintext highlighter-rouge">XO%</code> and <code class="language-plaintext highlighter-rouge">X1%</code> to avoid confusion and be more consistent with the \(Y = \theta^T X\) literature.</p>
+
+<p>Line 700 is nifty. I don’t recall using <code class="language-plaintext highlighter-rouge">ON..GOSUB</code> in high school but it enables branching based on the argument. I use <code class="language-plaintext highlighter-rouge">K+1</code> since the first class is \(0\) and a zero argument doesn’t branch. For the moment, this only supports two classes.</p>
+
+<h3 id="counting-the-samples">Counting the samples</h3>
+
+<p>For debugging purposes, I added some code to count the number of samples in each class to make sure it matched the hyperparameters. In the end, I decided to leave it. The loop is actually a bit slow but it’s only run once.</p>
+
+<div class="language-bbcbasic highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="m">720</span> <span class="c">REM == COUNT SAMPLES OF EACH CLASS TO VERIFY RESULT ==</span>
+<span class="m">730</span> <span class="k">DIM</span> <span class="nv">CT%</span><span class="o">(</span><span class="nv">KN</span> <span class="o">-</span> <span class="m">1</span><span class="o">)</span>
+<span class="m">740</span> <span class="k">FOR</span> <span class="nv">I</span> <span class="o">=</span> <span class="m">0</span> <span class="k">TO</span> <span class="nv">NS</span> <span class="o">-</span> <span class="m">1</span>
+<span class="m">750</span>   <span class="nv">K</span> <span class="o">=</span> <span class="nv">DS%</span><span class="o">(</span><span class="nv">I</span><span class="p">,</span><span class="m">2</span><span class="o">)</span>
+<span class="m">760</span>   <span class="nv">CT%</span><span class="o">(</span><span class="nv">K</span><span class="o">)</span> <span class="o">=</span> <span class="nv">CT%</span><span class="o">(</span><span class="nv">K</span><span class="o">)</span> <span class="o">+</span> <span class="m">1</span>
+<span class="m">770</span> <span class="k">NEXT</span>
+<span class="m">780</span> <span class="k">PRINT</span> <span class="s">"TOTAL SAMPLES FOR EACH CLASS:"</span>
+<span class="m">790</span> <span class="k">FOR</span> <span class="nv">I</span> <span class="o">=</span> <span class="m">0</span> <span class="k">TO</span> <span class="nv">KN</span> <span class="o">-</span> <span class="m">1</span>
+<span class="m">800</span>   <span class="k">PRINT</span> <span class="nv">CT%</span><span class="o">(</span><span class="nv">I</span><span class="o">)</span><span class="p">;</span> <span class="nv">TAB</span><span class="o">(</span><span class="m">5</span><span class="o">)</span><span class="p">;</span> <span class="s">"SAMPLES IN CLASS "</span><span class="p">;</span> <span class="nv">I</span>
+<span class="m">810</span> <span class="k">NEXT</span>
+<span class="m">820</span> <span class="k">END</span>
+</code></pre></div></div>
+
+<h2 id="fixing-the-plotting-routines">Fixing the plotting routines</h2>
+
+<p>The only remaining tweaks were for the plotting routines. The two routines below, which are called from the <code class="language-plaintext highlighter-rouge">ON..GOSUB</code> in line 700, are updated to use <code class="language-plaintext highlighter-rouge">XO%</code> and <code class="language-plaintext highlighter-rouge">X1%</code>. The rest is the same.</p>
+
+<div class="language-bbcbasic highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="m">1200</span> <span class="c">REM == DRAW + AT X0, X1 ==</span>
+<span class="m">1210</span> <span class="nv">X1%</span> <span class="o">=</span> <span class="m">159</span> <span class="o">-</span> <span class="nv">X1%</span>
+<span class="m">1220</span> <span class="k">IF</span> <span class="nv">X0%</span> <span class="o">&lt;</span> <span class="m">1</span> <span class="o">OR</span> <span class="nv">X0%</span> <span class="o">&gt;</span> <span class="m">270</span> <span class="k">THEN</span> <span class="k">RETURN</span>
+<span class="m">1230</span> <span class="k">IF</span> <span class="nv">X1%</span> <span class="o">&lt;</span> <span class="m">1</span> <span class="o">OR</span> <span class="nv">X1%</span> <span class="o">&gt;</span> <span class="m">150</span> <span class="k">THEN</span> <span class="k">RETURN</span>
+<span class="m">1240</span> <span class="nv">HPLOT</span> <span class="nv">X0%</span> <span class="o">-</span> <span class="m">1</span><span class="p">,</span><span class="nv">X1%</span> <span class="k">TO</span> <span class="nv">X0%</span> <span class="o">+</span> <span class="m">1</span><span class="p">,</span><span class="nv">X1%</span>
+<span class="m">1250</span> <span class="nv">HPLOT</span> <span class="nv">X0%</span><span class="p">,</span><span class="nv">X1%</span> <span class="o">-</span> <span class="m">1</span> <span class="k">TO</span> <span class="nv">X0%</span><span class="p">,</span><span class="nv">X1</span> <span class="o">+</span> <span class="m">1</span>
+<span class="m">1260</span> <span class="k">RETURN</span>
+
+<span class="m">1300</span> <span class="c">REM == DRAW BOX AT X0, X1 ==</span>
+<span class="m">1310</span> <span class="nv">X1%</span> <span class="o">=</span> <span class="m">159</span> <span class="o">-</span> <span class="nv">X1%</span>
+<span class="m">1320</span> <span class="k">IF</span> <span class="nv">X0%</span> <span class="o">&lt;</span> <span class="m">1</span> <span class="o">OR</span> <span class="nv">X0%</span> <span class="o">&gt;</span> <span class="m">270</span> <span class="k">THEN</span> <span class="k">RETURN</span>
+<span class="m">1330</span> <span class="k">IF</span> <span class="nv">X1%</span> <span class="o">&lt;</span> <span class="m">1</span> <span class="o">OR</span> <span class="nv">X1%</span> <span class="o">&gt;</span> <span class="m">150</span> <span class="k">THEN</span> <span class="k">RETURN</span>
+<span class="m">1340</span> <span class="nv">HPLOT</span> <span class="nv">X0%</span> <span class="o">-</span> <span class="m">1</span><span class="p">,</span><span class="nv">X1%</span> <span class="o">-</span> <span class="m">1</span> <span class="k">TO</span> <span class="nv">X0%</span> <span class="o">+</span> <span class="m">1</span><span class="p">,</span><span class="nv">X1%</span> <span class="o">-</span> <span class="m">1</span>
+<span class="m">1350</span> <span class="nv">HPLOT</span> <span class="nv">X0%</span> <span class="o">-</span> <span class="m">1</span><span class="p">,</span><span class="nv">X1%</span><span class="p">:</span> <span class="nv">HPLOT</span> <span class="nv">X0%</span> <span class="o">+</span> <span class="m">1</span><span class="p">,</span><span class="nv">X1%</span>
+<span class="m">1360</span> <span class="nv">HPLOT</span> <span class="nv">X0%</span> <span class="o">-</span> <span class="m">1</span><span class="p">,</span><span class="nv">X1%</span> <span class="o">+</span> <span class="m">1</span> <span class="k">TO</span> <span class="nv">X0%</span> <span class="o">+</span> <span class="m">1</span><span class="p">,</span><span class="nv">X1%</span> <span class="o">+</span> <span class="m">1</span>
+<span class="m">1370</span> <span class="k">RETURN</span>
+</code></pre></div></div>
+
+<h2 id="testing-irwin-hall-as-an-alternative-to-box-muller">Testing Irwin-Hall as an alternative to Box-Muller</h2>
+
+<p>The final chunk of code is interesting. After sharing my <a href="/apple-2-blog/synthesizing-data#box-muller-to-the-rescue">Box-Muller</a> routine with my friend, <a href="https://www.linkedin.com/in/surdules/" target="_blank">Răzvan Surdulescu</a>, he suggested using the <a href="https://en.wikipedia.org/wiki/Irwin%E2%80%93Hall_distribution" target="_blank">Irwin-Hall Distribution</a>. <code class="language-plaintext highlighter-rouge">SQR</code> and <code class="language-plaintext highlighter-rouge">COS</code> are expensive operations in BASIC and Irwin-Hall <a href="https://en.wikipedia.org/wiki/Irwin%E2%80%93Hall_distribution#Approximating_a_Normal_distribution" target="_blank">approximates a normal distribution</a> by sampling 12 uniform random numbers.</p>
+
+<div class="language-bbcbasic highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="m">1400</span> <span class="c">REM == IRWIN-HALL DISTRIBUTION ==</span>
+<span class="m">1490</span> <span class="nv">Z0</span> <span class="o">=</span> <span class="o">-</span><span class="m">6</span><span class="p">:</span><span class="nv">Z1</span> <span class="o">=</span> <span class="o">-</span><span class="m">6</span>
+<span class="m">1500</span> <span class="k">FOR</span> <span class="nv">I</span> <span class="o">=</span> <span class="m">1</span> <span class="k">TO</span> <span class="m">12</span>
+<span class="m">1510</span>   <span class="nv">Z0</span> <span class="o">=</span> <span class="nv">Z0</span> <span class="o">+</span> <span class="nb">RND</span><span class="o">(</span><span class="m">1</span><span class="o">)</span>
+<span class="m">1520</span>   <span class="nv">Z1</span> <span class="o">=</span> <span class="nv">Z1</span> <span class="o">+</span> <span class="nb">RND</span><span class="o">(</span><span class="m">1</span><span class="o">)</span>
+<span class="m">1530</span> <span class="k">NEXT</span>
+<span class="m">1540</span> <span class="k">RETURN</span>
+<span class="m">1550</span> <span class="c">REM == RANDOM GEN SPEED TEST ==</span>
+<span class="m">1560</span> <span class="k">FOR</span> <span class="nv">I</span> <span class="o">=</span> <span class="m">1</span> <span class="k">TO</span> <span class="m">500</span>
+<span class="m">1570</span>   <span class="k">GOSUB</span> <span class="m">1400</span>
+<span class="m">1580</span> <span class="k">NEXT</span>
+</code></pre></div></div>
+<p>I gave it a go and ran a comparison by generating 500 pairs of random numbers with each. This took 63s with Box-Muller and 90s with Irwin-Hall, so I will stick with the former. That being said, this was a nifty idea.</p>
+
+<h2 id="an-updated-final-plot">An updated final plot</h2>
+
+<p>The final result looks pretty much the same as before but it’s flipped horizontally. The new data structure, however, will make implementing ML much easier.</p>
+
+<p><img src="/assets/images/apple2/updated-final-plot.jpg" alt="Updated plot of synthesized data" title="Updated final plot of synthesized data" /></p>
+
+<p>Now onto implementing the simplest and easiest to understand machine learning algorithm…</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/machine-learning" class="page__taxonomy-item" rel="tag">machine learning</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/refactoring" class="page__taxonomy-item" rel="tag">refactoring</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/synthesizing-data" class="page__taxonomy-item" rel="tag">synthesizing data</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-07-13T00:00:00-07:00">July 13, 2025</time></p>
+        
+      </footer><section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?via=markdcramer&text=Refactoring%20https%3A%2F%2Fmdcramer.github.io%2Fapple-2-blog%2Frefactoring%2F" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmdcramer.github.io%2Fapple-2-blog%2Frefactoring%2F" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+<!-- 
+  <a href="https://plus.google.com/share?url=https%3A%2F%2Fmdcramer.github.io%2Fapple-2-blog%2Frefactoring%2F" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a> -->
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmdcramer.github.io%2Fapple-2-blog%2Frefactoring%2F" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+  <nav class="pagination">
+    
+      <a href="https://mdcramer.github.io/apple-2-blog/synthesizing-data/" class="pagination--pager" title="In the beginning, there was data
+">Previous</a>
+    
+    
+      <a href="https://mdcramer.github.io/apple-2-blog/emulator/" class="pagination--pager" title="No Cursor, no emulator
+">Next</a>
+    
+  </nav>
+</div><div class="page__comments">
+  
+    
+        <h4 class="page__comments-title">Leave a Comment</h4>
+        <section id="disqus_thread"></section>
+      
+</div></article>
+</div>
+
+
+    <div class="page__footer">
+      <footer>
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    <!-- 
+      <li><strong>Follow:</strong></li>
+     -->
+    
+      <li><a href="https://twitter.com/markdcramer"><i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+    
+
+    
+    <li>
+      <a href="https://www.linkedin.com/in/mcramer" itemprop="sameAs">
+        <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+      </a>
+    </li>
+    
+<li>
+  <a href="https://github.com/mdcramer/mdcramer.github.io/tree/blog/_apple-2-blog"><i class="fa fa-fw fa-github" aria-hidden="true"></i>GitHub</a>
+</li>
+    <li>
+      <a href="https://www.stackoverflow.com/users/852795/mark-cramer" itemprop="sameAs">
+        <i class="fa fa-fw fa-stack-overflow" aria-hidden="true"></i> Stackoverflow
+      </a>
+    </li>
+    
+
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=vlo46P8AAAAJ" itemprop="sameAs">
+        <img src="/assets/images/googlescholar.svg" alt="googlescholar" class="profile_icon"> Google Scholar
+      </a>
+    </li>
+  
+
+    <li><a href="https://mdcramer.github.io/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 Mark Cramer. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="https://mdcramer.github.io/assets/js/main.min.js"></script>
+
+
+
+
+  
+      
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://mdcramer.github.io/apple-2-blog/refactoring/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/apple-2-blog/refactoring"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://githubmdcramer.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+    
+
+
+    <script type="text/javascript" async 
+src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?
+config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+</html>

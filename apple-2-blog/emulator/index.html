@@ -1,0 +1,473 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.6.0 by Michael Rose
+  Copyright 2017 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<title>No Cursor, no emulator - Hackin’ and Tinkerin’</title>
+
+
+
+
+<meta name="description" content="While the modern tools are at my disposal, I am, for the most part, not using them.">
+
+
+
+
+<meta name="author" content="">
+
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="Hackin' and Tinkerin'">
+<meta property="og:title" content="No Cursor, no emulator - Hackin’ and Tinkerin’">
+
+
+  <link rel="canonical" href="https://mdcramer.github.io/apple-2-blog/emulator/">
+  <meta property="og:url" content="https://mdcramer.github.io/apple-2-blog/emulator/">
+
+
+
+  <meta property="og:description" content="While the modern tools are at my disposal, I am, for the most part, not using them.">
+
+
+
+  <meta name="twitter:site" content="@markdcramer">
+  <meta name="twitter:title" content="No Cursor, no emulator - Hackin’ and Tinkerin’">
+  <meta name="twitter:description" content="While the modern tools are at my disposal, I am, for the most part, not using them.">
+  <meta name="twitter:url" content="https://mdcramer.github.io/apple-2-blog/emulator/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+  
+
+  
+
+
+
+  
+
+  
+
+
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2025-08-16T00:00:00-07:00">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end SEO -->
+
+
+<link href="https://mdcramer.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Hackin' and Tinkerin' Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://mdcramer.github.io/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav"><a class="site-title" href="/apple-2-blog/">apple 2 blog</a>
+        <ul class="visible-links">
+          
+            <li class="masthead__menu-item"><a href="/">Home</a></li>
+            
+            
+<li>
+  <a href="https://github.com/mdcramer/mdcramer.github.io/tree/blog/_apple-2-blog"><i class="fa fa-fw fa-github" aria-hidden="true"></i>GitHub</a>
+</li>
+        </ul>
+        <button type="button">
+          <span class="visually-hidden">Toggle Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+    <div itemscope itemtype="http://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="https://mdcramer.github.io/assets/images/profilepic-small.jpg" class="author__avatar" alt="Mark Cramer" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name" itemprop="name">Mark Cramer</h3>
+    
+      <p class="author__bio" itemprop="description">
+        Product Management executive who enjoys hacking around with code in his free time, of which there is never, sadly, enough.
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Profile</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> <span itemprop="name">San Francisco</span>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/markdcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="https://www.facebook.com/markdcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/mcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/mdcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.stackoverflow.com/users/852795/mark-cramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-stack-overflow" aria-hidden="true"></i> Stackoverflow
+          </a>
+        </li>
+      
+
+      
+        
+          <li>
+            <a href="https://youtube.com/c/MarkCramerD" itemprop="sameAs">
+              <i class="fa fa-fw fa-youtube-square" aria-hidden="true"></i> YouTube
+            </a>
+          </li>
+        
+      
+
+      
+
+      
+        <li>
+          <a href="https://scholar.google.com/citations?user=vlo46P8AAAAJ" itemprop="sameAs">
+            <img src="/assets/images/googlescholar.svg" alt="googlescholar" class="profile_icon"> Google Scholar
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+  
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="No Cursor, no emulator">
+    <meta itemprop="description" content="While the modern tools are at my disposal, I am, for the most part, not using them.">
+    <meta itemprop="datePublished" content="August 16, 2025">
+    <meta itemprop="dateModified" content="August 23, 2025">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">No Cursor, no emulator
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <p>A few weeks ago, after reading this <a href="/apple-2-blog/refactoring">blog</a>, a good friend sent an email with some interesting questions:</p>
+
+<blockquote>
+  <p>Are you actually writing and running your code on the real physical Apple ][, or are you using an emulator? If you’re using a real one, how are you transferring the code back and forth from the Apple ][ to the blog? I’m guessing you’re not using generative AI to write the code, since it sounds like writing it by hand is part of the fun. Is that right?</p>
+</blockquote>
+
+<p>I sent him the answers but I thought I might share here, too.</p>
+
+<h2 id="running-on-the-real-hardware">Running on the real hardware</h2>
+
+<p>He might have missed my post about <a href="/apple-2-blog/revive">bringing the clunker back to life</a> but I’m running on the real hardware from early ’80s, which I recently refurbished with new capacitors in the power supply and new RAM chips on the motherboard.</p>
+
+<p>I can’t remember exactly when my parents ponied up a bought me the Apple ][+ but it was after years of me hassling them relentlessly. In their defense, no one had a personal computer back then and it wasn’t entirely clear what one would do with one. The machine was <em>very</em> expensive and they didn’t want to pay that kind of money for a video game machine. I vaguely recall the Apple ][+ with a pair of floppy drives costing ~$2000 plus a few hundred for the extra 16k RAM on the expansion memory card and ~$500 for the dot matrix printer. That would be ~$9000 today. (For comparison, we had a <a href="https://www.youtube.com/watch?v=DYVH2IHnH8U&amp;t=300s" target="_blank">Magnavox Odyssey<sup>2</sup></a> which was under $200. The cartridges were ~$25.) My father was an aircraft mechanic and my mother stayed home to raise two children, so they paid close attention to finances.</p>
+
+<p>My obsession with the Apple computer began during the summer after the 6<sup>th</sup> grade. My mother signed me up for computer camp where we learned how to write code on the Apple ][. These machines didn’t even have floppies, so we used cassette tape recorders. You’d press ‘record’ on the tape recorder before entering <code class="language-plaintext highlighter-rouge">SAVE</code> to store the program. To get it back you’d type <code class="language-plaintext highlighter-rouge">LOAD</code> and then press ‘play’ on the tape recorder. It wasn’t punch cards but that’s wild. My program was a lowres picture of a Star Wars battle (another childhood obsession).</p>
+
+<p>From that moment, I had to have one. Every single birthday or holiday from that point forward, when anyone asked me what I wanted, to everyone’s dismay, I’d say, “Money.” My plan was to save up enough to get one. In the meantime, since these computers were not readily available, I would write BASIC programs on notebook paper (to do what, I can’t remember), ride my bike to the mall and then try them out on the <a href="https://en.wikipedia.org/wiki/TRS-80_Color_Computer" target="_blank">TRS-80 Color Computer</a>s at Radio Shack. As I recognized at the time, the sales people there were extremely cool to let me do that.</p>
+
+<p>Saving up that kind of money took years but sometime around the 9<sup>th</sup> grade I had enough to get a TRS-80, which was significantly less expensive at about half the cost. My parents, realizing that I was about to drop every penny I had on a computer inferior to the one I really wanted, stepped up and surprised me. I can still remember the boxes sitting in the living room when I got home.</p>
+
+<h2 id="suffering-on-the-real-hardware">Suffering on the real hardware</h2>
+
+<p>While I know that there are <a href="https://www.applefritter.com/content/apple-ii-online-emulator-0" target="_blank">emulators</a>, which would probably make life easier, I am not using them. While writing Applesoft BASIC on the original hardware feels <em>authentic</em>, it comes with some challenges:</p>
+
+<ul>
+  <li>The keyboard works but it’s 40+ years old and isn’t particularly ergonomic.</li>
+  <li>The monitor is only 40 characters wide because, for some reason, I don’t have the <a href="https://en.wikipedia.org/wiki/Apple_80-Column_Text_Card" target="_blank">80-column card</a>. (I vaguely recall having an 80-character wide display but perhaps that was on the school’s computers. I also remember having a color monitor but that must have been the school as well.)</li>
+  <li>Reading the code requires the <code class="language-plaintext highlighter-rouge">LIST</code> command but without specifying line numbers the entire program will quickly scroll by. Therefore, I have to painstakingly enter the line numbers each time.</li>
+  <li>There isn’t a particularly effective way to edit lines of text. This super enthusiastic dude <a href="https://youtu.be/PHfKCxjsmos?si=LbrDEIzWVNBPsF8K&amp;t=108">demonstrates</a> how to use the <code class="language-plaintext highlighter-rouge">ESC</code> character to edit a line of code but it’s a real hassle. I’ve used this (although on my machine, which I found in the manual, you have to use a, b, c and d, which is confusing, plus hold down <code class="language-plaintext highlighter-rouge">ESC</code> the entire time) but it’s almost always easier to just retype the line. (<strong>Update</strong>: The I, J, K, M works and <code class="language-plaintext highlighter-rouge">ESC</code> toggles if you use those keys. It takes a little getting used to but it’s much better.)</li>
+  <li>Applesoft BASIC has a “debug mode” with <code class="language-plaintext highlighter-rouge">TRACE</code>, which essentially prints out line numbers as they’re executed, but I’ve never used it. It sounds like a nightmare.</li>
+</ul>
+
+<h2 id="transferring-applesoft-basic-code-to-this-blog">Transferring Applesoft BASIC code to this blog</h2>
+
+<p>While there’s probably a way to connect the Apple ][+ to my Windows machine, I solve this problem by taking a picture of the monitor with my phone and then asking <a href="https://chatgpt.com/share/684f9647-c438-8010-86d6-a3eae68a7b7d" target="_blank">chatGPT</a> to extract the code. The first attempts weren’t too bad, but I had to iterate quite a few times to get it to output correctly. For example, if a single line of code wrapped on the screen, chatGPT would add extra line numbers. It also messed up the counting on occasion. It sometimes interpreted the percent sign as a dollar sign. That being said, it saves me a <em>ton</em> of work. Interestingly, I think I ‘trained’ chatGPT on how to read the Applesoft BASIC code because outputs have become increasingly higher quality.</p>
+
+<p align="middle">
+  <img src="/assets/images/apple2/code-pic-1.jpg" width="32%" />
+  <img src="/assets/images/apple2/code-pic-2.jpg" width="32%" /> 
+  <img src="/assets/images/apple2/code-pic-3.jpg" width="32%" />
+</p>
+
+<p>I tried taking a video of the entire program scrolling by but the quality was not good enough for OCR.</p>
+
+<h2 id="no-generative-ai">No generative AI</h2>
+
+<p>Or not much, at any rate. GenAI is amazing and Cursor is beyond fantastic, but, as my friend said, part of the fun is writing the code myself. I’ll admit to getting assistance with <a href="/apple-2-blog/refactoring#generating-the-samples">adpative quota sampling</a>, which isn’t particularly difficult. I’ve also asked about how some commands work (e.g. <code class="language-plaintext highlighter-rouge">RND()</code>) although I’ve been relying primarily on the original <a href="/apple-2-blog/synthesizing-data">reference manual</a>. The rest, however, is me.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/cursor" class="page__taxonomy-item" rel="tag">Cursor</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/emulator" class="page__taxonomy-item" rel="tag">emulator</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-08-23">August 23, 2025</time></p>
+        
+      </footer><section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?via=markdcramer&text=No+Cursor%2C+no+emulator%20https%3A%2F%2Fmdcramer.github.io%2Fapple-2-blog%2Femulator%2F" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmdcramer.github.io%2Fapple-2-blog%2Femulator%2F" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+<!-- 
+  <a href="https://plus.google.com/share?url=https%3A%2F%2Fmdcramer.github.io%2Fapple-2-blog%2Femulator%2F" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a> -->
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmdcramer.github.io%2Fapple-2-blog%2Femulator%2F" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+  <nav class="pagination">
+    
+      <a href="https://mdcramer.github.io/apple-2-blog/refactoring/" class="pagination--pager" title="Refactoring
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+</div><div class="page__comments">
+  
+    
+        <h4 class="page__comments-title">Leave a Comment</h4>
+        <section id="disqus_thread"></section>
+      
+</div></article>
+</div>
+
+
+    <div class="page__footer">
+      <footer>
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    <!-- 
+      <li><strong>Follow:</strong></li>
+     -->
+    
+      <li><a href="https://twitter.com/markdcramer"><i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+    
+
+    
+    <li>
+      <a href="https://www.linkedin.com/in/mcramer" itemprop="sameAs">
+        <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+      </a>
+    </li>
+    
+<li>
+  <a href="https://github.com/mdcramer/mdcramer.github.io/tree/blog/_apple-2-blog"><i class="fa fa-fw fa-github" aria-hidden="true"></i>GitHub</a>
+</li>
+    <li>
+      <a href="https://www.stackoverflow.com/users/852795/mark-cramer" itemprop="sameAs">
+        <i class="fa fa-fw fa-stack-overflow" aria-hidden="true"></i> Stackoverflow
+      </a>
+    </li>
+    
+
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=vlo46P8AAAAJ" itemprop="sameAs">
+        <img src="/assets/images/googlescholar.svg" alt="googlescholar" class="profile_icon"> Google Scholar
+      </a>
+    </li>
+  
+
+    <li><a href="https://mdcramer.github.io/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 Mark Cramer. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="https://mdcramer.github.io/assets/js/main.min.js"></script>
+
+
+
+
+  
+      
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://mdcramer.github.io/apple-2-blog/emulator/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/apple-2-blog/emulator"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://githubmdcramer.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+    
+
+
+    <script type="text/javascript" async 
+src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?
+config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+</html>
