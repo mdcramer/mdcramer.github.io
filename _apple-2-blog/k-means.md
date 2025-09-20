@@ -1,6 +1,6 @@
 ---
 title: "K-means by another means"
-excerpt: "Success! There is machine learning happening on my Apple ]\[+."
+excerpt: "Success! There is machine learning happening on my Apple ][+."
 tags:
   - K-means
   - machine learning
@@ -15,7 +15,7 @@ Wait. Does k-means count as machine learning? Yes. It does.
 
 Unlike [previously](/apple-2-blog/synthesizing-data/) where I saved the result for the end, let's start by taking a look at the algorithm in action!
 
-[![Video of Apple][+ running k-means](https://img.youtube.com/vi/xi876Gqt4jk/0.jpg)](https://youtube.com/shorts/Cy0wMMLObVA "Video of Apple]\[+ running k-means"){:target="_blank"}
+[![Video of Apple 2+ running k-means](https://img.youtube.com/vi/Cy0wMMLObVA/0.jpg)](https://youtube.com/shorts/Cy0wMMLObVA "Video of Apple ][+ running k-means"){:target="_blank"}
 
 For debugging purposes, to speed up execution, I reduced the number of samples in each class to 5. That's obviously pretty small but you can see the algorithm iterating. At the end of each loop I draw a line between the latest estimates of cluster centroids. The perpendicular bisector of these segments are the decision boundaries between the classes, so I draw that, too. Some of the code was written to handle more than two classes but here there are only two which makes this relatively easy.
 
