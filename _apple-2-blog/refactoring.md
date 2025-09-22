@@ -27,7 +27,7 @@ To make that happen, I start by moving all of my generator hyperparameters into 
 
 150 REM -- GENERATORS --
 160 REM -- CLASS - MU-X0, MU-X1, SIG-X0, SIG-X1, RHO --
-170 DIM GE(KN - 1,4)
+170 DIM GE(KN - 1,5)
 
 180 REM -- CLASS 0 --
 190 GE(0,0) = 100: REM MU-X0

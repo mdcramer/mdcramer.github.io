@@ -153,7 +153,7 @@ Putting it all together, it takes the Apple ][+ about a minute to generate and p
 
 Watch this video if you'd like to see it run, in all it's glory.
 
-[![Video of Apple2+ synthesizing data](https://img.youtube.com/vi/xi876Gqt4jk/0.jpg)](https://youtube.com/shorts/xi876Gqt4jk "Video of Apple][+ synthesizing data"){:target="_blank"}
+[![Video of Apple2+ synthesizing data](https://img.youtube.com/vi/xi876Gqt4jk/0.jpg)](https://youtube.com/shorts/xi876Gqt4jk?autoplay=1 "Video of Apple][+ synthesizing data"){:target="_blank"}
 
 Now that this is out of the way, we'll start by implementing one of the simplest and easiest to understand machine learning algorithms.
 
