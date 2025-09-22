@@ -9,7 +9,7 @@ date: 2025-09-20
 
 Wait. Does k-means count as machine learning? Yes. Yes, it does.
 
-[CS229](https://cs229.stanford.edu/){:target="_blank"} is the graduate-level machine learning course I took at Stanford as part of the [Graduate Certificate in AI](https://www.linkedin.com/pulse/graduate-certificate-ai-achievement-unlocked-mark-cramer/){:target="_blank"} that I received back in 2021. While k-means is my choice as the easiest to understand algorithm in machine learning, it was taught as the introductory clustering algorithm for unsupervised learning. As a TA (technically a 'course facilitator') for [XCS229](https://online.stanford.edu/courses/xcs229-machine-learning){:target="_blank"}, which I have been doing since 2022 and most recently did this Spring, I know that it is still being taught as part of this seminal course in AI.
+[CS229](https://cs229.stanford.edu/){:target="_blank"} is the graduate-level machine learning course I took at Stanford as part of the [Graduate Certificate in AI](https://www.linkedin.com/pulse/graduate-certificate-ai-achievement-unlocked-mark-cramer/){:target="_blank"} which I received back in 2021. While k-means is my choice as the easiest to understand algorithm in machine learning, it was taught as the introductory clustering algorithm for unsupervised learning. As a TA for [XCS229](https://online.stanford.edu/courses/xcs229-machine-learning){:target="_blank"}, which I have been doing since 2022 and most recently did this Spring, I know that it is still being taught as part of this seminal course in AI.
 
 ## We have liftoff!
 
@@ -17,11 +17,19 @@ Unlike [previously](/apple-2-blog/synthesizing-data/) where I saved the result f
 
 [![Video of Apple 2+ running k-means](https://img.youtube.com/vi/Cy0wMMLObVA/0.jpg)](https://youtube.com/shorts/Cy0wMMLObVA?autoplay=1 "Video of Apple ]\[+ running k-means"){:target="_blank"}
 
-For debugging purposes, to speed up execution, I reduced the number of samples in each class to 5. (You might note that, on the graph, there are only 4 points in class 1, which is the □s. That's because one of the points is at (291, 90), which is off the edge of the screen. Gaussian distributions can generate extreme outliers, so I decided to preserve those points rather than clip them to the edge of the screen.) That's obviously pretty small but you can see the algorithm iterating. At the end of each loop I draw a line between the latest estimates of cluster centroids. The perpendicular bisector of these segments are the decision boundaries between the classes, so I draw that, too. Some of the code was written to handle more than two classes but here there are only two which makes this relatively easy.
+Here is a screenshot of the final decision boundary after convergence.
+
+![K-means decision boundary after convergence](/assets/images/apple2/k-means-convergence.jpg "K-means decision boundary after convergence")
+
+The final accuracy is 90% because 1 of the 10 observations is on the incorrect side of the decision boundary.
+
+For debugging purposes, to speed up execution, I reduced the number of samples in each class to 5. (You might note that, on the graph, there are only 4 points in class 1, which are the □s. That's because one of the points is at (291, 90), which is off the edge of the screen. Gaussian distributions can generate extreme outliers, so I decided to preserve those points rather than clip them to the edge of the screen.) That's obviously pretty small but you can see the algorithm iterating.
+
+At the end of each loop I draw a line between the latest estimates of cluster centroids. The perpendicular bisector of these segments are the decision boundaries between the classes, so I draw them, too. Some of the code was written to handle more than two classes but here there are only two which makes this relatively easy.
 
 ## K-means explained
 
-[K-means clustering](https://en.wikipedia.org/wiki/K-means_clustering){:target="_blank"} aims to partition \\(n\\) observations into \\(k\\) clusters in which each observation belongs to the cluster with the nearest mean, called the cluster centroid. In pseudo-code it looks like this:
+[K-means clustering](https://en.wikipedia.org/wiki/K-means_clustering){:target="_blank"} is a recursive algorithm that aims to partition \\(n\\) observations into \\(k\\) clusters in which each observation belongs to the cluster with the nearest mean, called the cluster centroid.
 
 |Step|Description|
 |--|--|
@@ -31,11 +39,11 @@ For debugging purposes, to speed up execution, I reduced the number of samples i
 
 Ezpz.
 
-The math is also very easy. In step 1, the distance between two points, \\(x\\) and \\(y\\), is simply \\(\sqrt{(x_0 - y_0)^2 + (x_1 - y_1)^2 + \cdots + (x_{d-1} - y_{d-1})^2}\\), where \\(d\\) is the dimensionality of the observation. In out case there are only 2 dimension which is why there is only \\(x_0\\) and \\(x_1\\). Also, we're only using the distances for comparative purposes, it's not even necessary to take the square root. In step 2, the centroid is simply the sum of all the points divided by the number of points.
+The math is also simple. In step 1, the distance between two points, \\(x\\) and \\(y\\), is simply \\(\sqrt{(x_0 - y_0)^2 + (x_1 - y_1)^2 + \cdots + (x_{d-1} - y_{d-1})^2}\\), where \\(d\\) is the dimensionality of the observations. In our case there are only 2 dimension which is why we only have \\(x_0\\) and \\(x_1\\). Also, since we're only using the distances for comparative purposes, it's not even necessary to take the square root. In step 2, the centroid is simply the sum of all the points divided by the number of points.
 
 ## Implementation
 
-First, a little housekeeping before getting to the Implementation of the algorithm.
+First, a little housekeeping before getting to the implementation of the algorithm.
 
 ```bbcbasic
 10  HOME : VTAB 21
@@ -64,9 +72,15 @@ First, a little housekeeping before getting to the Implementation of the algorit
 940 RETURN
 ```
 
-At the very top of the program I decided to organize everything into subroutines. The idea here is to enable expansion in other ML algorithms. The "wait for key" subroutine is the APPLESOFT BASIC method for simply waiting for any keystroke before continuing. (`PEEK` and `POKE` are commands for directly accessing addresses in memory. I had those numbers memorized in high school but, naturally, I had to look them up.) I thought it'd be nice to add this pause after generating the data but I might take it out later. Lastly, at the end of the "hyperparameters" section I declare a convenience array, `P%(2,1)` to keep track of 3 random points as well as a few arrays I'm going to use in the k-means algorithm. The reason I do this here is because in APPLESOFT BASIC you get an error if you declare an array that already exists. Should at some point I want to call the k-means algorithm multiple times, this won't be a problem.
+At the very top of the program I decided to organize everything into subroutines. The idea here is to enable expansion into other ML algorithms.
+
+The "wait for key" subroutine is the APPLESOFT BASIC method for simply waiting for any keystroke before continuing. (`PEEK` and `POKE` are commands for directly accessing addresses in memory. I had those numbers memorized in high school but, naturally, I had to look them up.) I thought it'd be nice to add this pause after generating the data but I might take it out later.
+
+Lastly, at the end of the "hyperparameters" section I declare a convenience array, `P%(2,1)` to keep track of 3 random points as well as a few arrays I'm going to use in the k-means algorithm. The reason I do this here is because in APPLESOFT BASIC you get an error if you declare an array that already exists. Should at some point I want to call the k-means algorithm multiple times, this won't be a problem.
 
 ### Initialize
+
+Getting started, the first thing to do is initialize the algorithm by generating \\(k\\) cluster centroids.
 
 ```bbcbasic
 2000 REM  == K-MEANS ==
@@ -90,7 +104,9 @@ At the very top of the program I decided to organize everything into subroutines
 2215 GOSUB 3000: REM  DRAW DECISION BOUNDARY
 ```
 
-I start the initialization by clearing out the prediction column, \\(y\\), of the dataset table because I'm going to use this to make sure I don't randomly pick the same point twice. Then for each class I randomly pick a point from the dataset. If it's already been used I randomly pick another. `KM(KN - 1, 2)` is where I store the means for each cluster along with a count of the number of points in each cluster. Finally, I draw a line between the cluster centroids. This loop does not take into account all combinations of centroids (it works fine if \\(k=2\\)) and errors if a centroid is off the screen, which is possible, so I might just get rid of this later, since it's not really necessary, rather than try to fix it.
+I start by clearing out the prediction column, \\(y\\), of the dataset table, `DS%(NS - 1,3)` because I'm going to use this to make sure I don't randomly pick the same point twice. Then for each class I randomly pick a point from the dataset. If it's already been used I randomly pick another. `KM(KN - 1, 2)` is where I store the means for each cluster along with a count of the number of points in each cluster.
+
+Finally, I draw a line between the cluster centroids. This loop does not take into account all combinations of centroids (it works fine if \\(k=2\\)) and generates an error if a centroid is off the screen, which is possible, so I might just get rid of this later, since it's not really necessary, rather than try to fix it.
 
 ### Step 1 - Assignment
 
@@ -117,7 +133,7 @@ The fist step is to assign every data point to the nearest cluster centroid.
 2570 PRINT "ACCURACY = "; INT(A*10000+0.5)/100;"%"
 ```
 
-The assignment step is also quite easy. I loop through all the data points, computing the Euclidean distance to each cluster centroid. (Since `SQRT()` is expensive, and unnecessary here since we're just comparing, I actually computing the square of the Euclidean distance.) If the distance is less than the previous minimum distance, `DI(I,DS%(I,3))`, I update the assignment, `DS%(I,3) = J`.
+The assignment step is also quite easy. I loop through all the data points, computing the Euclidean distance to each cluster centroid. (Since `SQRT()` is expensive, and unnecessary here since we're just comparing, I actually just compute the square of the Euclidean distance.) If the distance is less than the previous minimum distance, `DI(I,DS%(I,3))`, I update the assignment, `DS%(I,3) = J`.
 
 At the end, I compute the accuracy of the computed assignments by simply counting the number of assignments, `DS%(I,3)`, that match the actual labels, `DS%(I,2)`. Here, however, there's an interesting wrinkle: with two classes, half the time the label I choose for the assignment is the opposite of the label from the original dataset. K-means doesn't require the distinction, so at times I was seeing a perfect classification reporting 0% accuracy. The line `IF A < 0.5 THEN A = 1 - A` addresses this, however, it only works for 2 classes. I'll need something more robust should I want this to work for \\(k > 2\\).
 
@@ -162,13 +178,13 @@ The second step is to recompute the cluster centroids based on the assigned data
 2990 RETURN
 ```
 
-I start by saving the cluster centroids to `KO(KN - 1, 1)`. This is used later to determine convergence. I then iterate through ever data point, adding it's values to the cluster mean to which it belongs, keeping track of the number of data points in each cluster. Next I iterate through each cluster and compute the mean of each dimension by dividing by the number of data point in that cluster.
+I start by saving the cluster centroids to `KO(KN - 1,1)`. This is used later to determine convergence. I then iterate through ever data point, adding it's values to the cluster to which it belongs while keeping track of the number of data points in each cluster. Next I iterate through each cluster and compute the mean of each dimension by dividing by the number of data point in that cluster.
 
-Lastly, I determine if there's convergence by measuring how far all the centroid have moved. If the answer is more than the tolerance, \\(0.01\\), I specified, I go back to Step #1. Otherwise, I clear the graphics, redraw the axis and data points and finish by drawing the decision boundary.
+Lastly, I determine if there's convergence by measuring how far all the centroid have moved. (Again, I don't bother with the `SQRT()`.) If the answer is more than the specified tolerance, \\(0.01\\), I go back to Step #1. Otherwise, I clear the graphics, redraw the axis and data points and finish by drawing the decision boundary.
 
 ### Drawing the decision boundary
 
-This code is a slog and it's not really critical to understanding ML but I thought it'd be cool to drawn a decision boundary while k-means is iterating and then again at the end. Given point (the midpoint on the segment between two cluster centroids) and a slope (which is perpendicular to that segment), the challenge is to drawn a line inside the box of the screen, assuming the line intersects that box.
+This code is a slog and it's not really critical to understanding ML but I thought it'd be cool to drawn a decision boundary while k-means is iterating and then again at the end. Given a point (the midpoint on the segment between two cluster centroids) and a slope (which is perpendicular to that segment), the challenge is to drawn a line inside the 'box' of the screen, assuming the line intersects that box.
 
 ```bbcbasic
 3000 REM  -- DRAW DECISION BOUNDARY --
@@ -203,12 +219,12 @@ This code is a slog and it's not really critical to understanding ML but I thoug
 3290 RETURN
 ```
 
-Without going into all the details, this routine relies heavily on the convenience array, `P%(2,1)`, that I declared during the "hyperparameters" routine. I start by computing the slope of the perpendicular segment connecting two centroids. (By the way, this routine also does not account for all combinations of centroids, but it works when \\(k=2\\).) I accommodate for when the slope is vertical and use `P%(0,0)` and `P%(0,1)` to store the midpoint between the two centroids and `M` for the slope.
+Without delving too far into the details, this routine relies heavily on the convenience array, `P%(2,1)`, that I declared during the "hyperparameters" routine. I start by computing the slope of the perpendicular segment connecting two centroids. I then find the midpoint of that segment. (By the way, this routine also does not account for all combinations of centroids, but it works when \\(k=2\\).) I accommodate for when the slope is vertical and use `P%(0,0)` and `P%(0,1)` to store the midpoint between the two centroids and `M` for the slope.
 
-I then rotate through the 4 sides of the 'box' on the screen, using the corners (10,10) and (269,149) so that the decision boundary isn't drawn all the way to the edges of the screen. I thought that would look prettier. I next determine if the decision boundary intersects, respectively, the left, right, top and bottom edges of the box. I use `NX` to keep track of the number of sides of the box intersected by the decision boundary and `P%(NX,0)` and `P%(NX,1)` to keep track of the intersections. If `NX = 3`, which means there are two intersections, I draw the line because it's inside the box.
+I then iterate through the 4 sides of the 'box' on the screen, using the corners (10,10) and (269,149) so that the decision boundary isn't drawn all the way to the edges of the screen. I thought that would look prettier this way. I next determine if the decision boundary intersects, respectively, the left, right, top and bottom edges of the box. I use `NX` to keep track of the number of sides of the box intersected by the decision boundary and `P%(NX,0)` and `P%(NX,1)` to keep track of those intersections. If `NX = 3`, which means there are two intersections, I draw the line because it's inside the box.
 
 ## Can we do better?
 
 Yes! Yes, we can.
 
-While k-means is simple, it does not take advantage of our knowledge of the Gaussian nature of the data. If we know that the distributions are Gaussian, which is very frequently the case in machine learning, we can employ a more powerful algorithm: Expectation Maximization (EM). This post is already long enough, so we'll deal with that another day. Eventually, perhaps, we'll get to deep learning, although developing back propagation for an arbitrary size neural net using APPLESOFT BASIC on an Apple ]\[+ is not going to be easy.
+While k-means is simple, it does not take advantage of our knowledge of the Gaussian nature of the data. If we know that the distributions are Gaussian, which is very frequently the case in machine learning, we can employ a more powerful algorithm: Expectation Maximization (EM). This post is already long enough, so we'll deal with that another day. Eventually, perhaps, we'll also get to deep learning, although developing back propagation for an arbitrary size neural net using APPLESOFT BASIC on an Apple ]\[+ is not going to be easy.
