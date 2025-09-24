@@ -23,7 +23,7 @@ Here is a screenshot of the final decision boundary after convergence.
 
 The final accuracy is 90% because 1 of the 10 observations is on the incorrect side of the decision boundary.
 
-For debugging purposes, to speed up execution, I reduced the number of samples in each class to 5. (You might note that, on the graph, there are only 4 points in class 1, which are the □s. That's because one of the points is at (291, 90), which is off the edge of the screen. Gaussian distributions can generate extreme outliers, so I decided to preserve those points rather than clip them to the edge of the screen.) That's obviously pretty small but you can see the algorithm iterating.
+For debugging purposes, to speed up execution, I reduced the number of samples in each class to 5. (You might note that, on the graph, there are only 4 points in class 1, which are the □s. That's because one of the points is at `(291, 90)`, which is off the edge of the screen. Gaussian distributions can generate extreme outliers, so I decided to preserve those points rather than clip them to the edge of the screen.) That's obviously pretty small but you can see the algorithm iterating.
 
 At the end of each loop I draw a line between the latest estimates of cluster centroids. The perpendicular bisector of these segments are the decision boundaries between the classes, so I draw them, too. Some of the code was written to handle more than two classes but here there are only two which makes this relatively easy.
 
@@ -39,7 +39,7 @@ At the end of each loop I draw a line between the latest estimates of cluster ce
 
 Ezpz.
 
-The math is also simple. In step 1, the distance between two points, \\(x\\) and \\(y\\), is simply \\(\sqrt{(x_0 - y_0)^2 + (x_1 - y_1)^2 + \cdots + (x_{d-1} - y_{d-1})^2}\\), where \\(d\\) is the dimensionality of the observations. In our case there are only 2 dimension which is why we only have \\(x_0\\) and \\(x_1\\). Also, since we're only using the distances for comparative purposes, it's not even necessary to take the square root. In step 2, the centroid is simply the sum of all the points divided by the number of points.
+The math is also simple. In step 1, the distance between two points, \\(x\\) and \\(y\\), is simply \\(\sqrt{(x_0 - y_0)^2 + (x_1 - y_1)^2 + \cdots + (x_{d-1} - y_{d-1})^2}\\), where \\(d\\) is the dimensionality of the observations. In our case \\(d=2\\) which is why we only have \\(x_0\\) and \\(x_1\\). Also, since we're only using the distances for comparative purposes, it's not even necessary to take the square root. In step 2, the centroid is simply the sum of all the points divided by the number of points.
 
 ## Implementation
 
@@ -80,7 +80,7 @@ Lastly, at the end of the "hyperparameters" section I declare a convenience arra
 
 ### Initialize
 
-Getting started, the first thing to do is initialize the algorithm by generating \\(k\\) cluster centroids.
+Getting started, the first thing to do is initialize the algorithm by generating \\(k\\) cluster centroids. (\\(k\\) is a hyperparameter that specifies the number of clusters to be "found." I set it previously with `KN = 2`.)
 
 ```bbcbasic
 2000 REM  == K-MEANS ==
@@ -97,11 +97,11 @@ Getting started, the first thing to do is initialize the algorithm by generating
 2150   KM(I,2) = DS%(J,2)
 2160   DS%(J,3) = 1
 2170 NEXT I
-2180 REM  -- DRAW LINES BETWEEN CENTROIDS --
-2190 FOR I = 1 TO KN - 1
-2200   HPLOT KM(I-1,0), 159-KM(I-1,1) TO KM(I,0), 159-KM(I,1)
-2210 NEXT I
-2215 GOSUB 3000: REM  DRAW DECISION BOUNDARY
+2200 REM  -- DRAW LINES BETWEEN CENTROIDS --
+2210 FOR I = 1 TO KN - 1
+2220   HPLOT KM(I-1,0), 159-KM(I-1,1) TO KM(I,0), 159-KM(I,1)
+2230 NEXT I
+2240 GOSUB 3000: REM  DRAW DECISION BOUNDARY
 ```
 
 I start by clearing out the prediction column, \\(y\\), of the dataset table, `DS%(NS - 1,3)` because I'm going to use this to make sure I don't randomly pick the same point twice. Then for each class I randomly pick a point from the dataset. If it's already been used I randomly pick another. `KM(KN - 1, 2)` is where I store the means for each cluster along with a count of the number of points in each cluster.
@@ -164,7 +164,7 @@ The second step is to recompute the cluster centroids based on the assigned data
 2820 FOR I = 0 TO KN - 1
 2830   DI = DI + (KM%(I,0) - KO%(I,0)) ^ 2 + (KM%(I,1) - KO%(I,1)) ^ 2
 2840 NEXT
-2850 IF DI > 0.01 THEN GOTO 2100
+2850 IF DI > 0.01 THEN GOTO 2200
 2860 PRINT "K-MEANS CONVERGED"
 2900 REM  -- CLEAR GRAPHICS AND REDRAW WITH DECISION BOUNDARY --
 2910 GOSUB 1000
@@ -221,10 +221,10 @@ This code is a slog and it's not really critical to understanding ML but I thoug
 
 Without delving too far into the details, this routine relies heavily on the convenience array, `P%(2,1)`, that I declared during the "hyperparameters" routine. I start by computing the slope of the perpendicular segment connecting two centroids. I then find the midpoint of that segment. (By the way, this routine also does not account for all combinations of centroids, but it works when \\(k=2\\).) I accommodate for when the slope is vertical and use `P%(0,0)` and `P%(0,1)` to store the midpoint between the two centroids and `M` for the slope.
 
-I then iterate through the 4 sides of the 'box' on the screen, using the corners (10,10) and (269,149) so that the decision boundary isn't drawn all the way to the edges of the screen. I thought that would look prettier this way. I next determine if the decision boundary intersects, respectively, the left, right, top and bottom edges of the box. I use `NX` to keep track of the number of sides of the box intersected by the decision boundary and `P%(NX,0)` and `P%(NX,1)` to keep track of those intersections. If `NX = 3`, which means there are two intersections, I draw the line because it's inside the box.
+I then iterate through the 4 sides of the 'box' on the screen, using the corners `(10,10)` and `(269,149)` so that the decision boundary isn't drawn all the way to the edges of the screen. I thought that would look prettier this way. I next determine if the decision boundary intersects, respectively, the left, right, top and bottom edges of the box. I use `NX` to keep track of the number of sides of the box intersected by the decision boundary and `P%(NX,0)` and `P%(NX,1)` to keep track of those intersections. If `NX = 3`, which means there are two intersections, I draw the line because it's inside the box.
 
 ## Can we do better?
 
 Yes! Yes, we can.
 
-While k-means is simple, it does not take advantage of our knowledge of the Gaussian nature of the data. If we know that the distributions are Gaussian, which is very frequently the case in machine learning, we can employ a more powerful algorithm: Expectation Maximization (EM). This post is already long enough, so we'll deal with that another day. Eventually, perhaps, we'll also get to deep learning, although developing back propagation for an arbitrary size neural net using APPLESOFT BASIC on an Apple ]\[+ is not going to be easy.
+While k-means is simple, it does not take advantage of our knowledge of the Gaussian nature of the data. If we know that the distributions are Gaussian, which is very frequently the case in machine learning, we can employ a more powerful algorithm: Expectation Maximization (EM). This post is already long enough, so we'll deal with that another day. Eventually, perhaps, we'll also get to deep learning, although developing back propagation for an arbitrary size neural net using APPLESOFT BASIC on an Apple ][+ is not going to be easy.
