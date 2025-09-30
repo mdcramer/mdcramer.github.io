@@ -21,7 +21,8 @@
 /* Override header background with image */
 .page__hero--overlay {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
-              url('/assets/images/cs229-notebook-header.jpg') center top/cover no-repeat !important;
+              url('/assets/images/cs229-notebook-header.jpg') center top/contain no-repeat !important;
+  background-color: #24292e !important; /* Grey background for any empty space */
   min-height: 150px;
 }
 
