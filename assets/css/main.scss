@@ -18,24 +18,24 @@
 
 /* Custom header image override                                 */
 /* https://claude.ai/share/ea376385-c62a-4607-93a6-51cc03e81b1d */
-.masthead {
+.page__hero {
   background: url('/assets/images/cs229-notebook-header.jpg') center top/cover no-repeat !important;
-  min-height: 60px; /* Matches typical masthead height */
+  min-height: 150px; /* Adjust as needed */
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.masthead .site-title {
+.page__hero .page__title {
   color: #1a1a1a !important; /* Dark text */
   text-shadow: 1px 1px 3px rgba(255,255,255,0.8), 
                -1px -1px 3px rgba(255,255,255,0.8),
                1px -1px 3px rgba(255,255,255,0.8),
-               -1px 1px 3px rgba(255,255,255,0.8) !important; /* White shadow/outline for contrast */
+               -1px 1px 3px rgba(255,255,255,0.8) !important;
   font-weight: 600 !important;
 }
 
-.masthead .site-subtitle {
+.page__hero .page__lead {
   color: #2a2a2a !important;
   text-shadow: 1px 1px 2px rgba(255,255,255,0.7),
                -1px -1px 2px rgba(255,255,255,0.7),
