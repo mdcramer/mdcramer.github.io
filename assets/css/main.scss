@@ -18,11 +18,11 @@
 
 /* Custom header image override                                 */
 /* https://claude.ai/share/ea376385-c62a-4607-93a6-51cc03e81b1d */
-/* Force header background image */
+/* Override header background with image */
 .page__hero--overlay {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
-              url('https://mdcramer.github.io/assets/images/cs229-notebook-header.jpg') center top/cover no-repeat !important;
-  min-height: 150px !important;
+              url('/assets/images/cs229-notebook-header.jpg') center top/cover no-repeat !important;
+  min-height: 150px;
 }
 
 .page__hero--overlay .page__title {
