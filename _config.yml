@@ -49,7 +49,7 @@ facebook:
   username:
   app_id:
   publisher:
-og_image: # Open Graph/Twitter default site image
+og_image: /assets/images/notebook-header.jpg # Open Graph/Twitter default site image
 
 analytics:
   provider: false # false (default), "google", "google-universal", "custom"
