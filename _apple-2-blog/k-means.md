@@ -1,7 +1,7 @@
 ---
 title: "K-means by another means"
 excerpt: "Success! There is machine learning happening on my Apple ][+."
-image: assets/images/apple2/k-means-convergence.jpg
+image: /assets/images/apple2/k-means-convergence.jpg
 tags:
   - K-means
   - machine learning
