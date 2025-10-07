@@ -135,7 +135,7 @@ The only remaining tweaks were for the plotting routines. The two routines below
 1220 IF X0% < 1 OR X0% > 270 THEN RETURN
 1230 IF X1% < 1 OR X1% > 150 THEN RETURN
 1240 HPLOT X0% - 1,X1% TO X0% + 1,X1%
-1250 HPLOT X0%,X1% - 1 TO X0%,X1 + 1
+1250 HPLOT X0%,X1% - 1 TO X0%,X1% + 1
 1260 RETURN
 
 1300 REM == DRAW BOX AT X0, X1 ==
@@ -153,17 +153,17 @@ The only remaining tweaks were for the plotting routines. The two routines below
 The final chunk of code is interesting. After sharing my [Box-Muller](/apple-2-blog/synthesizing-data#box-muller-to-the-rescue) routine with my friend, [Răzvan Surdulescu](https://www.linkedin.com/in/surdules/){:target="_blank"}, he suggested using the [Irwin-Hall Distribution](https://en.wikipedia.org/wiki/Irwin%E2%80%93Hall_distribution){:target="_blank"}. `SQR` and `COS` are expensive operations in BASIC and Irwin-Hall [approximates a normal distribution](https://en.wikipedia.org/wiki/Irwin%E2%80%93Hall_distribution#Approximating_a_Normal_distribution){:target="_blank"} by sampling 12 uniform random numbers.
 
 ```bbcbasic
-1400 REM == IRWIN-HALL DISTRIBUTION ==
-1490 Z0 = -6:Z1 = -6
-1500 FOR I = 1 TO 12
-1510   Z0 = Z0 + RND(1)
-1520   Z1 = Z1 + RND(1)
-1530 NEXT
-1540 RETURN
-1550 REM == RANDOM GEN SPEED TEST ==
-1560 FOR I = 1 TO 500
-1570   GOSUB 1400
-1580 NEXT
+1500 REM == IRWIN-HALL DISTRIBUTION ==
+1510 Z0 = -6:Z1 = -6
+1520 FOR Z = 1 TO 12
+1530   Z0 = Z0 + RND(1)
+1540   Z1 = Z1 + RND(1)
+1550 NEXT
+1560 RETURN
+1600 REM == RANDOM GEN SPEED TEST ==
+1610 FOR I = 1 TO 500
+1620   GOSUB 1400
+1630 NEXT
 ```
 I gave it a go and ran a comparison by generating 500 pairs of random numbers with each. This took 63s with Box-Muller and 90s with Irwin-Hall, so I will stick with the former. That being said, this was a nifty idea.
 

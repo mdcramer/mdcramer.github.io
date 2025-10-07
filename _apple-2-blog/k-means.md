@@ -8,6 +8,7 @@ tags:
   - K-means
   - machine learning
 date: 2025-09-20
+last_modified_at: 2025-10-06
 ---
 
 Wait. Does k-means count as machine learning? Yes. Yes, it does.
@@ -32,7 +33,7 @@ At the end of each loop I draw a line between the latest estimates of cluster ce
 
 ## K-means explained
 
-[K-means clustering](https://en.wikipedia.org/wiki/K-means_clustering){:target="_blank"} is a recursive algorithm that aims to partition \\(n\\) observations into \\(k\\) clusters in which each observation belongs to the cluster with the nearest mean, called the cluster centroid.
+[K-means clustering](https://en.wikipedia.org/wiki/K-means_clustering){:target="_blank"} is an iterative algorithm that aims to partition \\(n\\) observations into \\(k\\) clusters in which each observation belongs to the cluster with the nearest mean, called the cluster centroid.
 
 |Step|Description|
 |--|--|
@@ -196,7 +197,7 @@ This code is a slog and it's not really critical to understanding ML but I thoug
 3030   IF KM%(I - 1,1) - KM%(I,1) <> 0 THEN M = -1 * (KM%(I - 1,0) - KM%(I,0)) / (KM%(I - 1,1) - KM%(I,1))
 3040   P%(0,0) = (KM%(I,0) - KM%(I - 1,0)) / 2 + KM%(I - 1,0)
 3050   P%(0,1) = (KM%(I,1) - KM%(I - 1,1)) / 2 + KM%(I - 1,1)
-3060   GOSUB 3500
+3060   GOSUB 3080
 3070 NEXT
 3080 REM  -- DRAW LINE FROM SLOPE AND POINT --
 3090 NX = 1 : REM  -- REM NUMBER OF INTERSECTIONS --
@@ -230,4 +231,9 @@ I then iterate through the 4 sides of the 'box' on the screen, using the corners
 
 Yes! Yes, we can.
 
-While k-means is simple, it does not take advantage of our knowledge of the Gaussian nature of the data. If we know that the distributions are Gaussian, which is very frequently the case in machine learning, we can employ a more powerful algorithm: Expectation Maximization (EM). This post is already long enough, so we'll deal with that another day. Eventually, perhaps, we'll also get to deep learning, although developing back propagation for an arbitrary size neural net using APPLESOFT BASIC on an <span class="no-break">Apple ][+</span> is not going to be easy.
+While k-means is simple, it does not take advantage of our knowledge of the Gaussian nature of the data. If we know that the distributions are at least approximately Gaussian, which is frequently the case, we can employ a more powerful application of the Expectation Maximization (EM) framework (k-means is a specific implementation of centroid-based clustering that uses an iterative approach similar to EM with 'hard' clustering) that takes advantage of this. This post is already long enough, so we'll deal with that another day. Eventually, perhaps, we'll also get to deep learning, although developing back propagation for an arbitrary size neural net using APPLESOFT BASIC on an <span class="no-break">Apple ]\[+</span> is not going to be easy.
+
+## Social media sharing
+I shared this post on [Hacker News](https://news.ycombinator.com/item?id=45415510){:target="_blank"} and, to my surprise and delight, got a decent amount of feedback, including some helpful corrections.
+
+My [post on Facebook](https://www.facebook.com/markdcramer/posts/pfbid0eG3AuPSxFTqBm4nggDAjqJrQe8VFv5VUEKf5SQ8qtnDjVFZ4qaSZvauDBcKRxSoFl){:target="_blank"} received _significantly_ less reaction. My friends are apparently a lot less interested in ML algorithms on retro hardware than randos on Hacker News. My share requests to Facebook groups [Apple II Enthusiasts](https://www.facebook.com/groups/5251478676){:target="_blank"} and [Retro Microcomputers](https://www.facebook.com/groups/retrocomputers){:target="_blank"} were both rejected, which is a bit disappointing. Still, those are fun groups to follow. My [post on the VCF forum](https://forum.vcfed.org/index.php?threads/ml-on-an-apple.1254709/){:target="_blank"} also got zilch. (I attend the [Vintage Computer Festival](https://vcfed.org/events/vintage-computer-festival-west/){:target="_blank"} at the [Computer History Museum](https://computerhistory.org/){:target="_blank"}, which was a good time.) Perhaps I'll try Reddit and LinkedIn next to see what happens...
