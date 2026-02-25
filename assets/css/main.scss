@@ -42,11 +42,15 @@
                -1px 1px 2px rgba(255,255,255,0.7) !important;
 }
 
-/* Apple 2 blog specific header */
+/* Blog specific headers */
 /* https://claude.ai/share/ea376385-c62a-4607-93a6-51cc03e81b1d */
 .page__hero--overlay[style*="apple2header"] {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
-              url('/assets/images/apple2-header.jpg') center top/cover no-repeat !important;
+              url('/assets/images/apple2/apple2-header.jpg') center center/cover no-repeat !important;
+}
+.page__hero--overlay[style*="rankdynamicsheader"] {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+              url('/assets/images/rank-dynamics/rankdynamicsheader.jpg') center top/cover no-repeat !important;
 }
 
 /* define the no-break class to prevent any line breaks within that element */
