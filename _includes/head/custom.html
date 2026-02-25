@@ -18,9 +18,16 @@
 <meta property="twitter:image" content="{{ page.image | default: site.og_image | absolute_url }}">
 
 <!-- Favicon -->
+<!-- original code from RealFaviconGenerator.net
 <link rel="icon" type="image/png" href="/assets/images/favicon.ico/favicon-96x96.png" sizes="96x96" />
 <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.ico/favicon.svg" />
 <link rel="shortcut icon" href="/assets/images/favicon.ico/favicon.ico" />
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon.ico/apple-touch-icon.png" />
 <meta name="apple-mobile-web-app-title" content="Hackin’ and Tinkerin’" />
-<link rel="manifest" href="/assets/images/favicon.ico/site.webmanifest" />
+<link rel="manifest" href="/assets/images/favicon.ico/site.webmanifest" /> -->
+<link rel="icon" type="image/png" href="{{ '/assets/images/favicon-96x96.png' | relative_url }}" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="{{ '/assets/images/favicon.svg' | relative_url }}" />
+<link rel="shortcut icon" href="{{ '/assets/images/favicon.ico' | relative_url }}" />
+<link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/images/apple-touch-icon.png' | relative_url }}" />
+<meta name="apple-mobile-web-app-title" content="Hackin’ and Tinkerin’" />
+<link rel="manifest" href="{{ '/assets/images/site.webmanifest' | relative_url }}" />

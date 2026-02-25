@@ -3,7 +3,7 @@
 internal_blogs:
   - name: apple 2 blog
     description: Machine learning on an Apple ][+.
-    background: darkred
+    background: apple2header
     
   - name: deep speeling blog
     description: A recurrent neural network (RNN) using Tensorflow designed to correct spelling mistakes.
