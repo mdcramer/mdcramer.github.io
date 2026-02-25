@@ -13,7 +13,7 @@ last_modified_at: 2025-10-06
 
 Wait. Does k-means count as machine learning? Yes. Yes, it does.
 
-[CS229](https://cs229.stanford.edu/){:target="_blank"} is the graduate-level machine learning course I took at Stanford as part of the [Graduate Certificate in AI](https://www.linkedin.com/pulse/graduate-certificate-ai-achievement-unlocked-mark-cramer/){:target="_blank"} which I received back in 2021. While k-means is my choice as the easiest to understand algorithm in machine learning, it was taught as the introductory clustering algorithm for unsupervised learning. As a TA for [XCS229](https://online.stanford.edu/courses/xcs229-machine-learning){:target="_blank"}, which I have been doing since 2022 and most recently did this Spring, I know that it is still being taught as part of this seminal course in AI.
+[CS229](https://cs229.stanford.edu/){:target="_blank"} is the graduate-level machine learning course I took at Stanford as part of the [Graduate Certificate in AI](https://www.linkedin.com/pulse/graduate-certificate-ai-achievement-unlocked-mark-cramer/){:target="_blank"} which I completed in 2021. While k-means is my choice as the easiest to understand algorithm in machine learning, it was taught as the introductory clustering algorithm for unsupervised learning. As a TA for [XCS229](https://online.stanford.edu/courses/xcs229-machine-learning){:target="_blank"}, which I have been doing since 2022 and most recently did this Spring, I know that it is still being taught as part of this seminal course in AI.
 
 ## We have liftoff!
 
@@ -21,11 +21,11 @@ Unlike [previously](/apple-2-blog/synthesizing-data/) where I saved the result f
 
 [![Video of Apple 2+ running k-means](https://img.youtube.com/vi/Cy0wMMLObVA/0.jpg)](https://youtube.com/shorts/Cy0wMMLObVA?autoplay=1 "Video of Apple ]\[+ running k-means"){:target="_blank"}
 
-Here is a screenshot of the final decision boundary after convergence.
+Here is a screenshot of the decision boundary after convergence.
 
 ![K-means decision boundary after convergence](/assets/images/apple2/k-means-convergence.jpg "K-means decision boundary after convergence")
 
-The final accuracy is 90% because 1 of the 10 observations is on the incorrect side of the decision boundary.
+Accuracy is 90% because 1 of the 10 observations is on the incorrect side of the decision boundary.
 
 For debugging purposes, to speed up execution, I reduced the number of samples in each class to 5. (You might note that, on the graph, there are only 4 points in class 1, which are the □s. That's because one of the points is at `(291, 90)`, which is off the edge of the screen. Gaussian distributions can generate extreme outliers, so I decided to preserve those points rather than clip them to the edge of the screen.) That's obviously pretty small but you can see the algorithm iterating.
 
