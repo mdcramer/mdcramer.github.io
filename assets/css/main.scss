@@ -47,11 +47,17 @@
 .page__hero--overlay[style*="apple2header"] {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
               url('/assets/images/apple2/apple2-header.jpg') center center/cover no-repeat !important;
-  min-height: 150px;
+  min-height: 200px;
 }
 .page__hero--overlay[style*="rankdynamicsheader"] {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
               url('/assets/images/rank-dynamics/rankdynamicsheader.jpg') center top/cover no-repeat !important;
+  min-height: 200px;
+}
+/* Hide text overlay for Rank Dynamics blog */
+.page__hero--overlay[style*="rankdynamicsheader"] .page__title,
+.page__hero--overlay[style*="rankdynamicsheader"] .page__lead {
+  display: none !important;
 }
 
 /* define the no-break class to prevent any line breaks within that element */

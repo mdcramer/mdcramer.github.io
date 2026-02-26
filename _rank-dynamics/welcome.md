@@ -1,6 +1,6 @@
 ---
 title: "Welcome"
-excerpt: "A backup of the blog from the company I founded. We improved search by transforming the traditional static list of links into a fluid experience where relevance was improved by dynamically re-ranking results in response to implicit user feedback. Open this post to find our mission, links to top posts and published research."
+excerpt: "A backup of the blog from the company I founded. Open this post to find our mission, links to top posts and published research."
 date: 2021-12-23
 last_modified_at: 2021-12-24
 tags: [top-posts, announcements]
