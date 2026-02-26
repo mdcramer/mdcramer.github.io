@@ -1,6 +1,6 @@
 ---
 title: "Welcome"
-excerpt: "This is a copy of the original Rank Dynamics blog for safe keeping. Open this post to find our mission, links to top posts and published research."
+excerpt: "A backup of the blog from the company I founded. We improved search by transforming the traditional static list of links into a fluid experience where relevance was improved by dynamically re-ranking results in response to implicit user feedback. Open this post to find our mission, links to top posts and published research."
 date: 2021-12-23
 last_modified_at: 2021-12-24
 tags: [top-posts, announcements]
@@ -8,7 +8,7 @@ tags: [top-posts, announcements]
 This is a copy of the original [Rank Dynamics blog](https://blog.rankdynamics.com/) for safe keeping.
 
 # Dynamic Search
-The mission of Rank Dynamics is to transform search into a dynamic experience where fluid result pages respond to user actions in real time. We develop Dynamic Search, a real-time contextual search technology. By transforming static lists of links into dynamic search pages that automatically and immediately re-order results in response to user behavior signals, searchers are able to more quickly and easily find pertinent information that might otherwise have remained buried as deep as page 100.
+The mission of Rank Dynamics was to transform search into a dynamic experience where fluid result pages respond to user actions in real time. We developed Dynamic Search, a real-time contextual search technology. By transforming static lists of links into dynamic search pages that automatically and immediately re-ordered results in response to user behavior signals, searchers were able to more quickly and easily find pertinent information that might otherwise have remained buried as deep as page 100.
 
 # Top Posts
  - [Discoverying Discovery](/rank-dynamics/discovering-discovery/): an introduction to the product and how it works

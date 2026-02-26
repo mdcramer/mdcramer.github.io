@@ -47,6 +47,7 @@
 .page__hero--overlay[style*="apple2header"] {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
               url('/assets/images/apple2/apple2-header.jpg') center center/cover no-repeat !important;
+  min-height: 150px;
 }
 .page__hero--overlay[style*="rankdynamicsheader"] {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
