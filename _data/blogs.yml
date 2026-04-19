@@ -2,19 +2,19 @@
 # colors: https://github.com/Tapanila/Portable-Jekyll-Azure/blob/master/devkit/mingw/i686-w64-mingw32/include/gdiplus/gdipluscolor.h
 external_blogs:
   - name: Mortal Wayfare
-    description: An old-school retro 2D turn-based RPG built for Android.
+    description: An old-school retro 2D turn-based RPG built for Android. (Redirects to www.mortalwayfare.com)
     url: http://www.mortalwayfare.com/
     
 internal_blogs:
   - name: llm personalization
     description: A prototype to experiment with adding personalization to ChatGPT.
-    background: darkgoldenrod
+    background: llmpersonalizationheader
     
   - name: rank dynamics
     description: Rank Dynamics improved search by transforming traditional static lists of links into fluid experiences where relevance was improved by dynamically re-ranking results in response to implicit user feedback. This is a backup of the blog from the company I founded.
     background: rankdynamicsheader # custom image header
     
-  - name: apple 2 machine learning
+  - name: apple ][+ machine learning
     description: Reviving the ol' Apple ][+ to, among other things, develop ML in BASIC.
     background: apple2header # custom image header
     

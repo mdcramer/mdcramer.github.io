@@ -220,3 +220,11 @@ defaults:
     values:
       layout: single
       permalink: /rank-dynamics/:title/
+
+  # _llm-personalization
+  - scope:
+      path: "_llm-personalization"
+      type: llm-personalization
+    values:
+      layout: single
+      permalink: /llm-personalization/:title/
