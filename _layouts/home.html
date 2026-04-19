@@ -16,7 +16,7 @@ layout: default
     </a>
     {%- endfor -%}
     {%- for blog in site.data.blogs.internal_blogs -%}
-    <a class = 'blog_card' href = '/{{ blog.name | downcase | slugify }}/'>
+    <a class = 'blog_card' href = '/{{ blog.path | default: blog.name | downcase | slugify }}/'>
       <h2 class = 'blog_header'>{{ blog.name }}</h2>
       <p class = 'blog_excerpt'>{{ blog.description }}</p>
     </a>

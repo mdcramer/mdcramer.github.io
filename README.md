@@ -89,7 +89,8 @@ New *_data/blogs.yml*
 
 > The **name** entry in this data file must always be in lower case
 
-> To change the color of a blog header, uncomment and alter the value of the **background** entry
+4. To change the color of a blog header, uncomment and alter the value of the **background** entry.
+For custom header images, look to main.scss.
 
 ## Working locally
 

@@ -8,20 +8,23 @@ external_blogs:
 internal_blogs:
   - name: llm personalization
     description: A prototype to experiment with adding personalization to ChatGPT.
-    background: llmpersonalizationheader
+    background: llmpersonalizationheader # custom image header
     
   - name: rank dynamics
     description: Rank Dynamics improved search by transforming traditional static lists of links into fluid experiences where relevance was improved by dynamically re-ranking results in response to implicit user feedback. This is a backup of the blog from the company I founded.
     background: rankdynamicsheader # custom image header
     
-  - name: apple ][+ machine learning
+  - name: apple 2 machine learning
+    path: apple-2-blog
     description: Reviving the ol' Apple ][+ to, among other things, develop ML in BASIC.
     background: apple2header # custom image header
-    
+
   - name: deep speeling
+    path: deep-speeling-blog
     description: A recurrent neural network (RNN) using Tensorflow designed to correct spelling mistakes.
     # background: darkgoldenrod
-    
+
   - name: perceptron magic
+    path: perceptron-magic-blog
     description: An instructional blog aimed at illustrating how neural networks function through the use of a Perceptron class, built from scratch, as opposed to matrix math.
     background: darkgoldenrod
