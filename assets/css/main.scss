@@ -59,10 +59,15 @@
 .page__hero--overlay[style*="rankdynamicsheader"] .page__lead {
   display: none !important;
 }
-.page__hero--overlay[style*="apple2header"] {
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+.page__hero--overlay[style*="llmpersonalizationheader"] {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
               url('/assets/images/llm-personalization/llmpersonalizationheader.jpg') center center/cover no-repeat !important;
   min-height: 400px;
+}
+/* Hide text overlay for LLM personalization blog */
+.page__hero--overlay[style*="llmpersonalizationheader"] .page__title,
+.page__hero--overlay[style*="llmpersonalizationheader"] .page__lead {
+  display: none !important;
 }
 
 /* define the no-break class to prevent any line breaks within that element */
