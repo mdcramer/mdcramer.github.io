@@ -26,7 +26,7 @@ A beginner and an expert may need very different explanations of the same idea. 
 
 I wanted to test whether a lightweight system, built in a weekend, with no custom model training, could meaningfully personalize LLM responses by maintaining a small, decaying memory of what the user cares about and then selectively injecting that context at inference time.
 
-So, over a weekend I built [www.mymemochat.com](https://www.mymemochat.com){:target="_blank"}.
+So, over a weekend I built [mymemochat.com](https://mymemochat.com){:target="_blank"}.
 
 It's a prototype that looks reminiscent of an early Rank Dynamics prototype. (I wish I had saved a screenshot!) We eventually dropped the 'insights' in the left panel and then quickly moved to delivering our technology through a browser extension (which ended up being installed tens of millions of times) but it makes the process transparent which helps with debugging and communicating the value proposition.
 
