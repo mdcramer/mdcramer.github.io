@@ -3,12 +3,19 @@
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
         {%- if page.signature == 'collection' -%}
-          {%- assign signature = page.permalink | remove: '/' | remove: 'index.html' | replace: '-', ' ' -%}
+          {%- assign signature_path = page.permalink | remove: '/' | remove: 'index.html' -%}
+          {%- assign signature = signature_path | replace: '-', ' ' -%}
+          {%- assign signature_blog = site.data.blogs.internal_blogs | where_exp: "item", "item.path == signature_path" -%}
+          {%- if signature_blog.size == 0 -%}
+            {%- assign signature_blog = site.data.blogs.internal_blogs | where_exp: "item", "item.name == signature" -%}
+          {%- endif -%}
         {%- endif -%}
 
         {%- if signature or page.collection -%}
           {%- if page.collection -%}
             {%- assign site_title = page.collection -%}
+          {%- elsif signature_blog.size > 0 -%}
+            {%- assign site_title = signature_blog[0].name -%}
           {%- else -%}
             {%- assign site_title = signature -%}
           {%- endif -%}
@@ -18,6 +25,8 @@
 
         {%- if site_title == site.title -%}
           {%- assign site_url = '/' -%}
+        {%- elsif signature_blog[0].path -%}
+          {%- assign site_url = signature_blog[0].path | prepend: '/' | append: '/' -%}
         {%- else -%}
           {%- assign site_url = site_title | slugify | prepend: '/' | append : '/' -%}
         {%- endif -%}
