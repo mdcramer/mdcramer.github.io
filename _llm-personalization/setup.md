@@ -10,16 +10,16 @@ After laying out the [motivation](/llm-personalization/motivation/), the next qu
 
 I did not want a heavy framework or a complex cloud architecture. The goal was not to build a polished product but a working prototype that would let me explore personalization in a concrete way. That meant choosing tools that were familiar, lightweight and easy to modify.
 
-The basic stack ended up being
+The basic stack ended up being:
 - a single-page frontend in HTML and JavaScript,
 - a small Python backend using Flask,
-- OpenAI’s API for the model calls and
+- OpenAI's API for the model calls and
 - SQLite for local storage.
 The idea was to keep the application legible. I wanted to be able to understand the whole system, change individual pieces quickly, and avoid spending the early days of the project fighting the scaffolding.
 
 ## To stream or not to stream
 
-I also chose not to implement streaming at the outset. That was partly a product decision and partly an architectural one. Since I wanted to work in a stack I already knew well, I started with a very simple HTML/JavaScript frontend and a Python Flask backend. Streaming would have been possible in that setup but it would have added complexity and pulled attention toward interface polish rather than the core question of the project. The memory logic and personalization is the story, so I kept the interaction loop simple and focused development effort there.
+I also chose not to implement streaming at the outset. That was partly a product decision and partly an architectural one. Since I wanted to work in a stack I already knew well, I started with a very simple HTML/JavaScript frontend and a Python Flask backend. Streaming would have been possible in that setup but it would have added complexity and pulled attention toward interface polish rather than the core question of the project. The memory logic is the story, so I kept the interaction loop simple and focused development effort there.
 
 ## My coding partner, Codex
 
@@ -35,11 +35,11 @@ Local development was done the old-fashioned way, on localhost. I used a familia
 
 ## Sharing with the world
 
-Once the `127.0.0.1:5000` local version was stable enough to be interesting, I wanted to put it online so that other people could try it. For hosting, I chose Railway for the simplicity. Railway connects straight to a GitHub repository so changes are deployed automatically with a simple `git push`. There was no need to build a deployment pipeline from scratch or think deeply about servers. I just needed a reliable way to turn a local experiment into a public URL.
+Once the `127.0.0.1:5000` local version was stable enough to be interesting, I wanted to put it online so that other people could try it. For hosting, I chose Railway for its simplicity. Railway connects straight to a GitHub repository so changes are deployed automatically with a simple `git push`. There was no need to build a deployment pipeline from scratch or think deeply about servers. I just needed a reliable way to turn a local experiment into a public URL.
 
-The application also needed a little production-minded handling because it uses SQLite. On a local machine, SQLite is almost effortless. In the cloud, it raises the practical question of where does the database live and does it survive restarts and redeploys? Railway’s persistent volume support provided a clean answer that let me keep the lightweight local-database approach while still preserving the prototype’s memory store across deployments.
+The application also needed a little production-minded handling because it uses SQLite. On a local machine, SQLite is almost effortless. In the cloud, it raises the practical questions of where does the database live, and does it survive restarts and redeploys? Railway's persistent volume support provided a clean answer that let me keep the lightweight local-database approach while still preserving the prototype’s memory store across deployments.
 
-Once the app was live on Railway, the next step was to make it feel less temporary with a custom domain name. (I bought [mymemochat.com](https://mymemochat.com){:target="_blank"} because it was available I didn't feel like spending days thinking about this.) This, unfortunately, turned out to be one of the more finicky parts of the setup. The DNS provided by the company hosting my domain did not play nicely with Railway’s custom-domain and SSL flow, particularly at the root. Railway expects a CNAME-style setup and some providers’ ALIAS-style behavior is unreliable for this because Railway services sit behind dynamic shared IPs. The practical fix was to move DNS handling to Cloudflare. That solved two problems at once:
+Once the app was live on Railway, the next step was to make it feel less temporary with a custom domain name. (I bought [mymemochat.com](https://mymemochat.com){:target="_blank"} because it was available and I didn't feel like spending days thinking about this.) This, unfortunately, turned out to be one of the more finicky parts of the setup. The DNS provided by the company hosting my domain did not play nicely with Railway's custom-domain and SSL flow, particularly at the root. Railway expects a CNAME-style setup and some providers’ ALIAS-style behavior is unreliable for this because Railway services sit behind dynamic shared IPs. The practical fix was to move DNS handling to Cloudflare. That solved two problems at once:
 1. Cloudflare supports CNAME flattening at the root domain and
 2. it gave me a more predictable path for SSL.
 
