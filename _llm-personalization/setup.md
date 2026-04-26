@@ -2,7 +2,7 @@
 title: "Setup"
 excerpt: "Some background into how I got the prototype off the ground."
 date: 2026-04-26
-last_modified_at: 2026-04-26
+last_modified_at: 2026-04-26 13:00:00
 tags: [setup, streaming, API, DNS]
 ---
 
