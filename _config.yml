@@ -196,6 +196,8 @@ defaults:
     values:
       layout: single
       permalink: /apple-2-blog/:title/
+      header:
+        og_image: /assets/images/apple2-header.jpg
       
   # _deep-speeling-blog
   - scope:
@@ -220,6 +222,8 @@ defaults:
     values:
       layout: single
       permalink: /rank-dynamics/:title/
+      header:
+        og_image: /assets/images/rankdynamicsheader.jpg
 
   # _llm-personalization
   - scope:
@@ -228,3 +232,5 @@ defaults:
     values:
       layout: single
       permalink: /llm-personalization/:title/
+      header:
+        og_image: /assets/images/llm-personalization-header.jpg

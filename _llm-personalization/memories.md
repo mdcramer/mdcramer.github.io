@@ -1,8 +1,8 @@
 ---
 title: "Making memories"
 excerpt: "Extracting user preferences from the prompts and then intelligently decaying them."
-date: 2026-04-26
-last_modified_at: 2026-04-26 15:45:00
+date: 2026-04-26 15:45:00
+last_modified_at: 2026-04-26
 tags: [memory, memories, decay]
 ---
 
