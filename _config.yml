@@ -189,6 +189,15 @@ collections:
     output: true
     # permalink: /llm-personalization/:path/
 
+# For feed.xml
+feed:
+  collections:
+    - apple-2-blog
+    - deep-speeling-blog
+    - perceptron-magic-blog
+    - rank-dynamics
+    - llm-personalization
+
 defaults:
   # All pages with layout of type [single]
   # This first block is for the author. This is the first thing seo.html checks.
