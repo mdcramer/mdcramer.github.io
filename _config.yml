@@ -220,12 +220,6 @@ defaults:
       permalink: /apple-2-blog/:title/
       og_image: /assets/images/apple2/apple2-header.jpg
 
-  # _apple-2-blog autopage index
-  - scope:
-      path: "apple-2-blog" # path does not include _
-    values:
-      og_image: /assets/images/apple2/apple2-header.jpg
-
   # _deep-speeling-blog
   - scope:
       path: "_deep-speeling-blog"
@@ -251,12 +245,6 @@ defaults:
       permalink: /rank-dynamics/:title/
       og_image: /assets/images/rank-dynamics/rankdynamicsheader.jpg
 
-  # _rank-dynamics autopage index
-  - scope:
-      path: "rank-dynamics" # path does not include _
-    values:
-      og_image: /assets/images/rank-dynamics/rankdynamicsheader.jpg
-
   # _llm-personalization
   - scope:
       path: "_llm-personalization"
@@ -266,8 +254,3 @@ defaults:
       permalink: /llm-personalization/:title/
       og_image: /assets/images/llm-personalization/llmpersonalizationheader.jpg
 
-  # _llm-personalization autopage index
-  - scope:
-      path: "llm-personalization" # path does not include _
-    values:
-      og_image: /assets/images/llm-personalization/llmpersonalizationheader.jpg
