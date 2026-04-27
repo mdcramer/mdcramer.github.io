@@ -4,6 +4,11 @@
 {% endif %}
 {% assign seo_url = seo_url | default: site.github.url %}
 
+{% assign collection_blog = nil %}
+{% if page.collection %}
+  {% assign collection_blog = site.data.blogs.internal_blogs | where: "path", page.collection | first %}
+{% endif %}
+
 {% assign page_title = page.title %}
 
 {% if page.layout == 'autopage_collection' %}
@@ -60,6 +65,7 @@
   <meta property="og:description" content="{{ seo_description }}">
 {% endif %}
 
+<!-- Twitter block -->
 {% if site.twitter.username %}
   <meta name="twitter:site" content="@{{ site.twitter.username | replace: "@", "" }}">
   <meta name="twitter:title" content="{{ seo_title | default: site.title | markdownify | strip_html | strip_newlines | escape_once }}">
@@ -79,6 +85,8 @@
     <meta name="twitter:card" content="summary">
     {% if page.header.teaser %}
       <meta name="twitter:image" content="{% if page.header.teaser contains "://" %}{{ page.header.teaser }}{% else %}{{ page.header.teaser | absolute_url }}{% endif %}">
+    {% elsif collection_blog.og_image %}
+      <meta name="twitter:image" content="{% if collection_blog.og_image contains "://" %}{{ collection_blog.og_image }}{% else %}{{ collection_blog.og_image | absolute_url }}{% endif %}">
     {% elsif site.og_image %}
       <meta name="twitter:image" content="{{ site.og_image | absolute_url }}">
     {% endif %}
@@ -89,6 +97,7 @@
   {% endif %}
 {% endif %}
 
+<!-- Facebook block -->
 {% if site.facebook %}
   {% if site.facebook.publisher %}
     <meta property="article:publisher" content="{{ site.facebook.publisher }}">
@@ -99,6 +108,7 @@
   {% endif %}
 {% endif %}
 
+<!-- generic OG block -->
 {% if page.header.og_image %}
   <meta property="og:image" content="{% if page.header.og_image contains "://" %}{{ page.header.og_image }}{% else %}{{ page.header.og_image | absolute_url }}{% endif %}">
 {% elsif page.og_image %}
@@ -109,6 +119,8 @@
   <meta property="og:image" content="{% if page.header.overlay_image contains "://" %}{{ page.header.overlay_image }}{% else %}{{ page.header.overlay_image | absolute_url }}{% endif %}">
 {% elsif page.header.teaser %}
   <meta property="og:image" content="{% if page.header.teaser contains "://" %}{{ page.header.teaser }}{% else %}{{ page.header.teaser | absolute_url }}{% endif %}">
+{% elsif collection_blog.og_image %}
+  <meta property="og:image" content="{% if collection_blog.og_image contains "://" %}{{ collection_blog.og_image }}{% else %}{{ collection_blog.og_image | absolute_url }}{% endif %}">
 {% elsif site.og_image %}
   <meta property="og:image" content="{% if site.og_image contains "://" %}{{ site.og_image }}{% else %}{{ site.og_image | absolute_url }}{% endif %}">
 {% endif %}

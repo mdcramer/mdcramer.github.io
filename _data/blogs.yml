@@ -10,15 +10,19 @@ internal_blogs:
     path: llm-personalization
     description: A prototype to experiment with adding personalization to ChatGPT.
     background: llmpersonalizationheader # custom image header
+    og_image: /assets/images/llm-personalization/llmpersonalizationheader.jpg
     
   - name: rank dynamics
+    path: rank-dynamics
     description: Rank Dynamics improved search by transforming traditional static lists of links into fluid experiences where relevance was improved by dynamically re-ranking results in response to implicit user feedback. This is a backup of the blog from the company I founded.
     background: rankdynamicsheader # custom image header
+    og_image: /assets/images/rank-dynamics/rankdynamicsheader.jpg
     
   - name: apple ][+ machine learning
     path: apple-2-blog
     description: Reviving the ol' Apple ][+ to, among other things, develop ML in BASIC.
     background: apple2header # custom image header
+    og_image: /assets/images/apple2/apple2-header.jpg
 
   - name: deep speeling
     path: deep-speeling-blog
