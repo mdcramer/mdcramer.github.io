@@ -19,12 +19,18 @@
 {% endif %}
 <!-- DEBUG: collection_key={{ collection_key }} autopages={{ page.autopages.display_name }} -->
 
+<!-- Assign page title -->
 {% assign page_title = page.title %}
 
 {% if page.layout == 'autopage_collection' %}
-  {% assign page_title = page_title | remove: "Posts in collection " | replace: '-', ' ' | capitalize %}
+  {% if collection_blog.title %}
+    {% assign page_title = collection_blog.title %}
+  {% else %}
+    {% assign page_title = page_title | remove: "Posts in collection " | replace: '-', ' ' | capitalize %}
+  {% endif %}
 {% endif %}
 
+<!-- Assign seo title -->
 {% if page_title %}
   {% assign seo_title = page_title | append: " " | append: site.title_separator | append: " " | append: site.title %}
 {% endif %}
