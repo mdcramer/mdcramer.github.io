@@ -4,9 +4,15 @@
 {% endif %}
 {% assign seo_url = seo_url | default: site.github.url %}
 
+<!-- old method which didn't work
 {% assign collection_blog = nil %}
 {% if page.collection %}
   {% assign collection_blog = site.data.blogs.internal_blogs | where: "path", page.collection | first %}
+{% endif %} -->
+{% assign collection_blog = nil %}
+{% assign collection_key = page.collection | default: paginator.collection %}
+{% if collection_key %}
+  {% assign collection_blog = site.data.blogs.internal_blogs | where: "path", collection_key | first %}
 {% endif %}
 
 {% assign page_title = page.title %}
