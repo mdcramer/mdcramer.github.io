@@ -41,6 +41,17 @@ comments:
           format: "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
   atom_feed:
     path: # blank (default) uses feed.xml
+author:
+  name: "Mark Cramer"
+  avatar: "/assets/images/profilepic-small.jpg"
+  bio: "ML Product Manager who enjoys hacking around with models and code..."
+  links:
+    - label: "LinkedIn"
+      url: "https://www.linkedin.com/in/mcramer"
+    - label: "Blog"
+      url: https://mdcramer.github.io/
+    - label: "GitHub"
+      url: "https://github.com/mdcramer"
 
 # Social Sharing
 twitter:
@@ -184,6 +195,7 @@ defaults:
       layout: single
     values:
       author_profile: true
+      author: "Mark Cramer"
       read_time: false
       comments: true # true
       share: true
