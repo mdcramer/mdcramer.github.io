@@ -191,13 +191,14 @@ collections:
 
 defaults:
   # All pages with layout of type [single]
+  # This first block is for the author. This is the first thing seo.html checks.
   - scope:
       layout: single
     values:
       author_profile: true
       author: "Mark Cramer"
       read_time: false
-      comments: true # true
+      comments: true
       share: true
       related: true
 
@@ -209,7 +210,13 @@ defaults:
       layout: single
       permalink: /apple-2-blog/:title/
       og_image: /assets/images/apple2/apple2-header.jpg
-      
+
+  # _apple-2-blog autopage index
+  - scope:
+      path: "apple-2-blog" # path does not include _
+    values:
+      og_image: /assets/images/apple2/apple2-header.jpg
+
   # _deep-speeling-blog
   - scope:
       path: "_deep-speeling-blog"
@@ -235,6 +242,12 @@ defaults:
       permalink: /rank-dynamics/:title/
       og_image: /assets/images/rank-dynamics/rankdynamicsheader.jpg
 
+  # _rank-dynamics autopage index
+  - scope:
+      path: "rank-dynamics" # path does not include _
+    values:
+      og_image: /assets/images/rank-dynamics/rankdynamicsheader.jpg
+
   # _llm-personalization
   - scope:
       path: "_llm-personalization"
@@ -242,4 +255,10 @@ defaults:
     values:
       layout: single
       permalink: /llm-personalization/:title/
+      og_image: /assets/images/llm-personalization/llmpersonalizationheader.jpg
+
+  # _llm-personalization autopage index
+  - scope:
+      path: "llm-personalization" # path does not include _
+    values:
       og_image: /assets/images/llm-personalization/llmpersonalizationheader.jpg
