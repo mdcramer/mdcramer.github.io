@@ -14,6 +14,7 @@
 {% if collection_key %}
   {% assign collection_blog = site.data.blogs.internal_blogs | where: "path", collection_key | first %}
 {% endif %}
+<!-- DEBUG: collection_key={{ collection_key }} page.collection={{ page.collection }} paginator.collection={{ paginator.collection }} -->
 
 {% assign page_title = page.title %}
 
