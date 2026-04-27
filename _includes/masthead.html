@@ -13,7 +13,12 @@
 
         {%- if signature or page.collection -%}
           {%- if page.collection -%}
-            {%- assign site_title = page.collection -%}
+            {%- assign post_blog = site.data.blogs.internal_blogs | where: "path", page.collection | first -%}
+            {%- if post_blog -%}
+              {%- assign site_title = post_blog.title -%}
+            {%- else -%}
+              {%- assign site_title = page.collection -%}
+            {%- endif -%}
           {%- elsif signature_blog.size > 0 -%}
             {%- assign site_title = signature_blog[0].name -%}
           {%- else -%}
