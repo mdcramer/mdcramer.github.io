@@ -6,6 +6,7 @@ header:
   image_description: "About"
 permalink: /about/
 author_profile: true
+comments: true
 ---
 
 Welcome to my about page.

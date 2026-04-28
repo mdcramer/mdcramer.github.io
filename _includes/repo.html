@@ -1,4 +1,5 @@
-<!-- First try page.collection — works for individual post pages -->
+<!-- dead code
+First try page.collection — works for individual post pages
 {% if page.signature == 'collection' %}
   {% assign signature = page.permalink | remove: '/' | remove: 'index.html' | replace: '-', ' ' %}
 {% endif %}
@@ -6,14 +7,14 @@
 {%- assign repo = site.repo -%}
 {%- assign repo_slug = repo.source_branch | prepend: '/tree/' | append: '/' -%}
 
-<!-- If not found, try page.permalink slug — works for autopage collection index pages -->
+If not found, try page.permalink slug — works for autopage collection index pages
 {% unless page.layout == 'home' %}
   {%- if signature -%}
     {%- assign repo_suffix = signature | slugify | prepend: '_' -%}
   {%- else -%}
     {% assign repo_suffix = page.collection | slugify | prepend: '_' -%}
   {%- endif -%}
-{% endunless %}
+{% endunless %} -->
 
 <!-- If repo_url is found in blogs.yml, use it — otherwise fall back to the original constructed URL -->
 {% assign repo_blog = site.data.blogs.internal_blogs | where: "path", page.collection | first %}
@@ -27,6 +28,7 @@
   {% if repo_blog.repo_url %}
     <a href="{{ repo_blog.repo_url }}" target="_blank"><i class="fa fa-fw fa-github" aria-hidden="true"></i>GitHub</a>
   {% else %}
-    <a href="{{ repo.root }}{{ repo_slug }}{{ repo_suffix }}" target="_blank"><i class="fa fa-fw fa-github" aria-hidden="true"></i>GitHub</a>
+    {% assign github_link = site.author.links | where: "label", "GitHub" | first %}
+    <a href="{{ github_link.url | default: 'https://github.com/mdcramer' }}" target="_blank"><i class="fa fa-fw fa-github" aria-hidden="true"></i>GitHub</a>
   {% endif %}
 </li>
