@@ -1,6 +1,9 @@
 ---
 layout: single
 title: "About"
+header:
+  image: /assets/images/notebook-header.jpg
+  image_description: "About"
 permalink: /about/
 author_profile: true
 ---
