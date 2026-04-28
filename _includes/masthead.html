@@ -16,6 +16,7 @@
             {%- assign post_blog = site.data.blogs.internal_blogs | where: "path", page.collection | first -%}
             {%- if post_blog -%}
               {%- assign site_title = post_blog.title -%}
+			  {%- assign site_url = post_blog.path | prepend: '/' | append: '/' -%}
             {%- else -%}
               {%- assign site_title = page.collection -%}
             {%- endif -%}
@@ -28,13 +29,15 @@
           {%- assign site_title = site.title -%}
         {%- endif -%}
 
-        {%- if site_title == site.title -%}
-          {%- assign site_url = '/' -%}
-        {%- elsif signature_blog[0].path -%}
-          {%- assign site_url = signature_blog[0].path | prepend: '/' | append: '/' -%}
-        {%- else -%}
-          {%- assign site_url = site_title | slugify | prepend: '/' | append : '/' -%}
-        {%- endif -%}
+        {%- unless post_blog -%}
+          {%- if site_title == site.title -%}
+            {%- assign site_url = '/' -%}
+          {%- elsif signature_blog[0].path -%}
+            {%- assign site_url = signature_blog[0].path | prepend: '/' | append: '/' -%}
+          {%- else -%}
+            {%- assign site_url = site_title | slugify | prepend: '/' | append : '/' -%}
+          {%- endif -%}
+        {%- endunless -%}
 
         <a class="site-title" href="{{ site_url }}">{{ site_title | replace: '-', ' ' }}</a>
         <ul class="visible-links">
