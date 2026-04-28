@@ -19,7 +19,9 @@ Wait. Does k-means count as machine learning? Yes. Yes, it does.
 
 Unlike [previously](/apple-2-blog/synthesizing-data/) where I saved the result for the end, let's start by taking a look at the algorithm in action!
 
-[![Video of Apple 2+ running k-means](https://img.youtube.com/vi/Cy0wMMLObVA/0.jpg)](https://youtube.com/shorts/Cy0wMMLObVA?autoplay=1 "Video of Apple ]\[+ running k-means"){:target="_blank"}
+<!-- old method for embedding YouTube video that clicks out to YouTube.com
+[![Video of Apple 2+ running k-means](https://img.youtube.com/vi/Cy0wMMLObVA/0.jpg)](https://youtube.com/shorts/Cy0wMMLObVA?autoplay=1 "Video of Apple ]\[+ running k-means"){:target="_blank"} -->
+{% include video id="Cy0wMMLObVA" provider="youtube" %}
 
 Here is a screenshot of the decision boundary after convergence.
 

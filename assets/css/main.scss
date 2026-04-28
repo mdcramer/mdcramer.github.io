@@ -70,6 +70,12 @@
   display: none !important;
 }
 
+/* Custom color for Reddit share button */
+.btn--reddit {
+  background-color: #ff4500;
+  color: #fff;
+}
+
 /* define the no-break class to prevent any line breaks within that element */
 .no-break {
   white-space: nowrap;
