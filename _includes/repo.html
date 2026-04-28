@@ -1,3 +1,4 @@
+<!-- First try page.collection — works for individual post pages -->
 {% if page.signature == 'collection' %}
   {% assign signature = page.permalink | remove: '/' | remove: 'index.html' | replace: '-', ' ' %}
 {% endif %}
@@ -5,6 +6,7 @@
 {%- assign repo = site.repo -%}
 {%- assign repo_slug = repo.source_branch | prepend: '/tree/' | append: '/' -%}
 
+<!-- If not found, try page.permalink slug — works for autopage collection index pages -->
 {% unless page.layout == 'home' %}
   {%- if signature -%}
     {%- assign repo_suffix = signature | slugify | prepend: '_' -%}
@@ -12,6 +14,19 @@
     {% assign repo_suffix = page.collection | slugify | prepend: '_' -%}
   {%- endif -%}
 {% endunless %}
+
+<!-- If repo_url is found in blogs.yml, use it — otherwise fall back to the original constructed URL -->
+{% assign repo_blog = site.data.blogs.internal_blogs | where: "path", page.collection | first %}
+{% unless repo_blog %}
+  {% assign collection_path = page.permalink | remove: '/' | remove: 'index.html' %}
+  {% assign repo_blog = site.data.blogs.internal_blogs | where: "path", collection_path | first %}
+{% endunless %}
+
+<!-- create the link -->
 <li>
-  <a href="{{ repo.root }}{{ repo_slug }}{{ repo_suffix }}"><i class="fa fa-fw fa-github" aria-hidden="true"></i>GitHub</a>
+  {% if repo_blog.repo_url %}
+    <a href="{{ repo_blog.repo_url }}"><i class="fa fa-fw fa-github" aria-hidden="true"></i>GitHub</a>
+  {% else %}
+    <a href="{{ repo.root }}{{ repo_slug }}{{ repo_suffix }}"><i class="fa fa-fw fa-github" aria-hidden="true"></i>GitHub</a>
+  {% endif %}
 </li>
