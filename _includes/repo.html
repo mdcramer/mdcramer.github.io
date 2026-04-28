@@ -25,8 +25,8 @@
 <!-- create the link -->
 <li>
   {% if repo_blog.repo_url %}
-    <a href="{{ repo_blog.repo_url }}"><i class="fa fa-fw fa-github" aria-hidden="true"></i>GitHub</a>
+    <a href="{{ repo_blog.repo_url }}" target="_blank"><i class="fa fa-fw fa-github" aria-hidden="true"></i>GitHub</a>
   {% else %}
-    <a href="{{ repo.root }}{{ repo_slug }}{{ repo_suffix }}"><i class="fa fa-fw fa-github" aria-hidden="true"></i>GitHub</a>
+    <a href="{{ repo.root }}{{ repo_slug }}{{ repo_suffix }}" target="_blank"><i class="fa fa-fw fa-github" aria-hidden="true"></i>GitHub</a>
   {% endif %}
 </li>
