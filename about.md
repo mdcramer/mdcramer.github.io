@@ -7,13 +7,16 @@ header:
 permalink: /about/
 author_profile: true
 comments: true
+date: 2026-04-28
+last_modified_at: 2026-05-06
+tags: [about, bio, contact]
 ---
 
 ## Bio
 
-I'm an ML Product Leader with 20+ years of experience building AI systems at scale, from research to production. My work sits at the intersection of machine learning, personalization and human-computer interaction, with a particular focus on the gap between what models can theoretically do and what users actually experience.
+I'm an ML Product Leader with [20+ years of experience](https://www.linkedin.com/in/mcramer){:target="_blank"} building AI systems at scale, from research to production. My work sits at the intersection of machine learning, personalization and human-computer interaction, with a particular focus on the gap between models theory and actual experiences.
 
-Most recently I spent nearly five years at Meta as a Principal PM (IC7), leading the ML platform for long-form video and Reels ranking at billion-user scale, migrating training and inference from CPUs to GPUs and driving early-stage candidate retrieval across 80+ billion videos. After that I led AR smart glasses input performance at Reality Labs where I created human-centric evaluation frameworks that replaced naive F~1~ metrics with task-based benchmarks. I hold three issued patents on implicit user modeling (625+ citations) and a Stanford Graduate Certificate in AI. I also TA in Stanford's AI Professional Program (see below).
+Most recently I spent nearly five years at Meta as a Principal PM (IC7), leading the ML platform for long-form video and Reels ranking at billion-user scale, migrating training and inference from CPUs to GPUs and driving early-stage candidate retrieval across 80+ billion videos. After that I led AR smart glasses input performance at Reality Labs where I created human-centric evaluation frameworks that replaced naive F<sub>1</sub> metrics with task-based benchmarks. I hold [three issued patents](https://scholar.google.com/citations?user=vlo46P8AAAAJ){:target="_blank"} on implicit user modeling (633 citations by Google, Microsoft, Amazon, Palantir, Facebook, eBay, Yahoo!, IBM, Walmart, Salesforce and others) and a [Stanford Graduate Certificate in AI](https://online.stanford.edu/programs/artificial-intelligence-graduate-certificate){:target="_blank"}. I also TA in Stanford's AI Professional Program (see below).
 
 Earlier, I founded [Rank Dynamics](/rank-dynamics){:target="_blank"}, where I built and commercialized "dynamic ranking," real-time implicit personalization for web search, scaling it to $10M in revenue, 12M browser extension downloads and 5M DAUs. That experience convinced me that the best personalization is invisible: systems that learn from what users do, not what they say.
 
@@ -27,13 +30,13 @@ The rest of this blog documents the experiments, prototypes and rabbit holes tha
 
 If we're not already connected, the best way to get in touch with me is probably on [LinkedIn](https://www.linkedin.com/in/mcramer/){:target="_blank"}. There you can find a button to "book an appointment," if you so choose.
 
-I offer 1-on-1 advice for folks interested in learning more about Product Management. Here are two articles to check out before we chat:
+I offer [1-on-1 advice](https://www.linkedin.com/feed/update/urn:li:activity:6853358476920463360/){:target="_blank"} for folks interested in learning more about Product Management. Here are two articles to check out before we chat:
 - [Resume writing](https://www.linkedin.com/pulse/resumes-write-them-right-mark-cramer/){:target="_blank"}
 - [Breaking into Product Management](https://www.linkedin.com/pulse/breaking-product-management-mark-cramer/){:target="_blank"}
 
 I also do entrepreneurial advising and mentoring through the [MIT Alumni Advisors Hub](https://alumniadvisors.mit.edu/){:target="_blank"}.
 
-Lastly, I'm a Teaching Assistant for [xcs221 - AI Principles and Techniques](https://online.stanford.edu/courses/xcs221-artificial-intelligence-principles-and-techniques){:target="_blank"}, [xcs234 - Reinforcement Learning](https://online.stanford.edu/courses/xcs234-reinforcement-learning){:target="_blank"} and [xcs229 - Machine Learning](https://online.stanford.edu/courses/xcs229-machine-learning){:target="_blank"}, [Andrew Ng](https://www.andrewng.org/){:target="_blank"}'s famous foundational course, at [Stanford's AI Professional Program](https://online.stanford.edu/programs/artificial-intelligence-professional-program){:target="_blank"}.
+Lastly, as Teaching Assistant for [xcs221 - AI Principles and Techniques](https://online.stanford.edu/courses/xcs221-artificial-intelligence-principles-and-techniques){:target="_blank"}, [xcs234 - Reinforcement Learning](https://online.stanford.edu/courses/xcs234-reinforcement-learning){:target="_blank"} and [xcs229 - Machine Learning](https://online.stanford.edu/courses/xcs229-machine-learning){:target="_blank"}, [Andrew Ng](https://www.andrewng.org/){:target="_blank"}'s famous foundational course, at [Stanford's AI Professional Program](https://online.stanford.edu/programs/artificial-intelligence-professional-program){:target="_blank"}, I make my appointments available to those in my cohorts.
 
 ## Fun stuff
 

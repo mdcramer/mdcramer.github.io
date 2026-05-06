@@ -1,8 +1,8 @@
 ---
 title: "Evaluations"
 excerpt: "Measuring the performance of the personalized LLM."
-date: 2026-04-26 18:00:00
-last_modified_at: 2026-04-26
+date: 2026-05-06 18:00:00
+last_modified_at: 2026-05-06
 tags: [personalization, eval, evaluations]
 ---
 
