@@ -5,7 +5,7 @@ tags:
   - "testimonials"
 ---
 
-Since Surf Canyon was introduced to [Mozilla's download page](http://blog.surfcanyon.com/2008/05/04/extention-approved-by-mozilla/) back in May we have received a number of [user reviews](https://addons.mozilla.org/en-US/firefox/reviews/display/6549?show=100). Here is a sampling of some of the best ones:
+Since Surf Canyon was introduced to [Mozilla's download page](/rank-dynamics/extention-approved-by-mozilla) back in May we have received a number of [user reviews](https://addons.mozilla.org/en-US/firefox/reviews/display/6549?show=100). Here is a sampling of some of the best ones:
 
 ### Surf Canyon finds links Google misses
 

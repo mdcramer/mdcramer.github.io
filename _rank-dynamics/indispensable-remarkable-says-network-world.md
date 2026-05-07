@@ -6,7 +6,7 @@ tags:
   - "testimonials"
 ---
 
-Mark Gibbs at [Network World](http://www.networkworld.com/columnists/2009/030309-gearhead.html) just wrote up Surf Canyon for the second time (here was the [first](http://blog.surfcanyon.com/2008/10/08/kudos-from-network-world/)) and we are flattered!
+Mark Gibbs at [Network World](http://www.networkworld.com/columnists/2009/030309-gearhead.html) just wrote up Surf Canyon for the second time (here was the [first](/rank-dynamics/kudos-from-network-world)) and we are flattered!
 
 > "Also on my list when it comes to search is a cool browser add-on/plug-in that I now can't live without: the [Surf Canyon](http://www.surfcanyon.com) browser search assistant.
 > 

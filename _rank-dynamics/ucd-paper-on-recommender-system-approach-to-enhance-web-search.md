@@ -13,6 +13,6 @@ They begin by observing that "the traditional search interface has remained rela
 
 > "... **Surf Canyon is an excellent example of a next-generation approach**, and allows users to interact with results returned by existing engines; in short, users can select a result and receive recommendations drawn  from related results that appear further down a result list. Surf Canyon launched in the latter stages of our own research and presents an interface similar to what is proposed here."
 
-While there are significant differences in terms or implementation, their results are similar to what Surf Canyon has [demonstrated](http://blog.surfcanyon.com/2008/12/01/evaluating-surf-canyon’s-technology-part-2/):
+While there are significant differences in terms or implementation, their results are similar to what Surf Canyon has [demonstrated](/rank-dynamics/evaluating-surf-canyons-technology-part-2):
 
 > "A key question is whether the resulting recommendations were found to be relevant. In fact... at least one of the 3 recommended results was selected approximately 25% of the time, a very significant indicator of relevance..."

@@ -16,4 +16,4 @@ Enjoy!
 
 Note: The title of this post is from the Monty Python [sketch](http://www.youtube.com/watch?v=M_eYSuPKP3Y).
 
-\[Update 2/16/11 - David Harry, with whom we [spoke previously](http://blog.surfcanyon.com/2010/02/22/geek-talk-with-huomah-seo-blog/), references Mark Cramer and offers his take on the content farm situation in the latest issue of [Search Engine Land](http://searchengineland.com/are-manual-solutions-the-answer-to-content-farms-64134).\]
+\[Update 2/16/11 - David Harry, with whom we [spoke previously](/rank-dynamics/geek-talk-with-huomah-seo-blog), references Mark Cramer and offers his take on the content farm situation in the latest issue of [Search Engine Land](http://searchengineland.com/are-manual-solutions-the-answer-to-content-farms-64134).\]

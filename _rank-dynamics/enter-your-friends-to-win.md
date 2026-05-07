@@ -9,7 +9,7 @@ tags:
 
 **Update (8/26/08) - This will be the last week for this promotion. The final winner will be announced tomorrow, August 27th, 2008. Thanks to everyone who participated!**
 
-![Amazon Gift Card](/assets/images/rank-dynamics/amazon-gift-card-2.jpg "Amazon Gift Card")This week [Surf Canyon](http://www.SurfCanyon.com) is initiating a contest to promote the new "[Email This](http://blog.surfcanyon.com/2008/06/20/email-this-to-your-friends/)" feature. A $25 gift certificate to Amazon.com will be distributed to a lucky winner, selected every Wednesday via a weekly drawing, for as long as the contest runs. To enter a friend to win, simply use the "Email This" feature to send him or her a search result, with contest@surfcanyon.com on copy. Have a friend email you a result and you'll be entered to win, too!
+![Amazon Gift Card](/assets/images/rank-dynamics/amazon-gift-card-2.jpg "Amazon Gift Card")This week [Surf Canyon](http://www.SurfCanyon.com) is initiating a contest to promote the new "[Email This](/rank-dynamics/email-this-to-your-friends)" feature. A $25 gift certificate to Amazon.com will be distributed to a lucky winner, selected every Wednesday via a weekly drawing, for as long as the contest runs. To enter a friend to win, simply use the "Email This" feature to send him or her a search result, with contest@surfcanyon.com on copy. Have a friend email you a result and you'll be entered to win, too!
 
 Additionally, you can enter your friends to win by adding contest@surfcanyon.com on copy to the email using the "Invite your friends to use Surf Canyon" link.
 

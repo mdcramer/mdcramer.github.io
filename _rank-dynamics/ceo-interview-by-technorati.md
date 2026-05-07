@@ -5,7 +5,7 @@ tags:
   - "media"
 ---
 
-![Technorati Logo](/assets/images/rank-dynamics/technorati-logo.jpg "Technorati Logo")Mark Cramer, CEO of [Surf Canyon](http://www.SurfCanyon.com), conducted an interview with Eric Matas at [Technorati](http://technorati.com/technology/article/ceo-interview-surf-canyons-mark-cramer/). Following up on being selected as "[Best Search Engine](http://blog.surfcanyon.com/2010/03/04/best-search-engine-winner/)" by the About Web Search Reader's Choice Awards, Eric had this to say:
+![Technorati Logo](/assets/images/rank-dynamics/technorati-logo.jpg "Technorati Logo")Mark Cramer, CEO of [Surf Canyon](http://www.SurfCanyon.com), conducted an interview with Eric Matas at [Technorati](http://technorati.com/technology/article/ceo-interview-surf-canyons-mark-cramer/). Following up on being selected as "[Best Search Engine](/rank-dynamics/best-search-engine-winner)" by the About Web Search Reader's Choice Awards, Eric had this to say:
 
 > " I reached out to the CEO, Mark Cramer, who agreed to answer some questions about their search engine... By besting Google and with more than 200 million queries to date, Surf Canyon seems to be catching on."
 

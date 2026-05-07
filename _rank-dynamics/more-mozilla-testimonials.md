@@ -5,7 +5,7 @@ tags:
   - "testimonials"
 ---
 
-Back in November we updated you on [some of the feedback](http://blog.surfcanyon.com/2008/11/10/mozilla-testimonials/) we've been receiving on [AMO (addons.mozilla.org)](https://addons.mozilla.org/en-US/firefox/addon/6549). Since then there's been a lot of [more positive stuff](https://addons.mozilla.org/en-US/firefox/reviews/display/6549?show=100). Here are some of the highlights:
+Back in November we updated you on [some of the feedback](/rank-dynamics/mozilla-testimonials) we've been receiving on [AMO (addons.mozilla.org)](https://addons.mozilla.org/en-US/firefox/addon/6549). Since then there's been a lot of [more positive stuff](https://addons.mozilla.org/en-US/firefox/reviews/display/6549?show=100). Here are some of the highlights:
 
 [Mac's Power Tools](https://addons.mozilla.org/en-US/firefox/collection/powertools) by [Megalomac](https://addons.mozilla.org/en-US/firefox/user/33013) on June 10, 2009
 

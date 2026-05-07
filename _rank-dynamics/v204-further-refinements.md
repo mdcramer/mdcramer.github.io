@@ -9,7 +9,7 @@ tags:
   - "testimonials"
 ---
 
-[v2.0.4](http://www.surfcanyon.com/product.jsp) introduces top of page Refinements. Additionally, the [Categories](http://blog.surfcanyon.com/2008/10/16/v114-categorically-speaking/) introduced with v1.1.4 have also been relabeled Refinements.
+[v2.0.4](http://www.surfcanyon.com/product.jsp) introduces top of page Refinements. Additionally, the [Categories](/rank-dynamics/v114-categorically-speaking) introduced with v1.1.4 have also been relabeled Refinements.
 
 Refinements are suggested query reformulations based on your query and Surf Canyon's real-time model of your inferred intent. In a sense, Refinements are personalized reformulations targeted to your "at the moment" information need. Furthermore, these links will send you to a search page where the results are already re-ranked, facilitating once again the process of finding what you need. The display of Refinements can be controlled under the Settings tab on [my.SurfCanyon.com](http://my.SurfCanyon.com).
 

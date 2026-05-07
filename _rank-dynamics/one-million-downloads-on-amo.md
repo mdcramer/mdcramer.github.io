@@ -11,9 +11,9 @@ We're thrilled to announce that Surf Canyon has surpassed 1 million downloads on
 
 ![1 million downloads on AMO](/assets/images/rank-dynamics/1-million-downloads.jpg)
 
-We have [thanked Mozilla](http://blog.surfcanyon.com/2009/02/19/happy-birthday-to-us/) in the past for the development of their add-on community and their encouragement of and support for add-on developers, but we'd like to take this opportunity to do so again. Thank you!
+We have [thanked Mozilla](/rank-dynamics/happy-birthday-to-us) in the past for the development of their add-on community and their encouragement of and support for add-on developers, but we'd like to take this opportunity to do so again. Thank you!
 
-As we mark this important milestone, we'd also like to thank the many people who have used our application and provided us with invaluable feedback and constructive criticism. Now, [as we like to do](http://blog.surfcanyon.com/2009/06/11/more-mozilla-testimonials/), we'll  point out some recent positive feedback we've received on [Mozilla's website](https://addons.mozilla.org/en-US/firefox/reviews/display/6549?show=100):
+As we mark this important milestone, we'd also like to thank the many people who have used our application and provided us with invaluable feedback and constructive criticism. Now, [as we like to do](/rank-dynamics/more-mozilla-testimonials), we'll  point out some recent positive feedback we've received on [Mozilla's website](https://addons.mozilla.org/en-US/firefox/reviews/display/6549?show=100):
 
 ![](/assets/images/rank-dynamics/5stars.png "Rated 5 out of 5 stars") by [PrintingDone](https://addons.mozilla.org/en-US/firefox/user/4861210) on August 13, 2009
 
