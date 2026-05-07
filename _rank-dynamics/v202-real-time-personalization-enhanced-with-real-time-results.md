@@ -6,7 +6,7 @@ tags:
   - "collaboration"
 ---
 
-It wasn't too long ago that we pushed out [v2.0.1](http://blog.surfcanyon.com/2009/02/18/v201-the-lexisweb-edition/), but [v2.0.2](http://www.surfcanyon.com/versions.jsp) could not wait. Perhaps that's because it has to do with real-time information for your searches on the major search engines.
+It wasn't too long ago that we pushed out [v2.0.1](/rank-dynamics/v201-the-lexisweb-edition), but [v2.0.2](http://www.surfcanyon.com/versions.jsp) could not wait. Perhaps that's because it has to do with real-time information for your searches on the major search engines.
 
 Back in December, [ReadWriteWeb](http://www.readwriteweb.com/archives/discovering_power_of_twitter_search.php) start talking about how Twitter, a very popular micro-blogging service, could deliver search results "in real time." Search engines typically have to index a page before it can be searched, which requires time. Searching Twitter, however, enables access to real-time information as there is no built in latency. As soon as someone Tweets it, you can search it.
 

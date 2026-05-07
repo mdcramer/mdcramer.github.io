@@ -7,7 +7,7 @@ tags:
   - "press-releases"
 ---
 
-Jolie O'Dell at [ReadWriteWeb](http://www.readwriteweb.com/archives/oneriot-api.php) wrote a post about OneRiot's new real-time web results API and their partnerships with Surf Canyon and WebMynd. A couple nice screen shots of Surf Canyon in action were included at the bottom. We announced our integration with OneRiot's real-time web results in March with our [launch of v2.0.2](http://blog.surfcanyon.com/2009/03/10/v202-real-time-personalization-enhanced-with-real-time-results/) and have since made some esthetic and performance improvements.
+Jolie O'Dell at [ReadWriteWeb](http://www.readwriteweb.com/archives/oneriot-api.php) wrote a post about OneRiot's new real-time web results API and their partnerships with Surf Canyon and WebMynd. A couple nice screen shots of Surf Canyon in action were included at the bottom. We announced our integration with OneRiot's real-time web results in March with our [launch of v2.0.2](/rank-dynamics/v202-real-time-personalization-enhanced-with-real-time-results) and have since made some esthetic and performance improvements.
 
 Here is OneRiot's [press release](http://www.prweb.com/releases/Realtime_Search_Engine/Social_Web_Search/prweb2455744.htm):
 

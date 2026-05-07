@@ -11,6 +11,6 @@ The latest version of Surf Canyon ([v3.0.2](http://www.surfcanyon.com/product.js
 
 Should you be interested in more sharing options, from over 60 different services, we'd like to invite you to download the full version of [Shareaholic](http://www.Shareaholic.com). Shareaholic is an award-winning add-on that has been downloaded over 1 million times by people looking for a customizable, light-weight method of sharing web pages.
 
-Additionally, we've expanded the [Craigslist image preview](http://blog.surfcanyon.com/2008/06/12/v110-the-craigslist-edition/) functionality to enable full-sized previews upon mouse-over.
+Additionally, we've expanded the [Craigslist image preview](/rank-dynamics/v110-the-craigslist-edition) functionality to enable full-sized previews upon mouse-over.
 
 \[Update 11/13/09\] [v3.0.3](http://www.surfcanyon.com/product.jsp) was released a couple days after v3.0.2 to fix a couple issues that snuck through.

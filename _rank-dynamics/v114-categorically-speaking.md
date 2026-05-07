@@ -10,7 +10,7 @@ Today we released the [latest version](http://www.surfcanyon.com/search/versions
 
 The big, new feature, which some of you might already have seen recently, is "Categories". While similar to [clustering](http://en.wikipedia.org/wiki/Data_clustering), these Categories are based on real-time actions and will help you to "drill down" on your search through a better understanding of your "at the moment" intent.
 
-[![Screen Shot of Categories](/assets/images/rank-dynamics/categories-image.jpg)](http://blog.surfcanyon.com/wp-content/uploads/2008/10/categories-image.jpg "Screen Shot of Categories")
+[![Screen Shot of Categories](/assets/images/rank-dynamics/categories-image.jpg)](/assets/images/rank-dynamics/categories-image.jpg "Screen Shot of Categories")
 
 Additionally, the update includes other minor fixes and enhancements, including correcting an issue with some types of Google links.
 

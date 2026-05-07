@@ -13,9 +13,9 @@ Enter a search for "Hillary Clinton" on your favorite search engine and the top 
 
 Few people will bother to venture past the first results page. It's simply too much work. Nevertheless, given the enormity of information available on the internet, one has to imagine that there's a lot more good information out there, sometimes the most juicy stuff. Turns out, it's true!
 
-Below we do the hard work for you and take a look at the top 100 results returned by Google for "Hillary Clinton." While one person's "[hidden treasure](http://blog.surfcanyon.com/2008/02/18/hidden-treasures/)" is another person's buried garbage, it's instructive to see how much potentially relevant information there is beyond the first page.
+Below we do the hard work for you and take a look at the top 100 results returned by Google for "Hillary Clinton." While one person's "[hidden treasure](/rank-dynamics/hidden-treasures)" is another person's buried garbage, it's instructive to see how much potentially relevant information there is beyond the first page.
 
-![Top 100 Google Results for “Hillary Clinton”](images/hillary-clinton-results-blog.jpg)
+![Top 100 Google Results for “Hillary Clinton”](/assets/images/hillary-clinton-results-blog.jpg)
 
 With millions of search results, what's the best way to get at what you need?
 
@@ -31,4 +31,4 @@ Congratulations on getting this far! Please tell us how we did (below).
 
 Stay tuned for more...
 
-Update (6/27/08): "[John McCain](http://blog.surfcanyon.com/2008/06/27/john-mccain-has-an-seo-problem/)" gets a similar treatment.
+Update (6/27/08): "[John McCain](/rank-dynamics/john-mccain-has-an-seo-problem)" gets a similar treatment.

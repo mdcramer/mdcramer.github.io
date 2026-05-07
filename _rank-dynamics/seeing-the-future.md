@@ -5,7 +5,7 @@ tags:
   - "media"
 ---
 
-![](/assets/images/rank-dynamics/Crystal-Ball.png "Crystal Ball")In August of last year, [Gordon Hotchkiss](http://searchengineland.com/author/gord-hotchkiss), CEO of [Enquiro](http://www.enquiro.com/) and one of the most respected voices in search, interviewed Mark Cramer, CEO of [Surf Canyon](http://www.surfcanyon.com) about "[Search as a Conversation](http://blog.surfcanyon.com/2010/08/06/where-is-search-going-search-engine-land-interview-with-gordon-hotchkiss/)." Today [Search Engine Land](http://www.searchengineland.com) published "**[Five Visionaries Sum Up the Future of Search](http://searchengineland.com/five-visionaries-sum-up-the-future-of-search-69877)**" where Gordon highlights some insights from conversations he has had with industry leaders, including:
+![](/assets/images/rank-dynamics/Crystal-Ball.png "Crystal Ball")In August of last year, [Gordon Hotchkiss](http://searchengineland.com/author/gord-hotchkiss), CEO of [Enquiro](http://www.enquiro.com/) and one of the most respected voices in search, interviewed Mark Cramer, CEO of [Surf Canyon](http://www.surfcanyon.com) about "[Search as a Conversation](/rank-dynamics/where-is-search-going-search-engine-land-interview-with-gordon-hotchkiss)." Today [Search Engine Land](http://www.searchengineland.com) published "**[Five Visionaries Sum Up the Future of Search](http://searchengineland.com/five-visionaries-sum-up-the-future-of-search-69877)**" where Gordon highlights some insights from conversations he has had with industry leaders, including:
 
 - Stephan Weitz - Director, Bing Search
 - John Battelle - Founder, Federated Media and Author, The Search

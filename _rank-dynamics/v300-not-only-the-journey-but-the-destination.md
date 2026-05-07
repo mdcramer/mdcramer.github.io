@@ -7,7 +7,7 @@ tags:
   - "testimonials"
 ---
 
-![v3 Icon](/assets/images/rank-dynamics/v3-yellow-medium.jpg "v3 Icon")We're thrilled to announce the release of [v3.0.0](http://www.surfcanyon.com/product.jsp)! Just shy of two months since our [last release](http://blog.surfcanyon.com/2009/06/04/v205-badda-bing/), this new version offers some considerable enhancement and major new functionality:
+![v3 Icon](/assets/images/rank-dynamics/v3-yellow-medium.jpg "v3 Icon")We're thrilled to announce the release of [v3.0.0](http://www.surfcanyon.com/product.jsp)! Just shy of two months since our [last release](/rank-dynamics/v205-badda-bing), this new version offers some considerable enhancement and major new functionality:
 
 - As reported by Anthony Ha at [VentureBeat](http://digital.venturebeat.com/2009/07/30/search-startup-surf-canyon-adds-more-ways-to-find-relevant-results/), we have "resurrected" our destination search engine, located at [search.SurfCanyon.com](http://search.SurfCanyon.com). Not only are searchers now able to test the technology prior to [downloading](http://www.SurfCanyon.com) the application, controlling the top 10 results enables an unprecedented level of personalization for real-time re-ranking.
 - We have significantly enhanced the SearchBar functionality. In addition to the dropdown Refinements, users will be presented with the top 3 search results to which they can navigate directly without having to visit the SERP. IE8 users will also have the pleasure of seeing image previews, as shown below.

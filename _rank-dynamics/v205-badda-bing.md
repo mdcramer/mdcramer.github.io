@@ -6,12 +6,12 @@ tags:
   - "personalization"
 ---
 
-The big news with [v2.0.5](http://www.surfcanyon.com/product.jsp), released this morning, is integration with Microsoft's shiny new search engine, [Bing](http://www.bing.com)! Only launched on Monday of this week, Bing is very impressive and has been receiving [wonderful reviews](http://www.techcrunch.com/2009/06/01/apparently-bing-is-something-of-a-hit/). Now, only a few days later, thanks to the latest version of Surf Canyon's [glowingly-reviewed](http://blog.surfcanyon.com/2009/01/13/googles-searchwiki-surf-canyon-share-the-mossberg-solutions-column/), [award-winning](http://blog.surfcanyon.com/2008/12/19/top-10-ases-for-2008/) [application](http://www.SurfCanyon.com), it's even better:
+The big news with [v2.0.5](http://www.surfcanyon.com/product.jsp), released this morning, is integration with Microsoft's shiny new search engine, [Bing](http://www.bing.com)! Only launched on Monday of this week, Bing is very impressive and has been receiving [wonderful reviews](http://www.techcrunch.com/2009/06/01/apparently-bing-is-something-of-a-hit/). Now, only a few days later, thanks to the latest version of Surf Canyon's [glowingly-reviewed](/rank-dynamics/googles-searchwiki-surf-canyon-share-the-mossberg-solutions-column), [award-winning](/rank-dynamics/top-10-ases-for-2008) [application](http://www.SurfCanyon.com), it's even better:
 
-- [Real-time personalization](http://blog.surfcanyon.com/2008/12/01/evaluating-surf-canyon%E2%80%99s-technology-part-2/) - Easily find relevant information _buried_ in Bing's results with real-time re-ranking.
-- [Real-time results](http://blog.surfcanyon.com/2009/05/22/oneriot-announces-real-time-search-partnership-with-surf-canyon/) - Insert relevant real-time results from [OneRiot](http://blog.oneriot.com/content/2009/06/oneriot-partners-plugs-bing-in-to-realtime/) and Twitter.
-- [Query refinements](http://blog.surfcanyon.com/2009/04/30/v204-further-refinements/) - Search reformulations are suggested based on your "at the moment" information need.
-- [Customize content](http://blog.surfcanyon.com/2008/12/09/v200-welcome-to-mysurfcanyoncom/) - Use [my.SurfCanyon.com](http://my.SurfCanyon.com) to indicate the sources of information you prefer, as well as those you'd like to avoid.
+- [Real-time personalization](/rank-dynamics/evaluating-surf-canyons-technology-part-2) - Easily find relevant information _buried_ in Bing's results with real-time re-ranking.
+- [Real-time results](/rank-dynamics/oneriot-announces-real-time-search-partnership-with-surf-canyon) - Insert relevant real-time results from [OneRiot](http://blog.oneriot.com/content/2009/06/oneriot-partners-plugs-bing-in-to-realtime/) and Twitter.
+- [Query refinements](/rank-dynamics/v204-further-refinements) - Search reformulations are suggested based on your "at the moment" information need.
+- [Customize content](/rank-dynamics/v200-welcome-to-mysurfcanyoncom) - Use [my.SurfCanyon.com](http://my.SurfCanyon.com) to indicate the sources of information you prefer, as well as those you'd like to avoid.
 
 ![Pearl Jam on Bing](/assets/images/rank-dynamics/pearl-jam.jpg)
 
@@ -21,7 +21,7 @@ Don Dodge, Director of Business Development for Microsoft's Emerging Business Te
 
 Additionally, the new version contains additional compatibility with Google's search pages.
 
-Finally, we'd like to suggest that our users give [WOT (Web of Trust)](http://www.mywot.com) a try. WOT warns you about risky websites that try to scam visitors, deliver malware, send spam or steal personal information. WOT's color-coded icons show you ratings for over 22 million websites - green for trust, yellow for caution and red to stop - helping you avoid interaction with harmful sites. We ensured full [compatibility with WOT](http://blog.surfcanyon.com/2009/03/27/v203-just-wot-you-need/) in v2.0.3.
+Finally, we'd like to suggest that our users give [WOT (Web of Trust)](http://www.mywot.com) a try. WOT warns you about risky websites that try to scam visitors, deliver malware, send spam or steal personal information. WOT's color-coded icons show you ratings for over 22 million websites - green for trust, yellow for caution and red to stop - helping you avoid interaction with harmful sites. We ensured full [compatibility with WOT](/rank-dynamics/v203-just-wot-you-need) in v2.0.3.
 
 Enjoy! And, as always, we appreciate [feedback](http://www.surfcanyon.com/contact.jsp).
 
