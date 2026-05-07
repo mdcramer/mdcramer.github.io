@@ -15,7 +15,7 @@ Few people will bother to venture past the first results page. It's simply too m
 
 Below we do the hard work for you and take a look at the top 100 results returned by Google for "Hillary Clinton." While one person's "[hidden treasure](/rank-dynamics/hidden-treasures)" is another person's buried garbage, it's instructive to see how much potentially relevant information there is beyond the first page.
 
-![Top 100 Google Results for “Hillary Clinton”](images/hillary-clinton-results-blog.jpg)
+![Top 100 Google Results for “Hillary Clinton”](/assets/images/hillary-clinton-results-blog.jpg)
 
 With millions of search results, what's the best way to get at what you need?
 

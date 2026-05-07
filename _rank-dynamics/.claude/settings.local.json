@@ -7,7 +7,8 @@
       "Bash(node *)",
       "Bash(ruby *)",
       "Bash(sed -i 's|/rank-dynamics/evaluating-surf-canyon%E2%80%99s-technology-part-2|/rank-dynamics/evaluating-surf-canyons-technology-part-2|g' /c/Users/mcram/Documents/GitHub/mdcramer.github.io/_rank-dynamics/scobleized.md /c/Users/mcram/Documents/GitHub/mdcramer.github.io/_rank-dynamics/v205-badda-bing.md)",
-      "Bash(sed -i 's|/rank-dynamics/maybe-if-i-just-add-some-quotes%E2%80%A6|/rank-dynamics/maybe-if-i-just-add-some-quotes\\\\xe2\\\\x80\\\\xa6|g' /c/Users/mcram/Documents/GitHub/mdcramer.github.io/_rank-dynamics/if-google-was-a-guy.md)"
+      "Bash(sed -i 's|/rank-dynamics/maybe-if-i-just-add-some-quotes%E2%80%A6|/rank-dynamics/maybe-if-i-just-add-some-quotes\\\\xe2\\\\x80\\\\xa6|g' /c/Users/mcram/Documents/GitHub/mdcramer.github.io/_rank-dynamics/if-google-was-a-guy.md)",
+      "Bash(xargs -I{} basename {})"
     ]
   }
 }
