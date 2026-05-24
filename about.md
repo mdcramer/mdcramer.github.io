@@ -28,15 +28,15 @@ The rest of this blog documents the experiments, prototypes and rabbit holes tha
 
 ## Contact
 
-If we're not already connected, the best way to get in touch with me is probably on [LinkedIn](https://www.linkedin.com/in/mcramer/){:target="_blank"}. There you can find a button to "book an appointment," if you so choose.
+You may book an appointment with me using [Calendly](https://calendly.com/markcramer/mentoring){:target="_blank"}. If we're not already connected, the best way to find me is probably on [LinkedIn](https://www.linkedin.com/in/mcramer/){:target="_blank"}. The "book an appointment" button will bring you back here.
 
-I offer [1-on-1 advice](https://www.linkedin.com/feed/update/urn:li:activity:6853358476920463360/){:target="_blank"} for folks interested in learning more about Product Management. Here are two articles to check out before we chat:
+I offer [1-on-1 advice](https://www.linkedin.com/feed/update/urn:li:activity:6853358476920463360/){:target="_blank"} for folks interested in learning about Product Management. Here are two articles to check out before we chat:
 - [Resume writing](https://www.linkedin.com/pulse/resumes-write-them-right-mark-cramer/){:target="_blank"}
 - [Breaking into Product Management](https://www.linkedin.com/pulse/breaking-product-management-mark-cramer/){:target="_blank"}
 
 I also do entrepreneurial advising and mentoring through the [MIT Alumni Advisors Hub](https://alumniadvisors.mit.edu/){:target="_blank"}.
 
-Lastly, as Teaching Assistant for [xcs221 - AI Principles and Techniques](https://online.stanford.edu/courses/xcs221-artificial-intelligence-principles-and-techniques){:target="_blank"}, [xcs234 - Reinforcement Learning](https://online.stanford.edu/courses/xcs234-reinforcement-learning){:target="_blank"} and [xcs229 - Machine Learning](https://online.stanford.edu/courses/xcs229-machine-learning){:target="_blank"}, [Andrew Ng](https://www.andrewng.org/){:target="_blank"}'s famous foundational course, at [Stanford's AI Professional Program](https://online.stanford.edu/programs/artificial-intelligence-professional-program){:target="_blank"}, I make my appointments available to those in my cohorts.
+Lastly, as Teaching Assistant for [xcs221 - AI Principles and Techniques](https://online.stanford.edu/courses/xcs221-artificial-intelligence-principles-and-techniques){:target="_blank"}, [xcs234 - Reinforcement Learning](https://online.stanford.edu/courses/xcs234-reinforcement-learning){:target="_blank"} and [xcs229 - Machine Learning](https://online.stanford.edu/courses/xcs229-machine-learning){:target="_blank"}, [Andrew Ng](https://www.andrewng.org/){:target="_blank"}'s famous foundational course, at [Stanford's AI Professional Program](https://online.stanford.edu/programs/artificial-intelligence-professional-program){:target="_blank"}, I make appointments available to students in my cohorts.
 
 ## Fun stuff
 
