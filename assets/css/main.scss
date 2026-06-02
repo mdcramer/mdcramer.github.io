@@ -93,12 +93,13 @@
 /* On desktop screens (wider than 600px), snap to a horizontal row */
 @media (min-width: 600px) {
   .image-grid {
-    flex-direction: row; 
+    flex-direction: row;
     align-items: center;  /* Vertically centers images if heights differ */
   }
-  .image-grid a {
+  .image-grid > * {
     flex: 1;              /* Automatically splits horizontal space evenly */
     min-width: 0;
+    margin: 0;            /* Remove paragraph margins if Kramdown wraps in <p> */
   }
 }
 
