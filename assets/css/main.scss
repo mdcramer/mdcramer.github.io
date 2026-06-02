@@ -80,3 +80,30 @@
 .no-break {
   white-space: nowrap;
 }
+
+/* Custom CSS for enabling side-by-side images */
+/* Responsive Image Grid */
+.image-grid {
+  display: flex;
+  flex-direction: column; /* Stack on mobile screens */
+  gap: 16px;              /* Clear spacing between images */
+  margin: 1.5em 0;        /* Consistent spacing above/below the grid */
+}
+
+/* On desktop screens (wider than 600px), snap to a horizontal row */
+@media (min-width: 600px) {
+  .image-grid {
+    flex-direction: row; 
+    align-items: center;  /* Vertically centers images if heights differ */
+  }
+  .image-grid a {
+    flex: 1;              /* Automatically splits horizontal space evenly */
+    min-width: 0;
+  }
+}
+
+.image-grid img {
+  width: 100%;            /* Fills the flexible link container */
+  height: auto;           /* Maintains perfect aspect ratio */
+  display: block;
+}
