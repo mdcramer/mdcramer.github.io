@@ -85,26 +85,31 @@
 /* Responsive Image Grid */
 .image-grid {
   display: flex;
-  flex-direction: column; /* Stack on mobile screens */
-  gap: 16px;              /* Clear spacing between images */
-  margin: 1.5em 0;        /* Consistent spacing above/below the grid */
+  flex-direction: column;
+  gap: 16px;
+  margin: 1.5em 0;
+}
+
+/* Kramdown wraps markdown links in <p> tags; display:contents removes the
+   box so <a> elements participate directly in the flex layout */
+.image-grid p {
+  display: contents;
 }
 
 /* On desktop screens (wider than 600px), snap to a horizontal row */
 @media (min-width: 600px) {
   .image-grid {
     flex-direction: row;
-    align-items: center;  /* Vertically centers images if heights differ */
+    align-items: center;
   }
-  .image-grid > * {
-    flex: 1;              /* Automatically splits horizontal space evenly */
+  .image-grid a {
+    flex: 1;
     min-width: 0;
-    margin: 0;            /* Remove paragraph margins if Kramdown wraps in <p> */
   }
 }
 
 .image-grid img {
-  width: 100%;            /* Fills the flexible link container */
-  height: auto;           /* Maintains perfect aspect ratio */
+  width: 100%;
+  height: auto;
   display: block;
 }
