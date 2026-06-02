@@ -24,7 +24,7 @@ Anyway, it works! Mostly. `PR#3` (the card is plugged into slot #3) turns on 80-
 
 Additionally, to get the screen to stop rolling I had to fiddle with the V.HOLD (vertical hold) and V.SIZE (vertical size) on the back of the monitor. Unfortunately, when switching back to 40 columns the screen starts rolling again. Finding settings that work for both 40 and 80 columns means giving up some vertical real estate on the screen. It's not a huge deal but since the analog signals are different, I had to find a compromise where the monitor's tubes successfully sync to both frequencies without the screen rolling or tearing.
 
-<div class="image-grid">
+<div class="image-grid" markdown="1">
   [![Writing code in 80 columns](/assets/images/apple2/ml-in-80-columns.jpg)](/assets/images/apple2/ml-in-80-columns.jpg)
   [![ProDOS in 80 columns](/assets/images/apple2/prodos-in-80-columns.jpg)](/assets/images/apple2/prodos-in-80-columns.jpg)
 </div>

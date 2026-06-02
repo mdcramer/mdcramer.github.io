@@ -15,28 +15,7 @@ permalink: /deep-speeling-blog/no-hablo-espanol/
 ```
 
 ### Set up the site on your github pages
-To setup the website, we shall use a different approach than you have used before. We shall:
-* Use forestry.io
-* Use 2 repos. The current repo will act as the source. All the changes to your site will occur on this repo. The second repo will serve as the deployment repo. Follow the following steps
-
-1. **Unpublish https://mdcramer.github.io/Deep-Speeling-Blog**
-I suppose you already  now how to do this
-
-2. **Sign Up for an account on forestry.io**
-Forestry.io will do the following for you.
-* Sync with the source repo (this repo) and generate your site on the deployment repo everytime you make changes to the repo.
-* Provide you with a cms. This means you can opt to make changes to your site through their dashboard if you choose to. It will by no means overhaul your workflow; it will just be an added option.
-
-I would recommend you signup for an account through github.
-
-3. **Import your site into forestry.io**
-Follow this quick guide https://forestry.io/docs/git-sync/github/...
-
-4. **Create the deployment repo on your github**
-Create a new repo and name it **mdcramer.github.io**. Initialize it with an empty readme file. That will be all for now.
-
-5. **Go back to forestry.io**
-Go to the site you imported. You will need to play with settings here. We will set the source and deployment repos here.
+Push changes to the `blog` branch; GitHub Actions builds the site and deploys it to `master`, which is served by GitHub Pages.
 
 
 ### Adding a new blog

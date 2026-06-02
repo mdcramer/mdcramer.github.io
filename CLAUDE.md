@@ -19,7 +19,7 @@ bundle exec jekyll build
 - `blog` — source/working branch (make all changes here)
 - `master` — production branch (deployed to GitHub Pages)
 
-Push changes to the `blog` branch; the site is built from there via Forestry.io and deployed to `master`.
+Push changes to the `blog` branch; GitHub Actions builds the site and deploys it to `master`.
 
 ## Architecture
 
