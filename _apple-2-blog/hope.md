@@ -36,6 +36,11 @@ The new drive would also require some new cables to hook it up. They were inexpe
 
 ![36" Universal 34-Pin Floppy Drive Ribbon Cable for 3.5" and/or 5.25" Drives](/assets/images/apple2/floppy-ribbon.jpeg "36" Universal 34-Pin Floppy Drive Ribbon Cable")
 
+<div class="image-grid" markdown="1">
+  [![Molex 4 pin female to female connector](/assets/images/apple2/molex-4pin-ftof.jpeg)](/assets/images/apple2/molex-4pin-ftof.jpeg)
+  [![36" Universal 34-Pin Floppy Drive Ribbon Cable for 3.5" and/or 5.25" Drives](/assets/images/apple2/floppy-ribbon.jpeg)](/assets/images/apple2/floppy-ribbon.jpeg)
+</div>
+
 The opportunity to give it a go arrived when we were invited to a dinner party at the Surdulescu’s. We plugged everything into Răzvan’s beefy homemade Windows desktop, grabbed a couple flutes of Champagne and got to work.
 
 ![The full rig with Greaseweazle](/assets/images/apple2/rig-with-greaseweazle.jpg "Full rig with Greaseweazle")

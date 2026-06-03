@@ -7,17 +7,17 @@ tags:
 date: 2025-07-06
 ---
 
-Crestfallen by the seeming impossibility of [recovering](/apple-2-blog/recover/) my beloved [game](https://mortalwayfare.com/remnant-from-the-past/){:target="_blank"} from high school, I turned my attention to the original [motivation](apple-2-blog/motivation/): developing machine learning on the Apple ][+. Grabbing my manuals, I got to work.
+Crestfallen by the seeming impossibility of [recovering](/apple-2-blog/recover/) my beloved [game](https://mortalwayfare.com/remnant-from-the-past/){:target="_blank"} from high school, I turned my attention to the original [motivation](apple-2-blog/motivation/): developing machine learning on the <span class="no-break">Apple ]\[+</span>. Grabbing my manuals, I got to work.
 
-![Apple 2+ manuals](/assets/images/apple2/manuals.jpg "Apple ][+ manuals")
+![Apple 2+ manuals](/assets/images/apple2/manuals.jpg "Apple ]\[+ manuals")
 
-Every solid machine learning project begins with data. My old clunker, however, is cut off from the world. I never had a modem but I recall one of my best friends using the modem on his Apple&nbsp;][ to hack long distance access codes. (He since went on to pursue a successful career in telecommunications... naturally.) Even if I had a modem, what would I connect it to? Do those services still even exists? (I'm sure they do but I'm not going to figure that out today.) In the meantime, the plan is to create synthetic data locally.
+Every solid machine learning project begins with data. My old clunker, however, is cut off from the world. I never had a modem but I recall one of my best friends using the modem on his <span class="no-break">Apple ]\[+</span> to hack long distance access codes. (He since went on to pursue a successful career in telecommunications... naturally.) Even if I had a modem, what would I connect it to? Do those services still even exists? (I'm sure they do but I'm not going to figure that out today.) In the meantime, the plan is to create synthetic data locally.
 
 I'm sure everyone is familiar with the [chart](https://scikit-learn.org/stable/auto_examples/classification/plot_classifier_comparison.html){:target="_blank"} comparing different classification algorithms. Since two-dimensional binary classification seems like a great place to start, I'll need a simple way to graph the data.
 
 [![Classifier comparison](/assets/images/apple2/sphx_glr_plot_classifier_comparison_001.png "Classifier comparison")](/assets/images/apple2/sphx_glr_plot_classifier_comparison_001.png)
 
-Fortunately, the Apple ][+ comes with a high-resolution graphics screen (`HGR`) that is 280 pixels across by 160 pixels high. (There is another mode with 192 vertical pixels but I wanted leave the bottom 4 lines of the text window visible for running output.) There are [8 color options](https://en.wikipedia.org/wiki/Apple_II_graphics#High-Resolution_%28Hi-Res%29_graphics){:target="_blank"} for each pixel, but I have a green screen monitor, so I set everything to `HCOLOR=7` (white2).
+Fortunately, the Apple ]\[+ comes with a high-resolution graphics screen (`HGR`) that is 280 pixels across by 160 pixels high. (There is another mode with 192 vertical pixels but I wanted leave the bottom 4 lines of the text window visible for running output.) There are [8 color options](https://en.wikipedia.org/wiki/Apple_II_graphics#High-Resolution_%28Hi-Res%29_graphics){:target="_blank"} for each pixel, but I have a green screen monitor, so I set everything to `HCOLOR=7` (white2).
 
 ## Drawing the axes
 
@@ -71,9 +71,9 @@ With a particular fondness for all thing [Gaussian](https://en.wikipedia.org/wik
 160 BC = -0.5
 170 REM  == END HYPERPARAMETERS ==
 ```
-`HOME` clears the screen and `VTAB 21` moves the cursor to the 21st text line on the screen, which will be the first line under the graphics after `HGR`. The Apple ][+ doesn't come with a constant for π so I set that up using all the precision available.
+`HOME` clears the screen and `VTAB 21` moves the cursor to the 21st text line on the screen, which will be the first line under the graphics after `HGR`. The <span class="no-break">Apple ]\[+</span> doesn't come with a constant for π so I set that up using all the precision available.
 
-`AM%` is a two element array of integers to store, respectively, the x-mean and y-mean values for the A data set. (The % sign makes the variable an integer which save space but actually reduced performance because mathematical operations on the Apple ][+ convert integers to real numbers and then back again.) `AS%` does the same for the x- and y-standard deviations. `AC` is a real number correlation coefficient ∈ [-1, 1]. Finally, `AN` is the number of elements in the A dataset. The corresponding B data set hyperparameters are similar. (In Applesoft BASIC only the [first two characters](https://youtu.be/PHfKCxjsmos?si=lVgpeslJ8ZBiRaAl&t=39){:target="_blank"} of a variable name are 'considered' so you have to be careful of collisions.)
+`AM%` is a two element array of integers to store, respectively, the x-mean and y-mean values for the A data set. (The % sign makes the variable an integer which save space but actually reduced performance because mathematical operations on the <span class="no-break">Apple ]\[+</span> convert integers to real numbers and then back again.) `AS%` does the same for the x- and y-standard deviations. `AC` is a real number correlation coefficient ∈ [-1, 1]. Finally, `AN` is the number of elements in the A dataset. The corresponding B data set hyperparameters are similar. (In Applesoft BASIC only the [first two characters](https://youtu.be/PHfKCxjsmos?si=lVgpeslJ8ZBiRaAl&t=39){:target="_blank"} of a variable name are 'considered' so you have to be careful of collisions.)
 
 ### Box-Muller to the rescue
 The Apple ][+ can generate uniform random variables from 0 to 0.999999999 using `RND()`, however, to get standard normal random variables we'll have to use the [Box-Muller](https://en.wikipedia.org/wiki/Box%E2%80%93Muller_transform){:target="_blank"} transform.
@@ -147,15 +147,12 @@ You can see calling `GOSUB 700` and `GOSUB 800` to plot the points. Here is the 
 I first verify that the data point is on the visible region of the graph (plotting off the screen will throw an error) and then draw either a "+" or a "□".
 
 ## Running the code
-Putting it all together, it takes the Apple ][+ about a minute to generate and plot 150 data points. The end result looks like this:
+Putting it all together, it takes the <span class="no-break">Apple ]\[+</span> about a minute to generate and plot 150 data points. The end result looks like this:
 
 ![Final plot of synthesized data](/assets/images/apple2/final-plot.jpg "Final plot of synthesized data")
 
 Watch this video if you'd like to see it run, in all it's glory.
 
-<-- old way of adding video to the post
-[![Video of Apple2+ synthesizing data](https://img.youtube.com/vi/xi876Gqt4jk/0.jpg)](https://youtube.com/shorts/xi876Gqt4jk?autoplay=1 "Video of Apple][+ synthesizing data"){:target="_blank"} -->
 {% include video id="xi876Gqt4jk" provider="youtube" %}
 
 Now that this is out of the way, we'll start by implementing one of the simplest and easiest to understand machine learning algorithms.
-
