@@ -17,7 +17,7 @@ I'm sure everyone is familiar with the [chart](https://scikit-learn.org/stable/a
 
 [![Classifier comparison](/assets/images/apple2/sphx_glr_plot_classifier_comparison_001.png "Classifier comparison")](/assets/images/apple2/sphx_glr_plot_classifier_comparison_001.png)
 
-Fortunately, the Apple ]\[+ comes with a high-resolution graphics screen (`HGR`) that is 280 pixels across by 160 pixels high. (There is another mode with 192 vertical pixels but I wanted leave the bottom 4 lines of the text window visible for running output.) There are [8 color options](https://en.wikipedia.org/wiki/Apple_II_graphics#High-Resolution_%28Hi-Res%29_graphics){:target="_blank"} for each pixel, but I have a green screen monitor, so I set everything to `HCOLOR=7` (white2).
+Fortunately, the <span class="no-break">Apple ]\[+</span> comes with a high-resolution graphics screen (`HGR`) that is 280 pixels across by 160 pixels high. (There is another mode with 192 vertical pixels but I wanted leave the bottom 4 lines of the text window visible for running output.) There are [8 color options](https://en.wikipedia.org/wiki/Apple_II_graphics#High-Resolution_%28Hi-Res%29_graphics){:target="_blank"} for each pixel, but I have a green screen monitor, so I set everything to `HCOLOR=7` (white2).
 
 ## Drawing the axes
 
