@@ -2,14 +2,16 @@
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
-        {%- if page.signature == 'collection' -%}
-          {%- assign signature_path = page.permalink | remove: '/' | remove: 'index.html' -%}
-          {%- assign signature = signature_path | replace: '-', ' ' -%}
-          {%- assign signature_blog = site.data.blogs.internal_blogs | where_exp: "item", "item.path == signature_path" -%}
-          {%- if signature_blog.size == 0 -%}
-            {%- assign signature_blog = site.data.blogs.internal_blogs | where_exp: "item", "item.name == signature" -%}
+        {%- unless page.url contains '/page/' -%}
+          {%- if page.signature == 'collection' -%}
+            {%- assign signature_path = page.permalink | remove: '/' | remove: 'index.html' -%}
+            {%- assign signature = signature_path | replace: '-', ' ' -%}
+            {%- assign signature_blog = site.data.blogs.internal_blogs | where_exp: "item", "item.path == signature_path" -%}
+            {%- if signature_blog.size == 0 -%}
+              {%- assign signature_blog = site.data.blogs.internal_blogs | where_exp: "item", "item.name == signature" -%}
+            {%- endif -%}
           {%- endif -%}
-        {%- endif -%}
+        {%- endunless -%}
 
         {%- if signature or page.collection -%}
           {%- if page.collection -%}
