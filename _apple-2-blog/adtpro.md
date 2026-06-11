@@ -29,14 +29,14 @@ The first problem was just getting ADTPro onto the <span class="no-break">Apple 
 ### This doesn't sound right
 After a fair amount of fiddling, I was able to send the ADTPro client from the laptop, over the audio cable, to the <span class="no-break">Apple ]\[+</span>. The magic settings were not obvious. I had to turn off Windows audio enhancements, set the input volume to 90%, set the output volume to 50% and then turn on mono audio so that the signal showed up on whichever RCA plug I happened to be using. Once I got it right, the Apple listened to the laptop squeal at it for a bit and then, like magic, ADTPro was running.
 
-[![ADTPro client on the Apple \]\[+](/assets/images/apple2/adtpro-client.jpg "ADTPro client on the Apple ]\[+")](/assets/images/apple2/adtpro-client.jpg)
+[![ADTPro client on the Apple \]\[+](/assets/images/apple2/adtpro-client.jpg "ADTPro client on the Apple ][+")](/assets/images/apple2/adtpro-client.jpg)
 
 That only solved the first half of the problem, however. Bootstrapping the client is one-way communication, from the laptop to the Apple. To transfer disk images, ADTPro needs two-way audio in order to also request blocks from the server. That meant connecting both cassette jacks: 'cassette in' from the laptop’s audio output and 'cassette out' back to a microphone input on the PC. To accommodate this, I bought a USB audio adapter with separate headphone and microphone jacks, plus a couple of 3.5mm cables. The working setup was eventually:
 
 > Laptop headphone output → Apple cassette in
 > Apple cassette out → USB audio adapter microphone input
 
-[![Laptop connected to Apple via audio cables](/assets/images/apple2/file-transfer.jpg "Laptop connected to Apple ]\[+ via audio cables")](/assets/images/apple2/file-transfer.jpg)
+[![Laptop connected to Apple via audio cables](/assets/images/apple2/file-transfer.jpg "Laptop connected to Apple ][+ via audio cables")](/assets/images/apple2/file-transfer.jpg)
 
 ### Music to my computer's ears
 Even then, things were difficult. The key was not just setting the global audio devices but making sure the ADTPro Java process itself was using the right output and input in the Windows sound mixer. Once that was configured, I could finally receive a full ADTPro floppy image from the PC and write it to a real 5.25" floppy. Even while transferring four blocks at a time (each block is 500b), it took 5min to transfer an entire 140Kb floppy image. Anyway, at this point I had a bootable ADTPro floppy which meant I no longer had to bootstrap the client over audio every time. That felt like a win.
@@ -46,9 +46,9 @@ The next step was getting my own BASIC code onto a floppy image to transfer to t
 The issue was that a blank `.dsk` file is not automatically a DOS 3.3 disk. It is just a virtual blank floppy. If DOS is not loaded, `SAVE` is not saving to a disk file in the way I expected. The fix was to either start from a real bootable DOS 3.3 disk image or virtually boot DOS 3.3 and then initialize a blank image properly. Once I had a DOS 3.3 image, I could paste my BASIC program into AppleWin, save it onto the image, verify it with `CATALOG` and then send that full 140K disk image to the <span class="no-break">Apple ]\[+</span> over the audio cables with ADTPro.
 
 <div class="image-grid" markdown="1">
-  [![ADTPro client initiating transfer](/assets/images/apple2/adtpro-client-initiate-transfer.jpg "ADTPro client initiating transfer")](/assets/images/apple2/adtpro-client-initiate-transfer.jpg)
-  [![ADTPro client receiving 8 blocks](/assets/images/apple2/adtpro-client-8-blocks.jpg "ADTPro client receiving 8 blocks")](/assets/images/apple2/adtpro-client-8-blocks.jpg)
-  [![ADTPro client successful transfer](/assets/images/apple2/adtpro-client-success.jpg "ADTPro client successful transfer")](/assets/images/apple2/adtpro-client-success.jpg)
+  [![ADTPro client initiating transfer](/assets/images/apple2/adtpro-client-initiate-transfer.jpg "ADTPro client initiating transfer")](/assets/images/apple2/adtpro-client-initiate-transfer.jpg "ADTPro client initiating transfer")
+  [![ADTPro client receiving 8 blocks](/assets/images/apple2/adtpro-client-8-blocks.jpg "ADTPro client receiving 8 blocks")](/assets/images/apple2/adtpro-client-8-blocks.jpg "ADTPro client receiving 8 blocks")
+  [![ADTPro client successful transfer](/assets/images/apple2/adtpro-client-success.jpg "ADTPro client successful transfer")](/assets/images/apple2/adtpro-client-success.jpg "ADTPro client successful transfer")
 </div>
 
 ## Visual Studio Code for the win
