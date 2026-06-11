@@ -47,7 +47,8 @@
           {%- endif -%}
         {%- endunless -%}
 
-        <a class="site-title" href="{{ site_url }}">{{ site_title | replace: '-', ' ' }}</a>
+        <!-- DEBUG: url={{ page.url }} signature={{ signature }} collection={{ page.collection }} site_title={{ site_title }} site_url={{ site_url }} -->
+		<a class="site-title" href="{{ site_url }}">{{ site_title | replace: '-', ' ' }}</a>
         <ul class="visible-links">
           {% for link in site.data.navigation.main %}
             <li class="masthead__menu-item"><a href="{{ link.url }}">{{ link.title }}</a></li>
