@@ -22,21 +22,21 @@ To get this going, I first installed ADTPro on my laptop. Then I had to get the 
 The first problem was just getting ADTPro onto the <span class="no-break">Apple ]\[+</span> in the first place. ADTPro can bootstrap itself over the Apple’s cassette input, which sounds ridiculous until you remember that this is exactly how early <span class="no-break">Apple ]\[</span> software was loaded. (I became obsessed with the <span class="no-break">Apple ]\[</span> at a computer summer camp after the 6<sup>th</sup> grade. My first programs were [stored on cassette tapes](/apple-2-blog/emulator#running-on-the-real-hardware).) My modern laptop, however, does not exactly have “cassette out.” It has a single headphone jack, fortunately, and I had a random 3.5mm-to-RCA cable in my [box of random cables](https://www.youtube.com/shorts/7Z2lJJrHIJ4){:target="_blank"}. Somehow, that was enough.
 
 <div class="image-grid" markdown="1">
-  [![Cassette ports on the back of the Apple](/assets/images/apple2/cassette-ports.jpg)](/assets/images/apple2/cassette-ports.jpg)
-  [![Audio cables to the Windows laptop](/assets/images/apple2/cables-and-adapter.jpg)](/assets/images/apple2/cables-and-adapter.jpg)
+  [![Cassette ports on the back of the Apple](/assets/images/apple2/cassette-ports.jpg "Cassette ports on the back of the Apple")](/assets/images/apple2/cassette-ports.jpg)
+  [![Audio cables to the Windows laptop](/assets/images/apple2/cables-and-adapter.jpg "Audio cables to the Windows laptop")](/assets/images/apple2/cables-and-adapter.jpg)
 </div>
 
 ### This doesn't sound right
 After a fair amount of fiddling, I was able to send the ADTPro client from the laptop, over the audio cable, to the <span class="no-break">Apple ]\[+</span>. The magic settings were not obvious. I had to turn off Windows audio enhancements, set the input volume to 90%, set the output volume to 50% and then turn on mono audio so that the signal showed up on whichever RCA plug I happened to be using. Once I got it right, the Apple listened to the laptop squeal at it for a bit and then, like magic, ADTPro was running.
 
-[![ADTPro client on the Apple \]\[+](/assets/images/apple2/adtpro-client.jpg)](/assets/images/apple2/adtpro-client.jpg)
+[![ADTPro client on the Apple \]\[+](/assets/images/apple2/adtpro-client.jpg "ADTPro client on the Apple ]\[+")](/assets/images/apple2/adtpro-client.jpg)
 
 That only solved the first half of the problem, however. Bootstrapping the client is one-way communication, from the laptop to the Apple. To transfer disk images, ADTPro needs two-way audio in order to also request blocks from the server. That meant connecting both cassette jacks: 'cassette in' from the laptop’s audio output and 'cassette out' back to a microphone input on the PC. To accommodate this, I bought a USB audio adapter with separate headphone and microphone jacks, plus a couple of 3.5mm cables. The working setup was eventually:
 
 > Laptop headphone output → Apple cassette in
 > Apple cassette out → USB audio adapter microphone input
 
-[![Laptop connected to Apple via audio cables](/assets/images/apple2/file-transfer.jpg)](/assets/images/apple2/file-transfer.jpg)
+[![Laptop connected to Apple via audio cables](/assets/images/apple2/file-transfer.jpg "Laptop connected to Apple ]\[+ via audio cables")](/assets/images/apple2/file-transfer.jpg)
 
 ### Music to my computer's ears
 Even then, things were difficult. The key was not just setting the global audio devices but making sure the ADTPro Java process itself was using the right output and input in the Windows sound mixer. Once that was configured, I could finally receive a full ADTPro floppy image from the PC and write it to a real 5.25" floppy. Even while transferring four blocks at a time (each block is 500b), it took 5min to transfer an entire 140Kb floppy image. Anyway, at this point I had a bootable ADTPro floppy which meant I no longer had to bootstrap the client over audio every time. That felt like a win.
@@ -46,9 +46,9 @@ The next step was getting my own BASIC code onto a floppy image to transfer to t
 The issue was that a blank `.dsk` file is not automatically a DOS 3.3 disk. It is just a virtual blank floppy. If DOS is not loaded, `SAVE` is not saving to a disk file in the way I expected. The fix was to either start from a real bootable DOS 3.3 disk image or virtually boot DOS 3.3 and then initialize a blank image properly. Once I had a DOS 3.3 image, I could paste my BASIC program into AppleWin, save it onto the image, verify it with `CATALOG` and then send that full 140K disk image to the <span class="no-break">Apple ]\[+</span> over the audio cables with ADTPro.
 
 <div class="image-grid" markdown="1">
-  [![ADTPro client initiating transfer](/assets/images/apple2/adtpro-client-initiate-transfer.jpg)](/assets/images/apple2/adtpro-client-initiate-transfer.jpg)
-  [![ADTPro client receiving 8 blocks](/assets/images/apple2/adtpro-client-8-blocks.jpg)](/assets/images/apple2/adtpro-client-8-blocks.jpg)
-  [![ADTPro client successful transfer](/assets/images/apple2/adtpro-client-success.jpg)](/assets/images/apple2/adtpro-client-success.jpg)
+  [![ADTPro client initiating transfer](/assets/images/apple2/adtpro-client-initiate-transfer.jpg "ADTPro client initiating transfer")](/assets/images/apple2/adtpro-client-initiate-transfer.jpg)
+  [![ADTPro client receiving 8 blocks](/assets/images/apple2/adtpro-client-8-blocks.jpg "ADTPro client receiving 8 blocks")](/assets/images/apple2/adtpro-client-8-blocks.jpg)
+  [![ADTPro client successful transfer](/assets/images/apple2/adtpro-client-success.jpg "ADTPro client successful transfer")](/assets/images/apple2/adtpro-client-success.jpg)
 </div>
 
 ## Visual Studio Code for the win
@@ -56,7 +56,7 @@ That workflow finally worked! Edit on the laptop, test in AppleWin, create a vir
 
 For the 'editing' piece, [Visual Studio Code](https://code.visualstudio.com/){:target="_blank"}, with the [Applesoft BASIC extension](https://marketplace.visualstudio.com/items?itemName=dfgordon.vscode-language-applesoft){:target="_blank"}, is amazing. It has a built in functions to renumber the lines (although it's not a full-featured as the old `RENUMBER` utility), auto-suggests edits, globally find and refactor variables, and syntax highlight. Also, you can write in lowercase as everything gets converted to uppercase when pasting into AppleWin.
 
-[![Applesoft BASIC in Visual Studio](/assets/images/apple2/visual-studio-code.png)](/assets/images/apple2/visual-studio-code.png)
+[![Applesoft BASIC in Visual Studio](/assets/images/apple2/visual-studio-code.png "Applesoft BASIC in Visual Studio")](/assets/images/apple2/visual-studio-code.png)
 
 Not only is the code easier to read, write and edit, I can upload it to [GitHub](https://github.com/mdcramer/Apple2-ML){:target="_blank"} for all the world to ignore.
 

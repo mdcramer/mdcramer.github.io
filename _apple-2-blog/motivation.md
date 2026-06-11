@@ -5,7 +5,7 @@ tags:
   - machine learning
   - motivation
 date: 2022-05-27
-last_modified_at: 2022-06-12
+last_modified_at: 2026-06-10
 ---
 
 Everyone is aware of the impressive achievements of modern artificial intelligence and, more specifically, machine learning. [Achievements.ai](https://achievements.ai/){:target="_blank"} chronicles a growing list of AI milestones, but today virtually every industry has benefited from AI in one way or another. From medicine to entertainment to information retrieval to scientific discovery to agriculture, machine learning algorithms, powered by massive amount of data and computational power, have delivered unprecedented gains in efficiency and user value.
