@@ -20,7 +20,7 @@ As such, I am going to see what sort of machine learning I can do on my <span cl
 
 ![Apple \]\[+ computer in the suitcase](/assets/images/apple2/apple2-in-suitcase.jpg)
 
-The [specifications of the Apple \]\[+](https://en.wikipedia.org/wiki/Apple_II_series#Apple_II_Plus){:target="_blank"} are somewhat daunting:
+The [specifications of the <span class="no-break">Apple \]\[+</span>](https://en.wikipedia.org/wiki/Apple_II_series#Apple_II_Plus){:target="_blank"} are somewhat daunting:
 * Processor: 6502 microprocessor running at 1.023 MHz
 * RAM: 48Kb (64Kb with the memory expansion card)
 * Storage: dual external 5 1⁄4-inch floppy drives, each capable of storing 140Kb per side with DOS 3.3

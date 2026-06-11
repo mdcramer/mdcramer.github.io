@@ -26,7 +26,7 @@ internal_blogs:
     path: apple-2-blog
     title: "Apple ][+ Machine Learning"
     repo_url: https://github.com/mdcramer/Apple2-ML
-    description: Reviving the ol' Apple ][+ to, among other things, develop ML in APPLESOFT BASIC.
+    description: Reviving the ol' Apple ][+ to, among other things, develop ML in Applesoft BASIC.
     background: apple2header # custom image header
     og_image: /assets/images/apple2/apple2-header.jpg
 

@@ -1,6 +1,6 @@
 ---
 title: "ADTPro to the rescue"
-excerpt: "Using a modern laptop to develop APPLESOFT BASIC"
+excerpt: "Using a modern laptop to develop Applesoft BASIC"
 tags:
   - ADTPro
   - coding
@@ -9,17 +9,17 @@ date: 2026-06-10
 last_modified_at: 2026-06-10
 ---
 
-As mentioned previously, developing on the <span class="no-break">Apple ]\[+</span> has been [very painful](/apple-2-blog/emulator#suffering-on-the-real-hardware). While the [80-column card](/apple-2-blog/mo-columns) is nifty, and helps a bit, it's still a slog. And I'm not even talking about generative AI. The keyboard is old and not particularly ergonomic, the monitor is still small, there isn't an easy way to `LIST` specific sections of the code and characterizing the editing features as "clunky" would be charitable. What I'd like to do is use my modern Windows laptop to develop the code but then the problem is... how do I get this onto the <span class="no-break">Apple ]\[+</span>.
+As mentioned previously, developing on the <span class="no-break">Apple ]\[+</span> has been [very painful](/apple-2-blog/emulator#suffering-on-the-real-hardware). While the [80-column card](/apple-2-blog/mo-columns) is nifty, and helps a bit, it's still a slog. The keyboard is old and not particularly ergonomic, the monitor is still small, there isn't an easy way to `LIST` specific sections of the code and characterizing the editing features as "clunky" would be charitable. What I'd like to do is use my modern Windows laptop to develop the code, and I'm not even talking about generative AI, but the problem is... how do I then get this onto the <span class="no-break">Apple ]\[+</span>. (Of course I could just use an emulator but how is that fun?)
 
 ## From the Apple ]\[+ to the laptop
 I've already been suffering in the other direction. To transfer the code I developed on the <span class="no-break">Apple ]\[+</span> to my laptop, so that you can witness all its glory on this blog, I've resorted to [taking screen shot with my phone](/apple-2-blog/emulator#transferring-applesoft-basic-code-to-this-blog) and then using ChatGPT and Claude to extract the code using [OCR](https://en.wikipedia.org/wiki/Optical_character_recognition){:target="_blank"}, which I then stitch together. Not only is that cumbersome, it's error-prone. After sharing my k-means writeup on [Hacker News](/apple-2-blog/k-means#social-media-sharing), a very helpful [gentleman](https://github.com/thecloudexpanse){:target="_blank"} tried to run my code and found a bunch of errors, which he shared with me on GitHub. Turns out, the OCR was far from perfect.
 
 ## From the laptop to the Apple ]\[+
-More importantly, however, when I asked him how he was able to get my code off this blog and onto his <span class="no-break">Apple //e</span> computer, he turned me on to [ADTPro](https://www.adtpro.com/){:target="_blank"} (Apple Disk Transfer ProDOS). It is software (updated as recently as 2021) that transfers floppy images over the cassette jacks between a modern computer and <span class="no-break">Apple ]\[-era</span> computers. Ingenious.
+More importantly, however, when I asked him how he was able to get my code off this blog and onto his <span class="no-break">Apple //e</span> computer, he turned me on to [ADTPro](https://www.adtpro.com/){:target="_blank"} (Apple Disk Transfer ProDOS). It is software that transfers floppy images over the cassette jacks between a modern computer and <span class="no-break">Apple ]\[-era</span> computers. Ingenious.
 
 To get this going, I first installed ADTPro on my laptop. Then I had to get the client version running on the <span class="no-break">Apple ]\[+</span>. This is where things got interesting...
 
-The first problem was just getting ADTPro onto the <span class="no-break">Apple ]\[+</span> in the first place. ADTPro can bootstrap itself over the Apple’s cassette input, which sounds ridiculous until you remember that this is exactly how early Apple II software was loaded. (I became obsessed with the <span class="no-break">Apple ]\[</span> at a computer summer camp after the 6<sup>th</sup> grade. My first programs were [stored on cassette tapes](/apple-2-blog/emulator#running-on-the-real-hardware).) My modern laptop, however, does not exactly have “cassette out.” It has a single headphone jack, fortunately, and I had a random 3.5mm-to-RCA cable in my [box of random cables](https://www.youtube.com/shorts/7Z2lJJrHIJ4){:target="_blank"}. Somehow, that was enough.
+The first problem was just getting ADTPro onto the <span class="no-break">Apple ]\[+</span> in the first place. ADTPro can bootstrap itself over the Apple’s cassette input, which sounds ridiculous until you remember that this is exactly how early <span class="no-break">Apple ]\[</span> software was loaded. (I became obsessed with the <span class="no-break">Apple ]\[</span> at a computer summer camp after the 6<sup>th</sup> grade. My first programs were [stored on cassette tapes](/apple-2-blog/emulator#running-on-the-real-hardware).) My modern laptop, however, does not exactly have “cassette out.” It has a single headphone jack, fortunately, and I had a random 3.5mm-to-RCA cable in my [box of random cables](https://www.youtube.com/shorts/7Z2lJJrHIJ4){:target="_blank"}. Somehow, that was enough.
 
 <div class="image-grid" markdown="1">
   [![Cassette ports on the back of the Apple](/assets/images/apple2/cassette-ports.jpg)](/assets/images/apple2/cassette-ports.jpg)
@@ -54,7 +54,9 @@ The issue was that a blank `.dsk` file is not automatically a DOS 3.3 disk. It i
 ## Visual Studio Code for the win
 That workflow finally worked! Edit on the laptop, test in AppleWin, create a virtual floppy image, transfer that over the audio cables, write the image to a real floppy and finally run it on the <span class="no-break">Apple ]\[+</span>. That might sound like a lot but it's a million times better than typing code directly into the machine. You'll have to trust me.
 
-[![APPLESOFT BASIC in Visual Studio](/assets/images/apple2/visual-studio-code.png)](/assets/images/apple2/visual-studio-code.png)
+For the 'editing' piece, [Visual Studio Code](https://code.visualstudio.com/){:target="_blank"}, with the [Applesoft BASIC extension](https://marketplace.visualstudio.com/items?itemName=dfgordon.vscode-language-applesoft){:target="_blank"}, is amazing. It has a built in functions to renumber the lines (although it's not a full-featured as the old `RENUMBER` utility), auto-suggests edits, globally find and refactor variables, and syntax highlight. Also, you can write in lowercase as everything gets converted to uppercase when pasting into AppleWin.
+
+[![Applesoft BASIC in Visual Studio](/assets/images/apple2/visual-studio-code.png)](/assets/images/apple2/visual-studio-code.png)
 
 Not only is the code easier to read, write and edit, I can upload it to [GitHub](https://github.com/mdcramer/Apple2-ML){:target="_blank"} for all the world to ignore.
 

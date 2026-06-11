@@ -19,8 +19,6 @@ Wait. Does k-means count as machine learning? Yes. Yes, it does.
 
 Unlike [previously](/apple-2-blog/synthesizing-data/) where I saved the result for the end, let's start by taking a look at the algorithm in action!
 
-<!-- old method for embedding YouTube video that clicks out to YouTube.com
-[![Video of Apple 2+ running k-means](https://img.youtube.com/vi/Cy0wMMLObVA/0.jpg)](https://youtube.com/shorts/Cy0wMMLObVA?autoplay=1 "Video of Apple ]\[+ running k-means"){:target="_blank"} -->
 {% include video id="Cy0wMMLObVA" provider="youtube" %}
 
 Here is a screenshot of the decision boundary after convergence.
@@ -80,9 +78,9 @@ First, a little housekeeping before getting to the implementation of the algorit
 
 At the very top of the program I decided to organize everything into subroutines. The idea here is to enable expansion into other ML algorithms.
 
-The "wait for key" subroutine is the APPLESOFT BASIC method for simply waiting for any keystroke before continuing. (`PEEK` and `POKE` are commands for directly accessing addresses in memory. I had those numbers memorized in high school but, naturally, I had to look them up.) I thought it'd be nice to add this pause after generating the data but I might take it out later.
+The "wait for key" subroutine is the Applesoft BASIC method for simply waiting for any keystroke before continuing. (`PEEK` and `POKE` are commands for directly accessing addresses in memory. I had those numbers memorized in high school but, naturally, I had to look them up.) I thought it'd be nice to add this pause after generating the data but I might take it out later.
 
-Lastly, at the end of the "hyperparameters" section I declare a convenience array, `P%(2,1)` to keep track of 3 random points as well as a few arrays I'm going to use in the k-means algorithm. The reason I do this here is because in APPLESOFT BASIC you get an error if you declare an array that already exists. Should at some point I want to call the k-means algorithm multiple times, this won't be a problem.
+Lastly, at the end of the "hyperparameters" section I declare a convenience array, `P%(2,1)` to keep track of 3 random points as well as a few arrays I'm going to use in the k-means algorithm. The reason I do this here is because in Applesoft BASIC you get an error if you declare an array that already exists. Should at some point I want to call the k-means algorithm multiple times, this won't be a problem.
 
 ### Initialize
 
@@ -233,7 +231,7 @@ I then iterate through the 4 sides of the 'box' on the screen, using the corners
 
 Yes! Yes, we can.
 
-While k-means is simple, it does not take advantage of our knowledge of the Gaussian nature of the data. If we know that the distributions are at least approximately Gaussian, which is frequently the case, we can employ a more powerful application of the Expectation Maximization (EM) framework (k-means is a specific implementation of centroid-based clustering that uses an iterative approach similar to EM with 'hard' clustering) that takes advantage of this. This post is already long enough, so we'll deal with that another day. Eventually, perhaps, we'll also get to deep learning, although developing back propagation for an arbitrary size neural net using APPLESOFT BASIC on an <span class="no-break">Apple ]\[+</span> is not going to be easy.
+While k-means is simple, it does not take advantage of our knowledge of the Gaussian nature of the data. If we know that the distributions are at least approximately Gaussian, which is frequently the case, we can employ a more powerful application of the Expectation Maximization (EM) framework (k-means is a specific implementation of centroid-based clustering that uses an iterative approach similar to EM with 'hard' clustering) that takes advantage of this. This post is already long enough, so we'll deal with that another day. Eventually, perhaps, we'll also get to deep learning, although developing back propagation for an arbitrary size neural net using Applesoft BASIC on an <span class="no-break">Apple ]\[+</span> is not going to be easy.
 
 ## Social media sharing
 I shared this post on [Hacker News](https://news.ycombinator.com/item?id=45415510){:target="_blank"} and, to my surprise and delight, got a decent amount of feedback, including some helpful corrections.

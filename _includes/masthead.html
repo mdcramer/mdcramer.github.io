@@ -16,7 +16,7 @@
             {%- assign post_blog = site.data.blogs.internal_blogs | where: "path", page.collection | first -%}
             {%- if post_blog -%}
               {%- assign site_title = post_blog.title -%}
-			  {%- assign site_url = post_blog.path | prepend: '/' | append: '/' -%}
+              {%- assign site_url = post_blog.path | prepend: '/' | append: '/' -%}
             {%- else -%}
               {%- assign site_title = page.collection -%}
             {%- endif -%}
@@ -24,6 +24,14 @@
             {%- assign site_title = signature_blog[0].name -%}
           {%- else -%}
             {%- assign site_title = signature -%}
+          {%- endif -%}
+        {%- elsif page.url contains '/page/' -%}
+          {%- assign url_parts = page.url | split: '/page/' -%}
+          {%- assign collection_path = url_parts[0] | remove: '/' -%}
+          {%- assign post_blog = site.data.blogs.internal_blogs | where: "path", collection_path | first -%}
+          {%- if post_blog -%}
+            {%- assign site_title = post_blog.title -%}
+            {%- assign site_url = post_blog.path | prepend: '/' | append: '/' -%}
           {%- endif -%}
         {%- else -%}
           {%- assign site_title = site.title -%}
