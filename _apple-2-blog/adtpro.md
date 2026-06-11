@@ -1,6 +1,6 @@
 ---
 title: "ADTPro to the rescue"
-excerpt: "Using a modern laptop to develop code for the Apple ]\[+"
+excerpt: "Using a modern laptop to develop APPLESOFT BASIC"
 tags:
   - ADTPro
   - coding
@@ -9,13 +9,13 @@ date: 2026-06-10
 last_modified_at: 2026-06-10
 ---
 
-As mentioned previously, developing on the <span class="no-break">Apple ]\[+</span> has been [very painful](/apple-2-blog/emulator#suffering-on-the-real-hardware). While the [80-column card](/apple-2-blog/mo-columns) is nifty, and helps a bit, it's still a slog. And I'm not even talking about generative AI. The keyboard is old and not particularly ergonomic, the monitor is still small, there isn't an easy way to `LIST` specific sections of the code and charactarizing the editing features as "clunky" would be charitable. What I'd like to do is use my modern Windows laptop to develop the code but then the problem is... how do I get this onto the <span class="no-break">Apple ]\[+</span>.
+As mentioned previously, developing on the <span class="no-break">Apple ]\[+</span> has been [very painful](/apple-2-blog/emulator#suffering-on-the-real-hardware). While the [80-column card](/apple-2-blog/mo-columns) is nifty, and helps a bit, it's still a slog. And I'm not even talking about generative AI. The keyboard is old and not particularly ergonomic, the monitor is still small, there isn't an easy way to `LIST` specific sections of the code and characterizing the editing features as "clunky" would be charitable. What I'd like to do is use my modern Windows laptop to develop the code but then the problem is... how do I get this onto the <span class="no-break">Apple ]\[+</span>.
 
 ## From the Apple ]\[+ to the laptop
 I've already been suffering in the other direction. To transfer the code I developed on the <span class="no-break">Apple ]\[+</span> to my laptop, so that you can witness all its glory on this blog, I've resorted to [taking screen shot with my phone](/apple-2-blog/emulator#transferring-applesoft-basic-code-to-this-blog) and then using ChatGPT and Claude to extract the code using [OCR](https://en.wikipedia.org/wiki/Optical_character_recognition){:target="_blank"}, which I then stitch together. Not only is that cumbersome, it's error-prone. After sharing my k-means writeup on [Hacker News](/apple-2-blog/k-means#social-media-sharing), a very helpful [gentleman](https://github.com/thecloudexpanse){:target="_blank"} tried to run my code and found a bunch of errors, which he shared with me on GitHub. Turns out, the OCR was far from perfect.
 
 ## From the laptop to the Apple ]\[+
-More importantly, however, when I asked him how he was able to get my code off this blog and onto his <span class="no-break">Apple //e</span> computer, he turned me on to [ADTPro](https://www.adtpro.com/){:target="_blank"} (Apple Disk Transfer ProDOS). It is software (updated as recently as 2021) that trasfers floppy images over the cassette jacks between a modern computer and <span class="no-break">Apple ]\[-era</span> computers. Ingenious.
+More importantly, however, when I asked him how he was able to get my code off this blog and onto his <span class="no-break">Apple //e</span> computer, he turned me on to [ADTPro](https://www.adtpro.com/){:target="_blank"} (Apple Disk Transfer ProDOS). It is software (updated as recently as 2021) that transfers floppy images over the cassette jacks between a modern computer and <span class="no-break">Apple ]\[-era</span> computers. Ingenious.
 
 To get this going, I first installed ADTPro on my laptop. Then I had to get the client version running on the <span class="no-break">Apple ]\[+</span>. This is where things got interesting...
 
@@ -31,7 +31,7 @@ After a fair amount of fiddling, I was able to send the ADTPro client from the l
 
 [![ADTPro client on the Apple \]\[+](/assets/images/apple2/adtpro-client.jpg)](/assets/images/apple2/adtpro-client.jpg)
 
-That only solved the first half of the problem, however. Bootstrapping the client is one-way communication, from the laptop to the Apple. To transfer disk images, ADTPro needs two-way audio in order to also request blocks from the server. That meant connecting both cassette jacks: 'cassette in' from the laptop’s audio output and 'cassette out' back to a microphone input on the PC. To accomodate this, I bought a USB audio adapter with separate headphone and microphone jacks, plus a couple of 3.5mm cables. The working setup was eventually:
+That only solved the first half of the problem, however. Bootstrapping the client is one-way communication, from the laptop to the Apple. To transfer disk images, ADTPro needs two-way audio in order to also request blocks from the server. That meant connecting both cassette jacks: 'cassette in' from the laptop’s audio output and 'cassette out' back to a microphone input on the PC. To accommodate this, I bought a USB audio adapter with separate headphone and microphone jacks, plus a couple of 3.5mm cables. The working setup was eventually:
 
 > Laptop headphone output → Apple cassette in
 > Apple cassette out → USB audio adapter microphone input
@@ -50,10 +50,10 @@ The issue was that a blank `.dsk` file is not automatically a DOS 3.3 disk. It i
 [![ADTPro client successful transfer](/assets/images/apple2/adtpro-client-success.jpg)](/assets/images/apple2/adtpro-client-success.jpg)
 
 ## Visual Studio Code for the win
-That workflow finally worked! Edit on the laptop, test in AppleWin, create a virtual floopy image, trasfer that over the audio cables, write the image to a real floppy and finally run it on the <span class="no-break">Apple ]\[+</span>. That might sound like a lot but it's a million times better than typing code directly into the machine. You'll have to trust me.
+That workflow finally worked! Edit on the laptop, test in AppleWin, create a virtual floppy image, transfer that over the audio cables, write the image to a real floppy and finally run it on the <span class="no-break">Apple ]\[+</span>. That might sound like a lot but it's a million times better than typing code directly into the machine. You'll have to trust me.
 
 [![APPLESOFT BASIC in Visual Studio](/assets/images/apple2/visual-studio-code.jpg)](/assets/images/apple2/visual-studio-code.jpg)
 
 Not only is the code easier to read, write and edit, I can upload it to [GitHub](https://github.com/mdcramer/Apple2-ML){:target="_blank"} for all the world to ignore.
 
-The one thing I never got working reliably was the reverse direction: copying a floppy from the <span class="no-break">Apple ]\[+</span> back to the laptop. The server (on the laptop) would receive a few blocks, sometimes with valid CRCs, then the transfer would stall and the Apple would drop into the system monitor. The ADTPro trace suggested that the laptop was receiving some packets correctly but then losing synchronization mid-transfer. I never fully determined whether that was an audio-level problem, a timing problem, a quirk of the USB audio input or something else entirely. Frankly, given the limited use case, and amount of effort I put into getting it to work in the other diection, I decided that this is a limitation with which I can live.
+The one thing I never got working reliably was the reverse direction: copying a floppy from the <span class="no-break">Apple ]\[+</span> back to the laptop. The server (on the laptop) would receive a few blocks, sometimes with valid CRCs, then the transfer would stall and the Apple would drop into the system monitor. The ADTPro trace suggested that the laptop was receiving some packets correctly but then losing synchronization mid-transfer. I never fully determined whether that was an audio-level problem, a timing problem, a quirk of the USB audio input or something else entirely. Frankly, given the limited use case, and amount of effort I put into getting it to work in the other direction, I decided that this is a limitation with which I can live.
