@@ -1,6 +1,6 @@
 ---
 title: "Motivation"
-excerpt: "Why develop machine learning on an Apple ]\[+?"
+excerpt: "Why develop machine learning on an Apple ][+?"
 tags:
   - machine learning
   - motivation
@@ -8,7 +8,6 @@ date: 2022-05-27
 last_modified_at: 2022-06-12
 ---
 
-## Why develop machine learning on an Apple ]\[+?
 Everyone is aware of the impressive achievements of modern artificial intelligence and, more specifically, machine learning. [Achievements.ai](https://achievements.ai/){:target="_blank"} chronicles a growing list of AI milestones, but today virtually every industry has benefited from AI in one way or another. From medicine to entertainment to information retrieval to scientific discovery to agriculture, machine learning algorithms, powered by massive amount of data and computational power, have delivered unprecedented gains in efficiency and user value.
 
 [Chip shortages](https://en.wikipedia.org/wiki/2020%E2%80%93present_global_chip_shortage){:target="_blank"}, however, exacerbated by the pandemic, trade, weather, fires and wars, have severely crimped our ability to deploy the compute necessary to train increasingly complex models. In times of scarcity we need to make the most of whatever resources are at our disposal. This requires creativity and gumption. Wired even recently reported on how some companies are [hacking their way around the shortages](https://www.wired.com/story/chip-shortage-hacks){:target="_blank"}:

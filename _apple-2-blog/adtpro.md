@@ -45,14 +45,16 @@ The next step was getting my own BASIC code onto a floppy image to transfer to t
 
 The issue was that a blank `.dsk` file is not automatically a DOS 3.3 disk. It is just a virtual blank floppy. If DOS is not loaded, `SAVE` is not saving to a disk file in the way I expected. The fix was to either start from a real bootable DOS 3.3 disk image or virtually boot DOS 3.3 and then initialize a blank image properly. Once I had a DOS 3.3 image, I could paste my BASIC program into AppleWin, save it onto the image, verify it with `CATALOG` and then send that full 140K disk image to the <span class="no-break">Apple ]\[+</span> over the audio cables with ADTPro.
 
-[![ADTPro client initiating transfer](/assets/images/apple2/adtpro-client-initiate-transfer.jpg)](/assets/images/apple2/adtpro-client-initiate-transfer.jpg)
-[![ADTPro client receiving 8 blocks](/assets/images/apple2/adtpro-client-8-blocks.jpg)](/assets/images/apple2/adtpro-client-8-blocks.jpg)
-[![ADTPro client successful transfer](/assets/images/apple2/adtpro-client-success.jpg)](/assets/images/apple2/adtpro-client-success.jpg)
+<div class="image-grid" markdown="1">
+  [![ADTPro client initiating transfer](/assets/images/apple2/adtpro-client-initiate-transfer.jpg)](/assets/images/apple2/adtpro-client-initiate-transfer.jpg)
+  [![ADTPro client receiving 8 blocks](/assets/images/apple2/adtpro-client-8-blocks.jpg)](/assets/images/apple2/adtpro-client-8-blocks.jpg)
+  [![ADTPro client successful transfer](/assets/images/apple2/adtpro-client-success.jpg)](/assets/images/apple2/adtpro-client-success.jpg)
+</div>
 
 ## Visual Studio Code for the win
 That workflow finally worked! Edit on the laptop, test in AppleWin, create a virtual floppy image, transfer that over the audio cables, write the image to a real floppy and finally run it on the <span class="no-break">Apple ]\[+</span>. That might sound like a lot but it's a million times better than typing code directly into the machine. You'll have to trust me.
 
-[![APPLESOFT BASIC in Visual Studio](/assets/images/apple2/visual-studio-code.jpg)](/assets/images/apple2/visual-studio-code.jpg)
+[![APPLESOFT BASIC in Visual Studio](/assets/images/apple2/visual-studio-code.png)](/assets/images/apple2/visual-studio-code.png)
 
 Not only is the code easier to read, write and edit, I can upload it to [GitHub](https://github.com/mdcramer/Apple2-ML){:target="_blank"} for all the world to ignore.
 
