@@ -9,13 +9,13 @@ date: 2025-07-06
 
 Crestfallen by the seeming impossibility of [recovering](/apple-2-blog/recover/) my beloved [game](https://mortalwayfare.com/remnant-from-the-past/){:target="_blank"} from high school, I turned my attention to the original [motivation](apple-2-blog/motivation/): developing machine learning on the <span class="no-break">Apple ]\[+</span>. Grabbing my manuals, I got to work.
 
-![Apple 2+ manuals](/assets/images/apple2/manuals.jpg "Apple ]\[+ manuals")
+[![Apple 2+ manuals](/assets/images/apple2/manuals.jpg "Apple ][+ manuals")](/assets/images/apple2/manuals.jpg "Apple ][+ manuals")
 
 Every solid machine learning project begins with data. My old clunker, however, is cut off from the world. I never had a modem but I recall one of my best friends using the modem on his <span class="no-break">Apple ]\[+</span> to hack long distance access codes. (He since went on to pursue a successful career in telecommunications... naturally.) Even if I had a modem, what would I connect it to? Do those services still even exists? (I'm sure they do but I'm not going to figure that out today.) In the meantime, the plan is to create synthetic data locally.
 
 I'm sure everyone is familiar with the [chart](https://scikit-learn.org/stable/auto_examples/classification/plot_classifier_comparison.html){:target="_blank"} comparing different classification algorithms. Since two-dimensional binary classification seems like a great place to start, I'll need a simple way to graph the data.
 
-[![Classifier comparison](/assets/images/apple2/sphx_glr_plot_classifier_comparison_001.png "Classifier comparison")](/assets/images/apple2/sphx_glr_plot_classifier_comparison_001.png)
+[![Classifier comparison](/assets/images/apple2/sphx_glr_plot_classifier_comparison_001.png "Classifier comparison")](/assets/images/apple2/sphx_glr_plot_classifier_comparison_001.png "Classifier comparison")
 
 Fortunately, the <span class="no-break">Apple ]\[+</span> comes with a high-resolution graphics screen (`HGR`) that is 280 pixels across by 160 pixels high. (There is another mode with 192 vertical pixels but I wanted leave the bottom 4 lines of the text window visible for running output.) There are [8 color options](https://en.wikipedia.org/wiki/Apple_II_graphics#High-Resolution_%28Hi-Res%29_graphics){:target="_blank"} for each pixel, but I have a green screen monitor, so I set everything to `HCOLOR=7` (white2).
 
@@ -46,7 +46,7 @@ Deciding to stick to the positive quadrant, I wrote a subroutine (Applesoft BASI
 ```
 The first `FOR I` loop adds tick marks along the y-axis. I decided to get fancy and add elongated tick marks at every 5th unit and even longer ticks marks at every 10 unit. I use `J` to count the ticks. The second `FOR I` loop does the same for the x-axis. The final result looks like this:
 
-![x- and y-axis of graph](/assets/images/apple2/axis.jpg "The x- and y-axis of the graph")
+[![x- and y-axis of graph](/assets/images/apple2/axis.jpg "The x- and y-axis of the graph")](/assets/images/apple2/axis.jpg "The x- and y-axis of the graph")
 
 ## Synthesizing the data
 
@@ -149,7 +149,7 @@ I first verify that the data point is on the visible region of the graph (plotti
 ## Running the code
 Putting it all together, it takes the <span class="no-break">Apple ]\[+</span> about a minute to generate and plot 150 data points. The end result looks like this:
 
-![Final plot of synthesized data](/assets/images/apple2/final-plot.jpg "Final plot of synthesized data")
+[![Final plot of synthesized data](/assets/images/apple2/final-plot.jpg "Final plot of synthesized data")](/assets/images/apple2/final-plot.jpg "Final plot of synthesized data")
 
 Watch this video if you'd like to see it run, in all it's glory.
 

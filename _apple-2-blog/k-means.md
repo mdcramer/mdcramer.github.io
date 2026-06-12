@@ -23,7 +23,7 @@ Unlike [previously](/apple-2-blog/synthesizing-data/) where I saved the result f
 
 Here is a screenshot of the decision boundary after convergence.
 
-![K-means decision boundary after convergence](/assets/images/apple2/k-means-convergence.jpg "K-means decision boundary after convergence")
+[![K-means decision boundary after convergence](/assets/images/apple2/k-means-convergence.jpg "K-means decision boundary after convergence")](/assets/images/apple2/k-means-convergence.jpg "K-means decision boundary after convergence")
 
 Accuracy is 90% because 1 of the 10 observations is on the incorrect side of the decision boundary.
 

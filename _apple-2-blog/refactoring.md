@@ -171,6 +171,6 @@ I gave it a go and ran a comparison by generating 500 pairs of random numbers wi
 
 The final result looks pretty much the same as before but it's flipped horizontally. The new data structure, however, will make implementing ML much easier.
 
-![Updated plot of synthesized data](/assets/images/apple2/updated-final-plot.jpg "Updated final plot of synthesized data")
+[![Updated plot of synthesized data](/assets/images/apple2/updated-final-plot.jpg "Updated final plot of synthesized data")](/assets/images/apple2/updated-final-plot.jpg "Updated final plot of synthesized data")
 
 Now onto implementing the simplest and easiest to understand machine learning algorithm...

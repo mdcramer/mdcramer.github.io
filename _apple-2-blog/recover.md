@@ -21,7 +21,7 @@ Alas, this is not to be.
 
 Buried in my parent's garage for decades, alongside the old <span class="no-break">Apple ]\[+</span>, was a box of 5.25" floppy disks. Was my game still on one of them?
 
-![A very old box of 5.25" floppy disks](/assets/images/apple2/box-of-floppies.jpg)
+[![A very old box of 5.25" floppy disks](/assets/images/apple2/box-of-floppies.jpg "A very old box of 5.25\" floppy disks")](/assets/images/apple2/box-of-floppies.jpg "A very old box of 5.25\" floppy disks")
 
 For some unknown reason, my high school brain decided to just number the floppies, as opposed to just writing the contents on the stickers. I used to have a sheet that listed the contents of each disk, but that is long gone. Additionally, judging by the enumeration, it looks like some of the floppies are missing. I vaguely recall taking some to college. Was the game on one of them? Perhaps.
 
@@ -37,11 +37,11 @@ In February 2022 we met at a coffee shop near his home. I brought the box of flo
 
 The floppies almost always started with a bunch of red squares. His software would make an initial pass to see what could be read, and typically that was not very much. The floppy had been sitting in a damp, cold garage for decades and most of the magnetic material had degenerated or fallen off. It did not help matters that I purchased inexpensive, single density floppies in high school, and then recorded on both the front and back. It worked fine back then, but I was clearly not thinking long term.
 
-![A lot of red squares](/assets/images/apple2/a-lot-of-red-squares.jpg)
+[![A lot of red squares](/assets/images/apple2/a-lot-of-red-squares.jpg "A lot of red squares")](/assets/images/apple2/a-lot-of-red-squares.jpg "A lot of red squares")
 
 As we patiently allowed the hardware and software to do its magic, something incredible happened. The red squares became green! Not all of them, but enough for us to identify what, if anything, was on the floppy. We were primarily interested in the catalog which, if memory serves correctly, was on track 14. I had a few floppies that I used for personal development, so the catalog would enable us to find these.
 
-![Some signs of life!](/assets/images/apple2/some-green-squares.jpg)
+[![Some signs of life!](/assets/images/apple2/some-green-squares.jpg "Some signs of life!")](/assets/images/apple2/some-green-squares.jpg "Some signs of life!")
 
 ## Disappointment
 
