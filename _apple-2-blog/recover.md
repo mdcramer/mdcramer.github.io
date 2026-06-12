@@ -19,15 +19,15 @@ Alas, this is not to be.
 
 ## Box of floppies
 
-Buried in my parent's garage for decades, alongside the old <span class="no-break">Apple ]\[+</span>, was a box of 5.25" floppy disks. Was my game still on one of them?
+Buried in my parent's garage for decades, alongside the old <span class="no-break">Apple ]\[+</span>, was a box of 5¼" floppy disks. Was my game still on one of them?
 
-[![A very old box of 5.25" floppy disks](/assets/images/apple2/box-of-floppies.jpg "A very old box of 5.25\" floppy disks")](/assets/images/apple2/box-of-floppies.jpg "A very old box of 5.25\" floppy disks")
+[![A very old box of 5&frac14;&quot; floppy disks](/assets/images/apple2/box-of-floppies.jpg "A very old box of 5&frac14;&quot; floppy disks")](/assets/images/apple2/box-of-floppies.jpg "A very old box of 5&frac14;&quot; floppy disks")
 
 For some unknown reason, my high school brain decided to just number the floppies, as opposed to just writing the contents on the stickers. I used to have a sheet that listed the contents of each disk, but that is long gone. Additionally, judging by the enumeration, it looks like some of the floppies are missing. I vaguely recall taking some to college. Was the game on one of them? Perhaps.
 
 ## A glimmer of hope on Twitter
 
-I don't recall how I came across [@bzotto](https://twitter.com/bzotto){:target="_blank"}'s Twitter thread about how he [resurrected his high school game](https://twitter.com/bzotto/status/1353797383201558531){:target="_blank"} by reconstructing the data from an old 5.25" floppy, but it renewed my hope. He purchased some [specialized hardware](https://twitter.com/bzotto/status/1353800316693606402){:target="_blank"} that repeatedly moved the drive head back and forth by fractions of a track to try to pull off enough magnetic signal to reconstruct the data.
+I don't recall how I came across [@bzotto](https://twitter.com/bzotto){:target="_blank"}'s Twitter thread about how he [resurrected his high school game](https://twitter.com/bzotto/status/1353797383201558531){:target="_blank"} by reconstructing the data from an old 5¼" floppy, but it renewed my hope. He purchased some [specialized hardware](https://twitter.com/bzotto/status/1353800316693606402){:target="_blank"} that repeatedly moved the drive head back and forth by fractions of a track to try to pull off enough magnetic signal to reconstruct the data.
 
 Turns out [@bzotto](https://twitter.com/bzotto){:target="_blank"} is a great guy and extremely generous with his time, so when I reached out with my story he offered to help.
 
