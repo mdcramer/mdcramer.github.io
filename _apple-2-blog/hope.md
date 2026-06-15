@@ -61,4 +61,4 @@ One solution was to cut another hole in the floppy case. Given the proximity to 
 
 Unfortunately, the result was no different from my previous attempt: there was no game to be found. The process wasn’t relatively quick. We were able to rip open and flip the media on about half of the floppies. There are ~25 to go so perhaps we’ll get to those one day. And then I’ll just discard everything. In the meantime, hopefully I’ll have some time to get back to deep learning…
 
-[![Deep learning on the Apple 2+](/assets/images/apple2/deep-learning.jpg "Deep learning on the Apple 2+")](/assets/images/apple2/deep-learning.jpg "Deep learning on the Apple 2+")
+[![Deep learning on the Apple &#93;&#91;+](/assets/images/apple2/deep-learning.jpg "Deep learning on the Apple &#93;&#91;+")](/assets/images/apple2/deep-learning.jpg "Deep learning on the Apple &#93;&#91;+")
