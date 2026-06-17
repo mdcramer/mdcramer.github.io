@@ -4,8 +4,8 @@ excerpt: "Squeezing everything in 64Kb is not easy."
 tags:
   - memory
   - RAM
-date: 2026-06-14
-last_modified_at: 2026-06-14
+date: 2026-06-15
+last_modified_at: 2026-06-16
 ---
 
 In high school I recall wondering how anyone would possibly be able to fully utilize 64Kb of RAM.
@@ -18,7 +18,7 @@ Fun. Unlike the [RAM issues](/apple-2-blog/revive/) I had before refurbishing th
 
 ## Memory map
 
-Here's a "RAM Organization and Usage" map that I pulled out of the <span class="no-break">Apple ]\[</span>  Reference Manual. The <span class="no-break">Apple ]\[+</span> came with 48Kb of RAM ($00-$BF) on the motherboard but I have the memory expansion card, also called a language card, with an extra 16Kb ($C0-$FF). Using the extra memory was complicated as the 16Kb were squeezed into a 12k addres space ($D000-$FFFF) by using bank switching. (I explored storing data on the language card, which would be relatively easy for integers but a nightmare for floats, but it hasn't come to that yet.)
+Here's a "RAM Organization and Usage" map that I pulled out of the <span class="no-break">Apple ]\[</span>  Reference Manual. The <span class="no-break">Apple ]\[+</span> came with 48Kb of RAM (`$0000-$BFFF`) on the motherboard but I have the memory expansion card, also called a language card, with an extra 16Kb (`$C000-$FFFF`). Using the extra memory was complicated as the 16Kb were squeezed into a 12k addres space (`$D000-$FFFF`) by using bank switching. (I explored storing data on the language card, which would be relatively easy for integers but a nightmare for floats, but it hasn't come to that yet.)
 
 | Page | Hex | Usage |
 |:----:|:---:|-------|
@@ -36,13 +36,13 @@ Here's a "RAM Organization and Usage" map that I pulled out of the <span class="
 | 200-207 | $C8-$CF | I/O ROM |
 | 208-255 | $D0-$FF | ROM or 16Kb language card |
 
-In "normal" operation, a BASIC program would reside starting at $0800, right after the primary text page, and on top of the secondary text page. From the end of the BASIC program, variables and arrays would grow up. Strings, for some reasons, would reside at $BFFF and grow down. If you don't use graphics, this gives you almost 46Kb of space. If you want to use the primary page of hi-res graphics, known as `HGR`, then you get only a paltry 6Kb of space for your program and variables. (This is surely an artifact of a 1977 design decision to enble `HGR` on machines that only shipped with 16Kb, making $3FFF the highest address in RAM.)
+In "normal" operation, a BASIC program would reside starting at `$0800`, right after the primary text page, and on top of the secondary text page. From the end of the BASIC program, variables and arrays would grow up. Strings, for some reasons, would reside at `$BFFF` and grow down. If you don't use graphics, this gives you almost 46Kb of space. If you want to use the primary page of hi-res graphics, known as `HGR`, then you get only a paltry 6Kb of space for your program and variables. (This is surely an artifact of a 1977 design decision to enble `HGR` on machines that only shipped with 16Kb, making `$3FFF` the highest address in RAM.)
 
 What you're seeing in the image above are my data arrays growing into `HGR`. When the arrays are declared, everything is zero, so there's no problem. As soon as I start writing values to the array, however, those show up on the screen. Similary, plotting graphics on the screen has the effect of writing values into the arrays. Obviously, this is a problem.
 
 ## Moving things around
 
-A very astute observer of my [last post](https://mdcramer.github.io/apple-2-blog/adtpro#visual-studio-code-for-the-win) might have noticed that I added a `LOMEM` statement to the very beginning of my program. This statement simply sets the bottom address for variables and arrays. Setting it to 16384, which is $4000, means my data arrays and other variables will now build from the top of `HGR`. The entire 6Kb space from $0800 to $2000 can now be used for the BASIC program. Huge! Also, $4000-$BFFF, or 32Kb, can be used for variables, arrays and strings. This is more than enough space... for now.
+A very astute observer of my [last post](https://mdcramer.github.io/apple-2-blog/adtpro#visual-studio-code-for-the-win) might have noticed that I added a `LOMEM` statement to the very beginning of my program. This statement simply sets the bottom address for variables and arrays. Setting it to 16384, which is `$4000`, means my data arrays and other variables will now build from the top of `HGR`. The entire 6Kb space from `$0800-$2000` can now be used for the BASIC program. Huge! Also, `$4000-$BFFF`, or 32Kb, can be used for variables, arrays and strings. This is more than enough space... for now.
 
 ## Still not enough
 
@@ -86,7 +86,7 @@ Now that I've got K-means working reliably with a decent number of samples in ea
 2600 RETURN
 ```
 
-More on the analysis later, but when I first put together this code, I would get errors after the first run. Turns out the last few lines of code were being erased. Was my BASIC code running into `HGR`? A quick Gemini prompt gave me `PRINT PEEK(175) + 256 * PEEK(176)` as the pointer to track the end of the BASIC program. `HGR` starts at $2000 (8192) and the pointer was giving me something over 8200.
+More on the analysis later, but when I first put together this code, I would get errors after the first run. Turns out the last few lines of code were being erased. Was my BASIC code running into `HGR`? A quick Gemini prompt gave me `PRINT PEEK(175) + 256 * PEEK(176)` as the pointer to track the end of the BASIC program. `HGR` starts at `$2000` (8192) and the pointer was giving me something over 8200.
 
 So I cut code. I didn't want to remove all of the `REM` statements, or even most of them, but I went through and trimmed them down. Additionally, the Irwin-Hall Distribution was deemed [significantly slower](/apple-2-blog/refactoring#testing-irwin-hall-as-an-alternative-to-box-muller) than the Box-Muller transform, I decided to remove that code altogether. The final result was and end address of 8032, well under `HGR`.
 
@@ -100,61 +100,66 @@ In [Visual Studio Code](/apple-2-blog/adtpro/#visual-studio-code-for-the-win) I 
 20 REM -- Box-Muller Transform vs Irwin-Hall Distribution --
 30 REM -- Generate random normal variables --
 40 REM -- Time measurement is not implemented...
-50 REM -- ... use a stopwatch to compare --
+50 REM -- ... use a stopwatch  --
 
 60 REM -- On AppleWin Apple ][+ emulator with 1000 iterations...
-70 REM -- Box-Muller takes about 3m4s seconds and
-80 REM -- Irwin-Hall takes about 3m7s seconds --
-90 REM -- This estimates that they are equally fast --
-100 REM -- When changing the order of the subroutines...
-110 REM -- Box-Muller takes about 3m1s seconds and
-120 REM -- Irwin-Hall takes about 3m4s seconds --
+70 REM --   Box-Muller takes 3m4s
+80 REM --   Irwin-Hall takes 3m7s --
+90 REM -- When changing the order of the subroutines...
+100 REM --   Box-Muller takes 3m1s
+110 REM --   Irwin-Hall takes 3m4s --
+120 REM -- On the Apple ][+ hardware ...
+130 REM --   Box-Muller takes 2m59s
+140 REM --   Irwin-Hall takes 3m2s --
+150 REM -- Conclusion: execution time is very similar --
 
-130 PRINT "BOX-MULLER VS IRWIN-HALL SPEED TEST"
-140 PRINT "RUN BOX-MULLER... BEEP AT END"
-150 GOSUB 420: REM wait for keystroke
-160 FOR I = 1 TO 1000
-170   GOSUB 270: REM Box-Muller
-180 NEXT
-190 PRINT CHR$(7);
-200 PRINT "RUN IRWIN-HALL... BEEP AT END"
-210 GOSUB 420: REM wait for keystroke
-220 FOR I = 1 TO 1000
-230   GOSUB 350: REM Irwin-Hall
-240 NEXT
-250 PRINT CHR$(7);
-260 END
+160 PRINT "BOX-MULLER VS IRWIN-HALL SPEED TEST"
+170 PRINT "RUN BOX-MULLER... BEEP AT END"
+180 GOSUB 450: REM wait for keystroke
+190 FOR I = 1 TO 1000
+200   GOSUB 300: REM Box-Muller
+210 NEXT
+220 PRINT CHR$(7);
+230 PRINT "RUN IRWIN-HALL... BEEP AT END"
+240 GOSUB 450: REM wait for keystroke
+250 FOR I = 1 TO 1000
+260   GOSUB 380: REM Irwin-Hall
+270 NEXT
+280 PRINT CHR$(7);
+290 END
 
-270 REM == Box-Muller Transform ==
-280 U1 = RND(1)
-290 U2 = RND(1)
-300 R = SQR(-2 * LOG(U1))
-310 TH = 6.28318531 * U2: REM 2 * PI * U2
-320 Z0 = R * COS(TH)
-330 Z1 = R * SIN(TH)
-340 RETURN
-350 REM == Irwin-Hall Distribution ==
-360 Z0 = -6:Z1 = -6
-370 FOR Z = 1 TO 12
-380   Z0 = Z0 + RND(1)
-390   Z1 = Z1 + RND(1)
-400 NEXT
-410 RETURN
+300 REM == Box-Muller Transform ==
+310 U1 = RND(1)
+320 U2 = RND(1)
+330 R = SQR(-2 * LOG(U1))
+340 TH = 6.28318531 * U2: REM 2 * pi * U2
+350 Z0 = R * COS(TH)
+360 Z1 = R * SIN(TH)
+370 RETURN
+380 REM == Irwin-Hall Distribution ==
+390 Z0 = -6:Z1 = -6
+400 FOR Z = 1 TO 12
+410   Z0 = Z0 + RND(1)
+420   Z1 = Z1 + RND(1)
+430 NEXT
+440 RETURN
 
-420 REM  == wait for keystroke ==
-430 PRINT "TYPE ANY KEY TO CONTINUE..."
-440 POKE 49168,0 : REM clear buffer
-450 IF PEEK(49152) < 128 GOTO 450
-460 POKE 49168,0
-470 PRINT "KEY PRESSED, CONTINUING..."
-480 RETURN
+450 REM  == wait for keystroke ==
+460 PRINT "TYPE ANY KEY TO CONTINUE..."
+470 POKE 49168,0 : REM clear buffer
+480 IF PEEK(49152) < 128 GOTO 480
+490 POKE 49168,0
+500 PRINT "KEY PRESSED, CONTINUING..."
+510 RETURN
 ```
+
+The `REM` statements above have the AppleWin results but I also [trasferred the program over](https://mdcramer.github.io/apple-2-blog/adtpro) and ran on the actual hardware. The results are _very_ similar: 2m59s for Box-Muller and 3m2s for Irwin-Hall. The emulator is impressive.
 
 As a fun note, I tried changing the order of the two methods because I read that Applesoft BASIC implements lines of code as a linked list, so it takes longer to run lines of code that are further down.
 
 ## What if I want more
 
-Since 8032 is a mere 160 bytes shy of `HGR`, I got to wondering if I could instead use HGR2 for graphics, which would give me another 8Kb of RAM for BASIC code, more than doubling the current amount of space. I spent _way_ too much time trying to figure this out, but it won't work if I insist on having 4 lines of text under the graphics, which comes standard with `HGR`. The reason is because, while there's a software switch to enabled "mixed mode" in `HGR2`, the 4 lines of text actually come from the _secondary_ page of text, which, unbelievably, starts at $0800, which is where BASIC code begins. There are also software switches to move the starting address of a BASIC program, which can be pushed to $0C00, however, BASIC `PRINT` statements will _still_ write to the primary text page. To work around this you can write text characters, using `POKE`, directly to the secondary page of text memory, but this starts to become way more hassle than it's worth.
+Since 8032 is a mere 160 bytes shy of `HGR`, I got to wondering if I could instead use HGR2 for graphics, which would give me another 8Kb of RAM for BASIC code, more than doubling the current amount of space. I spent _way_ too much time trying to figure this out, but it won't work if I insist on having 4 lines of text under the graphics, which comes standard with `HGR`. The reason is because, while there's a software switch to enabled "mixed mode" in `HGR2`, the 4 lines of text actually come from the _secondary_ page of text, which, unbelievably, starts at `$0800`, which is where BASIC code begins. There are also software switches to move the starting address of a BASIC program, which can be pushed to $0C00, however, BASIC `PRINT` statements will _still_ write to the primary text page. To work around this you can write text characters, using `POKE`, directly to the secondary page of text memory, but this starts to become way more hassle than it's worth.
 
 [![HGR2 in Applesoft BASIC Programming Reference Manual](/assets/images/apple2/hgr2-reference.jpg "HGR2 in Applesoft BASIC Programming Reference Manual")](/assets/images/apple2/hgr2-reference.jpg "HGR2 in Applesoft BASIC Programming Reference Manual")
 
