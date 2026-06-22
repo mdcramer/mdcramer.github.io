@@ -6,6 +6,7 @@ tags:
   - synthesizing data
   - refactoring
 date: 2025-07-13
+last_modified_at: 2026-06-20
 ---
 
 Well, that didn't take too long. When I was developing [Mortal Wayfare](https://mortalwayfare.com/){:target="_blank"}, I recall frequently passing hours just looking at the code, trying to figure out how to better represent what I was trying to accomplish while improving the organization. (Should this method go in a different class? Is there a better name for this variable? Should I break this code out into a function?...) Some days I would do nothing but this. Having never been a professional software developer, I'm not sure to what extent this is normal, but I found the process to be very helpful.
@@ -165,7 +166,7 @@ The final chunk of code is interesting. After sharing my [Box-Muller](/apple-2-b
 1620   GOSUB 1400
 1630 NEXT
 ```
-I gave it a go and ran a comparison by generating 500 pairs of random numbers with each. This took 63s with Box-Muller and 90s with Irwin-Hall, so I will stick with the former. That being said, this was a nifty idea.
+I gave it a go and ran a comparison by generating 500 pairs of random numbers with each. This took 63s with Box-Muller and 90s with Irwin-Hall, so I will stick with the former. That being said, this was a nifty idea. (Update: I'm not sure what happened here but a [more recent analysis](/apple-2-blog/memory/#box-muller-vs-irwin-hall-redux) shows these two routines executing at almost the same speed.)
 
 ## An updated final plot
 

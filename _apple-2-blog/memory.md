@@ -2,10 +2,11 @@
 title: "Remembering memory"
 excerpt: "Squeezing everything in 64Kb is not easy."
 tags:
-  - memory
+  - memory map
   - RAM
+  - garbage collection
 date: 2026-06-15
-last_modified_at: 2026-06-16
+last_modified_at: 2026-06-20
 ---
 
 In high school I recall wondering how anyone would possibly be able to fully utilize 64Kb of RAM.
@@ -18,7 +19,7 @@ Fun. Unlike the [RAM issues](/apple-2-blog/revive/) I had before refurbishing th
 
 ## Memory map
 
-Here's a "RAM Organization and Usage" map that I pulled out of the <span class="no-break">Apple ]\[</span>  Reference Manual. The <span class="no-break">Apple ]\[+</span> came with 48Kb of RAM (`$0000-$BFFF`) on the motherboard but I have the memory expansion card, also called a language card, with an extra 16Kb (`$C000-$FFFF`). Using the extra memory was complicated as the 16Kb were squeezed into a 12k addres space (`$D000-$FFFF`) by using bank switching. (I explored storing data on the language card, which would be relatively easy for integers but a nightmare for floats, but it hasn't come to that yet.)
+Here's a "RAM Organization and Usage" map that I pulled out of the <span class="no-break">Apple ]\[</span> Reference Manual. The <span class="no-break">Apple ]\[+</span> came with 48Kb of RAM (`$0000-$BFFF`) on the motherboard but I have the memory expansion card, also called a language card, with an extra 16Kb (`$C000-$FFFF`). Using the extra memory was complicated as the 16Kb were squeezed into a 12k addres space (`$D000-$FFFF`) by using bank switching. (I explored storing data on the language card, which would be relatively easy for integers but a nightmare for floats, but it hasn't come to that yet.)
 
 | Page | Hex | Usage |
 |:----:|:---:|-------|
@@ -26,12 +27,12 @@ Here's a "RAM Organization and Usage" map that I pulled out of the <span class="
 | 1 | $01 | System stack |
 | 2 | $02 | GETLN input buffer |
 | 3 | $03 | Monitor vector locations |
-| 4-7 | $04-$07 | Text and lo-res graphics (primary page) |
-| 8-11 | $08-$0B | Text and lo-res graphics (secondary page) |
-| 12-31 | $0C-$1F | Free RAM |
-| 32-63 | $20-$3F | Hi-res graphics (`HGR`, primary page) |
-| 64-95 | $40-$5F | Hi-res graphics (`HGR2`, secondary page) |
-| 96-191 | $60-$BF | Free RAM |
+| 4-7 | $04-$07 | **1Kb**: Text and lo-res graphics (primary page) |
+| 8-11 | $08-$0B | **1Kb**: Text and lo-res graphics (secondary page) |
+| 12-31 | $0C-$1F | **5Kb**: Free RAM |
+| 32-63 | $20-$3F | **8Kb**: Hi-res graphics (`HGR`, primary page) |
+| 64-95 | $40-$5F | **8Kb**: Hi-res graphics (`HGR2`, secondary page) |
+| 96-191 | $60-$BF | **24Kb**: Free RAM |
 | 192-199 | $C0-$C7 | I/O |
 | 200-207 | $C8-$CF | I/O ROM |
 | 208-255 | $D0-$FF | ROM or 16Kb language card |
@@ -86,13 +87,13 @@ Now that I've got K-means working reliably with a decent number of samples in ea
 2600 RETURN
 ```
 
-More on the analysis later, but when I first put together this code, I would get errors after the first run. Turns out the last few lines of code were being erased. Was my BASIC code running into `HGR`? A quick Gemini prompt gave me `PRINT PEEK(175) + 256 * PEEK(176)` as the pointer to track the end of the BASIC program. `HGR` starts at `$2000` (8192) and the pointer was giving me something over 8200.
+More on the analysis later, but when I first put together this code, I would get errors after the first run. Turns out the last few lines of code were being erased. Was my code running into `HGR`? A quick Gemini prompt gave me `PRINT PEEK(175) + 256 * PEEK(176)` as the pointer to track the end of the BASIC program. `HGR` starts at `$2000` (8192) and the pointer was giving me something over 8200.
 
-So I cut code. I didn't want to remove all of the `REM` statements, or even most of them, but I went through and trimmed them down. Additionally, the Irwin-Hall Distribution was deemed [significantly slower](/apple-2-blog/refactoring#testing-irwin-hall-as-an-alternative-to-box-muller) than the Box-Muller transform, I decided to remove that code altogether. The final result was and end address of 8032, well under `HGR`.
+So I cut. I didn't want to remove all of the `REM` statements, or even most of them, but I went through and trimmed them down. Additionally, since the Irwin-Hall Distribution was previously deemed [significantly slower](/apple-2-blog/refactoring/#testing-irwin-hall-as-an-alternative-to-box-muller) than the Box-Muller transform, I decided to remove that code altogether. The final result was and end address of 8032, well under `HGR`.
 
 ## Box-Muller vs Irwin-Hall redux
 
-In [Visual Studio Code](/apple-2-blog/adtpro/#visual-studio-code-for-the-win) I was able to quickly spin up a separate program to compare the speeds. A quick test on AppleWin showed their speeds to be almost identical. That being said, I'm sticking with Box-Muller because of its superior mathematical properties. (It generates exact, independent standard normal samples, whereas Irwin-Hall relies on the [Central Limit Theorem](https://en.wikipedia.org/wiki/Central_limit_theorem){:target="_blank"} to [approximate](https://stats.stackexchange.com/a/620059){:target="_blank"} a normal distribution. You could get away with generating fewer than 12 random normal variables in order to improve speed but performance at the tails will suffer.)
+In [Visual Studio Code](/apple-2-blog/adtpro/#visual-studio-code-for-the-win) I was able to quickly spin up a separate program to compare the speeds. Unlike what I saw previously, a quick test on AppleWin showed their speeds to be almost identical. That being said, I'm sticking with Box-Muller because of its superior mathematical properties. (It generates exact, independent standard normal samples, whereas Irwin-Hall relies on the [Central Limit Theorem](https://en.wikipedia.org/wiki/Central_limit_theorem){:target="_blank"} to [approximate](https://stats.stackexchange.com/a/620059){:target="_blank"} a normal distribution. You could get away with generating fewer than 12 random normal variables in order to improve speed but performance at the tails will suffer.)
 
 ```bbcbasic
 10 REM == Random Number Generation Speed Test ==
@@ -153,13 +154,19 @@ In [Visual Studio Code](/apple-2-blog/adtpro/#visual-studio-code-for-the-win) I 
 510 RETURN
 ```
 
-The `REM` statements above have the AppleWin results but I also [trasferred the program over](https://mdcramer.github.io/apple-2-blog/adtpro) and ran on the actual hardware. The results are _very_ similar: 2m59s for Box-Muller and 3m2s for Irwin-Hall. The emulator is impressive.
+The `REM` statements above have the AppleWin results but I also [trasferred the program](https://mdcramer.github.io/apple-2-blog/adtpro) and ran on the actual hardware. The results were _very_ similar: 2m59s for Box-Muller and 3m2s for Irwin-Hall. The emulator is impressive.
 
 As a fun note, I tried changing the order of the two methods because I read that Applesoft BASIC implements lines of code as a linked list, so it takes longer to run lines of code that are further down.
 
-## What if I want more
+## TIL the Apple ][+ has garbage collection
 
-Since 8032 is a mere 160 bytes shy of `HGR`, I got to wondering if I could instead use HGR2 for graphics, which would give me another 8Kb of RAM for BASIC code, more than doubling the current amount of space. I spent _way_ too much time trying to figure this out, but it won't work if I insist on having 4 lines of text under the graphics, which comes standard with `HGR`. The reason is because, while there's a software switch to enabled "mixed mode" in `HGR2`, the 4 lines of text actually come from the _secondary_ page of text, which, unbelievably, starts at `$0800`, which is where BASIC code begins. There are also software switches to move the starting address of a BASIC program, which can be pushed to $0C00, however, BASIC `PRINT` statements will _still_ write to the primary text page. To work around this you can write text characters, using `POKE`, directly to the secondary page of text memory, but this starts to become way more hassle than it's worth.
+While thumbing through the Applesoft BASIC Programming Reference Manual, as one is wont to do, I stumbled across `FRE(expr)`. Since the arrays grow up in memory and the strings grow down, as noted above, this command will return the amount of memory between the two, essentially telling you how much free RAM is left. As a side effect, since changing the contents of a string does not remove the old characters (it just adds the new characters to RAM and moves the pointer) it will force Appplesoft to "house clean," freeing up additional space. Fun fact: according to the manual, `expr` ony exists to hold the parenthesis apart, so just plugging in a `0` is standard.
+
+Since I'm not really using strings, garbage collection isn't important, but I might add `FRE(0)` to the code just to see what's happening. While adding the `PRINT PEEK(175) + 256 * PEEK(176)` trick to find the end of the program will necessitate making the program longer (by 54 bytes - I counted), I might do that, too, just for fun.
+
+## But I still want more
+
+Since 8032 is a mere 160 bytes shy of `HGR`, I got to wondering if I could instead use `HGR2` for graphics, which would give me another 8Kb of RAM for BASIC code, more than doubling the current amount of space. I spent _way_ too much time trying to figure this out, but it basically won't work if I insist on having 4 lines of text under the graphics, which comes standard with `HGR`. The reason is, while there's a software switch to enabled "mixed mode" in `HGR2`, the 4 lines of text will actually come from the _secondary_ page of text, which, unhelpfully, starts at `$0800`, which is where BASIC code begins. There are also software switches to move the starting address of a BASIC program, which can be pushed to $0C00, however, BASIC `PRINT` statements will _still_ write to the primary text page. To work around this you can write text characters, using `POKE`, directly to the secondary page of text memory, but this starts to become way more hassle than it's worth.
 
 [![HGR2 in Applesoft BASIC Programming Reference Manual](/assets/images/apple2/hgr2-reference.jpg "HGR2 in Applesoft BASIC Programming Reference Manual")](/assets/images/apple2/hgr2-reference.jpg "HGR2 in Applesoft BASIC Programming Reference Manual")
 
