@@ -1,6 +1,6 @@
 ---
 title: "Splitsville"
-excerpt: "Conserving RAM by splitting BASIC programs and chaining them together."
+excerpt: "Making the most out of 6Kb of RAM by splitting BASIC programs and chaining them together."
 tags:
   - memory
   - RAM
@@ -14,7 +14,7 @@ At the end of the [last post](/apple-2-blog/memory#what-if-i-want-more), while l
 
 ## Parting is not always such sweet sorrow
 
-To spoil the suspence, I'm putting this at the top. Here's is a special nighttime edition of my code running multiple k-means, with the data generation broken into a separate program, on the <span class="no-break">Apple ]\[</span> hardware.
+To spoil the suspence, I'm putting this at the top. Here's is a special nighttime edition of my code running multiple k-means, with the data generation broken into a separate program, on the <span class="no-break">Apple ]\[+</span> hardware.
 
 {% include video id="VN-NouXrqgg" provider="youtube" %}
 
@@ -25,7 +25,7 @@ To spoil the suspence, I'm putting this at the top. Here's is a special nighttim
 
 ## Chaining
 
-The idea was relatively simple. Figure out how to break up the program into independent parts, make each one a separate program and then have them call each other so that only one of them is in memory at any given time. Ezpz. The implementation, however, gets complicated, especially when you consider that all variables are lost when loading a new program (although `HGR` memory persists, which could be handy, as well as any data `POKE`ed into RAM, including the expansion memory card) and each new program will `RUN` from the beginning. As such, this takes planning, especially if you want to run a second program from inside a loop. All the data that needs to be saved or transferred must either be written to floppy or `POKE`ed somewhere safe.
+The idea is relatively simple. Figure out how to break up the program into independent parts, make each one a separate program and then have them call each other so that only one of them is in memory at any given time. Ezpz. The implementation, however, gets complicated, especially when you consider that all variables are lost when loading a new program (although `HGR` memory persists, which could be handy, as well as any data `POKE`ed into RAM, including the expansion memory card) and each new program will `RUN` from the beginning. As such, this takes planning, especially if you want to run a second program from inside a loop. All the data that needs to be saved or transferred must either be written to floppy or `POKE`ed somewhere safe.
 
 This level of code manipulation would have been a nightmare without Visual Studio Code. Using it, however, made things quite easy. I decided I'd start by pulling out all the code that synthesizes data points into a separate `generate` program. After moving over all the hyperparameters as well as the drawing and generating routings, I added a simple routine to save the data to floppy.
 
@@ -82,7 +82,7 @@ In the remaing code, which I renamed from `ml` to `k-means`, I now needed a way 
 
 It's worth noting that I previously wrote a post about how I was (proudly) [not using generative AI or an emulator](/apple-2-blog/emulator). The idea was that I wanted to enjoy writing the code myself and learn from the experience. With the currently Visual Studio Code [setup](/apple-2-blog/adtpro/#visual-studio-code-for-the-win), however, both have become unavoidable.
 
-Not only does it take ~5min to transfer a floppy image from my laptop to the <span class="no-break">Apple ]\[</span>, I actually need an emulator (AppleWin) to create the image. Naturally, only running on the hardware would be a missive impediment so I have taken to running updates on the emulator and then transferring to the hardware once everything is looking good.
+Not only does it take ~5min to transfer a floppy image from my laptop to the <span class="no-break">Apple ]\[+</span>, I actually need an emulator (AppleWin) to create the image. Naturally, only running on the hardware would be a missive impediment so I have taken to running updates on the emulator and then transferring to the hardware once everything is looking good.
 
 While there might be a way to turn off the generative AI in Visual Studio Code, it's too good to ignore. Below are three examples of the IDE prediciting what I want to type next. While they're also crazy, I found the second one to be particularly impressive. As I'm typing `FRE(0)`, Visual Studio Code anticipats that I want to finish that line of code with `; " BYTES FREE"`. For it to predict this, it would have had to know, without almost no latency, the functionality of `FRE(0)`.
 
@@ -105,7 +105,7 @@ Of course, this doesn't change the fact that apparently something else was causi
 1. **Empty clusters** - k-means moves each centroid to the average of the points assigned to it. Trouble is, while unlikely, due to randomness, on a given pass a cluster can end up with no points at all. When this happens the count is zero and `KM(I,0) = KM(I,0) / KM(I,2)` will throw a `divide by zero` error. The fix was to just park empty cluster centroids.
 2. **Log(0)** - I use the Box-Muller transform to generate random normal numbers. This involves taking the natural log of a uniform random number. Applesoft's `RND(1)` returns a value in \[0, 1), which means `0` is a possible. In the very rare event this happens, `LOG(0)` will throw an `illegal quanitity` error. The fix is simply to draw `1 - RND(1)` instead, which lives in (0, 1] and so never returns `0`.
 
-## optimizations
+## Optimizations
 
 Before wrapping up this post, I want to point out two optimizations. The first was suggested by Claude. When drawing the decision boundary, I was checking for a vertical line to avoid a `divide by zero` error. Turns out, if I just set the slope to a very large number (which I was already doing) and then changed `P%(2,1)` to `P(2,1)` so that it's values wouldn't be capped at ±32,767, I could eliminate all of this dead code:
 
@@ -120,8 +120,15 @@ Before wrapping up this post, I want to point out two optimizations. The first w
 
 Since I'm now a bit obsessed with saving code space, this was a nice win.
 
-On the theme of saving space for odd, the next idea came from your truly. My range checking statements were proliferating and each of them was looking long. `IF X0% < 1 OR X0% > 270 THEN RETURN` and `IF X1% < 1 OR X1% > 150 THEN RETURN` check that a single point is on the screen prior to `HPLOT` in order to avoid any `illegal quanitity` error. For a line connecting two centroids, I would need 4 checks like that, which will take up a lot of space.
+On the theme of saving space for odd, the next idea came from yours truly. My range checking statements were proliferating and each of them was looking long. `IF X0% < 1 OR X0% > 270 THEN RETURN` and `IF X1% < 1 OR X1% > 150 THEN RETURN` check that a single point is on the screen prior to `HPLOT` in order to avoid any `illegal quanitity` error. For a line connecting two centroids, I would need 4 checks like that, which will take up a lot of space.
 
-I don't recall ever using `DEF FN` in high school, but I came across it while flipping through the Applesoft BASIC Programming Reference Manual, for jollies, and decided to create `DEF FN H(Z) = (Z >= 0) * (Z < 280)` and `DEF FN V(Z) = (Z >= 0) * (Z < 160)`. These two functions can now determine if a point is on the screen with a simple `IF FN H(X0%) * FN V(X1%) THEN ...`. I now use these throughout. Assuring that an entire line is on the screen, I simply use `IF FN H(XA) * FN H(XB) * FN V(YA) * FN V(YB) THEN HPLOT XA, YA TO XB, YB`. Finally, checking that a 3x3 pixel object, centered around (`X0%`,`X1%`), fits on the screen, I use `FN H(X0% - 1) * FN H(X0% + 1) * FN V(X1% - 1) * FN V(X1% + 1)`.
+I don't recall ever using `DEF FN` in high school, but I came across it while flipping through the Applesoft BASIC Programming Reference Manual, for jollies, and decided to create:
 
-All of this extra space for code has afforded me some space to start analysizing how k-means behaves. More on that to come...
+```bbcbasic
+DEF FN H(Z) = (Z >= 0) * (Z < 280): REM X in range
+DEF FN V(Z) = (Z >= 0) * (Z < 160): REM Y in range
+```
+
+These two functions can now determine if a point is on the screen with a simple `IF FN H(X0%) * FN V(X1%) THEN ...`. I now use these throughout. Assuring that an entire line is on the screen, I simply use `IF FN H(XA) * FN H(XB) * FN V(YA) * FN V(YB) THEN HPLOT XA, YA TO XB, YB`. Finally, checking that a 3x3 pixel object, centered around (`X0%`,`X1%`), fits on the screen, I use `FN H(X0% - 1) * FN H(X0% + 1) * FN V(X1% - 1) * FN V(X1% + 1)`.
+
+All of this extra RAM for code has afforded me some space to start analysizing how k-means behaves. More to come...
