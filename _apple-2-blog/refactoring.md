@@ -15,9 +15,9 @@ I suppose there's a balance between planning out what you're going to do and jus
 
 Quick note on line numbers: refactoring BASIC almost _always_ consists of changing line numbers. As such, this code is not going to match up with previous posts. Hopefully that won't be confusing.
 
-## Refactoring the hyperparameters
+## Refactoring the hyper-parameters
 
-To make that happen, I start by moving all of my generator hyperparameters into a single array, `GE(..,..)`, where the first axis is the class. The second axis contains, respectively, \\(u_{x_0}, u_{x_1}, \sigma_{x_0}, \sigma_{x_1}, \rho\\) and \\(\sqrt{1 - \rho^2}\\). (See [Synthesizing data - Box-Muller](/apple-2-blog/synthesizing-data#box-muller-to-the-rescue) for details.) The last element is purely for performance since this quantity will be needed frequently. (Upon further refection, I could have used \\(\sqrt{1 - \rho^2} \sigma_{x_1}\\) but this is a small optimization for later.)
+To make that happen, I start by moving all of my generator hyper-parameters into a single array, `GE(..,..)`, where the first axis is the class. The second axis contains, respectively, \\(u_{x_0}, u_{x_1}, \sigma_{x_0}, \sigma_{x_1}, \rho\\) and \\(\sqrt{1 - \rho^2}\\). (See [Synthesizing data - Box-Muller](/apple-2-blog/synthesizing-data#box-muller-to-the-rescue) for details.) The last element is purely for performance since this quantity will be needed frequently. (Upon further refection, I could have used \\(\sqrt{1 - \rho^2} \sigma_{x_1}\\) but this is a small optimization for later.)
 
 ```bbcbasic
 100 REM == HYPERPARAMETERS ==
@@ -102,7 +102,7 @@ Since I'd like for my data to be randomly sampled, rather than scrambled after t
 700   ON K + 1 GOSUB 1200,1300: REM PLOT SAMPLE
 710 NEXT
 ```
-`RK%(..)` holds the remaining number of samples to be generated for each class. Lines 490 to 550 then produce a random number `P%` which is from 0 to the number of remaining samples to generate and then figures out which class this should be based on the remaining number of samples to be generated for each. The beauty of this is that the probability of generating a sample in each class will be a function of how many remaining samples need to be generated. It took a while to debug, but in the end this produces exactly the number of samples in each class as specified in the hyperparameters.
+`RK%(..)` holds the remaining number of samples to be generated for each class. Lines 490 to 550 then produce a random number `P%` which is from 0 to the number of remaining samples to generate and then figures out which class this should be based on the remaining number of samples to be generated for each. The beauty of this is that the probability of generating a sample in each class will be a function of how many remaining samples need to be generated. It took a while to debug, but in the end this produces exactly the number of samples in each class as specified in the hyper-parameters.
 
 The code from lines 580 to 690 is the same as previously, however, the class-specific variables have been replaced by `GE(..,..)`, as mentioned above. Also, I changed `X%` and `Y%` to `XO%` and `X1%` to avoid confusion and be more consistent with the \\(Y = \theta^T X\\) literature.
 
@@ -110,7 +110,7 @@ Line 700 is nifty. I don't recall using `ON..GOSUB` in high school but it enable
 
 ### Counting the samples
 
-For debugging purposes, I added some code to count the number of samples in each class to make sure it matched the hyperparameters. In the end, I decided to leave it. The loop is actually a bit slow but it's only run once.
+For debugging purposes, I added some code to count the number of samples in each class to make sure it matched the hyper-parameters. In the end, I decided to leave it. The loop is actually a bit slow but it's only run once.
 
 ```bbcbasic
 720 REM == COUNT SAMPLES OF EACH CLASS TO VERIFY RESULT ==

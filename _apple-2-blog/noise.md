@@ -9,7 +9,7 @@ date: 2026-07-03
 last_modified_at: 2026-07-03
 ---
 
-Taking a break from exploring k-means on my <span class="no-break">Apple ]\[+</span>, I decided to takle the problem of significantly greater import: the speaker is really loud. I don't recall this ever bothering me in high school, but it's pretty loud and there is no way to non-programmatically control the volume.
+Taking a break from exploring k-means on my <span class="no-break">Apple ]\[+</span>, I decided to tackle a problem of significantly greater import: the speaker is really loud. I don't recall this ever bothering me in high school but it's pretty loud and there is no way to non-programmatically control it. I'd like to have a volume knob so I can play [Ultima 1](https://mortalwayfare.com/in-the-beginning-there-was-basic/){:target="_blank"} late at night without waking the dead.
 
 ## It goes to 11
 
@@ -17,7 +17,7 @@ There's not a lot of how-to retro hardware upgrade videos on the internet but I 
 
 {% include video id="rO5eXxVxK_4" provider="youtube" %}
 
-While it's a little difficult to follow (he offers a schmetic but it's hard to tell which wires are going where), he links to the necessary parts. In addition to a 1kΩ audio log potentiometer, I got a knob that [goes to 11](https://youtu.be/uMSV4OteqBE?si=e2hANo3D6ktuzAxs&t=78){:target="_blank"} and an STL file to 3D print a small mount for the potentiometer and knob that slides into one of the air vents.
+While it's a little difficult to follow (he offers a schematic but it's hard to tell which wires are going where), he links to the necessary parts. In addition to a 1kΩ audio log potentiometer, I got a knob that [goes to 11](https://youtu.be/uMSV4OteqBE?si=e2hANo3D6ktuzAxs&t=78){:target="_blank"} and an STL file to 3D print a small mount for the potentiometer and knob that slides into one of the air vents.
 
 <div class="image-grid" markdown="1">
   [![Parts and equipment to add a volume knob](/assets/images/apple2/parts-for-volume-know.jpg)](/assets/images/apple2/parts-for-volume-know.jpg "Parts and equipment to add a volume knob")
@@ -72,7 +72,7 @@ From there it was easy. I chose the colors of the jumper cables to line up with 
 
 ## The Verdict
 
-It works!
+It works! (Turn up the volumn on your computer if you watch the video below.)
 
 {% include video id="zObSVatIQxs" provider="youtube" %}
 

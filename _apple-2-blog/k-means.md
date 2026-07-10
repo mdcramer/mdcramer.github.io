@@ -80,11 +80,11 @@ At the very top of the program I decided to organize everything into subroutines
 
 The "wait for key" subroutine is the Applesoft BASIC method for simply waiting for any keystroke before continuing. (`PEEK` and `POKE` are commands for directly accessing addresses in memory. I had those numbers memorized in high school but, naturally, I had to look them up.) I thought it'd be nice to add this pause after generating the data but I might take it out later.
 
-Lastly, at the end of the "hyperparameters" section I declare a convenience array, `P%(2,1)` to keep track of 3 random points as well as a few arrays I'm going to use in the k-means algorithm. The reason I do this here is because in Applesoft BASIC you get an error if you declare an array that already exists. Should at some point I want to call the k-means algorithm multiple times, this won't be a problem.
+Lastly, at the end of the "hyper-parameters" section I declare a convenience array, `P%(2,1)` to keep track of 3 random points as well as a few arrays I'm going to use in the k-means algorithm. The reason I do this here is because in Applesoft BASIC you get an error if you declare an array that already exists. Should at some point I want to call the k-means algorithm multiple times, this won't be a problem.
 
 ### Initialize
 
-Getting started, the first thing to do is initialize the algorithm by generating \\(k\\) cluster centroids. (\\(k\\) is a hyperparameter that specifies the number of clusters to be "found." I set it previously with `KN = 2`.)
+Getting started, the first thing to do is initialize the algorithm by generating \\(k\\) cluster centroids. (\\(k\\) is a hyper-parameter that specifies the number of clusters to be "found." I set it previously with `KN = 2`.)
 
 ```bbcbasic
 2000 REM  == K-MEANS ==
@@ -223,7 +223,7 @@ This code is a slog and it's not really critical to understanding ML but I thoug
 3290 RETURN
 ```
 
-Without delving too far into the details, this routine relies heavily on the convenience array, `P%(2,1)`, that I declared during the "hyperparameters" routine. I start by computing the slope of the perpendicular segment connecting two centroids. I then find the midpoint of that segment. (By the way, this routine also does not account for all combinations of centroids, but it works when \\(k=2\\).) I accommodate for when the slope is vertical and use `P%(0,0)` and `P%(0,1)` to store the midpoint between the two centroids and `M` for the slope.
+Without delving too far into the details, this routine relies heavily on the convenience array, `P%(2,1)`, that I declared during the "hyper-parameters" routine. I start by computing the slope of the perpendicular segment connecting two centroids. I then find the midpoint of that segment. (By the way, this routine also does not account for all combinations of centroids, but it works when \\(k=2\\).) I accommodate for when the slope is vertical and use `P%(0,0)` and `P%(0,1)` to store the midpoint between the two centroids and `M` for the slope.
 
 I then iterate through the 4 sides of the 'box' on the screen, using the corners `(10,10)` and `(269,149)` so that the decision boundary isn't drawn all the way to the edges of the screen. I thought that would look prettier this way. I next determine if the decision boundary intersects, respectively, the left, right, top and bottom edges of the box. I use `NX` to keep track of the number of sides of the box intersected by the decision boundary and `P%(NX,0)` and `P%(NX,1)` to keep track of those intersections. If `NX = 3`, which means there are two intersections, I draw the line because it's inside the box.
 

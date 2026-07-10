@@ -19,7 +19,7 @@ Fun. Unlike the [RAM issues](/apple-2-blog/revive/) I had before refurbishing th
 
 ## Memory map
 
-Here's a "RAM Organization and Usage" map that I pulled out of the <span class="no-break">Apple ]\[</span> Reference Manual. The <span class="no-break">Apple ]\[+</span> came with 48Kb of RAM (`$0000-$BFFF`) on the motherboard but I have the memory expansion card, also called a language card, with an extra 16Kb (`$C000-$FFFF`). Using the extra memory was complicated as the 16Kb were squeezed into a 12k addres space (`$D000-$FFFF`) by using bank switching. (I explored storing data on the language card, which would be relatively easy for integers but a nightmare for floats, but it hasn't come to that yet.)
+Here's a "RAM Organization and Usage" map that I pulled out of the <span class="no-break">Apple ]\[</span> Reference Manual. The <span class="no-break">Apple ]\[+</span> came with 48Kb of RAM (`$0000-$BFFF`) on the motherboard but I have the memory expansion card, also called a language card, with an extra 16Kb (`$C000-$FFFF`). Using the extra memory was complicated as the 16Kb were squeezed into a 12k address space (`$D000-$FFFF`) by using bank switching. (I explored storing data on the language card, which would be relatively easy for integers but a nightmare for floats, but it hasn't come to that yet.)
 
 | Page | Hex | Usage |
 |:----:|:---:|-------|
@@ -37,9 +37,9 @@ Here's a "RAM Organization and Usage" map that I pulled out of the <span class="
 | 200-207 | $C8-$CF | I/O ROM |
 | 208-255 | $D0-$FF | ROM or 16Kb language card |
 
-In "normal" operation, a BASIC program would reside starting at `$0800`, right after the primary text page, and on top of the secondary text page. From the end of the BASIC program, variables and arrays would grow up. Strings, for some reasons, would reside at `$BFFF` and grow down. If you don't use graphics, this gives you almost 46Kb of space. If you want to use the primary page of hi-res graphics, known as `HGR`, then you get only a paltry 6Kb of space for your program and variables. (This is surely an artifact of a 1977 design decision to enble `HGR` on machines that only shipped with 16Kb, making `$3FFF` the highest address in RAM.)
+In "normal" operation, a BASIC program would reside starting at `$0800`, right after the primary text page, and on top of the secondary text page. From the end of the BASIC program, variables and arrays would grow up. Strings, for some reasons, would reside at `$BFFF` and grow down. If you don't use graphics, this gives you almost 46Kb of space. If you want to use the primary page of hi-res graphics, known as `HGR`, then you get only a paltry 6Kb of space for your program and variables. (This is surely an artifact of a 1977 design decision to enable `HGR` on machines that only shipped with 16Kb, making `$3FFF` the highest address in RAM.)
 
-What you're seeing in the image above are my data arrays growing into `HGR`. When the arrays are declared, everything is zero, so there's no problem. As soon as I start writing values to the array, however, those show up on the screen. Similary, plotting graphics on the screen has the effect of writing values into the arrays. Obviously, this is a problem.
+What you're seeing in the image above are my data arrays growing into `HGR`. When the arrays are declared, everything is zero, so there's no problem. As soon as I start writing values to the array, however, those show up on the screen. Similarly, plotting graphics on the screen has the effect of writing values into the arrays. Obviously, this is a problem.
 
 ## Moving things around
 
@@ -154,13 +154,13 @@ In [Visual Studio Code](/apple-2-blog/adtpro/#visual-studio-code-for-the-win) I 
 510 RETURN
 ```
 
-The `REM` statements above have the AppleWin results but I also [trasferred the program](https://mdcramer.github.io/apple-2-blog/adtpro) and ran on the actual hardware. The results were _very_ similar: 2m59s for Box-Muller and 3m2s for Irwin-Hall. The emulator is impressive.
+The `REM` statements above have the AppleWin results but I also [transferred the program](https://mdcramer.github.io/apple-2-blog/adtpro) and ran on the actual hardware. The results were _very_ similar: 2m59s for Box-Muller and 3m2s for Irwin-Hall. The emulator is impressive.
 
 As a fun note, I tried changing the order of the two methods because I read that Applesoft BASIC implements lines of code as a linked list, so it takes longer to run lines of code that are further down.
 
 ## TIL the Apple ][+ has garbage collection
 
-While thumbing through the Applesoft BASIC Programming Reference Manual, as one is wont to do, I stumbled across `FRE(expr)`. Since the arrays grow up in memory and the strings grow down, as noted above, this command will return the amount of memory between the two, essentially telling you how much free RAM is left. As a side effect, since changing the contents of a string does not remove the old characters (it just adds the new characters to RAM and moves the pointer) it will force Appplesoft to "house clean," freeing up additional space. Fun fact: according to the manual, `expr` ony exists to hold the parenthesis apart, so just plugging in a `0` is standard.
+While thumbing through the Applesoft BASIC Programming Reference Manual, as one is wont to do, I stumbled across `FRE(expr)`. Since the arrays grow up in memory and the strings grow down, as noted above, this command will return the amount of memory between the two, essentially telling you how much free RAM is left. As a side effect, since changing the contents of a string does not remove the old characters (it just adds the new characters to RAM and moves the pointer) it will force Applesoft to "house clean," freeing up additional space. Fun fact: according to the manual, `expr` ony exists to hold the parenthesis apart, so just plugging in a `0` is standard.
 
 Since I'm not really using strings, garbage collection isn't important, but I might add `FRE(0)` to the code just to see what's happening. While adding the `PRINT PEEK(175) + 256 * PEEK(176)` trick to find the end of the program will necessitate making the program longer (by 54 bytes - I counted), I might do that, too, just for fun.
 

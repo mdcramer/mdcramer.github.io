@@ -50,4 +50,4 @@ I tried taking a video of the entire program scrolling by but the quality was no
 
 ## No generative AI
 
-Or not much, at any rate. GenAI is amazing and Cursor is beyond fantastic, but, as my friend said, part of the fun is writing the code myself. I'll admit to getting assistance with [adpative quota sampling](/apple-2-blog/refactoring#generating-the-samples), which isn't particularly difficult. I've also asked about how some commands work (e.g. `RND()`) although I've been relying primarily on the original [reference manual](/apple-2-blog/synthesizing-data). The rest, however, is me.
+Or not much, at any rate. GenAI is amazing and Cursor is beyond fantastic, but, as my friend said, part of the fun is writing the code myself. I'll admit to getting assistance with [adaptive quota sampling](/apple-2-blog/refactoring#generating-the-samples), which isn't particularly difficult. I've also asked about how some commands work (e.g. `RND()`) although I've been relying primarily on the original [reference manual](/apple-2-blog/synthesizing-data). The rest, however, is me.
