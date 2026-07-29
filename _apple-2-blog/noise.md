@@ -72,7 +72,7 @@ From there it was easy. I chose the colors of the jumper cables to line up with 
 
 ## The Verdict
 
-It works! (Turn up the volumn on your computer if you watch the video below.)
+It works! (Turn up the volume on your computer if you watch the video below.)
 
 {% include video id="zObSVatIQxs" provider="youtube" %}
 

@@ -7,7 +7,7 @@ tags:
   - chaining
   - bugs
 date: 2026-06-21
-last_modified_at: 2026-06-21
+last_modified_at: 2026-07-10
 ---
 
 At the end of the [last post](/apple-2-blog/memory#what-if-i-want-more), while lamenting wanting more than 6Kb of space for an entire BASIC program, I suggested that I would look into chaining another day. Turns out, that was the next day.
@@ -103,7 +103,7 @@ Turns out, `ONERR` will branch on _any_ error and so if there is any bug in the 
 Of course, this doesn't change the fact that apparently something else was causing an error. I was already aware of one - when drawing the line between two centroids there's a random chance that one will be off the screen causing `HPLOT` to throw and `illegal quantity` error. I fixed this by adding a range check and just not plotting the line if this is the case. Since intermittent errors are painful to find, I asked Claude to do a deep code review for anything else and it found a couple doozies:
 
 1. **Empty clusters** - k-means moves each centroid to the average of the points assigned to it. Trouble is, while unlikely, due to randomness, on a given pass a cluster can end up with no points at all. When this happens the count is zero and `KM(I,0) = KM(I,0) / KM(I,2)` will throw a `divide by zero` error. The fix was to just park empty cluster centroids.
-2. **Log(0)** - I use the Box-Muller transform to generate random normal numbers. This involves taking the natural log of a uniform random number. Applesoft's `RND(1)` returns a value in \[0, 1), which means `0` is a possible. In the very rare event this happens, `LOG(0)` will throw an `illegal quantity` error. The fix is simply to draw `1 - RND(1)` instead, which lives in (0, 1] and so never returns `0`.
+2. **Log(0)** - I use the Box-Muller transform to generate random normal numbers. This involves taking the natural log of a uniform random number. Applesoft's `RND(1)` returns a value in \[0, 1), which means `0` is a possible. In the very rare event this happens, `LOG(0)` will throw an `illegal quantity` error. The fix is simply to draw `1 - RND(1)` instead, which lives in (0, 1] and so never returns `0`. (Update: While it's theoretically possible for `RND(1)` to return a value exactly equal to `0` it simply doesn't happen. I wrote a simple routine that created 10s of thousands of `RND(1)` values and never saw a zero. Regardless, this is a nice patch.)
 
 ## Optimizations
 
