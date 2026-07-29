@@ -20,7 +20,7 @@ _No es bueno_. These types of system crashes are typically indicative of hardwar
 
 ## Did `RND(1)` break something?
 
-My first thought was a recent test I ran to see how long it would take for `RND(1)` to return a value of exactly zero. My interest was related to the `log(0)` [vulnerability](/apple-2-blog/splitting/#squashing-dem-bugs) that I fixed previously. Does `RND(1)` ever return exactly zero, which would cause `log(RND(1))` to crash? I don't know but I ran it 10s of thousands of times and never got one.
+My first thought was a recent test I ran to see how long it would take for `RND(1)` to return a value of exactly zero. My interest was related to the `log(0)` [vulnerability](/apple-2-blog/splitting/#squashing-dem-bugs) that I fixed previously. Does `RND(1)` ever return exactly zero, which would cause `log(0)` to crash? I don't know but I ran it 10s of thousands of times and never got one.
 
 Regardless, could the strain from running `RND(1)` in a tight loop cause something to overheat and perhaps break? It's possible that this kind of sustained access pushed a chip's local temperature up a few degrees and exposed a marginal connection or borderline component that's been sitting right at the edge of failing for years. It might also be worth noting that Applesoft's `RND()` is fully deterministic from a cold boot, so the fact the system was crashing at different places ruled out a fixed logic bug or hard stuck bit.
 
@@ -45,9 +45,9 @@ While testing RAM is as simple as writing values and ensuring that you can read 
 Testing the CPU is even trickier because finding intermittent errors would require all kinds of stress testing. There's a GitHub repo with a [6502 functional test](https://github.com/Klaus2m5/6502_65C02_functional_tests){:target="_blank"} but there isn't an obvious way to download and run it, so I decided to just re-seat the chip. It's a small thing and was easy to do. I removed the Synertek SY6502 with date code 8119 (week 19 of 1981), wiped the pins and sockets with [DeoxIT](https://caig.com/what-is-deoxit-how-to-use-it/){:target="_blank"} for good measure, and then carefully put it back.
 
 <div class="image-grid" markdown="1">
-  [![6502 on the motherboard](/assets/images/apple2/6502-cpu.jpg)](/assets/images/apple2/6502-cpu.jpg "6502 on the motherboard")
-  [![6502 socket on the motherboard](/assets/images/apple2/6502-socket.jpg)](/assets/images/apple2/6502-socket.jpg "6502 socket on the motherboard")
-  [![Extracted 6502 processor](/assets/images/apple2/6502.jpg)](/assets/images/apple2/6502.jpg "Extracted 6502 processor")
+  [![6502 on the motherboard](/assets/images/apple2/6502-cpu.png)](/assets/images/apple2/6502-cpu.png "6502 on the motherboard")
+  [![6502 socket on the motherboard](/assets/images/apple2/6502-socket.png)](/assets/images/apple2/6502-socket.png "6502 socket on the motherboard")
+  [![Extracted 6502 processor](/assets/images/apple2/6502.png)](/assets/images/apple2/6502.png "Extracted 6502 processor")
 </div>
 
 None of this resolved the issue so I decided to start eliminating things.
