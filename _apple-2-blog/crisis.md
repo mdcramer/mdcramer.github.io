@@ -6,7 +6,7 @@ tags:
   - hardware
   - 80-column card
 date: 2026-07-29
-last_modified_at: 2026-07-29
+last_modified_at: 2026-08-01
 ---
 
 Feeling pretty happy with my new volume knob, I turned back to running ML on my <span class="no-break">Apple ]\[+</span>. Then... I started getting crashes to the system monitor.
@@ -61,3 +61,15 @@ To my surprise and delight, after closing the machine back up, the problem seems
 [![K-means running to the end without any crashing](/assets/images/apple2/clean-k-means-run.jpg "K-means running to the end without any crashing")](/assets/images/apple2/clean-k-means-run.jpg "K-means running to the end without any crashing")
 
 Crisis averted. Now, hopefully, I can get back to coding...
+
+## Update from Vintage Computer Festival
+
+Ugh.
+
+[![K-means crashing at the Vintage Computer Festival](/assets/images/apple2/vcf-crash.jpg "K-means crashing at the Vintage Computer Festival")](/assets/images/apple2/vcf-crash.jpg "K-means crashing at the Vintage Computer Festival")
+
+I guess it's not _solely_ the 80-column card. I have a booth at the [Vintage Computer Festival](https://vcfed.org/events/vintage-computer-festival-west/){:target="_blank"} (more on that later) and, for what it's worth, have been demonstrating the K-means algorithm for over 3 hours straight. When I popped the lid I could feel the heat coming off the chips and could smell the "old computer overheating" odor. While only slightly warm to the touch, apparently that's enough.
+
+[![Opening the case at the Vintage Computer Festival to cool off the machine](/assets/images/apple2/vcf-open-case.jpg "Opening the case at the Vintage Computer Festival to cool off the machine")](/assets/images/apple2/vcf-open-case.jpg "Opening the case at the Vintage Computer Festival to cool off the machine")
+
+The good news is that popping the lid to let the internals cool down did the trick... for now...
