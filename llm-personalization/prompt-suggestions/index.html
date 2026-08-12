@@ -1,0 +1,670 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.6.0 by Michael Rose
+  Copyright 2017 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin SEO -->
+
+
+
+<!-- old method which didn't work
+
+ -->
+
+
+
+
+<!-- DEBUG: collection_key=llm-personalization autopages= -->
+
+<!-- Assign page title -->
+
+
+
+
+<!-- Assign seo title -->
+
+
+
+
+
+
+<title>Prompt Suggestions - Hackin’ and Tinkerin’</title>
+
+
+
+
+<meta name="description" content="Some helpful ideas for testing the prototype without having to burn mental energy.">
+
+
+
+
+<meta name="author" content="Mark Cramer">
+
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="Hackin' and Tinkerin'">
+<meta property="og:title" content="Prompt Suggestions - Hackin’ and Tinkerin’">
+
+
+  <link rel="canonical" href="https://mdcramer.github.io/llm-personalization/prompt-suggestions/">
+  <meta property="og:url" content="https://mdcramer.github.io/llm-personalization/prompt-suggestions/">
+
+
+
+  <meta property="og:description" content="Some helpful ideas for testing the prototype without having to burn mental energy.">
+
+
+<!-- Twitter block -->
+
+
+<!-- Facebook block -->
+
+  
+
+  
+
+
+<!-- generic OG block -->
+
+  <meta property="og:image" content="https://mdcramer.github.io/assets/images/llm-personalization/llmpersonalizationheader.jpg">
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2026-05-07T00:00:00-07:00">
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://mdcramer.github.io",
+      "logo": "https://mdcramer.github.io/assets/images/notebook-header.jpg"
+    }
+  </script>
+
+
+
+
+
+
+
+
+
+<!-- end SEO -->
+
+
+<link href="https://mdcramer.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Hackin' and Tinkerin' Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://mdcramer.github.io/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+<!-- Suggestion from https://claude.ai/share/45526d65-a109-4f2d-84be-9e46a03990ae -->
+
+<!-- DEBUG: page.image =  -->
+<!-- DEBUG: site.og_image = /assets/images/notebook-header.jpg -->
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mdcramer.github.io/llm-personalization/prompt-suggestions/">
+<meta property="og:title" content="Prompt Suggestions">
+<meta property="og:description" content="Some helpful ideas for testing the prototype without having to burn mental energy.">
+<meta property="og:image" content="https://mdcramer.github.io/assets/images/notebook-header.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://mdcramer.github.io/llm-personalization/prompt-suggestions/">
+<meta property="twitter:title" content="Prompt Suggestions">
+<meta property="twitter:description" content="Some helpful ideas for testing the prototype without having to burn mental energy.">
+<meta property="twitter:image" content="https://mdcramer.github.io/assets/images/notebook-header.jpg">
+
+<!-- Favicon -->
+<!-- original code from RealFaviconGenerator.net
+<link rel="icon" type="image/png" href="/assets/images/favicon.ico/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/assets/images/favicon.ico/favicon.svg" />
+<link rel="shortcut icon" href="/assets/images/favicon.ico/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon.ico/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="Hackin’ and Tinkerin’" />
+<link rel="manifest" href="/assets/images/favicon.ico/site.webmanifest" /> -->
+<link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg" />
+<link rel="shortcut icon" href="/assets/images/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="Hackin’ and Tinkerin’" />
+<link rel="manifest" href="/assets/images/site.webmanifest" />
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav"><!-- DEBUG: url=/llm-personalization/prompt-suggestions/ signature= collection=llm-personalization site_title=LLM Personalization site_url=/llm-personalization/ -->
+		<a class="site-title" href="/llm-personalization/">LLM Personalization</a>
+        <ul class="visible-links">
+          
+            <li class="masthead__menu-item"><a href="/">Home</a></li>
+            
+            <li class="masthead__menu-item"><a href="/about/">About</a></li>
+            
+            <!-- dead code
+First try page.collection — works for individual post pages
+If not found, try page.permalink slug — works for autopage collection index pages
+ -->
+
+<!-- If repo_url is found in blogs.yml, use it — otherwise fall back to the original constructed URL -->
+
+
+
+
+<!-- create the link -->
+<li>
+  
+    <a href="https://github.com/mdcramer/llm-personalization" target="_blank"><i class="fa fa-fw fa-github" aria-hidden="true"></i>GitHub</a>
+  
+</li>
+        </ul>
+        <button type="button">
+          <span class="visually-hidden">Toggle Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+    <div itemscope itemtype="http://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="https://mdcramer.github.io/assets/images/profilepic-small.jpg" class="author__avatar" alt="Mark Cramer" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name" itemprop="name">Mark Cramer</h3>
+    
+      <p class="author__bio" itemprop="description">
+        ML Product Manager who enjoys hacking around with models and code in his free time, of which there is never, sadly, enough.
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Profile</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> <span itemprop="name">San Francisco</span>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.facebook.com/markdcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/mcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/mdcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.stackoverflow.com/users/852795/mark-cramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-stack-overflow" aria-hidden="true"></i> Stackoverflow
+          </a>
+        </li>
+      
+
+      
+        
+          <li>
+            <a href="https://youtube.com/c/MarkCramerD" itemprop="sameAs">
+              <i class="fa fa-fw fa-youtube-square" aria-hidden="true"></i> YouTube
+            </a>
+          </li>
+        
+      
+
+      
+
+      
+        <li>
+          <a href="https://scholar.google.com/citations?user=vlo46P8AAAAJ" itemprop="sameAs">
+            <img src="/assets/images/googlescholar.svg" alt="googlescholar" class="profile_icon"> Google Scholar
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+  
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Prompt Suggestions">
+    <meta itemprop="description" content="Some helpful ideas for testing the prototype without having to burn mental energy.">
+    <meta itemprop="datePublished" content="May 07, 2026">
+    <meta itemprop="dateModified" content="May 07, 2026">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">Prompt Suggestions
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <p>These prompts are adapted from <a href="https://prefeval.github.io/" target="_blank" rel="noopener">PrefEval</a>, a public LLM preference-following benchmark. In particular, they draw from the <a href="https://huggingface.co/datasets/siyanzhao/prefeval_implicit_choice" target="_blank" rel="noopener">PrefEval implicit-choice dataset</a>, which contains preference/query pairs designed to test whether a model can notice a user’s preference and apply it later. The original benchmark is usually scored as a multiple-choice task. For this prototype, the examples below have been rewritten as copy/paste chat prompts.</p>
+
+<p>Try one of the examples below:</p>
+
+<ol>
+  <li>Copy the setup prompt.</li>
+  <li>Send it to the prototype.</li>
+  <li>Click <strong>New Chat</strong>.</li>
+  <li>Copy the test prompt.</li>
+  <li>See whether the answer reflects the preference you gave earlier.</li>
+</ol>
+
+<h2 id="in-person-learning">In-Person Learning</h2>
+
+<p>Setup prompt:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I have a strong aversion to digital or online learning environments and prefer traditional, in-person classroom settings.
+</code></pre></div></div>
+
+<p>Test prompt:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>What are some good ways to learn a new language?
+</code></pre></div></div>
+
+<h2 id="narrative-learning">Narrative Learning</h2>
+
+<p>Setup prompt:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I find flashcards ineffective and prefer storytelling and narrative-based approaches for memorization.
+</code></pre></div></div>
+
+<p>Test prompt:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>How should I study historical dates and events for an exam?
+</code></pre></div></div>
+
+<h2 id="interactive-learning">Interactive Learning</h2>
+
+<p>Setup prompt:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I avoid using textbooks and prefer interactive learning experiences.
+</code></pre></div></div>
+
+<p>Test prompt:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>How can I learn more about the history of ancient civilizations?
+</code></pre></div></div>
+
+<h2 id="group-study">Group Study</h2>
+
+<p>Setup prompt:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I find it difficult to stay engaged in learning activities that do not involve peer-to-peer interaction and group work.
+</code></pre></div></div>
+
+<p>Test prompt:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>What are some effective ways to prepare for an upcoming exam?
+</code></pre></div></div>
+
+<h2 id="peanut-allergy">Peanut Allergy</h2>
+
+<p>Setup prompt:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I have a severe peanut allergy, so I must avoid any foods containing peanuts or peanut products.
+</code></pre></div></div>
+
+<p>Test prompt:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I am visiting Bangkok next month. What are some must-try local Thai dishes or restaurants you would recommend for me?
+</code></pre></div></div>
+
+<h2 id="mild-food">Mild Food</h2>
+
+<p>Setup prompt:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I strongly dislike eating spicy food and prefer mild, delicate flavors.
+</code></pre></div></div>
+
+<p>Test prompt:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>What are some local dishes I should try when visiting Mexico City?
+</code></pre></div></div>
+
+<h2 id="gluten-free-travel">Gluten-Free Travel</h2>
+
+<p>Setup prompt:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I have celiac disease, so I absolutely cannot consume any foods containing gluten.
+</code></pre></div></div>
+
+<p>Test prompt:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I am visiting Rome next month. What are some must-try restaurants or dishes you would recommend for me?
+</code></pre></div></div>
+
+<h2 id="no-chain-restaurants">No Chain Restaurants</h2>
+
+<p>Setup prompt:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I strongly dislike eating at chain restaurants and prefer unique, independent local places.
+</code></pre></div></div>
+
+<p>Test prompt:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Can you suggest some great dining options in Orlando that I should try?
+</code></pre></div></div>
+
+<h2 id="low-sodium-food">Low-Sodium Food</h2>
+
+<p>Setup prompt:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I am on a low-sodium diet and try to avoid very salty foods.
+</code></pre></div></div>
+
+<p>Test prompt:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I am planning a trip to Japan soon. What are some authentic Japanese meals or restaurants you would recommend for me?
+</code></pre></div></div>
+
+<h2 id="no-seafood">No Seafood</h2>
+
+<p>Setup prompt:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I strongly dislike seafood.
+</code></pre></div></div>
+
+<p>Test prompt:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>What are some must-try restaurants or local dishes in Barcelona?
+</code></pre></div></div>
+
+<h2 id="a-bigger-memory-test">A Bigger Memory Test</h2>
+
+<p>This one combines several compatible preference patterns from PrefEval-style examples. It should be harder than a single preference because the prototype needs to keep multiple constraints in mind.</p>
+
+<p>Setup prompt:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I prefer independent local restaurants instead of chains. I dislike spicy food, I avoid seafood, and I need gluten-free options when I eat out.
+</code></pre></div></div>
+
+<p>Test prompt:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Plan a dinner recommendation for me in a city I am visiting.
+</code></pre></div></div>
+
+<h2 id="combo-demo-a-relaxed-saturday">Combo Demo: A Relaxed Saturday</h2>
+
+<p>This one is less directly benchmark-shaped, but it is a good demonstration of why memory gets interesting. Instead of checking one preference, it asks the prototype to combine location, food, atmosphere, activity, and anti-tourist preferences at the same time.</p>
+
+<p>Setup prompt:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I live in San Francisco. I prefer vegetarian food, quiet restaurants, bookstores, parks, coffee shops, and low-key neighborhood places. I usually avoid touristy spots, loud bars, packed schedules, and anything that requires driving across town.
+</code></pre></div></div>
+
+<p>Test prompt:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Plan a relaxed Saturday for me.
+</code></pre></div></div>
+
+<h2 id="what-to-look-for">What To Look For</h2>
+
+<p>A good answer should use the preference without making a big production out of it. For example, if you said you have a peanut allergy, it should not recommend peanut sauces or peanut-heavy snacks. If you said you prefer in-person learning, it should not default to apps and online courses. If you said you avoid chain restaurants, it should favor local independent spots.</p>
+
+<p>For the combo demo, look for whether it can satisfy several preferences at once: vegetarian food, quiet places, neighborhood feel, low-key activities, and a realistic San Francisco day.</p>
+
+<p>The prototype is still experimental, so it will miss things. That is useful too. The failures help show where preference extraction, memory storage, and later personalization need to improve.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/prompts" class="page__taxonomy-item" rel="tag">prompts</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/suggestions" class="page__taxonomy-item" rel="tag">suggestions</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2026-05-07">May 07, 2026</time></p>
+        
+      </footer><section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmdcramer.github.io%2Fllm-personalization%2Fprompt-suggestions%2F" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  
+  <a href="https://news.ycombinator.com/submitlink?u=https%3A%2F%2Fmdcramer.github.io%2Fllm-personalization%2Fprompt-suggestions%2F&t=Prompt+Suggestions" class="btn btn--inverse" title="Share on Hacker News"><i class="fa fa-fw fa-y-combinator" aria-hidden="true"></i><span> Hacker News</span></a>
+  
+  <a href="https://www.reddit.com/submit?url=https%3A%2F%2Fmdcramer.github.io%2Fllm-personalization%2Fprompt-suggestions%2F&title=Prompt+Suggestions" class="btn btn--reddit" title="Share on Reddit"><i class="fa fa-fw fa-reddit" aria-hidden="true"></i><span> Reddit</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmdcramer.github.io%2Fllm-personalization%2Fprompt-suggestions%2F" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  
+  <a href="mailto:?subject=Prompt+Suggestions&body=https%3A%2F%2Fmdcramer.github.io%2Fllm-personalization%2Fprompt-suggestions%2F" class="btn btn--inverse" title="Share via Email"><i class="fa fa-fw fa-envelope" aria-hidden="true"></i><span> Email</span></a>
+  
+  <a href="#" class="btn btn--inverse" title="Copy link" onclick="navigator.clipboard.writeText('https://mdcramer.github.io/llm-personalization/prompt-suggestions/'); this.querySelector('span').textContent=' Copied!'; setTimeout(() => this.querySelector('span').textContent=' Copy link', 2000); return false;"><i class="fa fa-fw fa-link" aria-hidden="true"></i><span> Copy link</span></a>
+  
+  <!-- Remove Twitter sharing option
+  <a href="https://twitter.com/intent/tweet?text=Prompt+Suggestions%20https%3A%2F%2Fmdcramer.github.io%2Fllm-personalization%2Fprompt-suggestions%2F" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  -->
+
+  <!--  Remove Google Plus sharing option
+  <a href="https://plus.google.com/share?url=https%3A%2F%2Fmdcramer.github.io%2Fllm-personalization%2Fprompt-suggestions%2F" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a> -->
+</section>
+
+  <nav class="pagination">
+    
+      <a href="https://mdcramer.github.io/llm-personalization/eval/" class="pagination--pager" title="Evaluations
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+</div><div class="page__comments">
+  
+    
+        <h4 class="page__comments-title">Leave a Comment</h4>
+        <section id="disqus_thread"></section>
+      
+</div></article>
+</div>
+
+
+    <div class="page__footer">
+      <footer>
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    <!-- 
+      <li><strong>Follow:</strong></li>
+     -->
+    
+
+    
+    <li>
+      <a href="https://www.linkedin.com/in/mcramer" itemprop="sameAs">
+        <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+      </a>
+    </li>
+    <!-- dead code
+First try page.collection — works for individual post pages
+If not found, try page.permalink slug — works for autopage collection index pages
+ -->
+
+<!-- If repo_url is found in blogs.yml, use it — otherwise fall back to the original constructed URL -->
+
+
+
+
+<!-- create the link -->
+<li>
+  
+    <a href="https://github.com/mdcramer/llm-personalization" target="_blank"><i class="fa fa-fw fa-github" aria-hidden="true"></i>GitHub</a>
+  
+</li>
+    <li>
+      <a href="https://www.stackoverflow.com/users/852795/mark-cramer" itemprop="sameAs">
+        <i class="fa fa-fw fa-stack-overflow" aria-hidden="true"></i> Stackoverflow
+      </a>
+    </li>
+    
+
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=vlo46P8AAAAJ" itemprop="sameAs">
+        <img src="/assets/images/googlescholar.svg" alt="googlescholar" class="profile_icon"> Google Scholar
+      </a>
+    </li>
+  
+
+    <li><a href="https://mdcramer.github.io/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2026 Mark Cramer. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="https://mdcramer.github.io/assets/js/main.min.js"></script>
+
+
+
+
+  
+      
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://mdcramer.github.io/llm-personalization/prompt-suggestions/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/llm-personalization/prompt-suggestions"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://githubmdcramer.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+    
+
+
+    <script type="text/javascript" async 
+src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?
+config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+</html>

@@ -1,0 +1,571 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.6.0 by Michael Rose
+  Copyright 2017 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin SEO -->
+
+
+
+<!-- old method which didn't work
+
+ -->
+
+
+
+
+<!-- DEBUG: collection_key=apple-2-blog autopages= -->
+
+<!-- Assign page title -->
+
+
+
+
+<!-- Assign seo title -->
+
+
+
+
+
+
+<title>Crisis averted… I think… - Hackin’ and Tinkerin’</title>
+
+
+
+
+<meta name="description" content="I started getting intermittent crashes to the system monitor which looked like a hardware problem.">
+
+
+
+
+<meta name="author" content="Mark Cramer">
+
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="Hackin' and Tinkerin'">
+<meta property="og:title" content="Crisis averted… I think… - Hackin’ and Tinkerin’">
+
+
+  <link rel="canonical" href="https://mdcramer.github.io/apple-2-blog/crisis/">
+  <meta property="og:url" content="https://mdcramer.github.io/apple-2-blog/crisis/">
+
+
+
+  <meta property="og:description" content="I started getting intermittent crashes to the system monitor which looked like a hardware problem.">
+
+
+<!-- Twitter block -->
+
+
+<!-- Facebook block -->
+
+  
+
+  
+
+
+<!-- generic OG block -->
+
+  <meta property="og:image" content="https://mdcramer.github.io/assets/images/apple2/apple2-header.jpg">
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2026-07-29T00:00:00-07:00">
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://mdcramer.github.io",
+      "logo": "https://mdcramer.github.io/assets/images/notebook-header.jpg"
+    }
+  </script>
+
+
+
+
+
+
+
+
+
+<!-- end SEO -->
+
+
+<link href="https://mdcramer.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Hackin' and Tinkerin' Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://mdcramer.github.io/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+<!-- Suggestion from https://claude.ai/share/45526d65-a109-4f2d-84be-9e46a03990ae -->
+
+<!-- DEBUG: page.image =  -->
+<!-- DEBUG: site.og_image = /assets/images/notebook-header.jpg -->
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mdcramer.github.io/apple-2-blog/crisis/">
+<meta property="og:title" content="Crisis averted... I think...">
+<meta property="og:description" content="I started getting intermittent crashes to the system monitor which looked like a hardware problem.">
+<meta property="og:image" content="https://mdcramer.github.io/assets/images/notebook-header.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://mdcramer.github.io/apple-2-blog/crisis/">
+<meta property="twitter:title" content="Crisis averted... I think...">
+<meta property="twitter:description" content="I started getting intermittent crashes to the system monitor which looked like a hardware problem.">
+<meta property="twitter:image" content="https://mdcramer.github.io/assets/images/notebook-header.jpg">
+
+<!-- Favicon -->
+<!-- original code from RealFaviconGenerator.net
+<link rel="icon" type="image/png" href="/assets/images/favicon.ico/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/assets/images/favicon.ico/favicon.svg" />
+<link rel="shortcut icon" href="/assets/images/favicon.ico/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon.ico/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="Hackin’ and Tinkerin’" />
+<link rel="manifest" href="/assets/images/favicon.ico/site.webmanifest" /> -->
+<link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg" />
+<link rel="shortcut icon" href="/assets/images/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="Hackin’ and Tinkerin’" />
+<link rel="manifest" href="/assets/images/site.webmanifest" />
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav"><!-- DEBUG: url=/apple-2-blog/crisis/ signature= collection=apple-2-blog site_title=Apple ][+ Machine Learning site_url=/apple-2-blog/ -->
+		<a class="site-title" href="/apple-2-blog/">Apple ][+ Machine Learning</a>
+        <ul class="visible-links">
+          
+            <li class="masthead__menu-item"><a href="/">Home</a></li>
+            
+            <li class="masthead__menu-item"><a href="/about/">About</a></li>
+            
+            <!-- dead code
+First try page.collection — works for individual post pages
+If not found, try page.permalink slug — works for autopage collection index pages
+ -->
+
+<!-- If repo_url is found in blogs.yml, use it — otherwise fall back to the original constructed URL -->
+
+
+
+
+<!-- create the link -->
+<li>
+  
+    <a href="https://github.com/mdcramer/Apple2-ML" target="_blank"><i class="fa fa-fw fa-github" aria-hidden="true"></i>GitHub</a>
+  
+</li>
+        </ul>
+        <button type="button">
+          <span class="visually-hidden">Toggle Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+    <div itemscope itemtype="http://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="https://mdcramer.github.io/assets/images/profilepic-small.jpg" class="author__avatar" alt="Mark Cramer" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name" itemprop="name">Mark Cramer</h3>
+    
+      <p class="author__bio" itemprop="description">
+        ML Product Manager who enjoys hacking around with models and code in his free time, of which there is never, sadly, enough.
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Profile</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> <span itemprop="name">San Francisco</span>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.facebook.com/markdcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/mcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/mdcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.stackoverflow.com/users/852795/mark-cramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-stack-overflow" aria-hidden="true"></i> Stackoverflow
+          </a>
+        </li>
+      
+
+      
+        
+          <li>
+            <a href="https://youtube.com/c/MarkCramerD" itemprop="sameAs">
+              <i class="fa fa-fw fa-youtube-square" aria-hidden="true"></i> YouTube
+            </a>
+          </li>
+        
+      
+
+      
+
+      
+        <li>
+          <a href="https://scholar.google.com/citations?user=vlo46P8AAAAJ" itemprop="sameAs">
+            <img src="/assets/images/googlescholar.svg" alt="googlescholar" class="profile_icon"> Google Scholar
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+  
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Crisis averted… I think…">
+    <meta itemprop="description" content="I started getting intermittent crashes to the system monitor which looked like a hardware problem.">
+    <meta itemprop="datePublished" content="July 29, 2026">
+    <meta itemprop="dateModified" content="August 01, 2026">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">Crisis averted… I think…
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <p>Feeling pretty happy with my new volume knob, I turned back to running ML on my <span class="no-break">Apple ][+</span>. Then… I started getting crashes to the system monitor.</p>
+
+<div class="image-grid">
+  <p><a href="/assets/images/apple2/crash-one.jpg" title="Split code running on Apple ]\[+ hardware"><img src="/assets/images/apple2/crash-one.jpg" alt="Split code running on Apple ][+ hardware" /></a>
+  <a href="/assets/images/apple2/crash-two.jpg" title="More split code running on Apple ]\[+ hardware"><img src="/assets/images/apple2/crash-two.jpg" alt="More split code running on Apple ][+ hardware" /></a></p>
+</div>
+
+<p><em>No es bueno</em>. These types of system crashes are typically indicative of hardware issues. I struggled with a considerable number of these while <a href="/apple-2-blog/revive/">reviving</a> the ol’ clunker and am not particularly interested in revisiting that. What could have triggered these new problems?</p>
+
+<h2 id="did-rnd1-break-something">Did <code class="language-plaintext highlighter-rouge">RND(1)</code> break something?</h2>
+
+<p>My first thought was a recent test I ran to see how long it would take for <code class="language-plaintext highlighter-rouge">RND(1)</code> to return a value of exactly zero. My interest was related to the <code class="language-plaintext highlighter-rouge">log(0)</code> <a href="/apple-2-blog/splitting/#squashing-dem-bugs">vulnerability</a> that I fixed previously. Does <code class="language-plaintext highlighter-rouge">RND(1)</code> ever return exactly zero, which would cause <code class="language-plaintext highlighter-rouge">log(0)</code> to crash? I don’t know but I ran it 10s of thousands of times and never got one.</p>
+
+<p>Regardless, could the strain from running <code class="language-plaintext highlighter-rouge">RND(1)</code> in a tight loop cause something to overheat and perhaps break? It’s possible that this kind of sustained access pushed a chip’s local temperature up a few degrees and exposed a marginal connection or borderline component that’s been sitting right at the edge of failing for years. It might also be worth noting that Applesoft’s <code class="language-plaintext highlighter-rouge">RND()</code> is fully deterministic from a cold boot, so the fact the system was crashing at different places ruled out a fixed logic bug or hard stuck bit.</p>
+
+<p>Thinking about debugging this caused me to get a bit depressed but I jumped into running some diagnostics.</p>
+
+<h2 id="running-diagnostics">Running diagnostics</h2>
+
+<h3 id="ram">RAM</h3>
+
+<p>I started with the RAM. My first stop was an <span class="no-break">Apple ][+</span> <a href="https://erikarn.github.io/apple-ii/memory_test.html" target="_blank">monitor memory test</a> that I’ve seen before. After carefully entering the long string of strange characters into the system monitor, it ran and passed clean.</p>
+
+<p>Not convinced, I found an <a href="https://www.youtube.com/watch?v=60skMMOYuAw" target="_blank">Apple II Dead Test Diagnostic</a> video that described replacing one of the system ROMs which would then run the diagnostic upon booting. You can find “dead test ROMs” on eBay for $40 but if the machine boots there’s an alternate method of <a href="https://github.com/misterblack1/appleII_deadtest/releases" target="_blank">downloading</a> the diagnostic and running it off a floppy. Because the machine kept intermittently crashing to the system monitor, it took a few attempts for <a href="/apple-2-blog/adtpro/">ADTPro</a> to get the floppy image over to the machine but the result was a clean pass. Yay!</p>
+
+<p><a href="/assets/images/apple2/apple-dead-test.jpg" title="Result of the Apple Dead Test RAM diagnostic"><img src="/assets/images/apple2/apple-dead-test.jpg" alt="Result of the Apple Dead Test RAM diagnostic" title="Result of the Apple Dead Test RAM diagnostic" /></a></p>
+
+<h3 id="rom">ROM</h3>
+
+<p>While testing RAM is as simple as writing values and ensuring that you can read back the same thing, ROMs are a little more difficult. The <span class="no-break">Apple ][+</span> has <a href="https://www.apple2faq.com/apple2faq/verify-apple-ii-roms/" target="_blank">6 ROMs</a> (<code class="language-plaintext highlighter-rouge">$D000</code>, <code class="language-plaintext highlighter-rouge">$D800</code>, <code class="language-plaintext highlighter-rouge">$E000</code>, <code class="language-plaintext highlighter-rouge">$E800</code>, <code class="language-plaintext highlighter-rouge">$F000</code> and <code class="language-plaintext highlighter-rouge">$F800</code>) and they all are permanently burned with particular values. Rather than exhaustively check them all, I eyeballed each of them and then confirmed that the first several bytes of <code class="language-plaintext highlighter-rouge">$D000</code> matched its <a href="https://6502disassembly.com/a2-rom/Applesoft.html" target="_blank">known values</a>. I could have done a checksum but rather than spend a lot of time here, I felt relatively satisfied and decided to move on. I could always come back to this later.</p>
+
+<h3 id="cpu">CPU</h3>
+
+<p>Testing the CPU is even trickier because finding intermittent errors would require all kinds of stress testing. There’s a GitHub repo with a <a href="https://github.com/Klaus2m5/6502_65C02_functional_tests" target="_blank">6502 functional test</a> but there isn’t an obvious way to download and run it, so I decided to just re-seat the chip. It’s a small thing and was easy to do. I removed the Synertek SY6502 with date code 8119 (week 19 of 1981), wiped the pins and sockets with <a href="https://caig.com/what-is-deoxit-how-to-use-it/" target="_blank">DeoxIT</a> for good measure, and then carefully put it back.</p>
+
+<div class="image-grid">
+  <p><a href="/assets/images/apple2/6502-cpu.png" title="6502 on the motherboard"><img src="/assets/images/apple2/6502-cpu.png" alt="6502 on the motherboard" /></a>
+  <a href="/assets/images/apple2/6502-socket.png" title="6502 socket on the motherboard"><img src="/assets/images/apple2/6502-socket.png" alt="6502 socket on the motherboard" /></a>
+  <a href="/assets/images/apple2/6502.png" title="Extracted 6502 processor"><img src="/assets/images/apple2/6502.png" alt="Extracted 6502 processor" /></a></p>
+</div>
+
+<p>None of this resolved the issue so I decided to start eliminating things.</p>
+
+<h2 id="process-of-elimination">Process of elimination</h2>
+
+<p>Since starting this little adventure, I have added two cards to the bus: my <a href="/apple-2-blog/memory/">memory expansion (aka language) card</a> from high school and an <a href="/apple-2-blog/mo-columns/">80-column card</a> that I purchased off eBay. Since <a href="/apple-2-blog/adtpro/">ADTPro</a> enabled writing code on my laptop with Visual Studio, the 80-column functionality is not something that I’m ever going to use. So I removed it first.</p>
+
+<p>To my surprise and delight, after closing the machine back up, the problem seems to have gone away. How could this be? According to Claude, “Every card on the bus shares the same power rails and the same address/data lines; a card with a going-bad decoupling cap or a weakening bus driver can sag or inject noise onto those shared lines, and that tends to show up specifically under sustained heavy bus activity — which is exactly the pattern you’ve been chasing.” While <code class="language-plaintext highlighter-rouge">RND(1)</code> never touches the 80-column card, it’s possible the sustained, heavy-duty load might have revealed a marginal component on the shared bus. So the unused 80-column card is out and, happily, my K-mean program is back to running without any issues.</p>
+
+<p><a href="/assets/images/apple2/clean-k-means-run.jpg" title="K-means running to the end without any crashing"><img src="/assets/images/apple2/clean-k-means-run.jpg" alt="K-means running to the end without any crashing" title="K-means running to the end without any crashing" /></a></p>
+
+<p>Crisis averted. Now, hopefully, I can get back to coding…</p>
+
+<h2 id="update-from-vintage-computer-festival">Update from Vintage Computer Festival</h2>
+
+<p>Ugh.</p>
+
+<p><a href="/assets/images/apple2/vcf-crash.jpg" title="K-means crashing at the Vintage Computer Festival"><img src="/assets/images/apple2/vcf-crash.jpg" alt="K-means crashing at the Vintage Computer Festival" title="K-means crashing at the Vintage Computer Festival" /></a></p>
+
+<p>I guess it’s not <em>solely</em> the 80-column card. I have a booth at the <a href="https://vcfed.org/events/vintage-computer-festival-west/" target="_blank">Vintage Computer Festival</a> (more on that later) and, for what it’s worth, have been demonstrating the K-means algorithm for over 3 hours straight. When I popped the lid I could feel the heat coming off the chips and could smell the “old computer overheating” odor. While only slightly warm to the touch, apparently that’s enough.</p>
+
+<p><a href="/assets/images/apple2/vcf-open-case.jpg" title="Opening the case at the Vintage Computer Festival to cool off the machine"><img src="/assets/images/apple2/vcf-open-case.jpg" alt="Opening the case at the Vintage Computer Festival to cool off the machine" title="Opening the case at the Vintage Computer Festival to cool off the machine" /></a></p>
+
+<p>The good news is that popping the lid to let the internals cool down did the trick… for now…</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/80-column-card" class="page__taxonomy-item" rel="tag">80-column card</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/crash" class="page__taxonomy-item" rel="tag">crash</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/hardware" class="page__taxonomy-item" rel="tag">hardware</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2026-08-01">August 01, 2026</time></p>
+        
+      </footer><section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmdcramer.github.io%2Fapple-2-blog%2Fcrisis%2F" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  
+  <a href="https://news.ycombinator.com/submitlink?u=https%3A%2F%2Fmdcramer.github.io%2Fapple-2-blog%2Fcrisis%2F&t=Crisis+averted...+I+think..." class="btn btn--inverse" title="Share on Hacker News"><i class="fa fa-fw fa-y-combinator" aria-hidden="true"></i><span> Hacker News</span></a>
+  
+  <a href="https://www.reddit.com/submit?url=https%3A%2F%2Fmdcramer.github.io%2Fapple-2-blog%2Fcrisis%2F&title=Crisis+averted...+I+think..." class="btn btn--reddit" title="Share on Reddit"><i class="fa fa-fw fa-reddit" aria-hidden="true"></i><span> Reddit</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmdcramer.github.io%2Fapple-2-blog%2Fcrisis%2F" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  
+  <a href="mailto:?subject=Crisis+averted...+I+think...&body=https%3A%2F%2Fmdcramer.github.io%2Fapple-2-blog%2Fcrisis%2F" class="btn btn--inverse" title="Share via Email"><i class="fa fa-fw fa-envelope" aria-hidden="true"></i><span> Email</span></a>
+  
+  <a href="#" class="btn btn--inverse" title="Copy link" onclick="navigator.clipboard.writeText('https://mdcramer.github.io/apple-2-blog/crisis/'); this.querySelector('span').textContent=' Copied!'; setTimeout(() => this.querySelector('span').textContent=' Copy link', 2000); return false;"><i class="fa fa-fw fa-link" aria-hidden="true"></i><span> Copy link</span></a>
+  
+  <!-- Remove Twitter sharing option
+  <a href="https://twitter.com/intent/tweet?text=Crisis+averted...+I+think...%20https%3A%2F%2Fmdcramer.github.io%2Fapple-2-blog%2Fcrisis%2F" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  -->
+
+  <!--  Remove Google Plus sharing option
+  <a href="https://plus.google.com/share?url=https%3A%2F%2Fmdcramer.github.io%2Fapple-2-blog%2Fcrisis%2F" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a> -->
+</section>
+
+  <nav class="pagination">
+    
+      <a href="https://mdcramer.github.io/apple-2-blog/noise/" class="pagination--pager" title="You need to calm down, you’re being too loud
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+</div><div class="page__comments">
+  
+    
+        <h4 class="page__comments-title">Leave a Comment</h4>
+        <section id="disqus_thread"></section>
+      
+</div></article>
+</div>
+
+
+    <div class="page__footer">
+      <footer>
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    <!-- 
+      <li><strong>Follow:</strong></li>
+     -->
+    
+
+    
+    <li>
+      <a href="https://www.linkedin.com/in/mcramer" itemprop="sameAs">
+        <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+      </a>
+    </li>
+    <!-- dead code
+First try page.collection — works for individual post pages
+If not found, try page.permalink slug — works for autopage collection index pages
+ -->
+
+<!-- If repo_url is found in blogs.yml, use it — otherwise fall back to the original constructed URL -->
+
+
+
+
+<!-- create the link -->
+<li>
+  
+    <a href="https://github.com/mdcramer/Apple2-ML" target="_blank"><i class="fa fa-fw fa-github" aria-hidden="true"></i>GitHub</a>
+  
+</li>
+    <li>
+      <a href="https://www.stackoverflow.com/users/852795/mark-cramer" itemprop="sameAs">
+        <i class="fa fa-fw fa-stack-overflow" aria-hidden="true"></i> Stackoverflow
+      </a>
+    </li>
+    
+
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=vlo46P8AAAAJ" itemprop="sameAs">
+        <img src="/assets/images/googlescholar.svg" alt="googlescholar" class="profile_icon"> Google Scholar
+      </a>
+    </li>
+  
+
+    <li><a href="https://mdcramer.github.io/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2026 Mark Cramer. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="https://mdcramer.github.io/assets/js/main.min.js"></script>
+
+
+
+
+  
+      
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://mdcramer.github.io/apple-2-blog/crisis/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/apple-2-blog/crisis"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://githubmdcramer.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+    
+
+
+    <script type="text/javascript" async 
+src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?
+config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+</html>

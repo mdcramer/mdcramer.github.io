@@ -1,0 +1,588 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.6.0 by Michael Rose
+  Copyright 2017 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin SEO -->
+
+
+
+<!-- old method which didn't work
+
+ -->
+
+
+
+
+<!-- DEBUG: collection_key=apple-2-blog autopages= -->
+
+<!-- Assign page title -->
+
+
+
+
+<!-- Assign seo title -->
+
+
+
+
+
+
+<title>You need to calm down, you’re being too loud - Hackin’ and Tinkerin’</title>
+
+
+
+
+<meta name="description" content="Adding a volume control knob.">
+
+
+
+
+<meta name="author" content="Mark Cramer">
+
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="Hackin' and Tinkerin'">
+<meta property="og:title" content="You need to calm down, you’re being too loud - Hackin’ and Tinkerin’">
+
+
+  <link rel="canonical" href="https://mdcramer.github.io/apple-2-blog/noise/">
+  <meta property="og:url" content="https://mdcramer.github.io/apple-2-blog/noise/">
+
+
+
+  <meta property="og:description" content="Adding a volume control knob.">
+
+
+<!-- Twitter block -->
+
+
+<!-- Facebook block -->
+
+  
+
+  
+
+
+<!-- generic OG block -->
+
+  <meta property="og:image" content="https://mdcramer.github.io/assets/images/apple2/apple2-header.jpg">
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2026-07-03T00:00:00-07:00">
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://mdcramer.github.io",
+      "logo": "https://mdcramer.github.io/assets/images/notebook-header.jpg"
+    }
+  </script>
+
+
+
+
+
+
+
+
+
+<!-- end SEO -->
+
+
+<link href="https://mdcramer.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Hackin' and Tinkerin' Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://mdcramer.github.io/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+<!-- Suggestion from https://claude.ai/share/45526d65-a109-4f2d-84be-9e46a03990ae -->
+
+<!-- DEBUG: page.image =  -->
+<!-- DEBUG: site.og_image = /assets/images/notebook-header.jpg -->
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mdcramer.github.io/apple-2-blog/noise/">
+<meta property="og:title" content="You need to calm down, you're being too loud">
+<meta property="og:description" content="Adding a volume control knob.">
+<meta property="og:image" content="https://mdcramer.github.io/assets/images/notebook-header.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://mdcramer.github.io/apple-2-blog/noise/">
+<meta property="twitter:title" content="You need to calm down, you're being too loud">
+<meta property="twitter:description" content="Adding a volume control knob.">
+<meta property="twitter:image" content="https://mdcramer.github.io/assets/images/notebook-header.jpg">
+
+<!-- Favicon -->
+<!-- original code from RealFaviconGenerator.net
+<link rel="icon" type="image/png" href="/assets/images/favicon.ico/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/assets/images/favicon.ico/favicon.svg" />
+<link rel="shortcut icon" href="/assets/images/favicon.ico/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon.ico/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="Hackin’ and Tinkerin’" />
+<link rel="manifest" href="/assets/images/favicon.ico/site.webmanifest" /> -->
+<link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg" />
+<link rel="shortcut icon" href="/assets/images/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="Hackin’ and Tinkerin’" />
+<link rel="manifest" href="/assets/images/site.webmanifest" />
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav"><!-- DEBUG: url=/apple-2-blog/noise/ signature= collection=apple-2-blog site_title=Apple ][+ Machine Learning site_url=/apple-2-blog/ -->
+		<a class="site-title" href="/apple-2-blog/">Apple ][+ Machine Learning</a>
+        <ul class="visible-links">
+          
+            <li class="masthead__menu-item"><a href="/">Home</a></li>
+            
+            <li class="masthead__menu-item"><a href="/about/">About</a></li>
+            
+            <!-- dead code
+First try page.collection — works for individual post pages
+If not found, try page.permalink slug — works for autopage collection index pages
+ -->
+
+<!-- If repo_url is found in blogs.yml, use it — otherwise fall back to the original constructed URL -->
+
+
+
+
+<!-- create the link -->
+<li>
+  
+    <a href="https://github.com/mdcramer/Apple2-ML" target="_blank"><i class="fa fa-fw fa-github" aria-hidden="true"></i>GitHub</a>
+  
+</li>
+        </ul>
+        <button type="button">
+          <span class="visually-hidden">Toggle Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+    <div itemscope itemtype="http://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="https://mdcramer.github.io/assets/images/profilepic-small.jpg" class="author__avatar" alt="Mark Cramer" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name" itemprop="name">Mark Cramer</h3>
+    
+      <p class="author__bio" itemprop="description">
+        ML Product Manager who enjoys hacking around with models and code in his free time, of which there is never, sadly, enough.
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Profile</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> <span itemprop="name">San Francisco</span>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.facebook.com/markdcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/mcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/mdcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.stackoverflow.com/users/852795/mark-cramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-stack-overflow" aria-hidden="true"></i> Stackoverflow
+          </a>
+        </li>
+      
+
+      
+        
+          <li>
+            <a href="https://youtube.com/c/MarkCramerD" itemprop="sameAs">
+              <i class="fa fa-fw fa-youtube-square" aria-hidden="true"></i> YouTube
+            </a>
+          </li>
+        
+      
+
+      
+
+      
+        <li>
+          <a href="https://scholar.google.com/citations?user=vlo46P8AAAAJ" itemprop="sameAs">
+            <img src="/assets/images/googlescholar.svg" alt="googlescholar" class="profile_icon"> Google Scholar
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+  
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="You need to calm down, you’re being too loud">
+    <meta itemprop="description" content="Adding a volume control knob.">
+    <meta itemprop="datePublished" content="July 03, 2026">
+    <meta itemprop="dateModified" content="July 03, 2026">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">You need to calm down, you’re being too loud
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <p>Taking a break from exploring k-means on my <span class="no-break">Apple ][+</span>, I decided to tackle a problem of significantly greater import: the speaker is really loud. I don’t recall this ever bothering me in high school but it’s pretty loud and there is no way to non-programmatically control it. I’d like to have a volume knob so I can play <a href="https://mortalwayfare.com/in-the-beginning-there-was-basic/" target="_blank">Ultima 1</a> late at night without waking the dead.</p>
+
+<h2 id="it-goes-to-11">It goes to 11</h2>
+
+<p>There’s not a lot of how-to retro hardware upgrade videos on the internet but I found this and it did the trick.</p>
+
+<!-- Courtesy of embedresponsively.com //-->
+<div class="responsive-video-container">
+
+  <iframe src="https://www.youtube.com/embed/rO5eXxVxK_4" frameborder="0" allowfullscreen=""></iframe>
+
+</div>
+
+<p>While it’s a little difficult to follow (he offers a schematic but it’s hard to tell which wires are going where), he links to the necessary parts. In addition to a 1kΩ audio log potentiometer, I got a knob that <a href="https://youtu.be/uMSV4OteqBE?si=e2hANo3D6ktuzAxs&amp;t=78" target="_blank">goes to 11</a> and an STL file to 3D print a small mount for the potentiometer and knob that slides into one of the air vents.</p>
+
+<div class="image-grid">
+  <p><a href="/assets/images/apple2/parts-for-volume-know.jpg" title="Parts and equipment to add a volume knob"><img src="/assets/images/apple2/parts-for-volume-know.jpg" alt="Parts and equipment to add a volume knob" /></a>
+  <a href="/assets/images/apple2/knob-goes-to-11.jpg" title="The knob goes to 11"><img src="/assets/images/apple2/knob-goes-to-11.jpg" alt="The knob goes to 11" /></a></p>
+</div>
+
+<h2 id="putting-it-all-together">Putting it all together</h2>
+
+<p>I’ve been busy with other things but after all the parts arrived (it took a couple weeks for <a href="https://craftcloud3d.com/" target="_blank">Craftcloud</a> to 3D print and mail the holder) but one afternoon I had a free hour so I decided to slap it together.</p>
+
+<p>Attempting to follow the video, my first instinct was the “parallel shunt” method, which has the potentiometer run side-by-side with the internal 8Ω speaker. I got a little confused by what connects to where, so I took a look at the speaker jack on the motherboard and, using a multimeter, tried to find ground. One of the pins registered 5.8Ω and the other 0, but ground was on the opposite side than I expected. So, to get a sense of how the neighboring capacitor is wired, I decided to consult the motherboard’s schematic which of course, is included as a foldout at the back of the Apple ][ Reference manual.</p>
+
+<div class="image-grid">
+  <p><a href="/assets/images/apple2/motherboard-speaker-jack.jpg" title="Speaker jack and neighboring capacitor on the motherboard"><img src="/assets/images/apple2/motherboard-speaker-jack.jpg" alt="Speaker jack and neighboring capacitor on the motherboard" /></a>
+  <a href="/assets/images/apple2/speaker-schematic.jpg" title="Speaker on motherboard schematic"><img src="/assets/images/apple2/speaker-schematic.jpg" alt="Speaker on motherboard schematic" /></a></p>
+</div>
+
+<p>I then realized something surprising: the speaker isn’t tied to ground but, rather, is suspended between the +5V power rail and the collector of the Q4 switching transistor. I now realize that this is what the gentleman in the video was trying to communicate with the on-screen text. I’m guessing that he either belatedly realized the same thing or forgot to mention that while making the video.</p>
+
+<p>While the “parallel shunt” method would provide a smooth volume sweep across the entire turn of the knob, I began to get nervous about frying my vintage machine. Not only could I wire it up incorrectly and connect power to ground, but turning the dial down to zero could create a short forcing the Q4 transistor to pull +5V straight to ground. There’s a way to mitigate the latter risk by adding a safety resistor to either terminal 1 or 2 of the potentiometer.</p>
+
+<p>Rather than take the risk, I opted to mount the potentiometer in series instead, making a short circuit virtually impossible. The downside is that I probably won’t get a full volume sweep across the entire turn of the knob, but that’s not a big deal.</p>
+
+<h3 id="splicing-the-wires">Splicing the wires</h3>
+
+<p>Mounting the potentiometer in series is also a much easier procedure. Rather than wiring up the three terminals on the potentiometer, I only need two. Also, I don’t need to figure out which wire going to the speaker is which - I can splice into either one. Since one of the wires looked like it already had damage, I decided to just snip it there.</p>
+
+<div class="image-grid">
+  <p><a href="/assets/images/apple2/speaker-wires.jpg" title="Speaker wires with one damaged"><img src="/assets/images/apple2/speaker-wires.jpg" alt="Speaker wires with one damaged" /></a>
+  <a href="/assets/images/apple2/connecting-the-header.jpg" title="Connecting the header to the speaker wires"><img src="/assets/images/apple2/connecting-the-header.jpg" alt="Connecting the header to the speaker wires" /></a></p>
+</div>
+
+<p>To enable disconnecting the potentiometer, for whatever reason, I used a modular approach with SparkFun 0.1” 4-pin jumper wires and a breakaway male header strip. I used wire snips to cut through the 5th pin of the header strip to get an exact 4-pin section without cracking the plastic housing. My first crack at soldering to the header was ugly, to say the least, but the next one went better. For safe keeping, I then wrapped it in electrical tape.</p>
+
+<p><a href="/assets/images/apple2/header-wired-up.jpg" title="Header and 4-pin jumper wires connected to speaker wires"><img src="/assets/images/apple2/header-wired-up.jpg" alt="Header and 4-pin jumper wires connected to speaker wires" title="Header and 4-pin jumper wires connected to speaker wires" /></a></p>
+
+<h3 id="mounting-the-potentiometer">Mounting the potentiometer</h3>
+
+<p>Since the inline series method only requires two terminals, Terminal 1 (the far-left pin when facing the shaft) was left empty. With help from a lovely assistant (who, frankly, I could have used when connecting the header), I soldered jumper wires to the potentiometer. (Terminal 1 was left empty. I originally wired it for the parallel shunt configuration but then removed it.)</p>
+
+<div class="image-grid">
+  <p><a href="/assets/images/apple2/soldering-help.jpeg" title="Getting some assistance with soldering"><img src="/assets/images/apple2/soldering-help.jpeg" alt="Getting some assistance with soldering" /></a>
+  <a href="/assets/images/apple2/more-soldering-help.jpeg" title="Closeup of soldering work on potentiometer"><img src="/assets/images/apple2/more-soldering-help.jpeg" alt="Closeup of soldering work on potentiometer" /></a></p>
+</div>
+
+<p>From there it was easy. I chose the colors of the jumper cables to line up with the 4-pin jumper wire, but even if I got it backwards the volume knob would just work in the opposite direction. (I didn’t get it backwards.) Sliding the 3D printed mount into the case was easy although I had to bend the terminals pretty severely in order to get them around the floppy drive. And… guess what?</p>
+
+<div class="image-grid">
+  <p><a href="/assets/images/apple2/final-assembly.jpg" title="Final assembly"><img src="/assets/images/apple2/final-assembly.jpg" alt="Final assembly" /></a>
+  <a href="/assets/images/apple2/mounted-potentiometer.jpg" title="Mounting the potentiometer"><img src="/assets/images/apple2/mounted-potentiometer.jpg" alt="Mounting the potentiometer" /></a></p>
+</div>
+
+<h2 id="the-verdict">The Verdict</h2>
+
+<p>It works! (Turn up the volume on your computer if you watch the video below.)</p>
+
+<!-- Courtesy of embedresponsively.com //-->
+<div class="responsive-video-container">
+
+  <iframe src="https://www.youtube.com/embed/zObSVatIQxs" frameborder="0" allowfullscreen=""></iframe>
+
+</div>
+
+<p>As anticipated, the dial does not have a full sweep of volume control. At 11 the sound is as loud as it’s always been but somewhere around 7 it’s pretty much at the lowest level of volume, which is pretty quiet, but it doesn’t go completely silent. All of that is fine. It’s operating as intended and doing the job I want it to do. The turning feels solid and for almost half the knob the audio softens nicely. It’s also easy to remove and a simple jumper cable connecting a couple plugs on the 4-pin jumper wire will get it back to original operation. Most importantly, there is virtually no risk to the motherboard.</p>
+
+<p>Not that there’s a lot of chance of this happening but now at some point it’d be nice to find time to finish <a href="https://mortalwayfare.com/in-the-beginning-there-was-basic/" target="_blank">Ultima 1</a>!</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/noise" class="page__taxonomy-item" rel="tag">noise</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/speaker" class="page__taxonomy-item" rel="tag">speaker</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/volume" class="page__taxonomy-item" rel="tag">volume</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2026-07-03">July 03, 2026</time></p>
+        
+      </footer><section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmdcramer.github.io%2Fapple-2-blog%2Fnoise%2F" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  
+  <a href="https://news.ycombinator.com/submitlink?u=https%3A%2F%2Fmdcramer.github.io%2Fapple-2-blog%2Fnoise%2F&t=You+need+to+calm+down%2C+you%27re+being+too+loud" class="btn btn--inverse" title="Share on Hacker News"><i class="fa fa-fw fa-y-combinator" aria-hidden="true"></i><span> Hacker News</span></a>
+  
+  <a href="https://www.reddit.com/submit?url=https%3A%2F%2Fmdcramer.github.io%2Fapple-2-blog%2Fnoise%2F&title=You+need+to+calm+down%2C+you%27re+being+too+loud" class="btn btn--reddit" title="Share on Reddit"><i class="fa fa-fw fa-reddit" aria-hidden="true"></i><span> Reddit</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmdcramer.github.io%2Fapple-2-blog%2Fnoise%2F" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  
+  <a href="mailto:?subject=You+need+to+calm+down%2C+you%27re+being+too+loud&body=https%3A%2F%2Fmdcramer.github.io%2Fapple-2-blog%2Fnoise%2F" class="btn btn--inverse" title="Share via Email"><i class="fa fa-fw fa-envelope" aria-hidden="true"></i><span> Email</span></a>
+  
+  <a href="#" class="btn btn--inverse" title="Copy link" onclick="navigator.clipboard.writeText('https://mdcramer.github.io/apple-2-blog/noise/'); this.querySelector('span').textContent=' Copied!'; setTimeout(() => this.querySelector('span').textContent=' Copy link', 2000); return false;"><i class="fa fa-fw fa-link" aria-hidden="true"></i><span> Copy link</span></a>
+  
+  <!-- Remove Twitter sharing option
+  <a href="https://twitter.com/intent/tweet?text=You+need+to+calm+down%2C+you%27re+being+too+loud%20https%3A%2F%2Fmdcramer.github.io%2Fapple-2-blog%2Fnoise%2F" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  -->
+
+  <!--  Remove Google Plus sharing option
+  <a href="https://plus.google.com/share?url=https%3A%2F%2Fmdcramer.github.io%2Fapple-2-blog%2Fnoise%2F" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a> -->
+</section>
+
+  <nav class="pagination">
+    
+      <a href="https://mdcramer.github.io/apple-2-blog/splitting/" class="pagination--pager" title="Splitsville
+">Previous</a>
+    
+    
+      <a href="https://mdcramer.github.io/apple-2-blog/crisis/" class="pagination--pager" title="Crisis averted… I think…
+">Next</a>
+    
+  </nav>
+</div><div class="page__comments">
+  
+    
+        <h4 class="page__comments-title">Leave a Comment</h4>
+        <section id="disqus_thread"></section>
+      
+</div></article>
+</div>
+
+
+    <div class="page__footer">
+      <footer>
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    <!-- 
+      <li><strong>Follow:</strong></li>
+     -->
+    
+
+    
+    <li>
+      <a href="https://www.linkedin.com/in/mcramer" itemprop="sameAs">
+        <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+      </a>
+    </li>
+    <!-- dead code
+First try page.collection — works for individual post pages
+If not found, try page.permalink slug — works for autopage collection index pages
+ -->
+
+<!-- If repo_url is found in blogs.yml, use it — otherwise fall back to the original constructed URL -->
+
+
+
+
+<!-- create the link -->
+<li>
+  
+    <a href="https://github.com/mdcramer/Apple2-ML" target="_blank"><i class="fa fa-fw fa-github" aria-hidden="true"></i>GitHub</a>
+  
+</li>
+    <li>
+      <a href="https://www.stackoverflow.com/users/852795/mark-cramer" itemprop="sameAs">
+        <i class="fa fa-fw fa-stack-overflow" aria-hidden="true"></i> Stackoverflow
+      </a>
+    </li>
+    
+
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=vlo46P8AAAAJ" itemprop="sameAs">
+        <img src="/assets/images/googlescholar.svg" alt="googlescholar" class="profile_icon"> Google Scholar
+      </a>
+    </li>
+  
+
+    <li><a href="https://mdcramer.github.io/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2026 Mark Cramer. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="https://mdcramer.github.io/assets/js/main.min.js"></script>
+
+
+
+
+  
+      
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://mdcramer.github.io/apple-2-blog/noise/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/apple-2-blog/noise"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://githubmdcramer.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+    
+
+
+    <script type="text/javascript" async 
+src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?
+config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+</html>

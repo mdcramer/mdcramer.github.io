@@ -1,0 +1,564 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.6.0 by Michael Rose
+  Copyright 2017 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin SEO -->
+
+
+
+<!-- old method which didn't work
+
+ -->
+
+
+
+
+<!-- DEBUG: collection_key=llm-personalization autopages= -->
+
+<!-- Assign page title -->
+
+
+
+
+<!-- Assign seo title -->
+
+
+
+
+
+
+<title>Philosophical first principles - Hackin’ and Tinkerin’</title>
+
+
+
+
+<meta name="description" content="How I think about personalization in general and personalizing LLMs in particular.">
+
+
+
+
+<meta name="author" content="Mark Cramer">
+
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="Hackin' and Tinkerin'">
+<meta property="og:title" content="Philosophical first principles - Hackin’ and Tinkerin’">
+
+
+  <link rel="canonical" href="https://mdcramer.github.io/llm-personalization/philosophy/">
+  <meta property="og:url" content="https://mdcramer.github.io/llm-personalization/philosophy/">
+
+
+
+  <meta property="og:description" content="How I think about personalization in general and personalizing LLMs in particular.">
+
+
+<!-- Twitter block -->
+
+
+<!-- Facebook block -->
+
+  
+
+  
+
+
+<!-- generic OG block -->
+
+  <meta property="og:image" content="https://mdcramer.github.io/assets/images/llm-personalization/llmpersonalizationheader.jpg">
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2026-05-06T07:00:00-07:00">
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://mdcramer.github.io",
+      "logo": "https://mdcramer.github.io/assets/images/notebook-header.jpg"
+    }
+  </script>
+
+
+
+
+
+
+
+
+
+<!-- end SEO -->
+
+
+<link href="https://mdcramer.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Hackin' and Tinkerin' Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://mdcramer.github.io/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+<!-- Suggestion from https://claude.ai/share/45526d65-a109-4f2d-84be-9e46a03990ae -->
+
+<!-- DEBUG: page.image =  -->
+<!-- DEBUG: site.og_image = /assets/images/notebook-header.jpg -->
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mdcramer.github.io/llm-personalization/philosophy/">
+<meta property="og:title" content="Philosophical first principles">
+<meta property="og:description" content="How I think about personalization in general and personalizing LLMs in particular.">
+<meta property="og:image" content="https://mdcramer.github.io/assets/images/notebook-header.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://mdcramer.github.io/llm-personalization/philosophy/">
+<meta property="twitter:title" content="Philosophical first principles">
+<meta property="twitter:description" content="How I think about personalization in general and personalizing LLMs in particular.">
+<meta property="twitter:image" content="https://mdcramer.github.io/assets/images/notebook-header.jpg">
+
+<!-- Favicon -->
+<!-- original code from RealFaviconGenerator.net
+<link rel="icon" type="image/png" href="/assets/images/favicon.ico/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/assets/images/favicon.ico/favicon.svg" />
+<link rel="shortcut icon" href="/assets/images/favicon.ico/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon.ico/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="Hackin’ and Tinkerin’" />
+<link rel="manifest" href="/assets/images/favicon.ico/site.webmanifest" /> -->
+<link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg" />
+<link rel="shortcut icon" href="/assets/images/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="Hackin’ and Tinkerin’" />
+<link rel="manifest" href="/assets/images/site.webmanifest" />
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav"><!-- DEBUG: url=/llm-personalization/philosophy/ signature= collection=llm-personalization site_title=LLM Personalization site_url=/llm-personalization/ -->
+		<a class="site-title" href="/llm-personalization/">LLM Personalization</a>
+        <ul class="visible-links">
+          
+            <li class="masthead__menu-item"><a href="/">Home</a></li>
+            
+            <li class="masthead__menu-item"><a href="/about/">About</a></li>
+            
+            <!-- dead code
+First try page.collection — works for individual post pages
+If not found, try page.permalink slug — works for autopage collection index pages
+ -->
+
+<!-- If repo_url is found in blogs.yml, use it — otherwise fall back to the original constructed URL -->
+
+
+
+
+<!-- create the link -->
+<li>
+  
+    <a href="https://github.com/mdcramer/llm-personalization" target="_blank"><i class="fa fa-fw fa-github" aria-hidden="true"></i>GitHub</a>
+  
+</li>
+        </ul>
+        <button type="button">
+          <span class="visually-hidden">Toggle Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+    <div itemscope itemtype="http://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="https://mdcramer.github.io/assets/images/profilepic-small.jpg" class="author__avatar" alt="Mark Cramer" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name" itemprop="name">Mark Cramer</h3>
+    
+      <p class="author__bio" itemprop="description">
+        ML Product Manager who enjoys hacking around with models and code in his free time, of which there is never, sadly, enough.
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Profile</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> <span itemprop="name">San Francisco</span>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.facebook.com/markdcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/mcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/mdcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.stackoverflow.com/users/852795/mark-cramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-stack-overflow" aria-hidden="true"></i> Stackoverflow
+          </a>
+        </li>
+      
+
+      
+        
+          <li>
+            <a href="https://youtube.com/c/MarkCramerD" itemprop="sameAs">
+              <i class="fa fa-fw fa-youtube-square" aria-hidden="true"></i> YouTube
+            </a>
+          </li>
+        
+      
+
+      
+
+      
+        <li>
+          <a href="https://scholar.google.com/citations?user=vlo46P8AAAAJ" itemprop="sameAs">
+            <img src="/assets/images/googlescholar.svg" alt="googlescholar" class="profile_icon"> Google Scholar
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+  
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Philosophical first principles">
+    <meta itemprop="description" content="How I think about personalization in general and personalizing LLMs in particular.">
+    <meta itemprop="datePublished" content="May 06, 2026">
+    <meta itemprop="dateModified" content="May 06, 2026">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">Philosophical first principles
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <p>When building <a href="http://mymemochat.com/" target="_blank">mymemochat.com</a>, I started from philosophical first principles of personalization. I discussed some briefly under <a href="/llm-personalization/motivation/">Motivation</a> but I’ll make them explicit here.</p>
+
+<h2 id="problem">Problem</h2>
+
+<p>As difficult as it is for users to unambiguously express their intent to a search engine through a set of keywords, it is virtually impossible to do so through a prompt to an LLM, regardless of the size of the context window. At <a href="/rank-dynamics">Rank Dynamics</a> we addressed the former with real-time <a href="/rank-dynamics/the-four-quadrants-of-personalization">personalization</a> through a model of inferred intent gleaned from implicit signals. With this prototype I hope to demonstrate some of the same thinking applied to an LLM.</p>
+
+<h2 id="key-principles">Key principles</h2>
+
+<p>There are a few things which I believe are universally true:</p>
+
+<ol>
+  <li>
+    <p><strong>Implicit signals are more powerful than explicit signals</strong> - Both are very <a href="/rank-dynamics/dont-ask-just-do-it">useful</a>, but not only are implicit signals more abundant, users are frequently unable to explicitly express their preferences because they don’t know they have them. When Dr. Usama Fayyad, Yahoo!’s EVP of Research &amp; Strategic Data Solutions, <a href="https://www.tmcnet.com/usubmit/2007/04/16/2510402.htm" target="_blank">said</a>, “I know more about your intent than any 1,000 keywords you could type,” he was making the point that behavioral signals reveal intent that explicit inputs never capture. This continues to be true today.</p>
+  </li>
+  <li>
+    <p><strong>Preferences decay</strong> - While some <a href="/rank-dynamics/hold-the-pickles-hold-the-lettuce">decay</a> faster than others, all inferred preferences lose predictive power over time. A key distinction is between <em>modes</em> and <em>facts</em>. Modes (car shopping, travel planning, job searching) are behavioral states that have a short half-life by nature and should decay quickly regardless of what happens next. Facts (“I live in SF,” “I own a Honda Civic”) decay slowly. Preferences fall somewhere in between. Crucially, systems should discover life changes through natural conversation as opposed to prompting users or mining external data sources.</p>
+  </li>
+  <li>
+    <p><strong>Preferences are not a point but a space</strong> - Preferences have a natural hierarchy and are typically amorphous and overlapping. A signal about baseball relates to sports broadly. A signal about hiking relates to both fitness and the outdoors. This means a new memory can refresh the decay clock for not just an exact match but a neighborhood of semantically related memories, with influence attenuating by distance. The memory store behaves less like a flat list of facts and more like a weighted graph of embeddings. At Rank Dynamics we tokenized and stemmed content before applying <a href="/rank-dynamics/fast-easy-wordnet-java">WordNet</a> to expand the semantic matching.</p>
+  </li>
+  <li>
+    <p><strong>Preference dissonance is natural</strong> - Because preferences are amorphous and overlapping, apparent conflicts are common and usually not real conflicts. Users who live in both San Francisco and New York are not contradicting themselves. A user who loved baseball last year and says, “I no longer watch baseball” is providing a new signal that will outweigh the former one as the old one decays. No explicit conflict resolution is required. The LLM is smart enough to handle ambiguity at inference time. The system’s job is to maintain a well-decayed memory store as opposed to adjudicate between competing beliefs. At Rank Dynamics we collected both <a href="/rank-dynamics/evaluating-surf-canyons-technology-part-2/">positive and negative</a> preference signals which we simultaneously used to, respectively up-rank and down-rank results.</p>
+  </li>
+</ol>
+
+<h2 id="technical-framework">Technical framework</h2>
+
+<p>Based on the principles above, the personalization system is designed around five steps:</p>
+
+<ol>
+  <li>
+    <p><strong>Extract</strong> - After each interaction, the system identifies memorable signals: stated preferences, implicit behavioral cues, facts about the user and the mode they appear to be in. This happens automatically, without requiring the user to explicitly say “remember this.”</p>
+  </li>
+  <li>
+    <p><strong>Embed</strong> - Each memory is encoded as a dense vector embedding and stored in a local vector memory store. Representing memories as embeddings rather than discrete facts enables semantic retrieval and proximity-based refresh.</p>
+  </li>
+  <li>
+    <p><strong>Decay</strong> - Every memory has a strength value that decays over time at a rate determined by its type. Modes decay fastest. Preferences decay at a moderate rate. Facts decay slowly. When a new signal arrives that is semantically related to an existing memory, the decay clock on that memory (and those nearby in the embedding space) is reset, with the refresh effect attenuating by semantic distance.</p>
+  </li>
+  <li>
+    <p><strong>Retrieve</strong> - At inference time, the current prompt is encoded and used to query the memory store for the most semantically relevant, non-decayed memories. This is a standard RAG (retrieval-augmented generation) pattern. The retrieved memories are then injected into the prompt context before generation.</p>
+  </li>
+  <li>
+    <p><strong>Augment</strong> - The LLM generates a response with the retrieved memories included in its context. No special fine-tuning or model modification is required. The personalization lives entirely in the memory pipeline rather than the model weights.</p>
+  </li>
+</ol>
+
+<p>The result is a system that gets more useful the more you use it, forgets what’s no longer relevant and never requires you to manage it explicitly. Future posts will walk through the implementation of each step in detail.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/decay" class="page__taxonomy-item" rel="tag">decay</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/explicit" class="page__taxonomy-item" rel="tag">explicit</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/implicit" class="page__taxonomy-item" rel="tag">implicit</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/personalization" class="page__taxonomy-item" rel="tag">personalization</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/philosophy" class="page__taxonomy-item" rel="tag">philosophy</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2026-05-06">May 06, 2026</time></p>
+        
+      </footer><section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmdcramer.github.io%2Fllm-personalization%2Fphilosophy%2F" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  
+  <a href="https://news.ycombinator.com/submitlink?u=https%3A%2F%2Fmdcramer.github.io%2Fllm-personalization%2Fphilosophy%2F&t=Philosophical+first+principles" class="btn btn--inverse" title="Share on Hacker News"><i class="fa fa-fw fa-y-combinator" aria-hidden="true"></i><span> Hacker News</span></a>
+  
+  <a href="https://www.reddit.com/submit?url=https%3A%2F%2Fmdcramer.github.io%2Fllm-personalization%2Fphilosophy%2F&title=Philosophical+first+principles" class="btn btn--reddit" title="Share on Reddit"><i class="fa fa-fw fa-reddit" aria-hidden="true"></i><span> Reddit</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmdcramer.github.io%2Fllm-personalization%2Fphilosophy%2F" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  
+  <a href="mailto:?subject=Philosophical+first+principles&body=https%3A%2F%2Fmdcramer.github.io%2Fllm-personalization%2Fphilosophy%2F" class="btn btn--inverse" title="Share via Email"><i class="fa fa-fw fa-envelope" aria-hidden="true"></i><span> Email</span></a>
+  
+  <a href="#" class="btn btn--inverse" title="Copy link" onclick="navigator.clipboard.writeText('https://mdcramer.github.io/llm-personalization/philosophy/'); this.querySelector('span').textContent=' Copied!'; setTimeout(() => this.querySelector('span').textContent=' Copy link', 2000); return false;"><i class="fa fa-fw fa-link" aria-hidden="true"></i><span> Copy link</span></a>
+  
+  <!-- Remove Twitter sharing option
+  <a href="https://twitter.com/intent/tweet?text=Philosophical+first+principles%20https%3A%2F%2Fmdcramer.github.io%2Fllm-personalization%2Fphilosophy%2F" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  -->
+
+  <!--  Remove Google Plus sharing option
+  <a href="https://plus.google.com/share?url=https%3A%2F%2Fmdcramer.github.io%2Fllm-personalization%2Fphilosophy%2F" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a> -->
+</section>
+
+  <nav class="pagination">
+    
+      <a href="https://mdcramer.github.io/llm-personalization/memories/" class="pagination--pager" title="Making memories
+">Previous</a>
+    
+    
+      <a href="https://mdcramer.github.io/llm-personalization/eval/" class="pagination--pager" title="Evaluations
+">Next</a>
+    
+  </nav>
+</div><div class="page__comments">
+  
+    
+        <h4 class="page__comments-title">Leave a Comment</h4>
+        <section id="disqus_thread"></section>
+      
+</div></article>
+</div>
+
+
+    <div class="page__footer">
+      <footer>
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    <!-- 
+      <li><strong>Follow:</strong></li>
+     -->
+    
+
+    
+    <li>
+      <a href="https://www.linkedin.com/in/mcramer" itemprop="sameAs">
+        <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+      </a>
+    </li>
+    <!-- dead code
+First try page.collection — works for individual post pages
+If not found, try page.permalink slug — works for autopage collection index pages
+ -->
+
+<!-- If repo_url is found in blogs.yml, use it — otherwise fall back to the original constructed URL -->
+
+
+
+
+<!-- create the link -->
+<li>
+  
+    <a href="https://github.com/mdcramer/llm-personalization" target="_blank"><i class="fa fa-fw fa-github" aria-hidden="true"></i>GitHub</a>
+  
+</li>
+    <li>
+      <a href="https://www.stackoverflow.com/users/852795/mark-cramer" itemprop="sameAs">
+        <i class="fa fa-fw fa-stack-overflow" aria-hidden="true"></i> Stackoverflow
+      </a>
+    </li>
+    
+
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=vlo46P8AAAAJ" itemprop="sameAs">
+        <img src="/assets/images/googlescholar.svg" alt="googlescholar" class="profile_icon"> Google Scholar
+      </a>
+    </li>
+  
+
+    <li><a href="https://mdcramer.github.io/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2026 Mark Cramer. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="https://mdcramer.github.io/assets/js/main.min.js"></script>
+
+
+
+
+  
+      
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://mdcramer.github.io/llm-personalization/philosophy/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/llm-personalization/philosophy"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://githubmdcramer.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+    
+
+
+    <script type="text/javascript" async 
+src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?
+config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+</html>

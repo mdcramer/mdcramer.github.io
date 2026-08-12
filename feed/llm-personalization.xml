@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="https://mdcramer.github.io/feed/llm-personalization.xml" rel="self" type="application/atom+xml" /><link href="https://mdcramer.github.io/" rel="alternate" type="text/html" /><updated>2026-08-12T11:51:51-07:00</updated><id>https://mdcramer.github.io/feed/llm-personalization.xml</id><title type="html">Hackin’ and Tinkerin’ | Llm-personalization</title><subtitle>A collection of blogs related to some of my work on GitHub and elsewhere</subtitle><author><name>Mark Cramer</name></author><entry><title type="html">Prompt Suggestions</title><link href="https://mdcramer.github.io/llm-personalization/prompt-suggestions/" rel="alternate" type="text/html" title="Prompt Suggestions" /><published>2026-05-07T00:00:00-07:00</published><updated>2026-05-07T00:00:00-07:00</updated><id>https://mdcramer.github.io/llm-personalization/prompt-suggestions</id><content type="html" xml:base="https://mdcramer.github.io/llm-personalization/prompt-suggestions/"><![CDATA[<p>These prompts are adapted from <a href="https://prefeval.github.io/" target="_blank" rel="noopener">PrefEval</a>, a public LLM preference-following benchmark. In particular, they draw from the <a href="https://huggingface.co/datasets/siyanzhao/prefeval_implicit_choice" target="_blank" rel="noopener">PrefEval implicit-choice dataset</a>, which contains preference/query pairs designed to test whether a model can notice a user’s preference and apply it later. The original benchmark is usually scored as a multiple-choice task. For this prototype, the examples below have been rewritten as copy/paste chat prompts.</p>
+
+<p>Try one of the examples below:</p>
+
+<ol>
+  <li>Copy the setup prompt.</li>
+  <li>Send it to the prototype.</li>
+  <li>Click <strong>New Chat</strong>.</li>
+  <li>Copy the test prompt.</li>
+  <li>See whether the answer reflects the preference you gave earlier.</li>
+</ol>
+
+<h2 id="in-person-learning">In-Person Learning</h2>
+
+<p>Setup prompt:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I have a strong aversion to digital or online learning environments and prefer traditional, in-person classroom settings.
+</code></pre></div></div>
+
+<p>Test prompt:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>What are some good ways to learn a new language?
+</code></pre></div></div>
+
+<h2 id="narrative-learning">Narrative Learning</h2>
+
+<p>Setup prompt:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I find flashcards ineffective and prefer storytelling and narrative-based approaches for memorization.
+</code></pre></div></div>
+
+<p>Test prompt:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>How should I study historical dates and events for an exam?
+</code></pre></div></div>
+
+<h2 id="interactive-learning">Interactive Learning</h2>
+
+<p>Setup prompt:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I avoid using textbooks and prefer interactive learning experiences.
+</code></pre></div></div>
+
+<p>Test prompt:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>How can I learn more about the history of ancient civilizations?
+</code></pre></div></div>
+
+<h2 id="group-study">Group Study</h2>
+
+<p>Setup prompt:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I find it difficult to stay engaged in learning activities that do not involve peer-to-peer interaction and group work.
+</code></pre></div></div>
+
+<p>Test prompt:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>What are some effective ways to prepare for an upcoming exam?
+</code></pre></div></div>
+
+<h2 id="peanut-allergy">Peanut Allergy</h2>
+
+<p>Setup prompt:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I have a severe peanut allergy, so I must avoid any foods containing peanuts or peanut products.
+</code></pre></div></div>
+
+<p>Test prompt:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I am visiting Bangkok next month. What are some must-try local Thai dishes or restaurants you would recommend for me?
+</code></pre></div></div>
+
+<h2 id="mild-food">Mild Food</h2>
+
+<p>Setup prompt:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I strongly dislike eating spicy food and prefer mild, delicate flavors.
+</code></pre></div></div>
+
+<p>Test prompt:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>What are some local dishes I should try when visiting Mexico City?
+</code></pre></div></div>
+
+<h2 id="gluten-free-travel">Gluten-Free Travel</h2>
+
+<p>Setup prompt:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I have celiac disease, so I absolutely cannot consume any foods containing gluten.
+</code></pre></div></div>
+
+<p>Test prompt:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I am visiting Rome next month. What are some must-try restaurants or dishes you would recommend for me?
+</code></pre></div></div>
+
+<h2 id="no-chain-restaurants">No Chain Restaurants</h2>
+
+<p>Setup prompt:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I strongly dislike eating at chain restaurants and prefer unique, independent local places.
+</code></pre></div></div>
+
+<p>Test prompt:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Can you suggest some great dining options in Orlando that I should try?
+</code></pre></div></div>
+
+<h2 id="low-sodium-food">Low-Sodium Food</h2>
+
+<p>Setup prompt:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I am on a low-sodium diet and try to avoid very salty foods.
+</code></pre></div></div>
+
+<p>Test prompt:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I am planning a trip to Japan soon. What are some authentic Japanese meals or restaurants you would recommend for me?
+</code></pre></div></div>
+
+<h2 id="no-seafood">No Seafood</h2>
+
+<p>Setup prompt:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I strongly dislike seafood.
+</code></pre></div></div>
+
+<p>Test prompt:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>What are some must-try restaurants or local dishes in Barcelona?
+</code></pre></div></div>
+
+<h2 id="a-bigger-memory-test">A Bigger Memory Test</h2>
+
+<p>This one combines several compatible preference patterns from PrefEval-style examples. It should be harder than a single preference because the prototype needs to keep multiple constraints in mind.</p>
+
+<p>Setup prompt:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I prefer independent local restaurants instead of chains. I dislike spicy food, I avoid seafood, and I need gluten-free options when I eat out.
+</code></pre></div></div>
+
+<p>Test prompt:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Plan a dinner recommendation for me in a city I am visiting.
+</code></pre></div></div>
+
+<h2 id="combo-demo-a-relaxed-saturday">Combo Demo: A Relaxed Saturday</h2>
+
+<p>This one is less directly benchmark-shaped, but it is a good demonstration of why memory gets interesting. Instead of checking one preference, it asks the prototype to combine location, food, atmosphere, activity, and anti-tourist preferences at the same time.</p>
+
+<p>Setup prompt:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I live in San Francisco. I prefer vegetarian food, quiet restaurants, bookstores, parks, coffee shops, and low-key neighborhood places. I usually avoid touristy spots, loud bars, packed schedules, and anything that requires driving across town.
+</code></pre></div></div>
+
+<p>Test prompt:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Plan a relaxed Saturday for me.
+</code></pre></div></div>
+
+<h2 id="what-to-look-for">What To Look For</h2>
+
+<p>A good answer should use the preference without making a big production out of it. For example, if you said you have a peanut allergy, it should not recommend peanut sauces or peanut-heavy snacks. If you said you prefer in-person learning, it should not default to apps and online courses. If you said you avoid chain restaurants, it should favor local independent spots.</p>
+
+<p>For the combo demo, look for whether it can satisfy several preferences at once: vegetarian food, quiet places, neighborhood feel, low-key activities, and a realistic San Francisco day.</p>
+
+<p>The prototype is still experimental, so it will miss things. That is useful too. The failures help show where preference extraction, memory storage, and later personalization need to improve.</p>]]></content><author><name>Mark Cramer</name></author><category term="prompts" /><category term="suggestions" /><summary type="html"><![CDATA[Some helpful ideas for testing the prototype without having to burn mental energy.]]></summary></entry><entry><title type="html">Evaluations</title><link href="https://mdcramer.github.io/llm-personalization/eval/" rel="alternate" type="text/html" title="Evaluations" /><published>2026-05-06T11:00:00-07:00</published><updated>2026-05-06T00:00:00-07:00</updated><id>https://mdcramer.github.io/llm-personalization/eval</id><content type="html" xml:base="https://mdcramer.github.io/llm-personalization/eval/"><![CDATA[<p>Coming soon but looking to leverage <a href="https://prefeval.github.io/" target="_blank">PrefEval</a>…</p>]]></content><author><name>Mark Cramer</name></author><category term="personalization" /><category term="eval" /><category term="evaluations" /><summary type="html"><![CDATA[Measuring the performance of the personalized LLM.]]></summary></entry><entry><title type="html">Philosophical first principles</title><link href="https://mdcramer.github.io/llm-personalization/philosophy/" rel="alternate" type="text/html" title="Philosophical first principles" /><published>2026-05-06T07:00:00-07:00</published><updated>2026-05-06T00:00:00-07:00</updated><id>https://mdcramer.github.io/llm-personalization/philosophy</id><content type="html" xml:base="https://mdcramer.github.io/llm-personalization/philosophy/"><![CDATA[<p>When building <a href="http://mymemochat.com/" target="_blank">mymemochat.com</a>, I started from philosophical first principles of personalization. I discussed some briefly under <a href="/llm-personalization/motivation/">Motivation</a> but I’ll make them explicit here.</p>
+
+<h2 id="problem">Problem</h2>
+
+<p>As difficult as it is for users to unambiguously express their intent to a search engine through a set of keywords, it is virtually impossible to do so through a prompt to an LLM, regardless of the size of the context window. At <a href="/rank-dynamics">Rank Dynamics</a> we addressed the former with real-time <a href="/rank-dynamics/the-four-quadrants-of-personalization">personalization</a> through a model of inferred intent gleaned from implicit signals. With this prototype I hope to demonstrate some of the same thinking applied to an LLM.</p>
+
+<h2 id="key-principles">Key principles</h2>
+
+<p>There are a few things which I believe are universally true:</p>
+
+<ol>
+  <li>
+    <p><strong>Implicit signals are more powerful than explicit signals</strong> - Both are very <a href="/rank-dynamics/dont-ask-just-do-it">useful</a>, but not only are implicit signals more abundant, users are frequently unable to explicitly express their preferences because they don’t know they have them. When Dr. Usama Fayyad, Yahoo!’s EVP of Research &amp; Strategic Data Solutions, <a href="https://www.tmcnet.com/usubmit/2007/04/16/2510402.htm" target="_blank">said</a>, “I know more about your intent than any 1,000 keywords you could type,” he was making the point that behavioral signals reveal intent that explicit inputs never capture. This continues to be true today.</p>
+  </li>
+  <li>
+    <p><strong>Preferences decay</strong> - While some <a href="/rank-dynamics/hold-the-pickles-hold-the-lettuce">decay</a> faster than others, all inferred preferences lose predictive power over time. A key distinction is between <em>modes</em> and <em>facts</em>. Modes (car shopping, travel planning, job searching) are behavioral states that have a short half-life by nature and should decay quickly regardless of what happens next. Facts (“I live in SF,” “I own a Honda Civic”) decay slowly. Preferences fall somewhere in between. Crucially, systems should discover life changes through natural conversation as opposed to prompting users or mining external data sources.</p>
+  </li>
+  <li>
+    <p><strong>Preferences are not a point but a space</strong> - Preferences have a natural hierarchy and are typically amorphous and overlapping. A signal about baseball relates to sports broadly. A signal about hiking relates to both fitness and the outdoors. This means a new memory can refresh the decay clock for not just an exact match but a neighborhood of semantically related memories, with influence attenuating by distance. The memory store behaves less like a flat list of facts and more like a weighted graph of embeddings. At Rank Dynamics we tokenized and stemmed content before applying <a href="/rank-dynamics/fast-easy-wordnet-java">WordNet</a> to expand the semantic matching.</p>
+  </li>
+  <li>
+    <p><strong>Preference dissonance is natural</strong> - Because preferences are amorphous and overlapping, apparent conflicts are common and usually not real conflicts. Users who live in both San Francisco and New York are not contradicting themselves. A user who loved baseball last year and says, “I no longer watch baseball” is providing a new signal that will outweigh the former one as the old one decays. No explicit conflict resolution is required. The LLM is smart enough to handle ambiguity at inference time. The system’s job is to maintain a well-decayed memory store as opposed to adjudicate between competing beliefs. At Rank Dynamics we collected both <a href="/rank-dynamics/evaluating-surf-canyons-technology-part-2/">positive and negative</a> preference signals which we simultaneously used to, respectively up-rank and down-rank results.</p>
+  </li>
+</ol>
+
+<h2 id="technical-framework">Technical framework</h2>
+
+<p>Based on the principles above, the personalization system is designed around five steps:</p>
+
+<ol>
+  <li>
+    <p><strong>Extract</strong> - After each interaction, the system identifies memorable signals: stated preferences, implicit behavioral cues, facts about the user and the mode they appear to be in. This happens automatically, without requiring the user to explicitly say “remember this.”</p>
+  </li>
+  <li>
+    <p><strong>Embed</strong> - Each memory is encoded as a dense vector embedding and stored in a local vector memory store. Representing memories as embeddings rather than discrete facts enables semantic retrieval and proximity-based refresh.</p>
+  </li>
+  <li>
+    <p><strong>Decay</strong> - Every memory has a strength value that decays over time at a rate determined by its type. Modes decay fastest. Preferences decay at a moderate rate. Facts decay slowly. When a new signal arrives that is semantically related to an existing memory, the decay clock on that memory (and those nearby in the embedding space) is reset, with the refresh effect attenuating by semantic distance.</p>
+  </li>
+  <li>
+    <p><strong>Retrieve</strong> - At inference time, the current prompt is encoded and used to query the memory store for the most semantically relevant, non-decayed memories. This is a standard RAG (retrieval-augmented generation) pattern. The retrieved memories are then injected into the prompt context before generation.</p>
+  </li>
+  <li>
+    <p><strong>Augment</strong> - The LLM generates a response with the retrieved memories included in its context. No special fine-tuning or model modification is required. The personalization lives entirely in the memory pipeline rather than the model weights.</p>
+  </li>
+</ol>
+
+<p>The result is a system that gets more useful the more you use it, forgets what’s no longer relevant and never requires you to manage it explicitly. Future posts will walk through the implementation of each step in detail.</p>]]></content><author><name>Mark Cramer</name></author><category term="personalization" /><category term="philosophy" /><category term="implicit" /><category term="explicit" /><category term="decay" /><summary type="html"><![CDATA[How I think about personalization in general and personalizing LLMs in particular.]]></summary></entry><entry><title type="html">Making memories</title><link href="https://mdcramer.github.io/llm-personalization/memories/" rel="alternate" type="text/html" title="Making memories" /><published>2026-04-26T08:45:00-07:00</published><updated>2026-04-26T00:00:00-07:00</updated><id>https://mdcramer.github.io/llm-personalization/memories</id><content type="html" xml:base="https://mdcramer.github.io/llm-personalization/memories/"><![CDATA[<p>After getting the <a href="/llm-personalization/setup/">setup</a>, the next set was representing what it learns about the user. For now, I have focused on a very specific kind of memory: <strong>preferences</strong>. The system is not yet trying to build a complete user model with biographical facts or long-lived profile information (more below). Instead, it is looking for preference signals in the user’s prompts and using those signals as the first layer of personalization.</p>
+
+<p>This was a deliberate choice to mirror the <a href="/rank-dynamics/selected-for-oral-presentation-at-sigir-09/" target="_blank">real-time implicit personalization</a> we worked on at <a href="/rank-dynamics/" target="_blank">Rank Dynamics</a>. The goal is to observe signals that emerge during interaction and use them quickly to change future behavior.</p>
+
+<h2 id="extracting-preferences">Extracting preferences</h2>
+
+<p>The first step is extracting preferences from the prompts. This is accomplished with a separate backend LLM call whose job is intentionally narrow: return a JSON object with two arrays, likes and dislikes, each containing short text snippets. If the user says something like “I like strawberries but I don’t like very sweet desserts,” the extractor attempts to isolate those preferences and store them as separate memory items.</p>
+
+<p>The current system is not trying to infer personality traits, stable facts or complex emotional states. It is only trying to catch reasonably clear preference evidence which makes the behavior easier to inspect and debug. Eventually, I will expand to include factual memories about the user as well. Facts, such as where a user lives, what they do for work, or what project they are working on, is not the same as a taste or preference and, as such, should probably decay much more slowly.</p>
+
+<h2 id="whats-the-vector-victor">What’s the vector, Victor?</h2>
+
+<p>Once a preference is extracted, it is converted into a vector representation using OpenAI embeddings. An important design choice here is that the embedded text is normalized to the semantic content of the preference rather than the full surface form. In other words, the goal is to embed something like “strawberries,” not “I like strawberries” or “I dislike strawberries.” The signed weight is stored separately.</p>
+
+<p>This matters because I want positive and negative evidence about the same concept to land in roughly the same part of vector space. If the user says “I like strawberries” in one moment and “I don’t like strawberries” in another, the prototype should treat those as two pieces of evidence about the same underlying topic, not as unrelated memories. The vector is meant to capture semantic similarity, while the weight captures direction and strength.</p>
+
+<p>At the moment, those weights are simple. Preferences are stored with signed values and the decay behavior is configurable, but I have not yet built the more intelligent weighting scheme that I ultimately want. For now, the important thing is that the prototype already separates semantic representation from preference direction, which gives it a useful structure for future refinement.</p>
+
+<h2 id="clustering-related-memories">Clustering related memories</h2>
+
+<p>Once memories are embedded, the next task is grouping related ones together. For this, I chose DBSCAN because it does not require pre-specifying the number of clusters, like <a href="/apple-2-blog/k-means/" target="_blank">k-means</a>. That is attractive because the number of memory themes depends on the user’s behavior rather than on an arbitrary design decision. If the user has expressed many related preferences, clusters should emerge naturally. If not, memories remain unclustered.</p>
+
+<p>Conceptually, the clustering step is meant to discover topics of preference rather than isolated statements. A user may express the same taste repeatedly in slightly different ways, or may express related attitudes toward a broader concept. Clustering makes it possible to start treating those as part of a shared pattern rather than as independent rows in a database.</p>
+
+<p>This is also where the prototype begins to move beyond simple prompt injection. Instead of just remembering isolated likes and dislikes, it starts building grouped preference areas. That is important because a personalized system should ideally react not just to exact repetition, but to related evidence that accumulates over time.</p>
+
+<h2 id="a-cluster-by-any-other-name">A cluster by any other name…</h2>
+
+<p>A cluster of vectors is useful computationally, but for the system to use clustered memories in prompt injection, and for the interface to make sense to users, each cluster needs a readable description.</p>
+
+<p>The current approach sends the aggregated cluster memories, along with their signed scores, to the LLM and asks it to generate a short directional description. In contrast to the memoires, the prompt explicitly asks the model to infer the underlying preference direction that best explains the cluster as a whole. So the goal is not merely to name a concept like “mechanical keyboards,” but to produce something more like a preference description, such as a preference for quieter keyboard sounds or a dislike of loud, clicky ones.</p>
+
+<p>The prompt also asks the model to judge whether each memory in the cluster supports or opposes the final cluster description. That matters because positive and negative memories about related concepts may still point toward the same higher-level preference. This gives the prototype a first pass at interpreting preference structure rather than merely storing raw observations.</p>
+
+<h2 id="real-time-signals-not-full-identity">Real-time signals, not full identity</h2>
+
+<p>One thing worth emphasizing is that this is still a very lightweight memory system. It is not trying to become a deep, persistent identity model of the user. That may come later in some form, especially once factual memories are added, but the current behavior is closer to short-horizon adaptation. In that sense, it remains aligned with the older Rank Dynamics intuition of using immediate interaction signals to improve relevance in real time.</p>
+
+<p>That is also why decay matters. Some memories should fade if they are not reinforced. Others should become stronger as evidence accumulates. At the moment the decay mechanism is still relatively blunt, and one of the next steps will be to make those decay weights more intelligent. I expect factual memories, when introduced, to behave very differently from preference memories in this respect.</p>
+
+<h2 id="prompt-injection-today-and-tomorrow">Prompt injection today and tomorrow</h2>
+
+<p>Right now, the prompt injection layer is still simple. The system stores and clusters the memories, but the live chat prompt is still primarily injected with raw remembered likes and dislikes when they seem relevant. In other words, the more sophisticated cluster descriptions already exist, but they are not yet the main representation used to guide the assistant.</p>
+
+<p>That will eventually change. The direction I want to move in is to inject cluster-level natural language descriptions, augmented with some sense of weight or confidence. Instead of giving the model a flat list of remembered items, the prompt could communicate higher-level preference summaries such as strong tendencies, mild tendencies or mixed evidence around a topic. That would be much closer to the kind of structured, interpretable personalization I have in mind.</p>
+
+<p>For now, the prototype is in an intermediate and useful state. It can extract preferences, map them into vector space, cluster related memories and generate directional descriptions for those clusters. That is already enough to make the memory system feel less like a bag of saved strings and more like the beginnings of a personalized representation of user intent.</p>]]></content><author><name>Mark Cramer</name></author><category term="memory" /><category term="memories" /><category term="decay" /><summary type="html"><![CDATA[Extracting user preferences from the prompts and then intelligently decaying them.]]></summary></entry><entry><title type="html">Setup</title><link href="https://mdcramer.github.io/llm-personalization/setup/" rel="alternate" type="text/html" title="Setup" /><published>2026-04-26T06:00:00-07:00</published><updated>2026-04-26T00:00:00-07:00</updated><id>https://mdcramer.github.io/llm-personalization/setup</id><content type="html" xml:base="https://mdcramer.github.io/llm-personalization/setup/"><![CDATA[<p>After laying out the <a href="/llm-personalization/motivation/">motivation</a>, the next question was how to build something simple enough to experiment with but real enough to share.</p>
+
+<p>I did not want a heavy framework or a complex cloud architecture. The goal was not to build a polished product but a working prototype that would let me explore personalization in a concrete way. That meant choosing tools that were familiar, lightweight and easy to modify.</p>
+
+<p>The basic stack ended up being:</p>
+<ul>
+  <li>a single-page frontend in HTML and JavaScript,</li>
+  <li>a small Python backend using Flask,</li>
+  <li>OpenAI’s API for the model calls and</li>
+  <li>SQLite for local storage.
+The idea was to keep the application legible. I wanted to be able to understand the whole system, change individual pieces quickly, and avoid spending the early days of the project fighting the scaffolding.</li>
+</ul>
+
+<h2 id="to-stream-or-not-to-stream">To stream or not to stream</h2>
+
+<p>I also chose not to implement streaming at the outset. That was partly a product decision and partly an architectural one. Since I wanted to work in a stack I already knew well, I started with a very simple HTML/JavaScript frontend and a Python Flask backend. Streaming would have been possible in that setup but it would have added complexity and pulled attention toward interface polish rather than the core question of the project. The memory logic is the story, so I kept the interaction loop simple and focused development effort there.</p>
+
+<h2 id="my-coding-partner-codex">My coding partner, Codex</h2>
+
+<p>Codex was my development partner. Rather than writing everything <a href="https://mortalwayfare.com/building-the-game-engine-from-scratch/" target="_blank">from scratch</a> in the traditional way, I used Codex conversationally to sketch the initial structure, generate and revise code, troubleshoot issues, and iteratively add features. That ended up shaping not just the speed of development, but the style of it. Instead of trying to design the entire system up front, I moved in small steps, testing each change and then deciding what to do next. My experience with coding agents is that, like when developing something from scratch, it helps to break the project up into little pieces and stage them out. For a prototype like this, that worked extremely well.</p>
+
+<h2 id="bare-bones">Bare bones</h2>
+
+<p>The first version was intentionally minimal. Before worrying about memory, embeddings, clustering or prompt injection, I just wanted a chatbot that worked. The frontend sends a message to the Flask backend, the backend forwards the request to OpenAI, and the response comes back to the browser. That simple loop established the core application shape and made it possible to layer in personalization later without rethinking everything.</p>
+
+<p>To make that work, I needed an OpenAI API key. A ChatGPT subscription is not the same thing as API access, so I created an API key through the OpenAI platform, configured billing and stored the key as an environment variable rather than hardcoding it into the project in order to cleanly separate the application code from credentials and make it easier to run the same project locally and in production.</p>
+
+<p>Local development was done the old-fashioned way, on localhost. I used a familiar Conda-based Python environment, installed the dependencies, ran the Flask app and iterated from there. This made it easy to test changes quickly and keep the feedback loop short.</p>
+
+<h2 id="sharing-with-the-world">Sharing with the world</h2>
+
+<p>Once the <code class="language-plaintext highlighter-rouge">127.0.0.1:5000</code> local version was stable enough to be interesting, I wanted to put it online so that other people could try it. For hosting, I chose Railway for its simplicity. Railway connects straight to a GitHub repository so changes are deployed automatically with a simple <code class="language-plaintext highlighter-rouge">git push</code>. There was no need to build a deployment pipeline from scratch or think deeply about servers. I just needed a reliable way to turn a local experiment into a public URL.</p>
+
+<p>The application also needed a little production-minded handling because it uses SQLite. On a local machine, SQLite is almost effortless. In the cloud, it raises the practical questions of where does the database live, and does it survive restarts and redeploys? Railway’s persistent volume support provided a clean answer that let me keep the lightweight local-database approach while still preserving the prototype’s memory store across deployments.</p>
+
+<p>Once the app was live on Railway, the next step was to make it feel less temporary with a custom domain name. (I bought <a href="https://mymemochat.com" target="_blank">mymemochat.com</a> because it was available and I didn’t feel like spending days thinking about this.) This, unfortunately, turned out to be one of the more finicky parts of the setup. The DNS provided by the company hosting my domain did not play nicely with Railway’s custom-domain and SSL flow, particularly at the root. Railway expects a CNAME-style setup and some providers’ ALIAS-style behavior is unreliable for this because Railway services sit behind dynamic shared IPs. The practical fix was to move DNS handling to <a href="https://www.cloudflare.com/" target="_blank">Cloudflare</a>. That solved two problems at once:</p>
+<ol>
+  <li>Cloudflare supports CNAME flattening at the root domain and</li>
+  <li>it gave me a more predictable path for SSL.</li>
+</ol>
+
+<h2 id="getting-to-work">Getting to work</h2>
+
+<p>One thing I appreciated about this setup is that it preserved the same basic development rhythm. I could still work locally on <code class="language-plaintext highlighter-rouge">127.0.0.1</code>, test changes quickly, and only push when something was ready to be seen publicly. Once the code was pushed to GitHub, Railway would redeploy the updated app. That created a smooth bridge between experimentation and publication, which is what I wanted.</p>
+
+<p>This all may sound ordinary, but when building a prototype whose main novelty lies in behavior rather than infrastructure, there is real value in keeping the surrounding system boring. A simple frontend, a small Flask backend, an API key, a local database, a straightforward host and a custom domain were enough to get the project to the point where the more interesting questions could begin.</p>
+
+<p>Those more interesting questions are really what the project is about. Once the basic shell was in place, I could start focusing on the personalization itself: how memories should be extracted, represented, weighted, clustered, decayed and eventually injected back into future prompts.</p>]]></content><author><name>Mark Cramer</name></author><category term="setup" /><category term="streaming" /><category term="API" /><category term="DNS" /><summary type="html"><![CDATA[Some background into how I got the prototype off the ground.]]></summary></entry><entry><title type="html">Motivation</title><link href="https://mdcramer.github.io/llm-personalization/motivation/" rel="alternate" type="text/html" title="Motivation" /><published>2026-04-19T00:00:00-07:00</published><updated>2026-04-22T00:00:00-07:00</updated><id>https://mdcramer.github.io/llm-personalization/motivation</id><content type="html" xml:base="https://mdcramer.github.io/llm-personalization/motivation/"><![CDATA[<p>At <a href="/rank-dynamics" target="_blank">Rank Dynamics</a>, our team worked on the problem of real-time personalization in search. The idea was simple: a short query rarely captures a person’s true intent and static ranking does a poor job of adapting as that intent becomes clearer. We believed relevance should not be frozen at the moment the query is issued but rather improved as the system learns, implicitly, from the user’s actions.</p>
+
+<p>The core problem was <a href="/rank-dynamics/the-problem-too-many-results/" target="_blank">too many search results</a>. <a href="https://www.microsoft.com/en-us/research/people/teevan/publications/" target="_blank">Teevan</a> et al., in “Beyond the Commons: Investigating the Value of Personalizing Web Search,” put it plainly:</p>
+
+<blockquote>
+  <p>“Web queries are very short, and it is unlikely that a two- or three-word query can unambiguously describe a user’s informational goal.”</p>
+</blockquote>
+
+<p>As such, we laid out our philosophy for addressing this problem with <a href="/rank-dynamics/the-four-quadrants-of-personalization/" target="_blank">four quadrants of personalization</a>. The quadrants distinguish two axes: signals learned explicitly (through keyword entry) vs. implicitly (through actions and inactions) and those that are captured in real time vs. built up over the long term. In particular contexts, like deep research and <a href="/rank-dynamics/more-pudding/" target="_blank">shopping</a>, the implicit signals turned out to be the most powerful. Critically, however, user intent signals have a half-life. Some aspects of personalization don’t change frequently but most signals should decay quickly.</p>
+
+<p>As a segue from search to LLMs, Andrej Karpathy recently <a href="https://x.com/karpathy/status/2036836816654147718" target="_blank">wrote</a>:</p>
+
+<blockquote>
+  <p>“One common issue with personalization in all LLMs is how distracting memory seems to be for the models. A single question from 2 months ago about some topic can keep coming up as some kind of a deep interest of mine with undue mentions in perpetuity. Some kind of trying too hard.”</p>
+</blockquote>
+
+<p>Large language models (LLMs) make this old philosophy newly interesting.</p>
+
+<p>LLMs are often discussed as if they have replaced search, which feels true to a large extent. In practice, however, they inherit many of the same problems, which are, frankly, fundamental to communication. The interface is more fluid and the output is more polished but the system still has to infer what the user actually wants. In fact, the problem may be even harder now. Instead of choosing which ten links to rank at the top, the system is choosing how to frame an answer, what assumptions to make, which facts to emphasize, how much detail to provide and what tone or style best fits the moment.</p>
+
+<p>A beginner and an expert may need very different explanations of the same idea. A user who prefers concise answers may experience the same response differently from someone who wants more context. A recommendation that is technically sound may still feel wrong if it conflicts with a person’s tastes, habits or current goals. To Andrej’s point, bringing up old signals after the person has moved on can be frustrating. What matters is not only whether the model can generate a plausible response, but whether it can generate one that feels appropriately aligned to a particular user at a particular moment.</p>
+
+<p>I wanted to test whether a lightweight system, built in a weekend, with no custom model training, could meaningfully personalize LLM responses by maintaining a small, decaying memory of what the user cares about and then selectively injecting that context at inference time.</p>
+
+<p>So, over a weekend I built <a href="https://mymemochat.com" target="_blank">mymemochat.com</a>.</p>
+
+<p>It’s a prototype that looks reminiscent of an early Rank Dynamics prototype. (I wish I had saved a screenshot!) We eventually dropped the ‘insights’ in the left panel and then quickly moved to delivering our technology through a browser extension (which ended up being installed tens of millions of times) but it makes the process transparent which helps with debugging and communicating the value proposition.</p>
+
+<p>The whole thing was built with Codex using OpenAI GPT-4o mini on the backend. The system progressively layers personalization on top of the LLM through prompt injection, using a local embedding vector memory store and explicit logic for deciding what should be saved, reinforced, decayed or discarded. I used Codex as a development partner throughout, sketching the architecture myself and breaking it into small chunks, without writing a line of code directly.</p>
+
+<p>In future posts, I’ll walk through the architecture in detail: how memories are extracted and embedded, the decay logic, how RAG augmentation works in practice and what I’d do differently. In the meantime, give it a try and let me know what you think.</p>]]></content><author><name>Mark Cramer</name></author><category term="motivation" /><summary type="html"><![CDATA[Motivation for building a prototype for chatbot personalization.]]></summary></entry></feed>
