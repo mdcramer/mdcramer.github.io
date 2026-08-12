@@ -107,4 +107,4 @@ After installing this plug-in, I find that it offers a great way to explore sear
 
 No user interface is perfect but this truly offers a convenient and innovative ways of viewing results without replacing the powerful search engine we love.
 
-I have written a review at http://geekycoder.wordpress.com/2008/05/10/reviewweb-expand-the-web-through-surf-canyon/
+I have written a review at [geekycoder.wordpress.com/2008/05/10/reviewweb-expand-the-web-through-surf-canyon/](http://geekycoder.wordpress.com/2008/05/10/reviewweb-expand-the-web-through-surf-canyon/).

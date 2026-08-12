@@ -1,6 +1,6 @@
 ---
 title: "K-means by another means"
-excerpt: "Success! There is machine learning happening on my Apple ][+."
+excerpt: "Success! There is machine learning happening on my Apple ]\[+."
 header:
   teaser: /assets/images/apple2/k-means-convergence.jpg
   og_image: /assets/images/apple2/k-means-convergence.jpg
@@ -236,4 +236,4 @@ While k-means is simple, it does not take advantage of our knowledge of the Gaus
 ## Social media sharing
 I shared this post on [Hacker News](https://news.ycombinator.com/item?id=45415510){:target="_blank"} and, to my surprise and delight, got a decent amount of feedback, including some helpful corrections.
 
-My [post on Facebook](https://www.facebook.com/markdcramer/posts/pfbid0eG3AuPSxFTqBm4nggDAjqJrQe8VFv5VUEKf5SQ8qtnDjVFZ4qaSZvauDBcKRxSoFl){:target="_blank"} received _significantly_ less reaction. My friends are apparently a lot less interested in ML algorithms on retro hardware than randos on Hacker News. My share requests to Facebook groups [Apple II Enthusiasts](https://www.facebook.com/groups/5251478676){:target="_blank"} and [Retro Microcomputers](https://www.facebook.com/groups/retrocomputers){:target="_blank"} were both rejected, which is a bit disappointing. Still, those are fun groups to follow. My [post on the VCF forum](https://forum.vcfed.org/index.php?threads/ml-on-an-apple.1254709/){:target="_blank"} also got zilch. (I attend the [Vintage Computer Festival](https://vcfed.org/events/vintage-computer-festival-west/){:target="_blank"} at the [Computer History Museum](https://computerhistory.org/){:target="_blank"}, which was a good time.) Perhaps I'll try Reddit and LinkedIn next to see what happens...
+My [post on Facebook](https://www.facebook.com/markdcramer/posts/pfbid0eG3AuPSxFTqBm4nggDAjqJrQe8VFv5VUEKf5SQ8qtnDjVFZ4qaSZvauDBcKRxSoFl){:target="_blank"} received _significantly_ less reaction. My friends are apparently a lot less interested in ML algorithms on retro hardware than randos on Hacker News. My share requests to Facebook groups [Apple II Enthusiasts](https://www.facebook.com/groups/5251478676){:target="_blank"} and [Retro Microcomputers](https://www.facebook.com/groups/retrocomputers){:target="_blank"} were both rejected, which is a bit disappointing. Still, those are fun groups to follow. My [post on the VCF forum](https://forum.vcfed.org/index.php?threads/ml-on-an-apple.1254709/){:target="_blank"} also got zilch. (I attended the [Vintage Computer Festival](https://vcfed.org/events/vintage-computer-festival-west/){:target="_blank"} at the [Computer History Museum](https://computerhistory.org/){:target="_blank"}, which was a good time.) Perhaps I'll try Reddit and LinkedIn next to see what happens...

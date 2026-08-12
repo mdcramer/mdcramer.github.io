@@ -1,6 +1,6 @@
 ---
 title: "Motivation"
-excerpt: "Why develop machine learning on an Apple ][+?"
+excerpt: "Why develop machine learning on an Apple ]\[+?"
 tags:
   - machine learning
   - motivation

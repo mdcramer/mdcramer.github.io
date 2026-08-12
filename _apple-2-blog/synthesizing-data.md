@@ -76,7 +76,7 @@ With a particular fondness for all thing [Gaussian](https://en.wikipedia.org/wik
 `AM%` is a two element array of integers to store, respectively, the x-mean and y-mean values for the A data set. (The % sign makes the variable an integer which save space but actually reduced performance because mathematical operations on the <span class="no-break">Apple ]\[+</span> convert integers to real numbers and then back again.) `AS%` does the same for the x- and y-standard deviations. `AC` is a real number correlation coefficient ∈ [-1, 1]. Finally, `AN` is the number of elements in the A dataset. The corresponding B data set hyper-parameters are similar. (In Applesoft BASIC only the [first two characters](https://youtu.be/PHfKCxjsmos?si=lVgpeslJ8ZBiRaAl&t=39){:target="_blank"} of a variable name are 'considered' so you have to be careful of collisions.)
 
 ### Box-Muller to the rescue
-The Apple ][+ can generate uniform random variables from 0 to 0.999999999 using `RND()`, however, to get standard normal random variables we'll have to use the [Box-Muller](https://en.wikipedia.org/wiki/Box%E2%80%93Muller_transform){:target="_blank"} transform.
+The <span class="no-break">Apple ]\[+</span> can generate uniform random variables from 0 to 0.999999999 using `RND()`, however, to get standard normal random variables we'll have to use the [Box-Muller](https://en.wikipedia.org/wiki/Box%E2%80%93Muller_transform){:target="_blank"} transform.
 
 Given two independent samples, \\(u_1\\) and \\(u_2\\), chosen from a uniform distribution on the unit interval (0, 1), we can get two independent random variables, \\(z_0\\) and \\(z_1\\), with a standard normal distribution with the following:
 
