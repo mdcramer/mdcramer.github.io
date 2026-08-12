@@ -1,6 +1,6 @@
 ---
 title: "K-means by another means"
-excerpt: "Success! There is machine learning happening on my Apple ]\[+."
+excerpt: "Success! There is machine learning happening on my Apple ][+."
 header:
   teaser: /assets/images/apple2/k-means-convergence.jpg
   og_image: /assets/images/apple2/k-means-convergence.jpg
