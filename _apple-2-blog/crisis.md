@@ -72,4 +72,4 @@ I guess it's not _solely_ the 80-column card. I have a booth at the [Vintage Com
 
 [![Opening the case at the Vintage Computer Festival to cool off the machine](/assets/images/apple2/vcf-open-case.jpg "Opening the case at the Vintage Computer Festival to cool off the machine")](/assets/images/apple2/vcf-open-case.jpg "Opening the case at the Vintage Computer Festival to cool off the machine")
 
-The good news is that popping the lid to let the internals cool down did the trick... for now...
+The good news is that popping the lid to let the internals cool down did the trick. I was able to run for another few hours, with the lid open, no problem.
