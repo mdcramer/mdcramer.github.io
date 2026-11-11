@@ -1,0 +1,550 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.6.0 by Michael Rose
+  Copyright 2017 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin SEO -->
+
+
+
+<!-- old method which didn't work
+
+ -->
+
+
+
+
+<!-- DEBUG: collection_key= autopages= -->
+
+<!-- Assign page title -->
+
+
+
+
+<!-- Assign seo title -->
+
+
+
+
+
+
+<title>About - Hackin’ and Tinkerin’</title>
+
+
+
+
+<meta name="description" content="A collection of blogs related to some of my work on GitHub and elsewhere">
+
+
+
+
+<meta name="author" content="Mark Cramer">
+
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="Hackin' and Tinkerin'">
+<meta property="og:title" content="About - Hackin’ and Tinkerin’">
+
+
+  <link rel="canonical" href="https://mdcramer.github.io/about/">
+  <meta property="og:url" content="https://mdcramer.github.io/about/">
+
+
+
+
+<!-- Twitter block -->
+
+
+<!-- Facebook block -->
+
+  
+
+  
+
+
+<!-- generic OG block -->
+
+  <meta property="og:image" content="https://mdcramer.github.io/assets/images/notebook-header.jpg">
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2026-04-28T00:00:00-07:00">
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://mdcramer.github.io",
+      "logo": "https://mdcramer.github.io/assets/images/notebook-header.jpg"
+    }
+  </script>
+
+
+
+
+
+
+
+
+
+<!-- end SEO -->
+
+
+<link href="https://mdcramer.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Hackin' and Tinkerin' Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://mdcramer.github.io/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+<!-- Suggestion from https://claude.ai/share/45526d65-a109-4f2d-84be-9e46a03990ae -->
+
+<!-- DEBUG: page.image =  -->
+<!-- DEBUG: site.og_image = /assets/images/notebook-header.jpg -->
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mdcramer.github.io/about/">
+<meta property="og:title" content="About">
+<meta property="og:description" content="A collection of blogs related to some of my work on GitHub and elsewhere">
+<meta property="og:image" content="https://mdcramer.github.io/assets/images/notebook-header.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://mdcramer.github.io/about/">
+<meta property="twitter:title" content="About">
+<meta property="twitter:description" content="A collection of blogs related to some of my work on GitHub and elsewhere">
+<meta property="twitter:image" content="https://mdcramer.github.io/assets/images/notebook-header.jpg">
+
+<!-- Favicon -->
+<!-- original code from RealFaviconGenerator.net
+<link rel="icon" type="image/png" href="/assets/images/favicon.ico/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/assets/images/favicon.ico/favicon.svg" />
+<link rel="shortcut icon" href="/assets/images/favicon.ico/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon.ico/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="Hackin’ and Tinkerin’" />
+<link rel="manifest" href="/assets/images/favicon.ico/site.webmanifest" /> -->
+<link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg" />
+<link rel="shortcut icon" href="/assets/images/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="Hackin’ and Tinkerin’" />
+<link rel="manifest" href="/assets/images/site.webmanifest" />
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav"><!-- DEBUG: url=/about/ signature= collection= site_title=Hackin' and Tinkerin' site_url=/ -->
+		<a class="site-title" href="/">Hackin' and Tinkerin'</a>
+        <ul class="visible-links">
+          
+            <li class="masthead__menu-item"><a href="/">Home</a></li>
+            
+            <li class="masthead__menu-item"><a href="/about/">About</a></li>
+            
+            <!-- dead code
+First try page.collection — works for individual post pages
+If not found, try page.permalink slug — works for autopage collection index pages
+ -->
+
+<!-- If repo_url is found in blogs.yml, use it — otherwise fall back to the original constructed URL -->
+
+
+
+
+<!-- create the link -->
+<li>
+  
+    
+    <a href="https://github.com/mdcramer" target="_blank"><i class="fa fa-fw fa-github" aria-hidden="true"></i>GitHub</a>
+  
+</li>
+        </ul>
+        <button type="button">
+          <span class="visually-hidden">Toggle Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+<div class="page__hero"
+  style=""
+>
+  
+    <img src="https://mdcramer.github.io/assets/images/notebook-header.jpg" alt="About" class="page__hero-image">
+  
+  
+</div>
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+    <div itemscope itemtype="http://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="https://mdcramer.github.io/assets/images/profilepic-small.jpg" class="author__avatar" alt="Mark Cramer" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name" itemprop="name">Mark Cramer</h3>
+    
+      <p class="author__bio" itemprop="description">
+        ML Product Manager who enjoys hacking around with models and code in his free time, of which there is never, sadly, enough.
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Profile</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> <span itemprop="name">San Francisco</span>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.facebook.com/markdcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/mcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/mdcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.stackoverflow.com/users/852795/mark-cramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-stack-overflow" aria-hidden="true"></i> Stackoverflow
+          </a>
+        </li>
+      
+
+      
+        
+          <li>
+            <a href="https://youtube.com/c/MarkCramerD" itemprop="sameAs">
+              <i class="fa fa-fw fa-youtube-square" aria-hidden="true"></i> YouTube
+            </a>
+          </li>
+        
+      
+
+      
+
+      
+        <li>
+          <a href="https://scholar.google.com/citations?user=vlo46P8AAAAJ" itemprop="sameAs">
+            <img src="/assets/images/googlescholar.svg" alt="googlescholar" class="profile_icon"> Google Scholar
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+  
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="About">
+    
+    <meta itemprop="datePublished" content="April 28, 2026">
+    <meta itemprop="dateModified" content="May 06, 2026">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">About
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <h2 id="bio">Bio</h2>
+
+<p>I’m an ML Product Leader with <a href="https://www.linkedin.com/in/mcramer" target="_blank">20+ years of experience</a> building AI systems at scale, from research to production. My work sits at the intersection of machine learning, personalization and human-computer interaction, with a particular focus on the gap between models theory and actual experiences.</p>
+
+<p>Most recently I spent nearly five years at Meta as a Principal PM (IC7), leading the ML platform for long-form video and Reels ranking at billion-user scale, migrating training and inference from CPUs to GPUs and driving early-stage candidate retrieval across 80+ billion videos. After that I led AR smart glasses input performance at Reality Labs where I created human-centric evaluation frameworks that replaced naive F<sub>1</sub> metrics with task-based benchmarks. I hold <a href="https://scholar.google.com/citations?user=vlo46P8AAAAJ" target="_blank">three issued patents</a> on implicit user modeling (633 citations by Google, Microsoft, Amazon, Palantir, Facebook, eBay, Yahoo!, IBM, Walmart, Salesforce and others) and a <a href="https://online.stanford.edu/programs/artificial-intelligence-graduate-certificate" target="_blank">Stanford Graduate Certificate in AI</a>. I also TA in Stanford’s AI Professional Program (see below).</p>
+
+<p>Earlier, I founded <a href="/rank-dynamics" target="_blank">Rank Dynamics</a>, where I built and commercialized “dynamic ranking,” real-time implicit personalization for web search, scaling it to $10M in revenue, 12M browser extension downloads and 5M DAUs. That experience convinced me that the best personalization is invisible: systems that learn from what users do, not what they say.</p>
+
+<p>That conviction is driving my current side project. I’m building <a href="http://mymemochat.com/" target="_blank">mymemochat.com</a>, an LLM personalization prototype that extracts preference signals from natural conversation, embeds them, clusters them using DBSCAN, applies configurable memory decay and injects them back into the context window via prompt injection, with RAG-based retrieval as the planned evolution, all without prompting users about themselves. I’m writing about the architecture and design decisions in my <a href="/llm-personalization" target="_blank">LLM Personalization</a> blog.</p>
+
+<p>When I’m not thinking about AI, I’m building <a href="https://mortalwayfare.com/" target="_blank">Mortal Wayfare</a>, a turn-based RPG for Android that I wrote from scratch, engine and all, in ~15,000 lines of Java across 175 files. No Unity. No Unreal. Custom rendering on SurfaceView, precomputed line-of-sight with bitwise symmetry unfolding, A* pathfinding with horizon clipping, inverse-square torch illumination with flicker, and Pathfinder combat rules encoded directly into data structures. The game also has a <a href="https://mortalwayfare.com/reviving-the-ol-game-with-ai-code-generation/" target="_blank">significant amount of AI</a> built into it. There’s a battle simulation mode designed for RL data collection already in there and teaching combatants to operate optimally via RL is next on the list. After a five-year hiatus, I recently revived the project with Claude Code, which has dramatically accelerated the pace. It might sound like a silly side project, but building it was my path into object-oriented programming, which eventually unlocked Python, ML and everything that followed.</p>
+
+<p>The rest of this blog documents the experiments, prototypes and rabbit holes that don’t fit neatly anywhere else. If you’d like to learn more, my social media links are to the left.</p>
+
+<h2 id="contact">Contact</h2>
+
+<p>You may book an appointment with me using <a href="https://calendly.com/markcramer/mentoring" target="_blank">Calendly</a>. If we’re not already connected, the best way to find me is probably on <a href="https://www.linkedin.com/in/mcramer/" target="_blank">LinkedIn</a>. The “book an appointment” button will bring you back here.</p>
+
+<p>I offer <a href="https://www.linkedin.com/feed/update/urn:li:activity:6853358476920463360/" target="_blank">1-on-1 advice</a> for folks interested in learning about Product Management. Here are two articles to check out before we chat:</p>
+<ul>
+  <li><a href="https://www.linkedin.com/pulse/resumes-write-them-right-mark-cramer/" target="_blank">Resume writing</a></li>
+  <li><a href="https://www.linkedin.com/pulse/breaking-product-management-mark-cramer/" target="_blank">Breaking into Product Management</a></li>
+</ul>
+
+<p>I also do entrepreneurial advising and mentoring through the <a href="https://alumniadvisors.mit.edu/" target="_blank">MIT Alumni Advisors Hub</a>.</p>
+
+<p>Lastly, as Teaching Assistant for <a href="https://online.stanford.edu/courses/xcs221-artificial-intelligence-principles-and-techniques" target="_blank">xcs221 - AI Principles and Techniques</a>, <a href="https://online.stanford.edu/courses/xcs234-reinforcement-learning" target="_blank">xcs234 - Reinforcement Learning</a> and <a href="https://online.stanford.edu/courses/xcs229-machine-learning" target="_blank">xcs229 - Machine Learning</a>, <a href="https://www.andrewng.org/" target="_blank">Andrew Ng</a>’s famous foundational course, at <a href="https://online.stanford.edu/programs/artificial-intelligence-professional-program" target="_blank">Stanford’s AI Professional Program</a>, I make appointments available to students in my cohorts.</p>
+
+<h2 id="fun-stuff">Fun stuff</h2>
+
+<p>Here I’ll put some random stuff about my personal life</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/about" class="page__taxonomy-item" rel="tag">about</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/bio" class="page__taxonomy-item" rel="tag">bio</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/contact" class="page__taxonomy-item" rel="tag">contact</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2026-05-06">May 06, 2026</time></p>
+        
+      </footer><section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmdcramer.github.io%2Fabout%2F" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  
+  <a href="https://news.ycombinator.com/submitlink?u=https%3A%2F%2Fmdcramer.github.io%2Fabout%2F&t=About" class="btn btn--inverse" title="Share on Hacker News"><i class="fa fa-fw fa-y-combinator" aria-hidden="true"></i><span> Hacker News</span></a>
+  
+  <a href="https://www.reddit.com/submit?url=https%3A%2F%2Fmdcramer.github.io%2Fabout%2F&title=About" class="btn btn--reddit" title="Share on Reddit"><i class="fa fa-fw fa-reddit" aria-hidden="true"></i><span> Reddit</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmdcramer.github.io%2Fabout%2F" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  
+  <a href="mailto:?subject=About&body=https%3A%2F%2Fmdcramer.github.io%2Fabout%2F" class="btn btn--inverse" title="Share via Email"><i class="fa fa-fw fa-envelope" aria-hidden="true"></i><span> Email</span></a>
+  
+  <a href="#" class="btn btn--inverse" title="Copy link" onclick="navigator.clipboard.writeText('https://mdcramer.github.io/about/'); this.querySelector('span').textContent=' Copied!'; setTimeout(() => this.querySelector('span').textContent=' Copy link', 2000); return false;"><i class="fa fa-fw fa-link" aria-hidden="true"></i><span> Copy link</span></a>
+  
+  <!-- Remove Twitter sharing option
+  <a href="https://twitter.com/intent/tweet?text=About%20https%3A%2F%2Fmdcramer.github.io%2Fabout%2F" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  -->
+
+  <!--  Remove Google Plus sharing option
+  <a href="https://plus.google.com/share?url=https%3A%2F%2Fmdcramer.github.io%2Fabout%2F" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a> -->
+</section>
+</div><div class="page__comments">
+  
+    
+        <h4 class="page__comments-title">Leave a Comment</h4>
+        <section id="disqus_thread"></section>
+      
+</div></article>
+</div>
+
+
+    <div class="page__footer">
+      <footer>
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    <!-- 
+      <li><strong>Follow:</strong></li>
+     -->
+    
+
+    
+    <li>
+      <a href="https://www.linkedin.com/in/mcramer" itemprop="sameAs">
+        <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+      </a>
+    </li>
+    <!-- dead code
+First try page.collection — works for individual post pages
+If not found, try page.permalink slug — works for autopage collection index pages
+ -->
+
+<!-- If repo_url is found in blogs.yml, use it — otherwise fall back to the original constructed URL -->
+
+
+
+
+<!-- create the link -->
+<li>
+  
+    
+    <a href="https://github.com/mdcramer" target="_blank"><i class="fa fa-fw fa-github" aria-hidden="true"></i>GitHub</a>
+  
+</li>
+    <li>
+      <a href="https://www.stackoverflow.com/users/852795/mark-cramer" itemprop="sameAs">
+        <i class="fa fa-fw fa-stack-overflow" aria-hidden="true"></i> Stackoverflow
+      </a>
+    </li>
+    
+
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=vlo46P8AAAAJ" itemprop="sameAs">
+        <img src="/assets/images/googlescholar.svg" alt="googlescholar" class="profile_icon"> Google Scholar
+      </a>
+    </li>
+  
+
+    <li><a href="https://mdcramer.github.io/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2026 Mark Cramer. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="https://mdcramer.github.io/assets/js/main.min.js"></script>
+
+
+
+
+  
+      
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://mdcramer.github.io/about/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = ""; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://githubmdcramer.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+    
+
+
+    <script type="text/javascript" async 
+src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?
+config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+</html>

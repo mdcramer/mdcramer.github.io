@@ -1,0 +1,560 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.6.0 by Michael Rose
+  Copyright 2017 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin SEO -->
+
+
+
+<!-- old method which didn't work
+
+ -->
+
+
+
+
+<!-- DEBUG: collection_key=llm-personalization autopages= -->
+
+<!-- Assign page title -->
+
+
+
+
+<!-- Assign seo title -->
+
+
+
+
+
+
+<title>Setup - Hackin’ and Tinkerin’</title>
+
+
+
+
+<meta name="description" content="Some background into how I got the prototype off the ground.">
+
+
+
+
+<meta name="author" content="Mark Cramer">
+
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="Hackin' and Tinkerin'">
+<meta property="og:title" content="Setup - Hackin’ and Tinkerin’">
+
+
+  <link rel="canonical" href="https://mdcramer.github.io/llm-personalization/setup/">
+  <meta property="og:url" content="https://mdcramer.github.io/llm-personalization/setup/">
+
+
+
+  <meta property="og:description" content="Some background into how I got the prototype off the ground.">
+
+
+<!-- Twitter block -->
+
+
+<!-- Facebook block -->
+
+  
+
+  
+
+
+<!-- generic OG block -->
+
+  <meta property="og:image" content="https://mdcramer.github.io/assets/images/llm-personalization/llmpersonalizationheader.jpg">
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2026-04-26T06:00:00-07:00">
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://mdcramer.github.io",
+      "logo": "https://mdcramer.github.io/assets/images/notebook-header.jpg"
+    }
+  </script>
+
+
+
+
+
+
+
+
+
+<!-- end SEO -->
+
+
+<link href="https://mdcramer.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Hackin' and Tinkerin' Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://mdcramer.github.io/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+<!-- Suggestion from https://claude.ai/share/45526d65-a109-4f2d-84be-9e46a03990ae -->
+
+<!-- DEBUG: page.image =  -->
+<!-- DEBUG: site.og_image = /assets/images/notebook-header.jpg -->
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mdcramer.github.io/llm-personalization/setup/">
+<meta property="og:title" content="Setup">
+<meta property="og:description" content="Some background into how I got the prototype off the ground.">
+<meta property="og:image" content="https://mdcramer.github.io/assets/images/notebook-header.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://mdcramer.github.io/llm-personalization/setup/">
+<meta property="twitter:title" content="Setup">
+<meta property="twitter:description" content="Some background into how I got the prototype off the ground.">
+<meta property="twitter:image" content="https://mdcramer.github.io/assets/images/notebook-header.jpg">
+
+<!-- Favicon -->
+<!-- original code from RealFaviconGenerator.net
+<link rel="icon" type="image/png" href="/assets/images/favicon.ico/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/assets/images/favicon.ico/favicon.svg" />
+<link rel="shortcut icon" href="/assets/images/favicon.ico/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon.ico/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="Hackin’ and Tinkerin’" />
+<link rel="manifest" href="/assets/images/favicon.ico/site.webmanifest" /> -->
+<link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg" />
+<link rel="shortcut icon" href="/assets/images/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="Hackin’ and Tinkerin’" />
+<link rel="manifest" href="/assets/images/site.webmanifest" />
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav"><!-- DEBUG: url=/llm-personalization/setup/ signature= collection=llm-personalization site_title=LLM Personalization site_url=/llm-personalization/ -->
+		<a class="site-title" href="/llm-personalization/">LLM Personalization</a>
+        <ul class="visible-links">
+          
+            <li class="masthead__menu-item"><a href="/">Home</a></li>
+            
+            <li class="masthead__menu-item"><a href="/about/">About</a></li>
+            
+            <!-- dead code
+First try page.collection — works for individual post pages
+If not found, try page.permalink slug — works for autopage collection index pages
+ -->
+
+<!-- If repo_url is found in blogs.yml, use it — otherwise fall back to the original constructed URL -->
+
+
+
+
+<!-- create the link -->
+<li>
+  
+    <a href="https://github.com/mdcramer/llm-personalization" target="_blank"><i class="fa fa-fw fa-github" aria-hidden="true"></i>GitHub</a>
+  
+</li>
+        </ul>
+        <button type="button">
+          <span class="visually-hidden">Toggle Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+    <div itemscope itemtype="http://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="https://mdcramer.github.io/assets/images/profilepic-small.jpg" class="author__avatar" alt="Mark Cramer" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name" itemprop="name">Mark Cramer</h3>
+    
+      <p class="author__bio" itemprop="description">
+        ML Product Manager who enjoys hacking around with models and code in his free time, of which there is never, sadly, enough.
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Profile</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> <span itemprop="name">San Francisco</span>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.facebook.com/markdcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/mcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/mdcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.stackoverflow.com/users/852795/mark-cramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-stack-overflow" aria-hidden="true"></i> Stackoverflow
+          </a>
+        </li>
+      
+
+      
+        
+          <li>
+            <a href="https://youtube.com/c/MarkCramerD" itemprop="sameAs">
+              <i class="fa fa-fw fa-youtube-square" aria-hidden="true"></i> YouTube
+            </a>
+          </li>
+        
+      
+
+      
+
+      
+        <li>
+          <a href="https://scholar.google.com/citations?user=vlo46P8AAAAJ" itemprop="sameAs">
+            <img src="/assets/images/googlescholar.svg" alt="googlescholar" class="profile_icon"> Google Scholar
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+  
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Setup">
+    <meta itemprop="description" content="Some background into how I got the prototype off the ground.">
+    <meta itemprop="datePublished" content="April 26, 2026">
+    <meta itemprop="dateModified" content="April 26, 2026">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">Setup
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <p>After laying out the <a href="/llm-personalization/motivation/">motivation</a>, the next question was how to build something simple enough to experiment with but real enough to share.</p>
+
+<p>I did not want a heavy framework or a complex cloud architecture. The goal was not to build a polished product but a working prototype that would let me explore personalization in a concrete way. That meant choosing tools that were familiar, lightweight and easy to modify.</p>
+
+<p>The basic stack ended up being:</p>
+<ul>
+  <li>a single-page frontend in HTML and JavaScript,</li>
+  <li>a small Python backend using Flask,</li>
+  <li>OpenAI’s API for the model calls and</li>
+  <li>SQLite for local storage.
+The idea was to keep the application legible. I wanted to be able to understand the whole system, change individual pieces quickly, and avoid spending the early days of the project fighting the scaffolding.</li>
+</ul>
+
+<h2 id="to-stream-or-not-to-stream">To stream or not to stream</h2>
+
+<p>I also chose not to implement streaming at the outset. That was partly a product decision and partly an architectural one. Since I wanted to work in a stack I already knew well, I started with a very simple HTML/JavaScript frontend and a Python Flask backend. Streaming would have been possible in that setup but it would have added complexity and pulled attention toward interface polish rather than the core question of the project. The memory logic is the story, so I kept the interaction loop simple and focused development effort there.</p>
+
+<h2 id="my-coding-partner-codex">My coding partner, Codex</h2>
+
+<p>Codex was my development partner. Rather than writing everything <a href="https://mortalwayfare.com/building-the-game-engine-from-scratch/" target="_blank">from scratch</a> in the traditional way, I used Codex conversationally to sketch the initial structure, generate and revise code, troubleshoot issues, and iteratively add features. That ended up shaping not just the speed of development, but the style of it. Instead of trying to design the entire system up front, I moved in small steps, testing each change and then deciding what to do next. My experience with coding agents is that, like when developing something from scratch, it helps to break the project up into little pieces and stage them out. For a prototype like this, that worked extremely well.</p>
+
+<h2 id="bare-bones">Bare bones</h2>
+
+<p>The first version was intentionally minimal. Before worrying about memory, embeddings, clustering or prompt injection, I just wanted a chatbot that worked. The frontend sends a message to the Flask backend, the backend forwards the request to OpenAI, and the response comes back to the browser. That simple loop established the core application shape and made it possible to layer in personalization later without rethinking everything.</p>
+
+<p>To make that work, I needed an OpenAI API key. A ChatGPT subscription is not the same thing as API access, so I created an API key through the OpenAI platform, configured billing and stored the key as an environment variable rather than hardcoding it into the project in order to cleanly separate the application code from credentials and make it easier to run the same project locally and in production.</p>
+
+<p>Local development was done the old-fashioned way, on localhost. I used a familiar Conda-based Python environment, installed the dependencies, ran the Flask app and iterated from there. This made it easy to test changes quickly and keep the feedback loop short.</p>
+
+<h2 id="sharing-with-the-world">Sharing with the world</h2>
+
+<p>Once the <code class="language-plaintext highlighter-rouge">127.0.0.1:5000</code> local version was stable enough to be interesting, I wanted to put it online so that other people could try it. For hosting, I chose Railway for its simplicity. Railway connects straight to a GitHub repository so changes are deployed automatically with a simple <code class="language-plaintext highlighter-rouge">git push</code>. There was no need to build a deployment pipeline from scratch or think deeply about servers. I just needed a reliable way to turn a local experiment into a public URL.</p>
+
+<p>The application also needed a little production-minded handling because it uses SQLite. On a local machine, SQLite is almost effortless. In the cloud, it raises the practical questions of where does the database live, and does it survive restarts and redeploys? Railway’s persistent volume support provided a clean answer that let me keep the lightweight local-database approach while still preserving the prototype’s memory store across deployments.</p>
+
+<p>Once the app was live on Railway, the next step was to make it feel less temporary with a custom domain name. (I bought <a href="https://mymemochat.com" target="_blank">mymemochat.com</a> because it was available and I didn’t feel like spending days thinking about this.) This, unfortunately, turned out to be one of the more finicky parts of the setup. The DNS provided by the company hosting my domain did not play nicely with Railway’s custom-domain and SSL flow, particularly at the root. Railway expects a CNAME-style setup and some providers’ ALIAS-style behavior is unreliable for this because Railway services sit behind dynamic shared IPs. The practical fix was to move DNS handling to <a href="https://www.cloudflare.com/" target="_blank">Cloudflare</a>. That solved two problems at once:</p>
+<ol>
+  <li>Cloudflare supports CNAME flattening at the root domain and</li>
+  <li>it gave me a more predictable path for SSL.</li>
+</ol>
+
+<h2 id="getting-to-work">Getting to work</h2>
+
+<p>One thing I appreciated about this setup is that it preserved the same basic development rhythm. I could still work locally on <code class="language-plaintext highlighter-rouge">127.0.0.1</code>, test changes quickly, and only push when something was ready to be seen publicly. Once the code was pushed to GitHub, Railway would redeploy the updated app. That created a smooth bridge between experimentation and publication, which is what I wanted.</p>
+
+<p>This all may sound ordinary, but when building a prototype whose main novelty lies in behavior rather than infrastructure, there is real value in keeping the surrounding system boring. A simple frontend, a small Flask backend, an API key, a local database, a straightforward host and a custom domain were enough to get the project to the point where the more interesting questions could begin.</p>
+
+<p>Those more interesting questions are really what the project is about. Once the basic shell was in place, I could start focusing on the personalization itself: how memories should be extracted, represented, weighted, clustered, decayed and eventually injected back into future prompts.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/api" class="page__taxonomy-item" rel="tag">API</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/dns" class="page__taxonomy-item" rel="tag">DNS</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/setup" class="page__taxonomy-item" rel="tag">setup</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/streaming" class="page__taxonomy-item" rel="tag">streaming</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2026-04-26">April 26, 2026</time></p>
+        
+      </footer><section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmdcramer.github.io%2Fllm-personalization%2Fsetup%2F" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  
+  <a href="https://news.ycombinator.com/submitlink?u=https%3A%2F%2Fmdcramer.github.io%2Fllm-personalization%2Fsetup%2F&t=Setup" class="btn btn--inverse" title="Share on Hacker News"><i class="fa fa-fw fa-y-combinator" aria-hidden="true"></i><span> Hacker News</span></a>
+  
+  <a href="https://www.reddit.com/submit?url=https%3A%2F%2Fmdcramer.github.io%2Fllm-personalization%2Fsetup%2F&title=Setup" class="btn btn--reddit" title="Share on Reddit"><i class="fa fa-fw fa-reddit" aria-hidden="true"></i><span> Reddit</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmdcramer.github.io%2Fllm-personalization%2Fsetup%2F" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  
+  <a href="mailto:?subject=Setup&body=https%3A%2F%2Fmdcramer.github.io%2Fllm-personalization%2Fsetup%2F" class="btn btn--inverse" title="Share via Email"><i class="fa fa-fw fa-envelope" aria-hidden="true"></i><span> Email</span></a>
+  
+  <a href="#" class="btn btn--inverse" title="Copy link" onclick="navigator.clipboard.writeText('https://mdcramer.github.io/llm-personalization/setup/'); this.querySelector('span').textContent=' Copied!'; setTimeout(() => this.querySelector('span').textContent=' Copy link', 2000); return false;"><i class="fa fa-fw fa-link" aria-hidden="true"></i><span> Copy link</span></a>
+  
+  <!-- Remove Twitter sharing option
+  <a href="https://twitter.com/intent/tweet?text=Setup%20https%3A%2F%2Fmdcramer.github.io%2Fllm-personalization%2Fsetup%2F" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  -->
+
+  <!--  Remove Google Plus sharing option
+  <a href="https://plus.google.com/share?url=https%3A%2F%2Fmdcramer.github.io%2Fllm-personalization%2Fsetup%2F" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a> -->
+</section>
+
+  <nav class="pagination">
+    
+      <a href="https://mdcramer.github.io/llm-personalization/motivation/" class="pagination--pager" title="Motivation
+">Previous</a>
+    
+    
+      <a href="https://mdcramer.github.io/llm-personalization/memories/" class="pagination--pager" title="Making memories
+">Next</a>
+    
+  </nav>
+</div><div class="page__comments">
+  
+    
+        <h4 class="page__comments-title">Leave a Comment</h4>
+        <section id="disqus_thread"></section>
+      
+</div></article>
+</div>
+
+
+    <div class="page__footer">
+      <footer>
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    <!-- 
+      <li><strong>Follow:</strong></li>
+     -->
+    
+
+    
+    <li>
+      <a href="https://www.linkedin.com/in/mcramer" itemprop="sameAs">
+        <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+      </a>
+    </li>
+    <!-- dead code
+First try page.collection — works for individual post pages
+If not found, try page.permalink slug — works for autopage collection index pages
+ -->
+
+<!-- If repo_url is found in blogs.yml, use it — otherwise fall back to the original constructed URL -->
+
+
+
+
+<!-- create the link -->
+<li>
+  
+    <a href="https://github.com/mdcramer/llm-personalization" target="_blank"><i class="fa fa-fw fa-github" aria-hidden="true"></i>GitHub</a>
+  
+</li>
+    <li>
+      <a href="https://www.stackoverflow.com/users/852795/mark-cramer" itemprop="sameAs">
+        <i class="fa fa-fw fa-stack-overflow" aria-hidden="true"></i> Stackoverflow
+      </a>
+    </li>
+    
+
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=vlo46P8AAAAJ" itemprop="sameAs">
+        <img src="/assets/images/googlescholar.svg" alt="googlescholar" class="profile_icon"> Google Scholar
+      </a>
+    </li>
+  
+
+    <li><a href="https://mdcramer.github.io/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2026 Mark Cramer. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="https://mdcramer.github.io/assets/js/main.min.js"></script>
+
+
+
+
+  
+      
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://mdcramer.github.io/llm-personalization/setup/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/llm-personalization/setup"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://githubmdcramer.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+    
+
+
+    <script type="text/javascript" async 
+src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?
+config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+</html>

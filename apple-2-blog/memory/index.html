@@ -1,0 +1,731 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.6.0 by Michael Rose
+  Copyright 2017 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin SEO -->
+
+
+
+<!-- old method which didn't work
+
+ -->
+
+
+
+
+<!-- DEBUG: collection_key=apple-2-blog autopages= -->
+
+<!-- Assign page title -->
+
+
+
+
+<!-- Assign seo title -->
+
+
+
+
+
+
+<title>Remembering memory - Hackin’ and Tinkerin’</title>
+
+
+
+
+<meta name="description" content="Squeezing everything in 64Kb is not easy.">
+
+
+
+
+<meta name="author" content="Mark Cramer">
+
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="Hackin' and Tinkerin'">
+<meta property="og:title" content="Remembering memory - Hackin’ and Tinkerin’">
+
+
+  <link rel="canonical" href="https://mdcramer.github.io/apple-2-blog/memory/">
+  <meta property="og:url" content="https://mdcramer.github.io/apple-2-blog/memory/">
+
+
+
+  <meta property="og:description" content="Squeezing everything in 64Kb is not easy.">
+
+
+<!-- Twitter block -->
+
+
+<!-- Facebook block -->
+
+  
+
+  
+
+
+<!-- generic OG block -->
+
+  <meta property="og:image" content="https://mdcramer.github.io/assets/images/apple2/apple2-header.jpg">
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2026-06-15T00:00:00-07:00">
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://mdcramer.github.io",
+      "logo": "https://mdcramer.github.io/assets/images/notebook-header.jpg"
+    }
+  </script>
+
+
+
+
+
+
+
+
+
+<!-- end SEO -->
+
+
+<link href="https://mdcramer.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Hackin' and Tinkerin' Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://mdcramer.github.io/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+<!-- Suggestion from https://claude.ai/share/45526d65-a109-4f2d-84be-9e46a03990ae -->
+
+<!-- DEBUG: page.image =  -->
+<!-- DEBUG: site.og_image = /assets/images/notebook-header.jpg -->
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mdcramer.github.io/apple-2-blog/memory/">
+<meta property="og:title" content="Remembering memory">
+<meta property="og:description" content="Squeezing everything in 64Kb is not easy.">
+<meta property="og:image" content="https://mdcramer.github.io/assets/images/notebook-header.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://mdcramer.github.io/apple-2-blog/memory/">
+<meta property="twitter:title" content="Remembering memory">
+<meta property="twitter:description" content="Squeezing everything in 64Kb is not easy.">
+<meta property="twitter:image" content="https://mdcramer.github.io/assets/images/notebook-header.jpg">
+
+<!-- Favicon -->
+<!-- original code from RealFaviconGenerator.net
+<link rel="icon" type="image/png" href="/assets/images/favicon.ico/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/assets/images/favicon.ico/favicon.svg" />
+<link rel="shortcut icon" href="/assets/images/favicon.ico/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon.ico/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="Hackin’ and Tinkerin’" />
+<link rel="manifest" href="/assets/images/favicon.ico/site.webmanifest" /> -->
+<link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg" />
+<link rel="shortcut icon" href="/assets/images/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="Hackin’ and Tinkerin’" />
+<link rel="manifest" href="/assets/images/site.webmanifest" />
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav"><!-- DEBUG: url=/apple-2-blog/memory/ signature= collection=apple-2-blog site_title=Apple ][+ Machine Learning site_url=/apple-2-blog/ -->
+		<a class="site-title" href="/apple-2-blog/">Apple ][+ Machine Learning</a>
+        <ul class="visible-links">
+          
+            <li class="masthead__menu-item"><a href="/">Home</a></li>
+            
+            <li class="masthead__menu-item"><a href="/about/">About</a></li>
+            
+            <!-- dead code
+First try page.collection — works for individual post pages
+If not found, try page.permalink slug — works for autopage collection index pages
+ -->
+
+<!-- If repo_url is found in blogs.yml, use it — otherwise fall back to the original constructed URL -->
+
+
+
+
+<!-- create the link -->
+<li>
+  
+    <a href="https://github.com/mdcramer/Apple2-ML" target="_blank"><i class="fa fa-fw fa-github" aria-hidden="true"></i>GitHub</a>
+  
+</li>
+        </ul>
+        <button type="button">
+          <span class="visually-hidden">Toggle Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+    <div itemscope itemtype="http://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="https://mdcramer.github.io/assets/images/profilepic-small.jpg" class="author__avatar" alt="Mark Cramer" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name" itemprop="name">Mark Cramer</h3>
+    
+      <p class="author__bio" itemprop="description">
+        ML Product Manager who enjoys hacking around with models and code in his free time, of which there is never, sadly, enough.
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Profile</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> <span itemprop="name">San Francisco</span>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.facebook.com/markdcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/mcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/mdcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.stackoverflow.com/users/852795/mark-cramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-stack-overflow" aria-hidden="true"></i> Stackoverflow
+          </a>
+        </li>
+      
+
+      
+        
+          <li>
+            <a href="https://youtube.com/c/MarkCramerD" itemprop="sameAs">
+              <i class="fa fa-fw fa-youtube-square" aria-hidden="true"></i> YouTube
+            </a>
+          </li>
+        
+      
+
+      
+
+      
+        <li>
+          <a href="https://scholar.google.com/citations?user=vlo46P8AAAAJ" itemprop="sameAs">
+            <img src="/assets/images/googlescholar.svg" alt="googlescholar" class="profile_icon"> Google Scholar
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+  
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Remembering memory">
+    <meta itemprop="description" content="Squeezing everything in 64Kb is not easy.">
+    <meta itemprop="datePublished" content="June 15, 2026">
+    <meta itemprop="dateModified" content="June 20, 2026">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">Remembering memory
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <p>In high school I recall wondering how anyone would possibly be able to fully utilize 64Kb of RAM.</p>
+
+<p>Fast forward to today and my K-means program produced a screen like this:</p>
+
+<p><a href="/assets/images/apple2/code-running-into-graphics.jpg" title="Program variables running into HGR memory"><img src="/assets/images/apple2/code-running-into-graphics.jpg" alt="Program variables running into HGR memory" title="Program variables running into HGR memory" /></a></p>
+
+<p>Fun. Unlike the <a href="/apple-2-blog/revive/">RAM issues</a> I had before refurbishing the machine, this issue was programmatic. In short, when increasing the number of samples in each class to something “large,” like 50, the data arrays would grow into graphics memory. What? Yes, on the <span class="no-break">Apple ][+</span> all the memory is contiguous.</p>
+
+<h2 id="memory-map">Memory map</h2>
+
+<p>Here’s a “RAM Organization and Usage” map that I pulled out of the <span class="no-break">Apple ][</span> Reference Manual. The <span class="no-break">Apple ][+</span> came with 48Kb of RAM (<code class="language-plaintext highlighter-rouge">$0000-$BFFF</code>) on the motherboard but I have the memory expansion card, also called a language card, with an extra 16Kb (<code class="language-plaintext highlighter-rouge">$C000-$FFFF</code>). Using the extra memory was complicated as the 16Kb were squeezed into a 12k address space (<code class="language-plaintext highlighter-rouge">$D000-$FFFF</code>) by using bank switching. (I explored storing data on the language card, which would be relatively easy for integers but a nightmare for floats, but it hasn’t come to that yet.)</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Page</th>
+      <th style="text-align: center">Hex</th>
+      <th>Usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">$00</td>
+      <td>System programs</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">$01</td>
+      <td>System stack</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">2</td>
+      <td style="text-align: center">$02</td>
+      <td>GETLN input buffer</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">3</td>
+      <td style="text-align: center">$03</td>
+      <td>Monitor vector locations</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">4-7</td>
+      <td style="text-align: center">$04-$07</td>
+      <td><strong>1Kb</strong>: Text and lo-res graphics (primary page)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">8-11</td>
+      <td style="text-align: center">$08-$0B</td>
+      <td><strong>1Kb</strong>: Text and lo-res graphics (secondary page)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">12-31</td>
+      <td style="text-align: center">$0C-$1F</td>
+      <td><strong>5Kb</strong>: Free RAM</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">32-63</td>
+      <td style="text-align: center">$20-$3F</td>
+      <td><strong>8Kb</strong>: Hi-res graphics (<code class="language-plaintext highlighter-rouge">HGR</code>, primary page)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">64-95</td>
+      <td style="text-align: center">$40-$5F</td>
+      <td><strong>8Kb</strong>: Hi-res graphics (<code class="language-plaintext highlighter-rouge">HGR2</code>, secondary page)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">96-191</td>
+      <td style="text-align: center">$60-$BF</td>
+      <td><strong>24Kb</strong>: Free RAM</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">192-199</td>
+      <td style="text-align: center">$C0-$C7</td>
+      <td>I/O</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">200-207</td>
+      <td style="text-align: center">$C8-$CF</td>
+      <td>I/O ROM</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">208-255</td>
+      <td style="text-align: center">$D0-$FF</td>
+      <td>ROM or 16Kb language card</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>In “normal” operation, a BASIC program would reside starting at <code class="language-plaintext highlighter-rouge">$0800</code>, right after the primary text page, and on top of the secondary text page. From the end of the BASIC program, variables and arrays would grow up. Strings, for some reasons, would reside at <code class="language-plaintext highlighter-rouge">$BFFF</code> and grow down. If you don’t use graphics, this gives you almost 46Kb of space. If you want to use the primary page of hi-res graphics, known as <code class="language-plaintext highlighter-rouge">HGR</code>, then you get only a paltry 6Kb of space for your program and variables. (This is surely an artifact of a 1977 design decision to enable <code class="language-plaintext highlighter-rouge">HGR</code> on machines that only shipped with 16Kb, making <code class="language-plaintext highlighter-rouge">$3FFF</code> the highest address in RAM.)</p>
+
+<p>What you’re seeing in the image above are my data arrays growing into <code class="language-plaintext highlighter-rouge">HGR</code>. When the arrays are declared, everything is zero, so there’s no problem. As soon as I start writing values to the array, however, those show up on the screen. Similarly, plotting graphics on the screen has the effect of writing values into the arrays. Obviously, this is a problem.</p>
+
+<h2 id="moving-things-around">Moving things around</h2>
+
+<p>A very astute observer of my <a href="https://mdcramer.github.io/apple-2-blog/adtpro#visual-studio-code-for-the-win">last post</a> might have noticed that I added a <code class="language-plaintext highlighter-rouge">LOMEM</code> statement to the very beginning of my program. This statement simply sets the bottom address for variables and arrays. Setting it to 16384, which is <code class="language-plaintext highlighter-rouge">$4000</code>, means my data arrays and other variables will now build from the top of <code class="language-plaintext highlighter-rouge">HGR</code>. The entire 6Kb space from <code class="language-plaintext highlighter-rouge">$0800-$2000</code> can now be used for the BASIC program. Huge! Also, <code class="language-plaintext highlighter-rouge">$4000-$BFFF</code>, or 32Kb, can be used for variables, arrays and strings. This is more than enough space… for now.</p>
+
+<h2 id="still-not-enough">Still not enough</h2>
+
+<p>Now that I’ve got K-means working reliably with a decent number of samples in each class, I decided to add some code to execute multiple runs so I could start comparing the results from random initializations. Here’s what I did:</p>
+
+<div class="language-bbcbasic highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="m">10</span> <span class="nb">LOMEM</span><span class="p">:</span> <span class="m">16384</span> <span class="p">:</span> <span class="c">REM top of HGR</span>
+<span class="m">20</span>  <span class="nv">HOME</span> <span class="p">:</span> <span class="nv">VTAB</span> <span class="m">21</span>
+<span class="m">30</span>  <span class="k">GOSUB</span> <span class="m">2420</span> <span class="p">:</span> <span class="c">REM Run multiple k-means</span>
+<span class="m">40</span>  <span class="k">END</span>
+
+<span class="m">...</span> <span class="nv">code</span> <span class="nv">same</span> <span class="nv">as</span> <span class="nv">before</span> <span class="m">...</span>
+
+<span class="m">1970</span> <span class="k">PRINT</span> <span class="s">"K-MEANS CONVERGED!"</span>
+<span class="m">1980</span> <span class="c">REM  -- clear graphics and redraw with decision boundaries --</span>
+<span class="m">1990</span> <span class="k">GOSUB</span> <span class="m">900</span><span class="p">:</span> <span class="c">REM draw axes</span>
+<span class="m">2000</span> <span class="k">GOSUB</span> <span class="m">2040</span><span class="p">:</span> <span class="c">REM draw samples</span>
+<span class="m">2010</span> <span class="k">GOSUB</span> <span class="m">2110</span><span class="p">:</span> <span class="c">REM draw decision boundaries</span>
+<span class="m">2020</span> <span class="k">RETURN</span>
+
+<span class="m">...</span> <span class="nv">code</span> <span class="nv">same</span> <span class="nv">as</span> <span class="nv">before</span> <span class="m">...</span>
+
+<span class="m">2420</span> <span class="c">REM == Run multiple k-means ==</span>
+<span class="m">2430</span> <span class="nv">NI</span> <span class="o">=</span> <span class="m">5</span><span class="p">:</span> <span class="c">REM # of iterations</span>
+<span class="m">2440</span> <span class="k">DIM</span> <span class="nv">IT</span><span class="o">(</span><span class="nv">NI</span><span class="p">,</span><span class="m">1</span><span class="o">)</span><span class="p">:</span> <span class="c">REM store results</span>
+<span class="m">2450</span> <span class="k">GOSUB</span> <span class="m">900</span> <span class="p">:</span> <span class="c">REM draw axes</span>
+<span class="m">2460</span> <span class="k">GOSUB</span> <span class="m">50</span> <span class="p">:</span> <span class="c">REM generate data</span>
+<span class="m">2470</span> <span class="k">FOR</span> <span class="nv">L</span> <span class="o">=</span> <span class="m">1</span> <span class="k">TO</span> <span class="nv">NI</span>
+<span class="m">2480</span>   <span class="k">GOSUB</span> <span class="m">900</span>
+<span class="m">2490</span>   <span class="k">GOSUB</span> <span class="m">2040</span><span class="p">:</span> <span class="c">REM draw samples</span>
+<span class="m">2500</span>   <span class="k">GOSUB</span> <span class="m">1320</span><span class="p">:</span> <span class="c">REM run k-means</span>
+<span class="m">2510</span>   <span class="nv">IT</span><span class="o">(</span><span class="nv">L</span><span class="p">,</span><span class="m">0</span><span class="o">)</span> <span class="o">=</span> <span class="nv">A</span>
+<span class="m">2520</span>   <span class="nv">IT</span><span class="o">(</span><span class="nv">L</span><span class="p">,</span><span class="m">1</span><span class="o">)</span> <span class="o">=</span> <span class="nv">KI%</span>
+<span class="m">2530</span>   <span class="k">PRINT</span> <span class="s">"RUN "</span><span class="p">;</span> <span class="nv">L</span><span class="p">;</span> <span class="s">": ACC = "</span><span class="p">;</span> <span class="nv">A</span><span class="p">;</span> <span class="s">"% IN "</span><span class="p">;</span> <span class="nv">KI%</span><span class="p">;</span> <span class="s">" ITERS"</span>
+<span class="m">2540</span> <span class="k">NEXT</span> <span class="nv">L</span>
+<span class="m">2550</span> <span class="nv">TEXT</span>
+<span class="m">2560</span> <span class="k">PRINT</span><span class="p">:</span> <span class="k">PRINT</span> <span class="s">"SUMMARY OF K-MEANS RUNS:"</span>
+<span class="m">2570</span> <span class="k">FOR</span> <span class="nv">L</span> <span class="o">=</span> <span class="m">1</span> <span class="k">TO</span> <span class="nv">NI</span>
+<span class="m">2580</span>  <span class="k">PRINT</span> <span class="s">"RUN "</span><span class="p">;</span> <span class="nv">L</span><span class="p">;</span> <span class="s">": ACC = "</span><span class="p">;</span> <span class="nv">IT</span><span class="o">(</span><span class="nv">L</span><span class="p">,</span><span class="m">0</span><span class="o">)</span><span class="p">;</span> <span class="s">"% IN "</span><span class="p">;</span> <span class="nv">IT</span><span class="o">(</span><span class="nv">L</span><span class="p">,</span><span class="m">1</span><span class="o">)</span><span class="p">;</span> <span class="s">" ITERS"</span>
+<span class="m">2590</span> <span class="k">NEXT</span> <span class="nv">L</span>
+<span class="m">2600</span> <span class="k">RETURN</span>
+</code></pre></div></div>
+
+<p>More on the analysis later, but when I first put together this code, I would get errors after the first run. Turns out the last few lines of code were being erased. Was my code running into <code class="language-plaintext highlighter-rouge">HGR</code>? A quick Gemini prompt gave me <code class="language-plaintext highlighter-rouge">PRINT PEEK(175) + 256 * PEEK(176)</code> as the pointer to track the end of the BASIC program. <code class="language-plaintext highlighter-rouge">HGR</code> starts at <code class="language-plaintext highlighter-rouge">$2000</code> (8192) and the pointer was giving me something over 8200.</p>
+
+<p>So I cut. I didn’t want to remove all of the <code class="language-plaintext highlighter-rouge">REM</code> statements, or even most of them, but I went through and trimmed them down. Additionally, since the Irwin-Hall Distribution was previously deemed <a href="/apple-2-blog/refactoring/#testing-irwin-hall-as-an-alternative-to-box-muller">significantly slower</a> than the Box-Muller transform, I decided to remove that code altogether. The final result was and end address of 8032, well under <code class="language-plaintext highlighter-rouge">HGR</code>.</p>
+
+<h2 id="box-muller-vs-irwin-hall-redux">Box-Muller vs Irwin-Hall redux</h2>
+
+<p>In <a href="/apple-2-blog/adtpro/#visual-studio-code-for-the-win">Visual Studio Code</a> I was able to quickly spin up a separate program to compare the speeds. Unlike what I saw previously, a quick test on AppleWin showed their speeds to be almost identical. That being said, I’m sticking with Box-Muller because of its superior mathematical properties. (It generates exact, independent standard normal samples, whereas Irwin-Hall relies on the <a href="https://en.wikipedia.org/wiki/Central_limit_theorem" target="_blank">Central Limit Theorem</a> to <a href="https://stats.stackexchange.com/a/620059" target="_blank">approximate</a> a normal distribution. You could get away with generating fewer than 12 random normal variables in order to improve speed but performance at the tails will suffer.)</p>
+
+<div class="language-bbcbasic highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="m">10</span> <span class="c">REM == Random Number Generation Speed Test ==</span>
+
+<span class="m">20</span> <span class="c">REM -- Box-Muller Transform vs Irwin-Hall Distribution --</span>
+<span class="m">30</span> <span class="c">REM -- Generate random normal variables --</span>
+<span class="m">40</span> <span class="c">REM -- Time measurement is not implemented...</span>
+<span class="m">50</span> <span class="c">REM -- ... use a stopwatch  --</span>
+
+<span class="m">60</span> <span class="c">REM -- On AppleWin Apple ][+ emulator with 1000 iterations...</span>
+<span class="m">70</span> <span class="c">REM --   Box-Muller takes 3m4s</span>
+<span class="m">80</span> <span class="c">REM --   Irwin-Hall takes 3m7s --</span>
+<span class="m">90</span> <span class="c">REM -- When changing the order of the subroutines...</span>
+<span class="m">100</span> <span class="c">REM --   Box-Muller takes 3m1s</span>
+<span class="m">110</span> <span class="c">REM --   Irwin-Hall takes 3m4s --</span>
+<span class="m">120</span> <span class="c">REM -- On the Apple ][+ hardware ...</span>
+<span class="m">130</span> <span class="c">REM --   Box-Muller takes 2m59s</span>
+<span class="m">140</span> <span class="c">REM --   Irwin-Hall takes 3m2s --</span>
+<span class="m">150</span> <span class="c">REM -- Conclusion: execution time is very similar --</span>
+
+<span class="m">160</span> <span class="k">PRINT</span> <span class="s">"BOX-MULLER VS IRWIN-HALL SPEED TEST"</span>
+<span class="m">170</span> <span class="k">PRINT</span> <span class="s">"RUN BOX-MULLER... BEEP AT END"</span>
+<span class="m">180</span> <span class="k">GOSUB</span> <span class="m">450</span><span class="p">:</span> <span class="c">REM wait for keystroke</span>
+<span class="m">190</span> <span class="k">FOR</span> <span class="nv">I</span> <span class="o">=</span> <span class="m">1</span> <span class="k">TO</span> <span class="m">1000</span>
+<span class="m">200</span>   <span class="k">GOSUB</span> <span class="m">300</span><span class="p">:</span> <span class="c">REM Box-Muller</span>
+<span class="m">210</span> <span class="k">NEXT</span>
+<span class="m">220</span> <span class="k">PRINT</span> <span class="nb">CHR$</span><span class="o">(</span><span class="m">7</span><span class="o">)</span><span class="p">;</span>
+<span class="m">230</span> <span class="k">PRINT</span> <span class="s">"RUN IRWIN-HALL... BEEP AT END"</span>
+<span class="m">240</span> <span class="k">GOSUB</span> <span class="m">450</span><span class="p">:</span> <span class="c">REM wait for keystroke</span>
+<span class="m">250</span> <span class="k">FOR</span> <span class="nv">I</span> <span class="o">=</span> <span class="m">1</span> <span class="k">TO</span> <span class="m">1000</span>
+<span class="m">260</span>   <span class="k">GOSUB</span> <span class="m">380</span><span class="p">:</span> <span class="c">REM Irwin-Hall</span>
+<span class="m">270</span> <span class="k">NEXT</span>
+<span class="m">280</span> <span class="k">PRINT</span> <span class="nb">CHR$</span><span class="o">(</span><span class="m">7</span><span class="o">)</span><span class="p">;</span>
+<span class="m">290</span> <span class="k">END</span>
+
+<span class="m">300</span> <span class="c">REM == Box-Muller Transform ==</span>
+<span class="m">310</span> <span class="nv">U1</span> <span class="o">=</span> <span class="nb">RND</span><span class="o">(</span><span class="m">1</span><span class="o">)</span>
+<span class="m">320</span> <span class="nv">U2</span> <span class="o">=</span> <span class="nb">RND</span><span class="o">(</span><span class="m">1</span><span class="o">)</span>
+<span class="m">330</span> <span class="nv">R</span> <span class="o">=</span> <span class="nb">SQR</span><span class="o">(-</span><span class="m">2</span> <span class="o">*</span> <span class="nb">LOG</span><span class="o">(</span><span class="nv">U1</span><span class="o">))</span>
+<span class="m">340</span> <span class="nv">TH</span> <span class="o">=</span> <span class="m">6.28318531</span> <span class="o">*</span> <span class="nv">U2</span><span class="p">:</span> <span class="c">REM 2 * pi * U2</span>
+<span class="m">350</span> <span class="nv">Z0</span> <span class="o">=</span> <span class="nv">R</span> <span class="o">*</span> <span class="nb">COS</span><span class="o">(</span><span class="nv">TH</span><span class="o">)</span>
+<span class="m">360</span> <span class="nv">Z1</span> <span class="o">=</span> <span class="nv">R</span> <span class="o">*</span> <span class="nb">SIN</span><span class="o">(</span><span class="nv">TH</span><span class="o">)</span>
+<span class="m">370</span> <span class="k">RETURN</span>
+<span class="m">380</span> <span class="c">REM == Irwin-Hall Distribution ==</span>
+<span class="m">390</span> <span class="nv">Z0</span> <span class="o">=</span> <span class="o">-</span><span class="m">6</span><span class="p">:</span><span class="nv">Z1</span> <span class="o">=</span> <span class="o">-</span><span class="m">6</span>
+<span class="m">400</span> <span class="k">FOR</span> <span class="nv">Z</span> <span class="o">=</span> <span class="m">1</span> <span class="k">TO</span> <span class="m">12</span>
+<span class="m">410</span>   <span class="nv">Z0</span> <span class="o">=</span> <span class="nv">Z0</span> <span class="o">+</span> <span class="nb">RND</span><span class="o">(</span><span class="m">1</span><span class="o">)</span>
+<span class="m">420</span>   <span class="nv">Z1</span> <span class="o">=</span> <span class="nv">Z1</span> <span class="o">+</span> <span class="nb">RND</span><span class="o">(</span><span class="m">1</span><span class="o">)</span>
+<span class="m">430</span> <span class="k">NEXT</span>
+<span class="m">440</span> <span class="k">RETURN</span>
+
+<span class="m">450</span> <span class="c">REM  == wait for keystroke ==</span>
+<span class="m">460</span> <span class="k">PRINT</span> <span class="s">"TYPE ANY KEY TO CONTINUE..."</span>
+<span class="m">470</span> <span class="nv">POKE</span> <span class="m">49168</span><span class="p">,</span><span class="m">0</span> <span class="p">:</span> <span class="c">REM clear buffer</span>
+<span class="m">480</span> <span class="k">IF</span> <span class="nv">PEEK</span><span class="o">(</span><span class="m">49152</span><span class="o">)</span> <span class="o">&lt;</span> <span class="m">128</span> <span class="k">GOTO</span> <span class="m">480</span>
+<span class="m">490</span> <span class="nv">POKE</span> <span class="m">49168</span><span class="p">,</span><span class="m">0</span>
+<span class="m">500</span> <span class="k">PRINT</span> <span class="s">"KEY PRESSED, CONTINUING..."</span>
+<span class="m">510</span> <span class="k">RETURN</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">REM</code> statements above have the AppleWin results but I also <a href="https://mdcramer.github.io/apple-2-blog/adtpro">transferred the program</a> and ran on the actual hardware. The results were <em>very</em> similar: 2m59s for Box-Muller and 3m2s for Irwin-Hall. The emulator is impressive.</p>
+
+<p>As a fun note, I tried changing the order of the two methods because I read that Applesoft BASIC implements lines of code as a linked list, so it takes longer to run lines of code that are further down.</p>
+
+<h2 id="til-the-apple--has-garbage-collection">TIL the Apple ][+ has garbage collection</h2>
+
+<p>While thumbing through the Applesoft BASIC Programming Reference Manual, as one is wont to do, I stumbled across <code class="language-plaintext highlighter-rouge">FRE(expr)</code>. Since the arrays grow up in memory and the strings grow down, as noted above, this command will return the amount of memory between the two, essentially telling you how much free RAM is left. As a side effect, since changing the contents of a string does not remove the old characters (it just adds the new characters to RAM and moves the pointer) it will force Applesoft to “house clean,” freeing up additional space. Fun fact: according to the manual, <code class="language-plaintext highlighter-rouge">expr</code> ony exists to hold the parenthesis apart, so just plugging in a <code class="language-plaintext highlighter-rouge">0</code> is standard.</p>
+
+<p>Since I’m not really using strings, garbage collection isn’t important, but I might add <code class="language-plaintext highlighter-rouge">FRE(0)</code> to the code just to see what’s happening. While adding the <code class="language-plaintext highlighter-rouge">PRINT PEEK(175) + 256 * PEEK(176)</code> trick to find the end of the program will necessitate making the program longer (by 54 bytes - I counted), I might do that, too, just for fun.</p>
+
+<h2 id="but-i-still-want-more">But I still want more</h2>
+
+<p>Since 8032 is a mere 160 bytes shy of <code class="language-plaintext highlighter-rouge">HGR</code>, I got to wondering if I could instead use <code class="language-plaintext highlighter-rouge">HGR2</code> for graphics, which would give me another 8Kb of RAM for BASIC code, more than doubling the current amount of space. I spent <em>way</em> too much time trying to figure this out, but it basically won’t work if I insist on having 4 lines of text under the graphics, which comes standard with <code class="language-plaintext highlighter-rouge">HGR</code>. The reason is, while there’s a software switch to enabled “mixed mode” in <code class="language-plaintext highlighter-rouge">HGR2</code>, the 4 lines of text will actually come from the <em>secondary</em> page of text, which, unhelpfully, starts at <code class="language-plaintext highlighter-rouge">$0800</code>, which is where BASIC code begins. There are also software switches to move the starting address of a BASIC program, which can be pushed to $0C00, however, BASIC <code class="language-plaintext highlighter-rouge">PRINT</code> statements will <em>still</em> write to the primary text page. To work around this you can write text characters, using <code class="language-plaintext highlighter-rouge">POKE</code>, directly to the secondary page of text memory, but this starts to become way more hassle than it’s worth.</p>
+
+<p><a href="/assets/images/apple2/hgr2-reference.jpg" title="HGR2 in Applesoft BASIC Programming Reference Manual"><img src="/assets/images/apple2/hgr2-reference.jpg" alt="HGR2 in Applesoft BASIC Programming Reference Manual" title="HGR2 in Applesoft BASIC Programming Reference Manual" /></a></p>
+
+<p>An alternative approach, which I haven’t tried yet, involves “chaining” BASIC programs. In Applesoft BASIC you can run other program by simple calling <code class="language-plaintext highlighter-rouge">RUN "PROGRAM NAME"</code>, however, <em>all</em> the variables are wiped. To get around that, you have to painstakingly write the variables you want to floppy and then the next program has to load them up. This obviously take a little time and coding but it’s theoretically not far from passing parameters to a modern programming method. I could write a program called <code class="language-plaintext highlighter-rouge">GENERATE DATA</code> that load a few parameters from a file on the floppy and then writes the data when it’s done. That being said, calling a second program from within a loop would create special problems and everything would need to be carefully chained. Anyway, this is probably why old <span class="no-break">Apple ][+</span> program would frequently cause the floppy to whirl.</p>
+
+<p>I’ll worry about this another day…</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/garbage-collection" class="page__taxonomy-item" rel="tag">garbage collection</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/memory-map" class="page__taxonomy-item" rel="tag">memory map</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/ram" class="page__taxonomy-item" rel="tag">RAM</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2026-06-20">June 20, 2026</time></p>
+        
+      </footer><section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmdcramer.github.io%2Fapple-2-blog%2Fmemory%2F" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  
+  <a href="https://news.ycombinator.com/submitlink?u=https%3A%2F%2Fmdcramer.github.io%2Fapple-2-blog%2Fmemory%2F&t=Remembering+memory" class="btn btn--inverse" title="Share on Hacker News"><i class="fa fa-fw fa-y-combinator" aria-hidden="true"></i><span> Hacker News</span></a>
+  
+  <a href="https://www.reddit.com/submit?url=https%3A%2F%2Fmdcramer.github.io%2Fapple-2-blog%2Fmemory%2F&title=Remembering+memory" class="btn btn--reddit" title="Share on Reddit"><i class="fa fa-fw fa-reddit" aria-hidden="true"></i><span> Reddit</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmdcramer.github.io%2Fapple-2-blog%2Fmemory%2F" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  
+  <a href="mailto:?subject=Remembering+memory&body=https%3A%2F%2Fmdcramer.github.io%2Fapple-2-blog%2Fmemory%2F" class="btn btn--inverse" title="Share via Email"><i class="fa fa-fw fa-envelope" aria-hidden="true"></i><span> Email</span></a>
+  
+  <a href="#" class="btn btn--inverse" title="Copy link" onclick="navigator.clipboard.writeText('https://mdcramer.github.io/apple-2-blog/memory/'); this.querySelector('span').textContent=' Copied!'; setTimeout(() => this.querySelector('span').textContent=' Copy link', 2000); return false;"><i class="fa fa-fw fa-link" aria-hidden="true"></i><span> Copy link</span></a>
+  
+  <!-- Remove Twitter sharing option
+  <a href="https://twitter.com/intent/tweet?text=Remembering+memory%20https%3A%2F%2Fmdcramer.github.io%2Fapple-2-blog%2Fmemory%2F" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  -->
+
+  <!--  Remove Google Plus sharing option
+  <a href="https://plus.google.com/share?url=https%3A%2F%2Fmdcramer.github.io%2Fapple-2-blog%2Fmemory%2F" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a> -->
+</section>
+
+  <nav class="pagination">
+    
+      <a href="https://mdcramer.github.io/apple-2-blog/adtpro/" class="pagination--pager" title="ADTPro to the rescue
+">Previous</a>
+    
+    
+      <a href="https://mdcramer.github.io/apple-2-blog/splitting/" class="pagination--pager" title="Splitsville
+">Next</a>
+    
+  </nav>
+</div><div class="page__comments">
+  
+    
+        <h4 class="page__comments-title">Leave a Comment</h4>
+        <section id="disqus_thread"></section>
+      
+</div></article>
+</div>
+
+
+    <div class="page__footer">
+      <footer>
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    <!-- 
+      <li><strong>Follow:</strong></li>
+     -->
+    
+
+    
+    <li>
+      <a href="https://www.linkedin.com/in/mcramer" itemprop="sameAs">
+        <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+      </a>
+    </li>
+    <!-- dead code
+First try page.collection — works for individual post pages
+If not found, try page.permalink slug — works for autopage collection index pages
+ -->
+
+<!-- If repo_url is found in blogs.yml, use it — otherwise fall back to the original constructed URL -->
+
+
+
+
+<!-- create the link -->
+<li>
+  
+    <a href="https://github.com/mdcramer/Apple2-ML" target="_blank"><i class="fa fa-fw fa-github" aria-hidden="true"></i>GitHub</a>
+  
+</li>
+    <li>
+      <a href="https://www.stackoverflow.com/users/852795/mark-cramer" itemprop="sameAs">
+        <i class="fa fa-fw fa-stack-overflow" aria-hidden="true"></i> Stackoverflow
+      </a>
+    </li>
+    
+
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=vlo46P8AAAAJ" itemprop="sameAs">
+        <img src="/assets/images/googlescholar.svg" alt="googlescholar" class="profile_icon"> Google Scholar
+      </a>
+    </li>
+  
+
+    <li><a href="https://mdcramer.github.io/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2026 Mark Cramer. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="https://mdcramer.github.io/assets/js/main.min.js"></script>
+
+
+
+
+  
+      
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://mdcramer.github.io/apple-2-blog/memory/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/apple-2-blog/memory"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://githubmdcramer.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+    
+
+
+    <script type="text/javascript" async 
+src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?
+config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+</html>

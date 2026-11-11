@@ -1,0 +1,747 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.6.0 by Michael Rose
+  Copyright 2017 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin SEO -->
+
+
+
+<!-- old method which didn't work
+
+ -->
+
+
+
+
+<!-- DEBUG: collection_key=apple-2-blog autopages= -->
+
+<!-- Assign page title -->
+
+
+
+
+<!-- Assign seo title -->
+
+
+
+
+
+
+<title>K-means by another means - Hackin’ and Tinkerin’</title>
+
+
+
+
+<meta name="description" content="Success! There is machine learning happening on my Apple ][+.">
+
+
+
+
+<meta name="author" content="Mark Cramer">
+
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="Hackin' and Tinkerin'">
+<meta property="og:title" content="K-means by another means - Hackin’ and Tinkerin’">
+
+
+  <link rel="canonical" href="https://mdcramer.github.io/apple-2-blog/k-means/">
+  <meta property="og:url" content="https://mdcramer.github.io/apple-2-blog/k-means/">
+
+
+
+  <meta property="og:description" content="Success! There is machine learning happening on my Apple ][+.">
+
+
+<!-- Twitter block -->
+
+
+<!-- Facebook block -->
+
+  
+
+  
+
+
+<!-- generic OG block -->
+
+  <meta property="og:image" content="https://mdcramer.github.io/assets/images/apple2/k-means-convergence.jpg">
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2025-09-20T00:00:00-07:00">
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": "https://mdcramer.github.io",
+      "logo": "https://mdcramer.github.io/assets/images/notebook-header.jpg"
+    }
+  </script>
+
+
+
+
+
+
+
+
+
+<!-- end SEO -->
+
+
+<link href="https://mdcramer.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Hackin' and Tinkerin' Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://mdcramer.github.io/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+<!-- Suggestion from https://claude.ai/share/45526d65-a109-4f2d-84be-9e46a03990ae -->
+
+<!-- DEBUG: page.image =  -->
+<!-- DEBUG: site.og_image = /assets/images/notebook-header.jpg -->
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mdcramer.github.io/apple-2-blog/k-means/">
+<meta property="og:title" content="K-means by another means">
+<meta property="og:description" content="Success! There is machine learning happening on my Apple ][+.">
+<meta property="og:image" content="https://mdcramer.github.io/assets/images/notebook-header.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://mdcramer.github.io/apple-2-blog/k-means/">
+<meta property="twitter:title" content="K-means by another means">
+<meta property="twitter:description" content="Success! There is machine learning happening on my Apple ][+.">
+<meta property="twitter:image" content="https://mdcramer.github.io/assets/images/notebook-header.jpg">
+
+<!-- Favicon -->
+<!-- original code from RealFaviconGenerator.net
+<link rel="icon" type="image/png" href="/assets/images/favicon.ico/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/assets/images/favicon.ico/favicon.svg" />
+<link rel="shortcut icon" href="/assets/images/favicon.ico/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon.ico/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="Hackin’ and Tinkerin’" />
+<link rel="manifest" href="/assets/images/favicon.ico/site.webmanifest" /> -->
+<link rel="icon" type="image/png" href="/assets/images/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg" />
+<link rel="shortcut icon" href="/assets/images/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="Hackin’ and Tinkerin’" />
+<link rel="manifest" href="/assets/images/site.webmanifest" />
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav"><!-- DEBUG: url=/apple-2-blog/k-means/ signature= collection=apple-2-blog site_title=Apple ][+ Machine Learning site_url=/apple-2-blog/ -->
+		<a class="site-title" href="/apple-2-blog/">Apple ][+ Machine Learning</a>
+        <ul class="visible-links">
+          
+            <li class="masthead__menu-item"><a href="/">Home</a></li>
+            
+            <li class="masthead__menu-item"><a href="/about/">About</a></li>
+            
+            <!-- dead code
+First try page.collection — works for individual post pages
+If not found, try page.permalink slug — works for autopage collection index pages
+ -->
+
+<!-- If repo_url is found in blogs.yml, use it — otherwise fall back to the original constructed URL -->
+
+
+
+
+<!-- create the link -->
+<li>
+  
+    <a href="https://github.com/mdcramer/Apple2-ML" target="_blank"><i class="fa fa-fw fa-github" aria-hidden="true"></i>GitHub</a>
+  
+</li>
+        </ul>
+        <button type="button">
+          <span class="visually-hidden">Toggle Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+    <div itemscope itemtype="http://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="https://mdcramer.github.io/assets/images/profilepic-small.jpg" class="author__avatar" alt="Mark Cramer" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name" itemprop="name">Mark Cramer</h3>
+    
+      <p class="author__bio" itemprop="description">
+        ML Product Manager who enjoys hacking around with models and code in his free time, of which there is never, sadly, enough.
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Profile</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> <span itemprop="name">San Francisco</span>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.facebook.com/markdcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/mcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/mdcramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.stackoverflow.com/users/852795/mark-cramer" itemprop="sameAs">
+            <i class="fa fa-fw fa-stack-overflow" aria-hidden="true"></i> Stackoverflow
+          </a>
+        </li>
+      
+
+      
+        
+          <li>
+            <a href="https://youtube.com/c/MarkCramerD" itemprop="sameAs">
+              <i class="fa fa-fw fa-youtube-square" aria-hidden="true"></i> YouTube
+            </a>
+          </li>
+        
+      
+
+      
+
+      
+        <li>
+          <a href="https://scholar.google.com/citations?user=vlo46P8AAAAJ" itemprop="sameAs">
+            <img src="/assets/images/googlescholar.svg" alt="googlescholar" class="profile_icon"> Google Scholar
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+  
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="K-means by another means">
+    <meta itemprop="description" content="Success! There is machine learning happening on my Apple ][+.">
+    <meta itemprop="datePublished" content="September 20, 2025">
+    <meta itemprop="dateModified" content="October 06, 2025">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">K-means by another means
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <p>Wait. Does k-means count as machine learning? Yes. Yes, it does.</p>
+
+<p><a href="https://cs229.stanford.edu/" target="_blank">CS229</a> is the graduate-level machine learning course I took at Stanford as part of the <a href="https://www.linkedin.com/pulse/graduate-certificate-ai-achievement-unlocked-mark-cramer/" target="_blank">Graduate Certificate in AI</a> which I completed in 2021. While k-means is my choice as the easiest to understand algorithm in machine learning, it was taught as the introductory clustering algorithm for unsupervised learning. As a TA for <a href="https://online.stanford.edu/courses/xcs229-machine-learning" target="_blank">XCS229</a>, which I have been doing since 2022 and most recently did this Spring, I know that it is still being taught as part of this seminal course in AI.</p>
+
+<h2 id="we-have-liftoff">We have liftoff!</h2>
+
+<p>Unlike <a href="/apple-2-blog/synthesizing-data/">previously</a> where I saved the result for the end, let’s start by taking a look at the algorithm in action!</p>
+
+<!-- Courtesy of embedresponsively.com //-->
+<div class="responsive-video-container">
+
+  <iframe src="https://www.youtube.com/embed/Cy0wMMLObVA" frameborder="0" allowfullscreen=""></iframe>
+
+</div>
+
+<p>Here is a screenshot of the decision boundary after convergence.</p>
+
+<p><a href="/assets/images/apple2/k-means-convergence.jpg" title="K-means decision boundary after convergence"><img src="/assets/images/apple2/k-means-convergence.jpg" alt="K-means decision boundary after convergence" title="K-means decision boundary after convergence" /></a></p>
+
+<p>Accuracy is 90% because 1 of the 10 observations is on the incorrect side of the decision boundary.</p>
+
+<p>For debugging purposes, to speed up execution, I reduced the number of samples in each class to 5. (You might note that, on the graph, there are only 4 points in class 1, which are the □s. That’s because one of the points is at <code class="language-plaintext highlighter-rouge">(291, 90)</code>, which is off the edge of the screen. Gaussian distributions can generate extreme outliers, so I decided to preserve those points rather than clip them to the edge of the screen.) That’s obviously pretty small but you can see the algorithm iterating.</p>
+
+<p>At the end of each loop I draw a line between the latest estimates of cluster centroids. The perpendicular bisector of these segments are the decision boundaries between the classes, so I draw them, too. Some of the code was written to handle more than two classes but here there are only two which makes this relatively easy.</p>
+
+<h2 id="k-means-explained">K-means explained</h2>
+
+<p><a href="https://en.wikipedia.org/wiki/K-means_clustering" target="_blank">K-means clustering</a> is an iterative algorithm that aims to partition \(n\) observations into \(k\) clusters in which each observation belongs to the cluster with the nearest mean, called the cluster centroid.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Step</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Initialize</td>
+      <td>Produce and initial set of k cluster centroids. This can be done by randomly choosing k observations from the dataset.</td>
+    </tr>
+    <tr>
+      <td>Step 1 - Assignment</td>
+      <td>Using Euclidean distance to the centroids, assign each observation to a cluster.</td>
+    </tr>
+    <tr>
+      <td>Step 2 - Update</td>
+      <td>For each cluster, recompute the centroid using the newly assigned observations. If the centroids change (outside of a certain tolerance), go back to step 1 and repeat.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Ezpz.</p>
+
+<p>The math is also simple. In step 1, the distance between two points, \(x\) and \(y\), is simply \(\sqrt{(x_0 - y_0)^2 + (x_1 - y_1)^2 + \cdots + (x_{d-1} - y_{d-1})^2}\), where \(d\) is the dimensionality of the observations. In our case \(d=2\) which is why we only have \(x_0\) and \(x_1\). Also, since we’re only using the distances for comparative purposes, it’s not even necessary to take the square root. In step 2, the centroid is simply the sum of all the points divided by the number of points.</p>
+
+<h2 id="implementation">Implementation</h2>
+
+<p>First, a little housekeeping before getting to the implementation of the algorithm.</p>
+
+<div class="language-bbcbasic highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="m">10</span>  <span class="nv">HOME</span> <span class="p">:</span> <span class="nv">VTAB</span> <span class="m">21</span>
+<span class="m">20</span>  <span class="nv">PI</span> <span class="o">=</span> <span class="m">3.14159265</span>
+<span class="m">30</span>  <span class="k">GOSUB</span> <span class="m">1000</span> <span class="p">:</span> <span class="c">REM  DRAW AXIS</span>
+<span class="m">40</span>  <span class="k">GOSUB</span> <span class="m">100</span> <span class="p">:</span> <span class="c">REM  GENERATE DATA</span>
+<span class="m">50</span>  <span class="k">GOSUB</span> <span class="m">900</span> <span class="p">:</span> <span class="c">REM  WAIT FOR KEY</span>
+<span class="m">60</span>  <span class="k">GOSUB</span> <span class="m">2000</span> <span class="p">:</span> <span class="c">REM  RUN K-MEANS</span>
+<span class="m">70</span>  <span class="k">END</span>
+
+<span class="m">100</span> <span class="c">REM  == HYPERPARAMETERS ==</span>
+<span class="m">...</span>
+<span class="m">450</span> <span class="k">DIM</span> <span class="nv">P%</span><span class="o">(</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="o">)</span> <span class="p">:</span> <span class="c">REM  RANDOM POINTS</span>
+<span class="m">460</span> <span class="c">REM  == K-MEANS DATA TABLES ==</span>
+<span class="m">470</span> <span class="k">DIM</span> <span class="nv">DI</span><span class="o">(</span><span class="nv">NS</span> <span class="o">-</span> <span class="m">1</span><span class="p">,</span><span class="nv">KN</span> <span class="o">-</span> <span class="m">1</span><span class="o">)</span>
+<span class="m">480</span> <span class="c">REM  -- K - MU-XO, MU-X1, N-K --</span>
+<span class="m">490</span> <span class="k">DIM</span> <span class="nv">KM</span><span class="o">(</span><span class="nv">KN</span> <span class="o">-</span> <span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="o">)</span>
+<span class="m">500</span> <span class="c">REM  -- K - OLD MU-X0, OLD MU-X1 --</span>
+<span class="m">510</span> <span class="k">DIM</span> <span class="nv">KO</span><span class="o">(</span><span class="nv">KN</span> <span class="o">-</span> <span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="o">)</span>
+<span class="m">...</span>
+
+<span class="m">900</span> <span class="c">REM  == WAIT FOR KEYSTROKE ==</span>
+<span class="m">910</span> <span class="nv">POKE</span> <span class="m">49168</span><span class="p">,</span><span class="m">0</span> <span class="p">:</span> <span class="c">REM  CLEAR BUFFER</span>
+<span class="m">920</span> <span class="k">IF</span> <span class="nv">PEEK</span><span class="o">(</span><span class="m">49152</span><span class="o">)</span> <span class="o">&lt;</span> <span class="m">128</span> <span class="k">GOTO</span> <span class="m">920</span>
+<span class="m">930</span> <span class="nv">POKE</span> <span class="m">49168</span><span class="p">,</span><span class="m">0</span>
+<span class="m">940</span> <span class="k">RETURN</span>
+</code></pre></div></div>
+
+<p>At the very top of the program I decided to organize everything into subroutines. The idea here is to enable expansion into other ML algorithms.</p>
+
+<p>The “wait for key” subroutine is the Applesoft BASIC method for simply waiting for any keystroke before continuing. (<code class="language-plaintext highlighter-rouge">PEEK</code> and <code class="language-plaintext highlighter-rouge">POKE</code> are commands for directly accessing addresses in memory. I had those numbers memorized in high school but, naturally, I had to look them up.) I thought it’d be nice to add this pause after generating the data but I might take it out later.</p>
+
+<p>Lastly, at the end of the “hyper-parameters” section I declare a convenience array, <code class="language-plaintext highlighter-rouge">P%(2,1)</code> to keep track of 3 random points as well as a few arrays I’m going to use in the k-means algorithm. The reason I do this here is because in Applesoft BASIC you get an error if you declare an array that already exists. Should at some point I want to call the k-means algorithm multiple times, this won’t be a problem.</p>
+
+<h3 id="initialize">Initialize</h3>
+
+<p>Getting started, the first thing to do is initialize the algorithm by generating \(k\) cluster centroids. (\(k\) is a hyper-parameter that specifies the number of clusters to be “found.” I set it previously with <code class="language-plaintext highlighter-rouge">KN = 2</code>.)</p>
+
+<div class="language-bbcbasic highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="m">2000</span> <span class="c">REM  == K-MEANS ==</span>
+<span class="m">2010</span> <span class="k">PRINT</span> <span class="s">"RUN K-MEANS"</span>
+<span class="m">2020</span> <span class="c">REM  -- CLEAR PREDICTIONS --</span>
+<span class="m">2030</span> <span class="k">FOR</span> <span class="nv">I</span> <span class="o">=</span> <span class="m">0</span> <span class="k">TO</span> <span class="nv">NS</span> <span class="o">-</span> <span class="m">1</span>
+<span class="m">2040</span>   <span class="nv">DS%</span><span class="o">(</span><span class="nv">I</span><span class="p">,</span><span class="m">3</span><span class="o">)</span> <span class="o">=</span> <span class="m">0</span>
+<span class="m">2050</span> <span class="k">NEXT</span> <span class="nv">I</span>
+<span class="m">2100</span> <span class="c">REM  -- INITIALIZE CENTROIDS --</span>
+<span class="m">2110</span> <span class="k">FOR</span> <span class="nv">I</span> <span class="o">=</span> <span class="m">0</span> <span class="k">TO</span> <span class="nv">KN</span> <span class="o">-</span> <span class="m">1</span>
+<span class="m">2120</span>   <span class="nv">J</span> <span class="o">=</span> <span class="nb">INT</span><span class="o">(</span><span class="nb">RND</span><span class="o">(</span><span class="m">1</span><span class="o">)</span> <span class="o">*</span> <span class="nv">NS</span><span class="o">)</span>
+<span class="m">2130</span>   <span class="k">IF</span> <span class="nv">DS%</span><span class="o">(</span><span class="nv">J</span><span class="p">,</span><span class="m">3</span><span class="o">)</span> <span class="o">=</span> <span class="m">1</span> <span class="k">GOTO</span> <span class="m">2120</span>
+<span class="m">2140</span>   <span class="nv">KM</span><span class="o">(</span><span class="nv">I</span><span class="p">,</span><span class="m">1</span><span class="o">)</span> <span class="o">=</span> <span class="nv">DS%</span><span class="o">(</span><span class="nv">J</span><span class="p">,</span><span class="m">1</span><span class="o">)</span>
+<span class="m">2150</span>   <span class="nv">KM</span><span class="o">(</span><span class="nv">I</span><span class="p">,</span><span class="m">2</span><span class="o">)</span> <span class="o">=</span> <span class="nv">DS%</span><span class="o">(</span><span class="nv">J</span><span class="p">,</span><span class="m">2</span><span class="o">)</span>
+<span class="m">2160</span>   <span class="nv">DS%</span><span class="o">(</span><span class="nv">J</span><span class="p">,</span><span class="m">3</span><span class="o">)</span> <span class="o">=</span> <span class="m">1</span>
+<span class="m">2170</span> <span class="k">NEXT</span> <span class="nv">I</span>
+<span class="m">2200</span> <span class="c">REM  -- DRAW LINES BETWEEN CENTROIDS --</span>
+<span class="m">2210</span> <span class="k">FOR</span> <span class="nv">I</span> <span class="o">=</span> <span class="m">1</span> <span class="k">TO</span> <span class="nv">KN</span> <span class="o">-</span> <span class="m">1</span>
+<span class="m">2220</span>   <span class="nv">HPLOT</span> <span class="nv">KM</span><span class="o">(</span><span class="nv">I</span><span class="o">-</span><span class="m">1</span><span class="p">,</span><span class="m">0</span><span class="o">)</span><span class="p">,</span> <span class="m">159</span><span class="o">-</span><span class="nv">KM</span><span class="o">(</span><span class="nv">I</span><span class="o">-</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="o">)</span> <span class="k">TO</span> <span class="nv">KM</span><span class="o">(</span><span class="nv">I</span><span class="p">,</span><span class="m">0</span><span class="o">)</span><span class="p">,</span> <span class="m">159</span><span class="o">-</span><span class="nv">KM</span><span class="o">(</span><span class="nv">I</span><span class="p">,</span><span class="m">1</span><span class="o">)</span>
+<span class="m">2230</span> <span class="k">NEXT</span> <span class="nv">I</span>
+<span class="m">2240</span> <span class="k">GOSUB</span> <span class="m">3000</span><span class="p">:</span> <span class="c">REM  DRAW DECISION BOUNDARY</span>
+</code></pre></div></div>
+
+<p>I start by clearing out the prediction column, \(y\), of the dataset table, <code class="language-plaintext highlighter-rouge">DS%(NS - 1,3)</code> because I’m going to use this to make sure I don’t randomly pick the same point twice. Then for each class I randomly pick a point from the dataset. If it’s already been used I randomly pick another. <code class="language-plaintext highlighter-rouge">KM(KN - 1, 2)</code> is where I store the means for each cluster along with a count of the number of points in each cluster.</p>
+
+<p>Finally, I draw a line between the cluster centroids. This loop does not take into account all combinations of centroids (it works fine if \(k=2\)) and generates an error if a centroid is off the screen, which is possible, so I might just get rid of this later, since it’s not really necessary, rather than try to fix it.</p>
+
+<h3 id="step-1---assignment">Step 1 - Assignment</h3>
+
+<p>The fist step is to assign every data point to the nearest cluster centroid.</p>
+
+<div class="language-bbcbasic highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="m">2300</span> <span class="c">REM  -- COMPUTE ASSIGNMENTS --</span>
+<span class="m">2310</span> <span class="k">FOR</span> <span class="nv">I</span> <span class="o">=</span> <span class="m">0</span> <span class="k">TO</span> <span class="nv">NS</span> <span class="o">-</span> <span class="m">1</span>
+<span class="m">2320</span>   <span class="k">PRINT</span> <span class="s">"POINT "</span><span class="p">;</span><span class="nv">I</span><span class="p">;</span><span class="s">" AT "</span><span class="p">;</span><span class="nv">DS%</span><span class="o">(</span><span class="nv">I</span><span class="p">,</span><span class="m">0</span><span class="o">)</span><span class="p">;</span><span class="s">","</span><span class="p">;</span><span class="nv">DS%</span><span class="o">(</span><span class="nv">I</span><span class="p">,</span><span class="m">1</span><span class="o">)</span><span class="p">;</span>
+<span class="m">2330</span>   <span class="nv">DS%</span><span class="o">(</span><span class="nv">I</span><span class="p">,</span><span class="m">3</span><span class="o">)</span> <span class="o">=</span> <span class="m">0</span>
+<span class="m">2340</span>   <span class="k">FOR</span> <span class="nv">J</span> <span class="o">=</span> <span class="m">0</span> <span class="k">TO</span> <span class="nv">KN</span> <span class="o">-</span> <span class="m">1</span>
+<span class="m">2350</span>     <span class="nv">DI</span><span class="o">(</span><span class="nv">I</span><span class="p">,</span><span class="nv">J</span><span class="o">)</span> <span class="o">=</span> <span class="o">(</span><span class="nv">DS%</span><span class="o">(</span><span class="nv">I</span><span class="p">,</span><span class="m">0</span><span class="o">)-</span><span class="nv">KM</span><span class="o">(</span><span class="nv">J</span><span class="p">,</span><span class="m">0</span><span class="o">))^</span><span class="m">2</span> <span class="o">+</span> <span class="o">(</span><span class="nv">DS%</span><span class="o">(</span><span class="nv">I</span><span class="p">,</span><span class="m">1</span><span class="o">)-</span><span class="nv">KM</span><span class="o">(</span><span class="nv">J</span><span class="p">,</span><span class="m">1</span><span class="o">))^</span><span class="m">2</span>
+<span class="m">2360</span>     <span class="k">IF</span> <span class="nv">J</span> <span class="o">&gt;</span><span class="m">0</span> <span class="o">AND</span> <span class="o">(</span><span class="nv">DI</span><span class="o">(</span><span class="nv">I</span><span class="p">,</span><span class="nv">J</span><span class="o">)</span> <span class="o">&lt;</span> <span class="nv">DI</span><span class="o">(</span><span class="nv">I</span><span class="p">,</span><span class="nv">DS%</span><span class="o">(</span><span class="nv">I</span><span class="p">,</span><span class="m">3</span><span class="o">)))</span> <span class="k">THEN</span> <span class="nv">DS%</span><span class="o">(</span><span class="nv">I</span><span class="p">,</span><span class="m">3</span><span class="o">)</span> <span class="o">=</span> <span class="nv">J</span>
+<span class="m">2370</span>   <span class="k">NEXT</span> <span class="nv">J</span>
+<span class="m">2380</span>   <span class="k">PRINT</span> <span class="s">" -&gt; "</span><span class="p">;</span><span class="nv">DS%</span><span class="o">(</span><span class="nv">I</span><span class="p">,</span><span class="m">3</span><span class="o">)</span><span class="p">;</span><span class="s">" Y^="</span><span class="p">;</span><span class="nv">DS%</span><span class="o">(</span><span class="nv">I</span><span class="p">,</span><span class="m">2</span><span class="o">)</span>
+<span class="m">2390</span> <span class="k">NEXT</span> <span class="nv">I</span>
+<span class="m">2500</span> <span class="c">REM  -- COMPUTE ACCURACY --</span>
+<span class="m">2510</span> <span class="nv">CT</span> <span class="o">=</span> <span class="m">0</span>
+<span class="m">2520</span> <span class="k">FOR</span> <span class="nv">I</span> <span class="o">=</span> <span class="m">0</span> <span class="k">TO</span> <span class="nv">NS</span> <span class="o">-</span> <span class="m">1</span>
+<span class="m">2530</span>   <span class="k">IF</span> <span class="nv">DS%</span><span class="o">(</span><span class="nv">I</span><span class="p">,</span><span class="m">2</span><span class="o">)</span> <span class="o">=</span> <span class="nv">DS%</span><span class="o">(</span><span class="nv">I</span><span class="p">,</span><span class="m">3</span><span class="o">)</span> <span class="k">THEN</span> <span class="nv">CT</span> <span class="o">=</span> <span class="nv">CT</span> <span class="o">+</span> <span class="m">1</span>
+<span class="m">2540</span> <span class="k">NEXT</span> <span class="nv">I</span>
+<span class="m">2550</span> <span class="nv">A</span> <span class="o">=</span> <span class="nv">CT</span> <span class="o">/</span> <span class="nv">NS</span>
+<span class="m">2560</span> <span class="k">IF</span> <span class="nv">A</span> <span class="o">&lt;</span> <span class="m">0.5</span> <span class="k">THEN</span> <span class="nv">A</span> <span class="o">=</span> <span class="m">1</span> <span class="o">-</span> <span class="nv">A</span>
+<span class="m">2570</span> <span class="k">PRINT</span> <span class="s">"ACCURACY = "</span><span class="p">;</span> <span class="nb">INT</span><span class="o">(</span><span class="nv">A</span><span class="o">*</span><span class="m">10000</span><span class="o">+</span><span class="m">0.5</span><span class="o">)/</span><span class="m">100</span><span class="p">;</span><span class="s">"%"</span>
+</code></pre></div></div>
+
+<p>The assignment step is also quite easy. I loop through all the data points, computing the Euclidean distance to each cluster centroid. (Since <code class="language-plaintext highlighter-rouge">SQRT()</code> is expensive, and unnecessary here since we’re just comparing, I actually just compute the square of the Euclidean distance.) If the distance is less than the previous minimum distance, <code class="language-plaintext highlighter-rouge">DI(I,DS%(I,3))</code>, I update the assignment, <code class="language-plaintext highlighter-rouge">DS%(I,3) = J</code>.</p>
+
+<p>At the end, I compute the accuracy of the computed assignments by simply counting the number of assignments, <code class="language-plaintext highlighter-rouge">DS%(I,3)</code>, that match the actual labels, <code class="language-plaintext highlighter-rouge">DS%(I,2)</code>. Here, however, there’s an interesting wrinkle: with two classes, half the time the label I choose for the assignment is the opposite of the label from the original dataset. K-means doesn’t require the distinction, so at times I was seeing a perfect classification reporting 0% accuracy. The line <code class="language-plaintext highlighter-rouge">IF A &lt; 0.5 THEN A = 1 - A</code> addresses this, however, it only works for 2 classes. I’ll need something more robust should I want this to work for \(k &gt; 2\).</p>
+
+<h3 id="step-2---update">Step 2 - Update</h3>
+
+<p>The second step is to recompute the cluster centroids based on the assigned data points. Convergence occurred if the centroids don’t change (within a tolerance) from the previous iteration.</p>
+
+<div class="language-bbcbasic highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="m">2600</span> <span class="c">REM  -- COMPUTE CENTROIDS --</span>
+<span class="m">2610</span> <span class="k">FOR</span> <span class="nv">J</span> <span class="o">=</span> <span class="m">0</span> <span class="k">TO</span> <span class="nv">KN</span> <span class="o">-</span> <span class="m">1</span>
+<span class="m">2620</span>   <span class="nv">K0</span><span class="o">(</span><span class="nv">J</span><span class="p">,</span><span class="m">0</span><span class="o">)</span> <span class="o">=</span> <span class="nv">KM</span><span class="o">(</span><span class="nv">J</span><span class="p">,</span><span class="m">0</span><span class="o">)</span>
+<span class="m">2630</span>   <span class="nv">K0</span><span class="o">(</span><span class="nv">J</span><span class="p">,</span><span class="m">1</span><span class="o">)</span> <span class="o">=</span> <span class="nv">KM</span><span class="o">(</span><span class="nv">J</span><span class="p">,</span><span class="m">1</span><span class="o">)</span>
+<span class="m">2640</span>   <span class="nv">KM</span><span class="o">(</span><span class="nv">J</span><span class="p">,</span><span class="m">0</span><span class="o">)</span> <span class="o">=</span> <span class="m">0</span><span class="p">:</span> <span class="nv">KM</span><span class="o">(</span><span class="nv">J</span><span class="p">,</span><span class="m">1</span><span class="o">)</span> <span class="o">=</span> <span class="m">0</span>
+<span class="m">2650</span>   <span class="nv">KM</span><span class="o">(</span><span class="nv">J</span><span class="p">,</span><span class="m">2</span><span class="o">)</span> <span class="o">=</span> <span class="m">0</span>
+<span class="m">2660</span> <span class="k">NEXT</span>
+<span class="m">2670</span> <span class="k">FOR</span> <span class="nv">I</span> <span class="o">=</span> <span class="m">0</span> <span class="k">TO</span> <span class="nv">NS</span> <span class="o">-</span> <span class="m">1</span>
+<span class="m">2680</span>   <span class="nv">Y</span> <span class="o">=</span> <span class="nv">DS%</span><span class="o">(</span><span class="nv">I</span><span class="p">,</span><span class="m">3</span><span class="o">)</span>
+<span class="m">2690</span>   <span class="nv">KM%</span><span class="o">(</span><span class="nv">Y</span><span class="p">,</span><span class="m">0</span><span class="o">)</span> <span class="o">=</span> <span class="nv">KM%</span><span class="o">(</span><span class="nv">Y</span><span class="p">,</span><span class="m">0</span><span class="o">)</span> <span class="o">+</span> <span class="nv">DS%</span><span class="o">(</span><span class="nv">I</span><span class="p">,</span><span class="m">0</span><span class="o">)</span>
+<span class="m">2700</span>   <span class="nv">KM%</span><span class="o">(</span><span class="nv">Y</span><span class="p">,</span><span class="m">1</span><span class="o">)</span> <span class="o">=</span> <span class="nv">KM%</span><span class="o">(</span><span class="nv">Y</span><span class="p">,</span><span class="m">1</span><span class="o">)</span> <span class="o">+</span> <span class="nv">DS%</span><span class="o">(</span><span class="nv">I</span><span class="p">,</span><span class="m">1</span><span class="o">)</span>
+<span class="m">2710</span>   <span class="nv">KM%</span><span class="o">(</span><span class="nv">Y</span><span class="p">,</span><span class="m">2</span><span class="o">)</span> <span class="o">=</span> <span class="nv">KM%</span><span class="o">(</span><span class="nv">Y</span><span class="p">,</span><span class="m">2</span><span class="o">)</span> <span class="o">+</span> <span class="m">1</span>
+<span class="m">2720</span> <span class="k">NEXT</span>
+<span class="m">2730</span> <span class="k">FOR</span> <span class="nv">I</span> <span class="o">=</span> <span class="m">0</span> <span class="k">TO</span> <span class="nv">KN</span> <span class="o">-</span> <span class="m">1</span>
+<span class="m">2740</span>   <span class="nv">KM%</span><span class="o">(</span><span class="nv">I</span><span class="p">,</span><span class="m">0</span><span class="o">)</span> <span class="o">=</span> <span class="nv">KM%</span><span class="o">(</span><span class="nv">I</span><span class="p">,</span><span class="m">0</span><span class="o">)</span> <span class="o">/</span> <span class="nv">KM%</span><span class="o">(</span><span class="nv">I</span><span class="p">,</span><span class="m">2</span><span class="o">)</span>
+<span class="m">2750</span>   <span class="nv">KM%</span><span class="o">(</span><span class="nv">I</span><span class="p">,</span><span class="m">1</span><span class="o">)</span> <span class="o">=</span> <span class="nv">KM%</span><span class="o">(</span><span class="nv">I</span><span class="p">,</span><span class="m">1</span><span class="o">)</span> <span class="o">/</span> <span class="nv">KM%</span><span class="o">(</span><span class="nv">I</span><span class="p">,</span><span class="m">2</span><span class="o">)</span>
+<span class="m">2760</span> <span class="k">NEXT</span>
+<span class="m">2800</span> <span class="c">REM  -- DETERMINE CONVERGENCE --</span>
+<span class="m">2810</span> <span class="nv">DI</span> <span class="o">=</span> <span class="m">0</span>
+<span class="m">2820</span> <span class="k">FOR</span> <span class="nv">I</span> <span class="o">=</span> <span class="m">0</span> <span class="k">TO</span> <span class="nv">KN</span> <span class="o">-</span> <span class="m">1</span>
+<span class="m">2830</span>   <span class="nv">DI</span> <span class="o">=</span> <span class="nv">DI</span> <span class="o">+</span> <span class="o">(</span><span class="nv">KM%</span><span class="o">(</span><span class="nv">I</span><span class="p">,</span><span class="m">0</span><span class="o">)</span> <span class="o">-</span> <span class="nv">KO%</span><span class="o">(</span><span class="nv">I</span><span class="p">,</span><span class="m">0</span><span class="o">))</span> <span class="o">^</span> <span class="m">2</span> <span class="o">+</span> <span class="o">(</span><span class="nv">KM%</span><span class="o">(</span><span class="nv">I</span><span class="p">,</span><span class="m">1</span><span class="o">)</span> <span class="o">-</span> <span class="nv">KO%</span><span class="o">(</span><span class="nv">I</span><span class="p">,</span><span class="m">1</span><span class="o">))</span> <span class="o">^</span> <span class="m">2</span>
+<span class="m">2840</span> <span class="k">NEXT</span>
+<span class="m">2850</span> <span class="k">IF</span> <span class="nv">DI</span> <span class="o">&gt;</span> <span class="m">0.01</span> <span class="k">THEN</span> <span class="k">GOTO</span> <span class="m">2200</span>
+<span class="m">2860</span> <span class="k">PRINT</span> <span class="s">"K-MEANS CONVERGED"</span>
+<span class="m">2900</span> <span class="c">REM  -- CLEAR GRAPHICS AND REDRAW WITH DECISION BOUNDARY --</span>
+<span class="m">2910</span> <span class="k">GOSUB</span> <span class="m">1000</span>
+<span class="m">2920</span> <span class="k">FOR</span> <span class="nv">I</span> <span class="o">=</span> <span class="m">0</span> <span class="k">TO</span> <span class="nv">NS</span> <span class="o">-</span> <span class="m">1</span>
+<span class="m">2930</span>   <span class="nv">X0%</span> <span class="o">=</span> <span class="nv">DS%</span><span class="o">(</span><span class="nv">I</span><span class="p">,</span><span class="m">0</span><span class="o">)</span>
+<span class="m">2940</span>   <span class="nv">X1%</span> <span class="o">=</span> <span class="nv">DS%</span><span class="o">(</span><span class="nv">I</span><span class="p">,</span><span class="m">1</span><span class="o">)</span>
+<span class="m">2950</span>   <span class="nv">K</span> <span class="o">=</span> <span class="nv">DS%</span><span class="o">(</span><span class="nv">I</span><span class="p">,</span><span class="m">2</span><span class="o">)</span>
+<span class="m">2960</span>   <span class="k">ON</span> <span class="nv">K</span> <span class="o">+</span> <span class="m">1</span> <span class="k">GOSUB</span> <span class="m">1200</span><span class="p">,</span><span class="m">1300</span>
+<span class="m">2970</span> <span class="k">NEXT</span>
+<span class="m">2980</span> <span class="k">GOSUB</span> <span class="m">3000</span>
+<span class="m">2990</span> <span class="k">RETURN</span>
+</code></pre></div></div>
+
+<p>I start by saving the cluster centroids to <code class="language-plaintext highlighter-rouge">KO(KN - 1,1)</code>. This is used later to determine convergence. I then iterate through ever data point, adding it’s values to the cluster to which it belongs while keeping track of the number of data points in each cluster. Next I iterate through each cluster and compute the mean of each dimension by dividing by the number of data point in that cluster.</p>
+
+<p>Lastly, I determine if there’s convergence by measuring how far all the centroid have moved. (Again, I don’t bother with the <code class="language-plaintext highlighter-rouge">SQRT()</code>.) If the answer is more than the specified tolerance, \(0.01\), I go back to Step #1. Otherwise, I clear the graphics, redraw the axis and data points and finish by drawing the decision boundary.</p>
+
+<h3 id="drawing-the-decision-boundary">Drawing the decision boundary</h3>
+
+<p>This code is a slog and it’s not really critical to understanding ML but I thought it’d be cool to drawn a decision boundary while k-means is iterating and then again at the end. Given a point (the midpoint on the segment between two cluster centroids) and a slope (which is perpendicular to that segment), the challenge is to drawn a line inside the ‘box’ of the screen, assuming the line intersects that box.</p>
+
+<div class="language-bbcbasic highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="m">3000</span> <span class="c">REM  -- DRAW DECISION BOUNDARY --</span>
+<span class="m">3010</span> <span class="k">FOR</span> <span class="nv">I</span> <span class="o">=</span> <span class="m">1</span> <span class="k">TO</span> <span class="nv">KN</span> <span class="o">-</span> <span class="m">1</span>
+<span class="m">3020</span>   <span class="nv">M</span> <span class="o">=</span> <span class="m">1</span><span class="nv">E6</span>
+<span class="m">3030</span>   <span class="k">IF</span> <span class="nv">KM%</span><span class="o">(</span><span class="nv">I</span> <span class="o">-</span> <span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="o">)</span> <span class="o">-</span> <span class="nv">KM%</span><span class="o">(</span><span class="nv">I</span><span class="p">,</span><span class="m">1</span><span class="o">)</span> <span class="o">&lt;&gt;</span> <span class="m">0</span> <span class="k">THEN</span> <span class="nv">M</span> <span class="o">=</span> <span class="o">-</span><span class="m">1</span> <span class="o">*</span> <span class="o">(</span><span class="nv">KM%</span><span class="o">(</span><span class="nv">I</span> <span class="o">-</span> <span class="m">1</span><span class="p">,</span><span class="m">0</span><span class="o">)</span> <span class="o">-</span> <span class="nv">KM%</span><span class="o">(</span><span class="nv">I</span><span class="p">,</span><span class="m">0</span><span class="o">))</span> <span class="o">/</span> <span class="o">(</span><span class="nv">KM%</span><span class="o">(</span><span class="nv">I</span> <span class="o">-</span> <span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="o">)</span> <span class="o">-</span> <span class="nv">KM%</span><span class="o">(</span><span class="nv">I</span><span class="p">,</span><span class="m">1</span><span class="o">))</span>
+<span class="m">3040</span>   <span class="nv">P%</span><span class="o">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="o">)</span> <span class="o">=</span> <span class="o">(</span><span class="nv">KM%</span><span class="o">(</span><span class="nv">I</span><span class="p">,</span><span class="m">0</span><span class="o">)</span> <span class="o">-</span> <span class="nv">KM%</span><span class="o">(</span><span class="nv">I</span> <span class="o">-</span> <span class="m">1</span><span class="p">,</span><span class="m">0</span><span class="o">))</span> <span class="o">/</span> <span class="m">2</span> <span class="o">+</span> <span class="nv">KM%</span><span class="o">(</span><span class="nv">I</span> <span class="o">-</span> <span class="m">1</span><span class="p">,</span><span class="m">0</span><span class="o">)</span>
+<span class="m">3050</span>   <span class="nv">P%</span><span class="o">(</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="o">)</span> <span class="o">=</span> <span class="o">(</span><span class="nv">KM%</span><span class="o">(</span><span class="nv">I</span><span class="p">,</span><span class="m">1</span><span class="o">)</span> <span class="o">-</span> <span class="nv">KM%</span><span class="o">(</span><span class="nv">I</span> <span class="o">-</span> <span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="o">))</span> <span class="o">/</span> <span class="m">2</span> <span class="o">+</span> <span class="nv">KM%</span><span class="o">(</span><span class="nv">I</span> <span class="o">-</span> <span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="o">)</span>
+<span class="m">3060</span>   <span class="k">GOSUB</span> <span class="m">3080</span>
+<span class="m">3070</span> <span class="k">NEXT</span>
+<span class="m">3080</span> <span class="c">REM  -- DRAW LINE FROM SLOPE AND POINT --</span>
+<span class="m">3090</span> <span class="nv">NX</span> <span class="o">=</span> <span class="m">1</span> <span class="p">:</span> <span class="c">REM  -- REM NUMBER OF INTERSECTIONS --</span>
+<span class="m">3100</span> <span class="k">IF</span> <span class="nb">ABS</span><span class="o">(</span><span class="nv">M</span><span class="o">)</span> <span class="o">&gt;</span> <span class="m">1</span><span class="nv">E5</span> <span class="k">THEN</span> <span class="k">GOSUB</span> <span class="m">3240</span> <span class="p">:</span> <span class="k">GOTO</span> <span class="m">3210</span> <span class="p">:</span> <span class="c">REM  VERTICAL LINE</span>
+<span class="m">3110</span> <span class="nv">P%</span><span class="o">(</span><span class="nv">NX</span><span class="p">,</span><span class="m">1</span><span class="o">)</span> <span class="o">=</span> <span class="nv">M</span> <span class="o">*</span> <span class="o">(</span><span class="m">10</span> <span class="o">-</span> <span class="nv">P%</span><span class="o">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="o">))</span> <span class="o">+</span> <span class="nv">P%</span><span class="o">(</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="o">)</span>
+<span class="m">3120</span> <span class="k">IF</span> <span class="nv">P%</span><span class="o">(</span><span class="nv">NX</span><span class="p">,</span><span class="m">1</span><span class="o">)</span> <span class="o">&gt;</span> <span class="m">10</span> <span class="o">AND</span> <span class="nv">P%</span><span class="o">(</span><span class="nv">NX</span><span class="p">,</span><span class="m">1</span><span class="o">)</span> <span class="o">&lt;</span> <span class="m">149</span> <span class="k">THEN</span> <span class="nv">P%</span><span class="o">(</span><span class="nv">NX</span><span class="p">,</span><span class="m">0</span><span class="o">)</span> <span class="o">=</span> <span class="m">10</span> <span class="p">:</span> <span class="nv">NX</span> <span class="o">=</span> <span class="nv">NX</span> <span class="o">+</span> <span class="m">1</span>
+<span class="m">3130</span> <span class="nv">P%</span><span class="o">(</span><span class="nv">NX</span><span class="p">,</span><span class="m">1</span><span class="o">)</span> <span class="o">=</span> <span class="nv">M</span> <span class="o">*</span> <span class="o">(</span><span class="m">269</span> <span class="o">-</span> <span class="nv">P%</span><span class="o">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="o">))</span> <span class="o">+</span> <span class="nv">P%</span><span class="o">(</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="o">)</span>
+<span class="m">3140</span> <span class="k">IF</span> <span class="nv">P%</span><span class="o">(</span><span class="nv">NX</span><span class="p">,</span><span class="m">1</span><span class="o">)</span> <span class="o">&gt;</span> <span class="m">10</span> <span class="o">AND</span> <span class="nv">P%</span><span class="o">(</span><span class="nv">NX</span><span class="p">,</span><span class="m">1</span><span class="o">)</span> <span class="o">&lt;</span> <span class="m">149</span> <span class="k">THEN</span> <span class="nv">P%</span><span class="o">(</span><span class="nv">NX</span><span class="p">,</span><span class="m">0</span><span class="o">)</span> <span class="o">=</span> <span class="m">269</span> <span class="p">:</span> <span class="nv">NX</span> <span class="o">=</span> <span class="nv">NX</span> <span class="o">+</span> <span class="m">1</span>
+<span class="m">3150</span> <span class="k">IF</span> <span class="nv">NX</span> <span class="o">=</span> <span class="m">3</span> <span class="k">THEN</span> <span class="k">GOTO</span> <span class="m">3210</span>
+<span class="m">3160</span> <span class="k">IF</span> <span class="nv">M</span> <span class="o">&lt;&gt;</span> <span class="m">0</span> <span class="k">THEN</span> <span class="nv">P%</span><span class="o">(</span><span class="nv">NX</span><span class="p">,</span><span class="m">0</span><span class="o">)</span> <span class="o">=</span> <span class="o">(</span><span class="m">10</span> <span class="o">-</span> <span class="nv">P%</span><span class="o">(</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="o">))</span> <span class="o">/</span> <span class="nv">M</span> <span class="o">+</span> <span class="nv">P%</span><span class="o">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="o">)</span>
+<span class="m">3170</span> <span class="k">IF</span> <span class="nv">M</span> <span class="o">&lt;&gt;</span> <span class="m">0</span> <span class="o">AND</span> <span class="nv">P%</span><span class="o">(</span><span class="nv">NX</span><span class="p">,</span><span class="m">0</span><span class="o">)</span> <span class="o">&gt;</span> <span class="m">10</span> <span class="o">AND</span> <span class="nv">P%</span><span class="o">(</span><span class="nv">NX</span><span class="p">,</span><span class="m">0</span><span class="o">)</span> <span class="o">&lt;</span> <span class="m">269</span> <span class="k">THEN</span> <span class="nv">P%</span><span class="o">(</span><span class="nv">NX</span><span class="p">,</span><span class="m">1</span><span class="o">)</span> <span class="o">=</span> <span class="m">10</span> <span class="p">:</span> <span class="nv">NX</span> <span class="o">=</span> <span class="nv">NX</span> <span class="o">+</span> <span class="m">1</span>
+<span class="m">3180</span> <span class="k">IF</span> <span class="nv">NX</span> <span class="o">=</span> <span class="m">3</span> <span class="k">THEN</span> <span class="k">GOTO</span> <span class="m">3210</span>
+<span class="m">3190</span> <span class="k">IF</span> <span class="nv">M</span> <span class="o">&lt;&gt;</span> <span class="m">0</span> <span class="k">THEN</span> <span class="nv">P%</span><span class="o">(</span><span class="nv">NX</span><span class="p">,</span><span class="m">0</span><span class="o">)</span> <span class="o">=</span> <span class="o">(</span><span class="m">149</span> <span class="o">-</span> <span class="nv">P%</span><span class="o">(</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="o">))</span> <span class="o">/</span> <span class="nv">M</span> <span class="o">+</span> <span class="nv">P%</span><span class="o">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="o">)</span>
+<span class="m">3200</span> <span class="k">IF</span> <span class="nv">M</span> <span class="o">&lt;&gt;</span> <span class="m">0</span> <span class="o">AND</span> <span class="nv">P%</span><span class="o">(</span><span class="nv">NX</span><span class="p">,</span><span class="m">0</span><span class="o">)</span> <span class="o">&gt;</span> <span class="m">10</span> <span class="o">AND</span> <span class="nv">P%</span><span class="o">(</span><span class="nv">NX</span><span class="p">,</span><span class="m">0</span><span class="o">)</span> <span class="o">&lt;</span> <span class="m">269</span> <span class="k">THEN</span> <span class="nv">P%</span><span class="o">(</span><span class="nv">NX</span><span class="p">,</span><span class="m">1</span><span class="o">)</span> <span class="o">=</span> <span class="m">149</span> <span class="p">:</span> <span class="nv">NX</span> <span class="o">=</span> <span class="nv">NX</span> <span class="o">+</span> <span class="m">1</span>
+<span class="m">3210</span> <span class="c">REM  -- DRAW LINE --</span>
+<span class="m">3220</span> <span class="k">IF</span> <span class="nv">NX</span> <span class="o">=</span> <span class="m">3</span> <span class="k">THEN</span> <span class="nv">HPLOT</span> <span class="nv">P%</span><span class="o">(</span><span class="m">1</span><span class="p">,</span><span class="m">0</span><span class="o">)</span><span class="p">,</span><span class="m">159</span> <span class="o">-</span> <span class="nv">P%</span><span class="o">(</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="o">)</span> <span class="k">TO</span> <span class="nv">P%</span><span class="o">(</span><span class="m">2</span><span class="p">,</span><span class="m">0</span><span class="o">)</span><span class="p">,</span><span class="m">159</span> <span class="o">-</span> <span class="nv">P%</span><span class="o">(</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="o">)</span>
+<span class="m">3230</span> <span class="k">RETURN</span>
+<span class="m">3240</span> <span class="c">REM  -- VERTICAL LINE --</span>
+<span class="m">3250</span> <span class="nv">P%</span><span class="o">(</span><span class="m">1</span><span class="p">,</span><span class="m">0</span><span class="o">)</span> <span class="o">=</span> <span class="nv">P%</span><span class="o">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="o">)</span>
+<span class="m">3260</span> <span class="nv">P%</span><span class="o">(</span><span class="m">2</span><span class="p">,</span><span class="m">0</span><span class="o">)</span> <span class="o">=</span> <span class="nv">P%</span><span class="o">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="o">)</span>
+<span class="m">3270</span> <span class="nv">P%</span><span class="o">(</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="o">)</span> <span class="o">=</span> <span class="m">10</span>
+<span class="m">3280</span> <span class="nv">P%</span><span class="o">(</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="o">)</span> <span class="o">=</span> <span class="m">269</span>
+<span class="m">3290</span> <span class="k">RETURN</span>
+</code></pre></div></div>
+
+<p>Without delving too far into the details, this routine relies heavily on the convenience array, <code class="language-plaintext highlighter-rouge">P%(2,1)</code>, that I declared during the “hyper-parameters” routine. I start by computing the slope of the perpendicular segment connecting two centroids. I then find the midpoint of that segment. (By the way, this routine also does not account for all combinations of centroids, but it works when \(k=2\).) I accommodate for when the slope is vertical and use <code class="language-plaintext highlighter-rouge">P%(0,0)</code> and <code class="language-plaintext highlighter-rouge">P%(0,1)</code> to store the midpoint between the two centroids and <code class="language-plaintext highlighter-rouge">M</code> for the slope.</p>
+
+<p>I then iterate through the 4 sides of the ‘box’ on the screen, using the corners <code class="language-plaintext highlighter-rouge">(10,10)</code> and <code class="language-plaintext highlighter-rouge">(269,149)</code> so that the decision boundary isn’t drawn all the way to the edges of the screen. I thought that would look prettier this way. I next determine if the decision boundary intersects, respectively, the left, right, top and bottom edges of the box. I use <code class="language-plaintext highlighter-rouge">NX</code> to keep track of the number of sides of the box intersected by the decision boundary and <code class="language-plaintext highlighter-rouge">P%(NX,0)</code> and <code class="language-plaintext highlighter-rouge">P%(NX,1)</code> to keep track of those intersections. If <code class="language-plaintext highlighter-rouge">NX = 3</code>, which means there are two intersections, I draw the line because it’s inside the box.</p>
+
+<h2 id="can-we-do-better">Can we do better?</h2>
+
+<p>Yes! Yes, we can.</p>
+
+<p>While k-means is simple, it does not take advantage of our knowledge of the Gaussian nature of the data. If we know that the distributions are at least approximately Gaussian, which is frequently the case, we can employ a more powerful application of the Expectation Maximization (EM) framework (k-means is a specific implementation of centroid-based clustering that uses an iterative approach similar to EM with ‘hard’ clustering) that takes advantage of this. This post is already long enough, so we’ll deal with that another day. Eventually, perhaps, we’ll also get to deep learning, although developing back propagation for an arbitrary size neural net using Applesoft BASIC on an <span class="no-break">Apple ][+</span> is not going to be easy.</p>
+
+<h2 id="social-media-sharing">Social media sharing</h2>
+<p>I shared this post on <a href="https://news.ycombinator.com/item?id=45415510" target="_blank">Hacker News</a> and, to my surprise and delight, got a decent amount of feedback, including some helpful corrections.</p>
+
+<p>My <a href="https://www.facebook.com/markdcramer/posts/pfbid0eG3AuPSxFTqBm4nggDAjqJrQe8VFv5VUEKf5SQ8qtnDjVFZ4qaSZvauDBcKRxSoFl" target="_blank">post on Facebook</a> received <em>significantly</em> less reaction. My friends are apparently a lot less interested in ML algorithms on retro hardware than randos on Hacker News. My share requests to Facebook groups <a href="https://www.facebook.com/groups/5251478676" target="_blank">Apple II Enthusiasts</a> and <a href="https://www.facebook.com/groups/retrocomputers" target="_blank">Retro Microcomputers</a> were both rejected, which is a bit disappointing. Still, those are fun groups to follow. My <a href="https://forum.vcfed.org/index.php?threads/ml-on-an-apple.1254709/" target="_blank">post on the VCF forum</a> also got zilch. (I attended the <a href="https://vcfed.org/events/vintage-computer-festival-west/" target="_blank">Vintage Computer Festival</a> at the <a href="https://computerhistory.org/" target="_blank">Computer History Museum</a>, which was a good time.) Perhaps I’ll try Reddit and LinkedIn next to see what happens…</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/k-means" class="page__taxonomy-item" rel="tag">K-means</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/machine-learning" class="page__taxonomy-item" rel="tag">machine learning</a>
+    
+    </span>
+  </p>
+
+
+
+
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2025-10-06">October 06, 2025</time></p>
+        
+      </footer><section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fmdcramer.github.io%2Fapple-2-blog%2Fk-means%2F" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  
+  <a href="https://news.ycombinator.com/submitlink?u=https%3A%2F%2Fmdcramer.github.io%2Fapple-2-blog%2Fk-means%2F&t=K-means+by+another+means" class="btn btn--inverse" title="Share on Hacker News"><i class="fa fa-fw fa-y-combinator" aria-hidden="true"></i><span> Hacker News</span></a>
+  
+  <a href="https://www.reddit.com/submit?url=https%3A%2F%2Fmdcramer.github.io%2Fapple-2-blog%2Fk-means%2F&title=K-means+by+another+means" class="btn btn--reddit" title="Share on Reddit"><i class="fa fa-fw fa-reddit" aria-hidden="true"></i><span> Reddit</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmdcramer.github.io%2Fapple-2-blog%2Fk-means%2F" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  
+  <a href="mailto:?subject=K-means+by+another+means&body=https%3A%2F%2Fmdcramer.github.io%2Fapple-2-blog%2Fk-means%2F" class="btn btn--inverse" title="Share via Email"><i class="fa fa-fw fa-envelope" aria-hidden="true"></i><span> Email</span></a>
+  
+  <a href="#" class="btn btn--inverse" title="Copy link" onclick="navigator.clipboard.writeText('https://mdcramer.github.io/apple-2-blog/k-means/'); this.querySelector('span').textContent=' Copied!'; setTimeout(() => this.querySelector('span').textContent=' Copy link', 2000); return false;"><i class="fa fa-fw fa-link" aria-hidden="true"></i><span> Copy link</span></a>
+  
+  <!-- Remove Twitter sharing option
+  <a href="https://twitter.com/intent/tweet?text=K-means+by+another+means%20https%3A%2F%2Fmdcramer.github.io%2Fapple-2-blog%2Fk-means%2F" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  -->
+
+  <!--  Remove Google Plus sharing option
+  <a href="https://plus.google.com/share?url=https%3A%2F%2Fmdcramer.github.io%2Fapple-2-blog%2Fk-means%2F" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a> -->
+</section>
+
+  <nav class="pagination">
+    
+      <a href="https://mdcramer.github.io/apple-2-blog/emulator/" class="pagination--pager" title="No Cursor, no emulator
+">Previous</a>
+    
+    
+      <a href="https://mdcramer.github.io/apple-2-blog/mo-columns/" class="pagination--pager" title="Mo columns is mo better
+">Next</a>
+    
+  </nav>
+</div><div class="page__comments">
+  
+    
+        <h4 class="page__comments-title">Leave a Comment</h4>
+        <section id="disqus_thread"></section>
+      
+</div></article>
+</div>
+
+
+    <div class="page__footer">
+      <footer>
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    <!-- 
+      <li><strong>Follow:</strong></li>
+     -->
+    
+
+    
+    <li>
+      <a href="https://www.linkedin.com/in/mcramer" itemprop="sameAs">
+        <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+      </a>
+    </li>
+    <!-- dead code
+First try page.collection — works for individual post pages
+If not found, try page.permalink slug — works for autopage collection index pages
+ -->
+
+<!-- If repo_url is found in blogs.yml, use it — otherwise fall back to the original constructed URL -->
+
+
+
+
+<!-- create the link -->
+<li>
+  
+    <a href="https://github.com/mdcramer/Apple2-ML" target="_blank"><i class="fa fa-fw fa-github" aria-hidden="true"></i>GitHub</a>
+  
+</li>
+    <li>
+      <a href="https://www.stackoverflow.com/users/852795/mark-cramer" itemprop="sameAs">
+        <i class="fa fa-fw fa-stack-overflow" aria-hidden="true"></i> Stackoverflow
+      </a>
+    </li>
+    
+
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=vlo46P8AAAAJ" itemprop="sameAs">
+        <img src="/assets/images/googlescholar.svg" alt="googlescholar" class="profile_icon"> Google Scholar
+      </a>
+    </li>
+  
+
+    <li><a href="https://mdcramer.github.io/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2026 Mark Cramer. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="https://mdcramer.github.io/assets/js/main.min.js"></script>
+
+
+
+
+  
+      
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://mdcramer.github.io/apple-2-blog/k-means/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/apple-2-blog/k-means"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://githubmdcramer.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+    
+
+
+    <script type="text/javascript" async 
+src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?
+config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+</html>
