@@ -12,7 +12,7 @@ Anyone who knows me mildly well is aware that I'm a Francophile. I lived in Fran
 
 ## Mistral _rentre dans la maison_
 
-That being said, I added Mistral to the backend of [MyMemoChat](http://mymemochat.com/){:target="_blank"}, to power the chat (`mistral-small-latest`) as well as the embeddings (1024-dimensional `mistral-embed`), not because it's a frontier lab based out of Paris, but... really it's mostly because of that.
+As such, I added Mistral to the backend of [MyMemoChat](http://mymemochat.com/){:target="_blank"}, to power the chat (`mistral-small-latest`) as well as the embeddings (1024-dimensional `mistral-embed`), not because it's a frontier lab based out of Paris, but... really it's mostly because of that.
 
 Actually, I also want to try it out. I could simply use [Le Chat](https://chat.mistral.ai/){:target="_blank"} but plugging Mistral into the backend of MyMemoChat will enable me to see how a personalization layer will behave on top of the European model.
 
